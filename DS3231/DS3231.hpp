@@ -2,11 +2,17 @@
 #define DS3231_HPP
 
 #include "hwlib.hpp"
+#include "bitParser.hpp"
 
-struct timeStamp {
-	uint16_t year;
-	uint8_t month;
+struct timestamp {
+	uint8_t seconds;
+	uint8_t minutes;
+	uint8_t hours;
 	uint8_t day;
+	uint8_t date;
+	uint8_t month;
+	uint8_t century;
+	uint8_t year;
 };
 
 
@@ -39,14 +45,28 @@ private:
 	static const uint8_t REG_TEMPERATURE_MSB = 	0x11;
 	static const uint8_t REG_TEMPERATURE_LSB =	0x12;
 
+	void setRegister(uint8_t chipRegAddress);
+	uint8_t getByteFromRegister(uint8_t chipRegAddress);
 
+	int getIntFromBCDRegister(uint8_t chipRegAddress);
 public:
 	DS3231(hwlib::i2c_bus_bit_banged_scl_sda& I2CBus, uint8_t address);
 
-	void setRegister(uint8_t regAddress);
-	uint8_t getByteFromRegister(uint8_t chipRegAddress);
 
-	int getCurrentSeconds();
+	uint8_t getIntFromBCDRegister(uint8_t chipRegAddress);
+
+	uint8_t getCurrentSeconds();
+	uint8_t getCurrentMinutes();
+	uint8_t getCurrentHours();
+	uint8_t getCurrentDay();
+	uint8_t getCurrentDate();
+	//uint8_t getCurrentMonthCentury();
+	//uint8_t getCurrentMonth();
+	uint8_t getCurrentCentury();
+
+
+	uint8_t getCurrentYear();
+	uint8_t getCurrentTimestamp();
 
 };
 

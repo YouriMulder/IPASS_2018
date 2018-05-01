@@ -28,8 +28,8 @@ Discarded input sections
                 0x00000000        0x4 DS3231.o
  .text._ZN5hwlib9uart_getcEv
                 0x00000000        0x4 DS3231.o
- .text._ZN6DS323117getCurrentSecondsEv
-                0x00000000        0x4 DS3231.o
+ .text._ZN6DS323121getIntFromBCDRegisterEh
+                0x00000000        0x8 DS3231.o
  .rodata._ZZN3due11ad_pin_infoENS_7ad_pinsEE17ad_pin_info_array
                 0x00000000        0xc DS3231.o
  .rodata._ZZN3due11ad_seq_infoEmE12ad_seq_array
@@ -41,6 +41,8 @@ Discarded input sections
  .text          0x00000000        0x0 bitParser.o
  .data          0x00000000        0x0 bitParser.o
  .bss           0x00000000        0x0 bitParser.o
+ .text._ZN5hwliblsERNS_7ostreamEi
+                0x00000000       0xce bitParser.o
  .text._ZN6sam3xa10SystemInitEv
                 0x00000000       0x7c bitParser.o
  .text._ZN3due8pin_infoENS_4pinsE
@@ -61,6 +63,12 @@ Discarded input sections
                 0x00000000        0x4 bitParser.o
  .text._ZN5hwlib9uart_getcEv
                 0x00000000        0x4 bitParser.o
+ .text._ZN9bitParser9printByteEh
+                0x00000000       0x34 bitParser.o
+ .text._ZN9bitParser8BCDToIntEh
+                0x00000000        0xe bitParser.o
+ .text._ZN9bitParser8intToBCDEi
+                0x00000000       0x12 bitParser.o
  .bss._ZZN3due9now_ticksEvE4high
                 0x00000000        0x8 bitParser.o
  .bss._ZZN3due9now_ticksEvE8last_low
@@ -71,6 +79,8 @@ Discarded input sections
                 0x00000000        0x4 bitParser.o
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
                 0x00000000       0x33 bitParser.o
+ .rodata._ZN9bitParser9printByteEh.str1.1
+                0x00000000        0x2 bitParser.o
  .rodata._ZZN3due11ad_pin_infoENS_7ad_pinsEE17ad_pin_info_array
                 0x00000000        0xc bitParser.o
  .rodata._ZZN3due11ad_seq_infoEmE12ad_seq_array
@@ -198,8 +208,6 @@ Discarded input sections
                 0x00000000       0x76 hwlib.o
  .text._ZN5hwlib24uart_putc_bit_banged_pinEcRNS_7pin_outE
                 0x00000000       0x66 hwlib.o
- .text._ZN5hwlib7wait_msEi
-                0x00000000       0x16 hwlib.o
  .text._ZN5hwlib5blinkERNS_7pin_outEj
                 0x00000000       0x2c hwlib.o
  .text._ZN5hwlib4kittERNS_11port_in_outEj
@@ -283,6 +291,8 @@ Discarded input sections
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -290,6 +300,10 @@ Discarded input sections
                 0x00000000        0x2 main.o
  .text._ZN5hwlib6pin_oc5flushEv
                 0x00000000        0x2 main.o
+ .text._ZN5hwlib7ostream6fillerEi
+                0x00000000       0x1a main.o
+ .text._ZN5hwliblsERNS_7ostreamEPKc
+                0x00000000       0x54 main.o
  .text._ZN6sam3xa10SystemInitEv
                 0x00000000       0x7c main.o
  .text._ZN3due8pin_infoENS_4pinsE
@@ -395,7 +409,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0xab8
+.text           0x00000000      0xab0
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -434,154 +448,156 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
  .text._ZN6DS323119getByteFromRegisterEh
                 0x000001a4       0x24 DS3231.o
                 0x000001a4                _ZN6DS323119getByteFromRegisterEh
+ .text._ZN6DS323117getCurrentSecondsEv
+                0x000001c8        0xa DS3231.o
+                0x000001c8                _ZN6DS323117getCurrentSecondsEv
  .text._ZN5hwlib7ostreamlsEc
-                0x000001c8        0xe bitParser.o
-                0x000001c8                _ZN5hwlib7ostreamlsEc
+                0x000001d2        0xe bitParser.o
+                0x000001d2                _ZN5hwlib7ostreamlsEc
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x000001d6       0x66 bitParser.o
-                0x000001d6                _ZN5hwliblsERNS_7ostreamEPKc
- .text._ZN5hwliblsERNS_7ostreamEi
-                0x0000023c       0xce bitParser.o
-                0x0000023c                _ZN5hwliblsERNS_7ostreamEi
- *fill*         0x0000030a        0x2 
- .text._ZN9bitParser10printBytesEh
-                0x0000030c       0x34 bitParser.o
-                0x0000030c                _ZN9bitParser10printBytesEh
+                0x000001e0       0x66 bitParser.o
+                0x000001e0                _ZN5hwliblsERNS_7ostreamEPKc
  .text._ZN5hwlib6pin_oc7refreshEv
-                0x00000340        0x2 hwlib.o
-                0x00000340                _ZN5hwlib6pin_oc7refreshEv
+                0x00000246        0x2 hwlib.o
+                0x00000246                _ZN5hwlib6pin_oc7refreshEv
  .text._ZN5hwlib6pin_oc5flushEv
-                0x00000342        0x2 hwlib.o
-                0x00000342                _ZN5hwlib6pin_oc5flushEv
+                0x00000248        0x2 hwlib.o
+                0x00000248                _ZN5hwlib6pin_oc5flushEv
  .text._ZN5hwlib7ostream5flushEv
-                0x00000344        0x2 hwlib.o
-                0x00000344                _ZN5hwlib7ostream5flushEv
+                0x0000024a        0x2 hwlib.o
+                0x0000024a                _ZN5hwlib7ostream5flushEv
  .text._ZN5hwlib5panicEPKcj
-                0x00000346        0x2 hwlib.o
-                0x00000346                _ZN5hwlib5panicEPKcj
+                0x0000024c        0x2 hwlib.o
+                0x0000024c                _ZN5hwlib5panicEPKcj
+ *fill*         0x0000024e        0x2 
  .text._ZN3due9uart_initEv
-                0x00000348       0x60 hwlib.o
-                0x00000348                _ZN3due9uart_initEv
+                0x00000250       0x60 hwlib.o
+                0x00000250                _ZN3due9uart_initEv
  .text._ZN3due9uart_putcEc
-                0x000003a8       0x1c hwlib.o
-                0x000003a8                _ZN3due9uart_putcEc
+                0x000002b0       0x1c hwlib.o
+                0x000002b0                _ZN3due9uart_putcEc
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
-                0x000003c4        0xa hwlib.o
-                0x000003c4                _ZN5hwlib20cout_using_uart_putc4putcEc
+                0x000002cc        0xa hwlib.o
+                0x000002cc                _ZN5hwlib20cout_using_uart_putc4putcEc
  .text._ZN5hwlib6now_usEv
-                0x000003ce       0x1c hwlib.o
-                0x000003ce                _ZN5hwlib6now_usEv
+                0x000002d6       0x1c hwlib.o
+                0x000002d6                _ZN5hwlib6now_usEv
  .text._ZN5hwlib12wait_us_busyEi
-                0x000003ea       0x1c hwlib.o
-                0x000003ea                _ZN5hwlib12wait_us_busyEi
+                0x000002f2       0x1c hwlib.o
+                0x000002f2                _ZN5hwlib12wait_us_busyEi
  .text._ZN5hwlib7wait_usEi
-                0x00000406        0x4 hwlib.o
-                0x00000406                _ZN5hwlib7wait_usEi
+                0x0000030e        0x4 hwlib.o
+                0x0000030e                _ZN5hwlib7wait_usEi
+ .text._ZN5hwlib7wait_msEi
+                0x00000312       0x16 hwlib.o
+                0x00000312                _ZN5hwlib7wait_msEi
  .text._ZN3due6pin_oc3getEN5hwlib9bufferingE
-                0x0000040a       0x10 main.o
-                0x0000040a                _ZN3due6pin_oc3getEN5hwlib9bufferingE
+                0x00000328       0x10 main.o
+                0x00000328                _ZN3due6pin_oc3getEN5hwlib9bufferingE
  .text._ZN3due6pin_oc3setEbN5hwlib9bufferingE
-                0x0000041a       0x10 main.o
-                0x0000041a                _ZN3due6pin_oc3setEbN5hwlib9bufferingE
- .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda16wait_half_periodEv.isra.0
-                0x0000042a        0x6 main.o
+                0x00000338       0x10 main.o
+                0x00000338                _ZN3due6pin_oc3setEbN5hwlib9bufferingE
+ .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda16wait_half_periodEv.isra.6
+                0x00000348        0x6 main.o
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda9write_bitEb
-                0x00000430       0x36 main.o
-                0x00000430                _ZN5hwlib26i2c_bus_bit_banged_scl_sda9write_bitEb
+                0x0000034e       0x36 main.o
+                0x0000034e                _ZN5hwlib26i2c_bus_bit_banged_scl_sda9write_bitEb
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda8read_bitEv
-                0x00000466       0x44 main.o
-                0x00000466                _ZN5hwlib26i2c_bus_bit_banged_scl_sda8read_bitEv
+                0x00000384       0x44 main.o
+                0x00000384                _ZN5hwlib26i2c_bus_bit_banged_scl_sda8read_bitEv
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda11write_startEv
-                0x000004aa       0x28 main.o
-                0x000004aa                _ZN5hwlib26i2c_bus_bit_banged_scl_sda11write_startEv
+                0x000003c8       0x28 main.o
+                0x000003c8                _ZN5hwlib26i2c_bus_bit_banged_scl_sda11write_startEv
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_stopEv
-                0x000004d2       0x48 main.o
-                0x000004d2                _ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_stopEv
+                0x000003f0       0x48 main.o
+                0x000003f0                _ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_stopEv
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_byteEj
-                0x0000051a       0x1c main.o
-                0x0000051a                _ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_byteEj
+                0x00000438       0x1c main.o
+                0x00000438                _ZN5hwlib26i2c_bus_bit_banged_scl_sda10write_byteEj
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda5writeEjPKhj
-                0x00000536       0x3a main.o
-                0x00000536                _ZN5hwlib26i2c_bus_bit_banged_scl_sda5writeEjPKhj
+                0x00000454       0x3a main.o
+                0x00000454                _ZN5hwlib26i2c_bus_bit_banged_scl_sda5writeEjPKhj
  .text._ZN5hwlib26i2c_bus_bit_banged_scl_sda4readEjPhj
-                0x00000570       0x60 main.o
-                0x00000570                _ZN5hwlib26i2c_bus_bit_banged_scl_sda4readEjPhj
+                0x0000048e       0x60 main.o
+                0x0000048e                _ZN5hwlib26i2c_bus_bit_banged_scl_sda4readEjPhj
+ *fill*         0x000004ee        0x2 
  .text._ZN3due6pin_ocC2ENS_4pinsE
-                0x000005d0       0x34 main.o
-                0x000005d0                _ZN3due6pin_ocC2ENS_4pinsE
-                0x000005d0                _ZN3due6pin_ocC1ENS_4pinsE
+                0x000004f0       0x34 main.o
+                0x000004f0                _ZN3due6pin_ocC2ENS_4pinsE
+                0x000004f0                _ZN3due6pin_ocC1ENS_4pinsE
  .text.startup.main
-                0x00000604       0x54 main.o
-                0x00000604                main
+                0x00000524      0x12c main.o
+                0x00000524                main
  .text.__startup
-                0x00000658       0x48 bmptk_cortex.o
-                0x00000658                __startup
- .text          0x000006a0       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
-                0x000006a0                __aeabi_uldivmod
- .text          0x000006d0      0x2d0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
-                0x000006d0                __udivmoddi4
- .text          0x000009a0        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
-                0x000009a0                __aeabi_ldiv0
-                0x000009a4                . = ALIGN (0x4)
+                0x00000650       0x48 bmptk_cortex.o
+                0x00000650                __startup
+ .text          0x00000698       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x00000698                __aeabi_uldivmod
+ .text          0x000006c8      0x2d0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x000006c8                __udivmoddi4
+ .text          0x00000998        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x00000998                __aeabi_ldiv0
+                0x0000099c                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x000009a4        0x0 linker stubs
- .glue_7t       0x000009a4        0x0 linker stubs
-                0x000009a4                . = ALIGN (0x4)
+ .glue_7        0x0000099c        0x0 linker stubs
+ .glue_7t       0x0000099c        0x0 linker stubs
+                0x0000099c                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x000009a4       0x33 DS3231.o
+                0x0000099c       0x33 DS3231.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x000009d7       0xa4 DS3231.o
- .rodata._ZN9bitParser10printBytesEh.str1.1
-                0x00000a7b        0x2 bitParser.o
- *fill*         0x00000a7d        0x3 
+                0x000009cf       0xa4 DS3231.o
+ *fill*         0x00000a73        0x1 
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00000a80       0x10 hwlib.o
-                0x00000a80                _ZTVN5hwlib20cout_using_uart_putcE
+                0x00000a74       0x10 hwlib.o
+                0x00000a74                _ZTVN5hwlib20cout_using_uart_putcE
  .rodata._ZTVN5hwlib26i2c_bus_bit_banged_scl_sdaE
-                0x00000a90       0x10 main.o
-                0x00000a90                _ZTVN5hwlib26i2c_bus_bit_banged_scl_sdaE
+                0x00000a84       0x10 main.o
+                0x00000a84                _ZTVN5hwlib26i2c_bus_bit_banged_scl_sdaE
  .rodata._ZTVN3due6pin_ocE
-                0x00000aa0       0x18 main.o
-                0x00000aa0                _ZTVN3due6pin_ocE
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000a94       0x18 main.o
+                0x00000a94                _ZTVN3due6pin_ocE
+ .rodata.main.str1.1
+                0x00000aac        0x2 main.o
+                0x00000ab0                . = ALIGN (0x4)
+ *fill*         0x00000aae        0x2 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000ab0                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000ab0                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000ab0                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000ab8                . = ALIGN (0x4)
-                0x00000ab8                __text_end = .
+                0x00000ab0                . = ALIGN (0x4)
+                0x00000ab0                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000ab8        0x0
- .vfp11_veneer  0x00000ab8        0x0 linker stubs
+.vfp11_veneer   0x00000ab0        0x0
+ .vfp11_veneer  0x00000ab0        0x0 linker stubs
 
-.v4_bx          0x00000ab8        0x0
- .v4_bx         0x00000ab8        0x0 linker stubs
+.v4_bx          0x00000ab0        0x0
+ .v4_bx         0x00000ab0        0x0 linker stubs
 
-.iplt           0x00000ab8        0x0
- .iplt          0x00000ab8        0x0 DS3231.o
+.iplt           0x00000ab0        0x0
+ .iplt          0x00000ab0        0x0 DS3231.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000ab8                . = ALIGN (0x4)
-                0x00000ab8                __exidx_start = .
+                0x00000ab0                . = ALIGN (0x4)
+                0x00000ab0                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x00000ab8        0x8
+.ARM.exidx      0x00000ab0        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00000ab8        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00000ab0        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x00000ac0        0x0
- .rel.iplt      0x00000ac0        0x0 DS3231.o
-                0x00000ac0                . = ALIGN (0x4)
-                0x00000ac0                __exidx_end = .
+.rel.dyn        0x00000ab8        0x0
+ .rel.iplt      0x00000ab8        0x0 DS3231.o
+                0x00000ab8                . = ALIGN (0x4)
+                0x00000ab8                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -618,9 +634,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x1c load address 0x00000ac0
+.data           0x20012010       0x1c load address 0x00000ab8
                 0x20012010                . = ALIGN (0x4)
-                0x00000ac0                __data_init_start = LOADADDR (.data)
+                0x00000ab8                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -638,13 +654,13 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x2001202c                . = ALIGN (0x4)
                 0x2001202c                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000ac0                __data_init_end = LOADADDR (.data)
+                0x00000ab8                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x0000001c                PROVIDE (__data_size, (__data_end - __data_start))
                 0x0000001c                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x2001202c        0x0 load address 0x00000adc
+.igot.plt       0x2001202c        0x0 load address 0x00000ad4
  .igot.plt      0x2001202c        0x0 DS3231.o
                 0x2001202c                . = ALIGN (0x4)
                 0x2001202c                __heap_start = .

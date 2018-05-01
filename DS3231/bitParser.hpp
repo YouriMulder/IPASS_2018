@@ -6,10 +6,10 @@
 namespace bitParser {
 
 // LSB to MSB
-void printBytes(uint_least8_t bytes);
-int BCDByteToInt(uint_fast8_t byte);
-uint8_t intToBCDByte(int digit);
-
+void printByte(uint8_t byte);
+uint8_t BCDToDEC(uint8_t BCD);
+uint8_t DECToBCD(uint8_t DEC);
+int uint8_tToInt(uint8_t byte);
 
 }
 

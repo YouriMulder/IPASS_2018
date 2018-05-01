@@ -2,21 +2,27 @@
 
 namespace bitParser {
 
-void printBytes(uint_least8_t bytes) {
-	unsigned int amountOfBits = sizeof(bytes) * 8;
-	for(unsigned int i = 0; i < amountOfBits; ++i) {
-		hwlib::cout << ((bytes >> i) & 1) << ' ';
+static const int nBitsinByte = 8;
+static const int nBitsinHalfAByte = 4;
+static const uint8_t leftHalfByteMask = 0x78;
+static const uint8_t rightHalfgByteMask = 0xF;
+
+void printByte(uint8_t byte) {
+	for(unsigned int i = 0; i < nBitsinByte; ++i) {
+		hwlib::cout << ((byte >> i) & 1) << ' ';
 	}
 	hwlib::cout << "\n";
 }
 
-int BCDBytesToInt(uint_least8_t bytes) {
-	amountOfBytes = sizeof(bytes);
-	amountOfBCDFields = amountOfBytes * 2;
+uint8_t BCDToDEC(uint8_t BCD) {
+	return (BCD >> nBitsinHalfAByte) * 10 + (BCD & rightHalfgByteMask);
+}
 
-	for()
-	}
+uint8_t DECToBCD(uint8_t DEC) {
+	return ((DEC / 10) << nBitsinHalfAByte) | (DEC % 10);
+}
 
-uint8_t intToBCDBytes(unsigned int digit);
-
+int uint8_tToInt(uint8_t byte) {
+	return (int)byte;
+}
 }
