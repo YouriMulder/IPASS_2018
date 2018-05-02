@@ -19,6 +19,14 @@ int main(int argc, char **argv) {
 
 	DS3231 realTimeClock(I2CBus, 0x68);
 
-	for(;;)
-		hwlib::cout << realTimeClock.getCurrentSeconds() << "\n";
+	for(;;) {
+		hwlib::cout << "Sec: " << (unsigned int)realTimeClock.getCurrentSeconds() << "\n";
+		hwlib::cout << "Min: " << (unsigned int)realTimeClock.getCurrentMinutes() << "\n";
+		hwlib::cout << "Hrs: " << (unsigned int)realTimeClock.getCurrentHours() << "\n";
+		hwlib::cout << "Day: " << (unsigned int)realTimeClock.getCurrentDay() << "\n";
+		hwlib::cout << "Month: " << (unsigned int)realTimeClock.getCurrentMonth() << "\n";
+		hwlib::cout << "Year: " << (unsigned int)realTimeClock.getCurrentYear() << "\n";
+		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n\n";
+		hwlib::wait_ms(2000);
+	}
 }

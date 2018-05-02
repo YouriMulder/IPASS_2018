@@ -2,7 +2,6 @@
 #define DS3231_HPP
 
 #include "hwlib.hpp"
-#include "bitParser.hpp"
 
 struct timestamp {
 
@@ -52,11 +51,12 @@ public:
 	uint8_t getCurrentDay();
 	uint8_t getCurrentDate();
 	uint8_t getCurrentMonthCentury();
-	//uint8_t getCurrentMonth() ;
-	//uint8_t getCurrentCentury() ;
+	uint8_t getCurrentMonth();
+	uint8_t getCurrentCentury();
 
 
 	uint8_t getCurrentYear();
+	int getCurrentTemperatureCelsius();
 	uint8_t getCurrentTimestamp();
 
 };
