@@ -9,10 +9,10 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := DS3231.cpp bitParser.cpp
+SOURCES := DS3231.cpp bitParser.cpp timestamp.cpp
 
 # header files in this project
-HEADERS := DS3231.hpp bitParser.hpp
+HEADERS := DS3231.hpp bitParser.hpp timestamp.hpp
 
 # other places to look for files for this project
 SEARCH  := 

@@ -29,6 +29,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="timestamp.cpp"/>
+    <File Name="timestamp.hpp"/>
     <File Name="bitParser.cpp"/>
     <File Name="bitParser.hpp"/>
     <File Name="DS3231.cpp"/>

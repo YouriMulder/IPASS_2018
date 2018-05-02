@@ -18,6 +18,7 @@ int main(int argc, char **argv) {
 
 
 	DS3231 realTimeClock(I2CBus, 0x68);
+
 	for(;;)
 		hwlib::cout << realTimeClock.getCurrentSeconds() << "\n";
 }

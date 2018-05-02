@@ -20,34 +20,34 @@ uint8_t DS3231::getByteFromRegister(uint8_t chipRegAddress) {
 	return data[0];
 }
 
-uint8_t DS3231::getIntFromBCDRegister(uint8_t chipRegAddress) {
-	return int(getByteFromRegister(chipRegAddress));
+uint8_t DS3231::getDECFromBCDRegister(uint8_t chipRegAddress) {
+	return bitParser::DECToBCD(getByteFromRegister(chipRegAddress));
 }
 
-uint8_t DS3231::getCurrentSeconds() {
-	return getIntFromBCDRegister(REG_SECONDS);
+uint8_t DS3231::getCurrentSeconds() const {
+	return getDECFromBCDRegister(REG_SECONDS);
 }
 
-uint8_t DS3231::getCurrentMinutes() {
-	return getIntFromBCDRegister(REG_MINUTES);
+uint8_t DS3231::getCurrentMinutes() const {
+	return getDECFromBCDRegister(REG_MINUTES);
 }
 
-uint8_t DS3231::getCurrentHours() {
-	return getIntFromBCDRegister(REG_HOURS);
+uint8_t DS3231::getCurrentHours() const {
+	return getDECFromBCDRegister(REG_HOURS);
 }
 
-uint8_t DS3231::getCurrentDay() {
-	return getIntFromBCDRegister(REG_DAY);
+uint8_t DS3231::getCurrentDay() const {
+	return getDECFromBCDRegister(REG_DAY);
 }
 
-uint8_t DS3231::getCurrentDate() {
-	return getIntFromBCDRegister(REG_DATE);
+uint8_t DS3231::getCurrentDate() const {
+	return getDECFromBCDRegister(REG_DATE);
 }
 
-uint8_t DS3231::getCurrentMonthCentury() {
-	return getIntFromBCDRegister(REG_MONTH_CENTURY);
+uint8_t DS3231::getCurrentMonthCentury() const {
+	return getDECFromBCDRegister(REG_MONTH_CENTURY);
 }
 
-uint8_t DS3231::getCurrentYear() {
-	return getIntFromBCDRegister(REG_YEAR);
+uint8_t DS3231::getCurrentYear() const {
+	return getDECFromBCDRegister(REG_YEAR);
 }

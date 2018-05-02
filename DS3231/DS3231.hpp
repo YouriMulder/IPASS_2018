@@ -5,14 +5,7 @@
 #include "bitParser.hpp"
 
 struct timestamp {
-	uint8_t seconds;
-	uint8_t minutes;
-	uint8_t hours;
-	uint8_t day;
-	uint8_t date;
-	uint8_t month;
-	uint8_t century;
-	uint8_t year;
+
 };
 
 
@@ -20,6 +13,7 @@ class DS3231 {
 private:
 	hwlib::i2c_bus_bit_banged_scl_sda& I2CBus;
 	uint8_t DS3231Address;
+	timestamp ts;
 
 	static const uint8_t REG_SECONDS = 			0x00;
 	static const uint8_t REG_MINUTES = 			0x01;
@@ -47,26 +41,23 @@ private:
 
 	void setRegister(uint8_t chipRegAddress);
 	uint8_t getByteFromRegister(uint8_t chipRegAddress);
+	uint8_t getDECFromBCDRegister(uint8_t chipRegAddress);
 
-	int getIntFromBCDRegister(uint8_t chipRegAddress);
 public:
 	DS3231(hwlib::i2c_bus_bit_banged_scl_sda& I2CBus, uint8_t address);
 
-
-	uint8_t getIntFromBCDRegister(uint8_t chipRegAddress);
-
-	uint8_t getCurrentSeconds();
-	uint8_t getCurrentMinutes();
-	uint8_t getCurrentHours();
-	uint8_t getCurrentDay();
-	uint8_t getCurrentDate();
-	//uint8_t getCurrentMonthCentury();
-	//uint8_t getCurrentMonth();
-	uint8_t getCurrentCentury();
+	uint8_t getCurrentSeconds() const;
+	uint8_t getCurrentMinutes() const;
+	uint8_t getCurrentHours() const;
+	uint8_t getCurrentDay() const;
+	uint8_t getCurrentDate() const;
+	uint8_t getCurrentMonthCentury() const;
+	//uint8_t getCurrentMonth() const;
+	//uint8_t getCurrentCentury() const;
 
 
-	uint8_t getCurrentYear();
-	uint8_t getCurrentTimestamp();
+	uint8_t getCurrentYear() const;
+	uint8_t getCurrentTimestamp() const;
 
 };
 
