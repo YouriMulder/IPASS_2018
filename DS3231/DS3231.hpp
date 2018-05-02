@@ -46,18 +46,18 @@ private:
 public:
 	DS3231(hwlib::i2c_bus_bit_banged_scl_sda& I2CBus, uint8_t address);
 
-	uint8_t getCurrentSeconds() const;
-	uint8_t getCurrentMinutes() const;
-	uint8_t getCurrentHours() const;
-	uint8_t getCurrentDay() const;
-	uint8_t getCurrentDate() const;
-	uint8_t getCurrentMonthCentury() const;
-	//uint8_t getCurrentMonth() const;
-	//uint8_t getCurrentCentury() const;
+	uint8_t getCurrentSeconds();
+	uint8_t getCurrentMinutes();
+	uint8_t getCurrentHours();
+	uint8_t getCurrentDay();
+	uint8_t getCurrentDate();
+	uint8_t getCurrentMonthCentury();
+	//uint8_t getCurrentMonth() ;
+	//uint8_t getCurrentCentury() ;
 
 
-	uint8_t getCurrentYear() const;
-	uint8_t getCurrentTimestamp() const;
+	uint8_t getCurrentYear();
+	uint8_t getCurrentTimestamp();
 
 };
 
