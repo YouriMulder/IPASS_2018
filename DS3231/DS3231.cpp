@@ -86,3 +86,7 @@ int DS3231::getCurrentTemperatureCelsius() {
 	                       | (I2CBus.getByteFromRegister(REG_TEMPERATURE_LSB) >> 6);
 	return temperature * 0.25;
 }
+
+int DS3231::getCurrentTemperatureFahrenheit() {
+	return getCurrentTemperatureCelsius() * 1.8 + 32;
+}

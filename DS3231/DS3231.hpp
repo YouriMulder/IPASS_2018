@@ -62,6 +62,7 @@ public:
 	void setCurrentYear(uint8_t newYear);
 
 	int getCurrentTemperatureCelsius();
+	int getCurrentTemperatureFahrenheit()
 	uint8_t getCurrentTimestamp();
 
 };

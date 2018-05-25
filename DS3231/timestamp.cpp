@@ -4,9 +4,13 @@ timestamp::timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours,
                      uint8_t day, uint8_t date, uint8_t month,
                      uint16_t year):
 	seconds(seconds), minutes(minutes), hours(hours), day(day),
-	date(date),	month(month), year(year) {
-	updateShortYear();
-}
+	date(date),	month(month), year(year)
+{}
+
+timestamp::timestamp():
+	seconds(minSeconds), minutes(minMinutes), hours(minHours), day(minDay),
+	date(minDate),	month(minMonth), year(minYear)
+{}
 
 int timestamp::toThePowerOf(int base, int power) {
 	int result = base;
@@ -16,13 +20,13 @@ int timestamp::toThePowerOf(int base, int power) {
 	return result;
 }
 
-void timestamp::updateShortYear() {
-	yearShort = year % toThePowerOf(1, amountOfYearShortDigits);
-}
-
-void timestamp::updateYear() {
-	int sizeOfYearShort = toThePowerOf(1,amountOfYearShortDigits);
-	year = (year / sizeOfYearShort) * sizeOfYearShort + yearShort;
+int timestamp::sizeOfInt(int number) {
+	unsigned int counter = 0;
+	while(number > 0) {
+		counter++;
+		number /= 10;
+	}
+	return counter;
 }
 
 void timestamp::setSeconds(uint8_t newSeconds) {
@@ -79,19 +83,14 @@ uint8_t timestamp::getMonth() const {
 }
 
 void timestamp::setYear(uint16_t newYear) {
-	year = newYear;
-	updateShortYear();
+	if(newYear < 100) {
+		year = (newYear >= minYear && newYear <= maxYear)
+		       ? newYear : minYear;
+	} else {
+		year = newYear / (sizeOfInt(newYear) - 2);
+	}
 }
 
-uint16_t timestamp::getYear() const {
+uint8_t timestamp::getYear() const {
 	return year;
-}
-
-void timestamp::setYearShort(uint8_t newYearShort) {
-	yearShort = newYearShort;
-	updateYear();
-}
-
-uint8_t timestamp::getYearShort() const {
-	return yearShort;
 }

@@ -10,28 +10,27 @@ class timestamp {
 	uint8_t day;
 	uint8_t date;
 	uint8_t month;
-	uint16_t year;
-	uint8_t yearShort;
+	uint8_t year;
 
-	static const uint8_t minSeconds, minMinutes, minDate = 0;
-	static const uint8_t minHours, minDay, minMonth = 1;
-	static const uint8_t maxDay = 7;
-	static const uint8_t maxDate = 31;
-	static const uint8_t maxMonth = 12;
-	static const uint8_t maxSeconds, maxMinutes = 59;
-	static const uint8_t maxHours = 23;
+	uint8_t minSeconds, minMinutes, minDate, minYear = 0;
+	uint8_t minHours, minDay, minMonth = 1;
+	uint8_t maxDay = 7;
+	uint8_t maxDate = 31;
+	uint8_t maxMonth = 12;
+	uint8_t maxSeconds, maxMinutes = 59;
+	uint8_t maxHours = 23;
+	uint16_t maxYear = 99;
 
-	static const unsigned int amountOfYearShortDigits = 2;
+	unsigned int amountOfYearShortDigits = 2;
 
 	int toThePowerOf(int base, int power);
-	void updateShortYear();
-	void updateYear();
+	int sizeOfInt(int number);
 
 
 public:
-	timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours,
-	          uint8_t day, uint8_t date, uint8_t month,
-	          uint16_t year);
+	timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours, uint8_t day,
+	          uint8_t date, uint8_t month, uint16_t year);
+	timestamp();
 
 	void setSeconds(uint8_t newSeconds);
 	uint8_t getSeconds() const;
@@ -55,10 +54,7 @@ public:
 	uint8_t getCentury() const;
 
 	void setYear(uint16_t newYear);
-	uint16_t getYear() const;
-
-	void setYearShort(uint8_t newYearShort);
-	uint8_t getYearShort() const;
+	uint8_t getYear() const;
 };
 
 #endif // TIMESTAMP_HPP
