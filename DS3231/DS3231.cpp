@@ -2,64 +2,87 @@
 
 #include "bitParser.hpp"
 
-DS3231::DS3231(hwlib::i2c_bus_bit_banged_scl_sda& I2CBus, uint8_t DS3231Address):
+DS3231::DS3231(i2cBus& I2CBus, uint8_t DS3231Address):
 	I2CBus(I2CBus), DS3231Address(DS3231Address) {
 }
 
-void DS3231::setRegister(uint8_t chipRegAddress) {
-	uint8_t chipReg[1] = {chipRegAddress};
-	I2CBus.write(DS3231Address, chipReg, 1);
-}
-
-uint8_t DS3231::getByteFromRegister(uint8_t chipRegAddress) {
-	uint8_t amountOfBytes = 1;
-	uint8_t chipReg[1] = {chipRegAddress};
-
-	setRegister(chipReg[0]);
-
-	uint8_t data[amountOfBytes] = {};
-	I2CBus.read(DS3231Address, data, amountOfBytes);
-	return data[0];
-}
-
-uint8_t DS3231::getDECFromBCDRegister(uint8_t chipRegAddress) {
-	return bitParser::BCDToDEC(getByteFromRegister(chipRegAddress));
+void DS3231::setI2CBusCurrentAddress() {
+	I2CBus.setCurrentChipAddress(DS3231Address);
 }
 
 uint8_t DS3231::getCurrentSeconds() {
-	return getDECFromBCDRegister(REG_SECONDS);
+	setI2CBusCurrentAddress();
+	return I2CBus.getDECFromBCDRegister(REG_SECONDS);
+}
+
+void DS3231::setCurrentSeconds(uint8_t newSeconds) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_SECONDS, bitParser::DECToBCD(newSeconds));
 }
 
 uint8_t DS3231::getCurrentMinutes() {
-	return getDECFromBCDRegister(REG_MINUTES);
+	setI2CBusCurrentAddress();
+	return I2CBus.getDECFromBCDRegister(REG_MINUTES);
+}
+
+void DS3231::setCurrentMinutes(uint8_t newMinutes) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_MINUTES, bitParser::DECToBCD(newMinutes));
 }
 
 uint8_t DS3231::getCurrentHours() {
-	return getDECFromBCDRegister(REG_HOURS);
+	setI2CBusCurrentAddress();
+	return I2CBus.getDECFromBCDRegister(REG_HOURS);
+}
+
+void DS3231::setCurrentHours(uint8_t newHours) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_HOURS, bitParser::DECToBCD(newHours));
 }
 
 uint8_t DS3231::getCurrentDay() {
-	return getDECFromBCDRegister(REG_DAY);
+	setI2CBusCurrentAddress();
+	return I2CBus.getDECFromBCDRegister(REG_DAY);
+}
+
+void DS3231::setCurrentDay(uint8_t newDay) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_DAY, bitParser::DECToBCD(newDay));
 }
 
 uint8_t DS3231::getCurrentDate() {
-	return getDECFromBCDRegister(REG_DATE);
+	setI2CBusCurrentAddress();
+	return I2CBus.getDECFromBCDRegister(REG_DATE);
+}
+
+void DS3231::setCurrentDate(uint8_t newDate) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_DATE, bitParser::DECToBCD(newDate));
 }
 
 uint8_t DS3231::getCurrentMonth() {
-	return bitParser::BCDToDEC(getByteFromRegister(REG_MONTH_CENTURY) & 0x1F);
+	setI2CBusCurrentAddress();
+	return bitParser::BCDToDEC(I2CBus.getByteFromRegister(REG_MONTH_CENTURY) & 0x1F);
 }
 
 uint8_t DS3231::getCurrentCentury() {
-	return (getByteFromRegister(REG_MONTH_CENTURY) & 0x80) >> 7;
+	setI2CBusCurrentAddress();
+	return (I2CBus.getByteFromRegister(REG_MONTH_CENTURY) & 0x80) >> 7;
 }
 
 uint8_t DS3231::getCurrentYear() {
-	return getDECFromBCDRegister(REG_YEAR);
+	setI2CBusCurrentAddress();
+	return I2CBus.getDECFromBCDRegister(REG_YEAR);
+}
+
+void DS3231::setCurrentYear(uint8_t newYear) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_YEAR, bitParser::DECToBCD(newYear));
 }
 
 int DS3231::getCurrentTemperatureCelsius() {
-	uint16_t temperature = (getByteFromRegister(REG_TEMPERATURE_MSB) << 2)
-	                       | (getByteFromRegister(REG_TEMPERATURE_LSB) >> 6);
+	setI2CBusCurrentAddress();
+	uint16_t temperature = (I2CBus.getByteFromRegister(REG_TEMPERATURE_MSB) << 2)
+	                       | (I2CBus.getByteFromRegister(REG_TEMPERATURE_LSB) >> 6);
 	return temperature * 0.25;
 }

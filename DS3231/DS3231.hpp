@@ -2,17 +2,12 @@
 #define DS3231_HPP
 
 #include "hwlib.hpp"
-
-struct timestamp {
-
-};
-
+#include "i2cBus.hpp"
 
 class DS3231 {
 private:
-	hwlib::i2c_bus_bit_banged_scl_sda& I2CBus;
+	i2cBus& I2CBus;
 	uint8_t DS3231Address;
-	timestamp ts;
 
 	static const uint8_t REG_SECONDS = 			0x00;
 	static const uint8_t REG_MINUTES = 			0x01;
@@ -38,24 +33,34 @@ private:
 	static const uint8_t REG_TEMPERATURE_MSB = 	0x11;
 	static const uint8_t REG_TEMPERATURE_LSB =	0x12;
 
-	void setRegister(uint8_t chipRegAddress);
-	uint8_t getByteFromRegister(uint8_t chipRegAddress);
-	uint8_t getDECFromBCDRegister(uint8_t chipRegAddress);
+public:
+	DS3231(i2cBus& I2CBus, uint8_t address);
+
+private:
+	void setI2CBusCurrentAddress();
 
 public:
-	DS3231(hwlib::i2c_bus_bit_banged_scl_sda& I2CBus, uint8_t address);
-
 	uint8_t getCurrentSeconds();
+	void setCurrentSeconds(uint8_t newSeconds);
+
 	uint8_t getCurrentMinutes();
+	void setCurrentMinutes(uint8_t newMinutes);
+
 	uint8_t getCurrentHours();
+	void setCurrentHours(uint8_t newHours);
+
 	uint8_t getCurrentDay();
+	void setCurrentDay(uint8_t newDay);
+
 	uint8_t getCurrentDate();
-	uint8_t getCurrentMonthCentury();
+	void setCurrentDate(uint8_t newDate);
+
 	uint8_t getCurrentMonth();
 	uint8_t getCurrentCentury();
 
-
 	uint8_t getCurrentYear();
+	void setCurrentYear(uint8_t newYear);
+
 	int getCurrentTemperatureCelsius();
 	uint8_t getCurrentTimestamp();
 

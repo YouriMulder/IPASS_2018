@@ -16,7 +16,6 @@ void printBytes(uint16_t bytes) {
 	hwlib::cout << "\n";
 }
 
-
 uint8_t BCDToDEC(uint8_t BCD) {
 	return (BCD >> nBitsinHalfAByte) * 10 + (BCD & rightHalfgByteMask);
 }
