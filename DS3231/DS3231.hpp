@@ -3,11 +3,14 @@
 
 #include "hwlib.hpp"
 #include "i2cBus.hpp"
+#include "time.hpp"
 
-class DS3231 {
+class DS3231 : public time {
 private:
 	i2cBus& I2CBus;
 	uint8_t DS3231Address;
+
+	int newCentury;
 
 	static const uint8_t REG_SECONDS = 			0x00;
 	static const uint8_t REG_MINUTES = 			0x01;
@@ -56,14 +59,20 @@ public:
 	void setCurrentDate(uint8_t newDate);
 
 	uint8_t getCurrentMonth();
-	uint8_t getCurrentCentury();
+	void setCurrentMonth(uint8_t newMonth);
+
+	bool getCurrentCentury();
+	void ResetCurentCenturyBit()
 
 	uint8_t getCurrentYear();
 	void setCurrentYear(uint8_t newYear);
 
 	int getCurrentTemperatureCelsius();
-	int getCurrentTemperatureFahrenheit()
+	int getCurrentTemperatureFahrenheit();
 	uint8_t getCurrentTimestamp();
+
+public:
+	void update();
 
 };
 

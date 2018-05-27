@@ -2,8 +2,9 @@
 #define TIMESTAMP_HPP
 
 #include <stdint.h>
+#include "time.hpp"
 
-class timestamp {
+class timestamp : public time {
 	uint8_t seconds;
 	uint8_t minutes;
 	uint8_t hours;
@@ -12,20 +13,10 @@ class timestamp {
 	uint8_t month;
 	uint8_t year;
 
-	uint8_t minSeconds, minMinutes, minDate, minYear = 0;
-	uint8_t minHours, minDay, minMonth = 1;
-	uint8_t maxDay = 7;
-	uint8_t maxDate = 31;
-	uint8_t maxMonth = 12;
-	uint8_t maxSeconds, maxMinutes = 59;
-	uint8_t maxHours = 23;
-	uint16_t maxYear = 99;
-
 	unsigned int amountOfYearShortDigits = 2;
 
 	int toThePowerOf(int base, int power);
 	int sizeOfInt(int number);
-
 
 public:
 	timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours, uint8_t day,

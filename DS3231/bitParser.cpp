@@ -17,14 +17,15 @@ void printBytes(uint16_t bytes) {
 }
 
 uint8_t BCDToDEC(uint8_t BCD) {
-	return (BCD >> nBitsinHalfAByte) * 10 + (BCD & rightHalfgByteMask);
+	return (BCD / 16 * 10) + (BCD % 16);
 }
 
 uint8_t DECToBCD(uint8_t DEC) {
-	return ((DEC / 10) << nBitsinHalfAByte) | (DEC % 10);
+	return (DEC / 10 * 16) + (DEC % 10);
 }
 
 int uint8_tToInt(uint8_t byte) {
 	return (unsigned int)byte;
 }
+
 }

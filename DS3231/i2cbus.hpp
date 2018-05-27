@@ -14,8 +14,9 @@ public:
 public:
 	void setRegister(uint8_t chipRegAddress);
 	uint8_t getByteFromRegister(uint8_t chipRegAddress);
-	void setByteInRegister(uint8_t chipRegAddress, uint8_t byte);
 	uint8_t getDECFromBCDRegister(uint8_t chipRegAddress);
+	void setByteInRegister(uint8_t chipRegAddress, uint8_t byte);
+	void setByteToBCDInRegister(uint8_t chipRegAddress, uint8_t byte);
 };
 
 #endif // I2CBUS_HPP

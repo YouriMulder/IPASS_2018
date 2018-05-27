@@ -27,13 +27,20 @@ uint8_t i2cBus::getByteFromRegister(uint8_t chipRegAddress) {
 	return data[0];
 }
 
+uint8_t i2cBus::getDECFromBCDRegister(uint8_t chipRegAddress) {
+	return bitParser::BCDToDEC(getByteFromRegister(chipRegAddress));
+}
+
 void i2cBus::setByteInRegister(uint8_t chipRegAddress, uint8_t byte) {
 	const uint8_t amountOfBytes = 1;
-	uint8_t data[amountOfBytes + 1] = { chipRegAddress, bitParser::DECToBCD(byte) };
+	uint8_t data[amountOfBytes + 1] = { chipRegAddress, byte };
 	setRegister(chipRegAddress);
 	write(currentChipAddress, data, amountOfBytes + 1);
 }
 
-uint8_t i2cBus::getDECFromBCDRegister(uint8_t chipRegAddress) {
-	return bitParser::BCDToDEC(getByteFromRegister(chipRegAddress));
+void i2cBus::setByteToBCDInRegister(uint8_t chipRegAddress, uint8_t byte) {
+	const uint8_t amountOfBytes = 1;
+	uint8_t data[amountOfBytes + 1] = { chipRegAddress, bitParser::DECToBCD(byte) };
+	setRegister(chipRegAddress);
+	write(currentChipAddress, data, amountOfBytes + 1);
 }
