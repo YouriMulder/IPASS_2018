@@ -25,11 +25,6 @@ int main(int argc, char **argv) {
 	realTimeClock.setCurrentMonth(12);
 	realTimeClock.setCurrentYear(99);
 
-	hwlib::cout << time::currentCentury << "\n";
-	time::increaseCentury();
-	hwlib::cout << time::currentCentury << "\n";
-
-
 	for(;;) {
 		hwlib::cout << "Sec: " << (unsigned int)realTimeClock.getCurrentSeconds() << "\n";
 		hwlib::cout << "Min: " << (unsigned int)realTimeClock.getCurrentMinutes() << "\n";
@@ -38,7 +33,7 @@ int main(int argc, char **argv) {
 		hwlib::cout << "Date: " << (unsigned int)realTimeClock.getCurrentDate() << "\n";
 		hwlib::cout << "Month: " << (unsigned int)realTimeClock.getCurrentMonth() << "\n";
 		hwlib::cout << "Year: " << (unsigned int)realTimeClock.getCurrentYear() << "\n";
-		hwlib::cout << "century: " << (unsigned int)realTimeClock.getCurrentCentury() << "\n";
+		hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
 		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
 		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
 		realTimeClock.update();

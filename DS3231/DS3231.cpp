@@ -67,20 +67,19 @@ uint8_t DS3231::getCurrentMonth() {
 
 void DS3231::setCurrentMonth(uint8_t newMonth) {
 	setI2CBusCurrentAddress();
-
-	I2CBus.setByteInRegister(REG_MONTH_CENTURY, bitParser::DECToBCD(newMonth) | getCurrentCentury());
+	I2CBus.setByteInRegister(REG_MONTH_CENTURY, bitParser::DECToBCD(newMonth) | getCurrentCenturyBit() << 7);
 }
 
 bool DS3231::getCurrentCenturyBit() {
 	setI2CBusCurrentAddress();
-	return (I2CBus.getByteFromRegister(REG_MONTH_CENTURY) & 0x80) >> 7;
+	return I2CBus.getByteFromRegister(REG_MONTH_CENTURY) >> 7;
 }
 
 void DS3231::ResetCurentCenturyBit() {
 	setI2CBusCurrentAddress();
 	uint8_t currentByte = I2CBus.getByteFromRegister(REG_MONTH_CENTURY);
-	currentByte &= ~(0x01 << 7);
-
+	currentByte &= 0x7F;
+	I2CBus.setByteInRegister(REG_MONTH_CENTURY, currentByte);
 }
 
 uint8_t DS3231::getCurrentYear() {
@@ -105,8 +104,11 @@ int DS3231::getCurrentTemperatureFahrenheit() {
 }
 
 void DS3231::update() {
-	if(getCurrentCentury() && !newCentury) {
+	if(getCurrentCenturyBit() && !newCentury) {
 		newCentury++;
-		hwlib::cout << "The century bit is active. You should change the currentCentury in the class - time \n";
+		time::increaseCentury();
+		hwlib::cout << "The century bit is active. You should change the currentCentury in the class - time - \n"
+		<< "The current century is now: " << time::currentCentury << "\n";
+		ResetCurentCenturyBit();
 	}
 }

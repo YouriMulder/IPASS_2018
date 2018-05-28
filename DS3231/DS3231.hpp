@@ -61,8 +61,8 @@ public:
 	uint8_t getCurrentMonth();
 	void setCurrentMonth(uint8_t newMonth);
 
-	bool getCurrentCentury();
-	void ResetCurentCenturyBit()
+	bool getCurrentCenturyBit();
+	void ResetCurentCenturyBit();
 
 	uint8_t getCurrentYear();
 	void setCurrentYear(uint8_t newYear);
