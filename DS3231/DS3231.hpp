@@ -71,7 +71,9 @@ public:
 	int getCurrentTemperatureCelsius();
 	int getCurrentTemperatureFahrenheit();
 
+	void getCurrentTimeData(uint8_t data[7]);
 	timestamp getCurrentTimestamp();
+	void getCurrentTimestamp(timestamp& ts);
 
 public:
 	void update();

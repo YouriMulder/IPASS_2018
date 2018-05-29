@@ -24,21 +24,14 @@ int main(int argc, char **argv) {
 	realTimeClock.setCurrentDate(31);
 	realTimeClock.setCurrentMonth(12);
 	realTimeClock.setCurrentYear(99);
-
+	timestamp ts;
 	for(;;) {
-		timestamp ts = realTimeClock.getCurrentTimestamp();
-		hwlib::cout << "TS\n" << ts; 
-		hwlib::cout << "Sec: " << (unsigned int)realTimeClock.getCurrentSeconds() << "\n";
-		hwlib::cout << "Min: " << (unsigned int)realTimeClock.getCurrentMinutes() << "\n";
-		hwlib::cout << "Hrs: " << (unsigned int)realTimeClock.getCurrentHours() << "\n";
-		hwlib::cout << "Day: " << (unsigned int)realTimeClock.getCurrentDay() << "\n";
-		hwlib::cout << "Date: " << (unsigned int)realTimeClock.getCurrentDate() << "\n";
-		hwlib::cout << "Month: " << (unsigned int)realTimeClock.getCurrentMonth() << "\n";
-		hwlib::cout << "Year: " << (unsigned int)realTimeClock.getCurrentYear() << "\n";
+		realTimeClock.getCurrentTimestamp(ts);
+		hwlib::cout << ts << "\n";
 		hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
 		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
 		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
 		realTimeClock.update();
-		hwlib::wait_ms(2000);
+		hwlib::wait_ms(1000);
 	}
 }

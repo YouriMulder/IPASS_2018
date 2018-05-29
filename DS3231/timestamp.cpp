@@ -5,12 +5,16 @@ timestamp::timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours,
                      uint16_t year):
 	seconds(seconds), minutes(minutes), hours(hours), day(day),
 	date(date),	month(month), year(year)
-{}
+{
+    setCentury(time::currentCentury);
+}
 
 timestamp::timestamp():
 	seconds(minSeconds), minutes(minMinutes), hours(minHours), day(minDay),
 	date(minDate),	month(minMonth), year(minYear)
-{}
+{
+    setCentury(time::currentCentury);
+}
 
 int timestamp::toThePowerOf(int base, int power) {
 	int result = base;
