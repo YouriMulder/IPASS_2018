@@ -159,6 +159,31 @@ void DS3231::getCurrentTimestamp(timestamp& ts) {
 	ts.setCentury(time::currentCentury);
 }
 
+// Alarm
+uint8_t DS3231::getAlarmOneSeconds() {
+	setI2CBusCurrentAddress();
+	return bitParser::BCDToDEC(
+		I2CBus.getByteFromRegister(REG_ALARM_1_SEC) & ~(0x01 << 7));
+}
+
+void DS3231::setAlarmOneSeconds(uint8_t newSeconds) {
+	setI2CBusCurrentAddress();
+	if(time::isSecondsValid(newSeconds)) {
+		bool A1M1 = (I2CBus.getByteFromRegister(REG_ALARM_1_SEC) >> 7) & 1;
+		I2CBus.setByteInRegister(REG_ALARM_1_SEC,
+			bitParser::DECToBCD(newSeconds) | A1M1 << 7);
+	}
+}
+
+uint8_t getAlarmMinutes(bool alarm);
+void setAlarmOneMinutes(bool alarm, uint8_t newMinutes);
+
+uint8_t getAlarmHours(bool alarm);
+void setAlarmHours(bool alarm, uint8_t newHours);
+
+uint8_t etAlarmDayDate(bool alarm);
+void setAlarmDayDate(bool alarm, uint8_t newDayDate);
+
 void DS3231::update() {
 	if(getCurrentCenturyBit() && !newCentury) {
 		newCentury++;

@@ -5,11 +5,15 @@ DS3231:
     ✔ currentCentury updated after the century bit was high  @timestamp(2018-05-28 22:37)  @done(2018-05-28 22:37) @project(DS3231)
     PRIORITY 1:
         ✔ Add max and min time param input check DS3231  @timestamp(2018-05-29 12:33) @done(2018-05-29 13:29) @project(DS3231 / PRIORITY 1)
-        ☐ Add date check (time)  @timestamp(2018-05-29 12:44)
-        ☐ Add timestamp DS3231 setter and getter  @timestamp(2018-05-28 22:38)
+        ✔ Add date check (time)  @timestamp(2018-05-29 12:44) @done(2018-05-29 20:39) @project(DS3231 / PRIORITY 1)
+            ☐ Leap year and difference in months
+        ✔ Add timestamp DS3231 setter and getter  @timestamp(2018-05-28 22:38) @done(2018-05-29 20:19) @project(DS3231 / PRIORITY 1)
             ✔ Add timestamp getter  @timestamp(2018-05-29 15:53) @done(2018-05-29 15:53) @project(DS3231 / PRIORITY 1 / TIMESTAMP)
-            ☐ Add timestamp setter  @timestamp(2018-05-29 15:53)
+            ✔ Add timestamp setter  @timestamp(2018-05-29 15:53) @done(2018-05-29 20:19) @project(DS3231 / PRIORITY 1)
         ☐ Make time conversion. (timestamp)  @timestamp(2018-05-28 20:40)
         ☐ Century bit reset ~(1 << 7) error while smaller than byte(DS3231)  @timestamp(2018-05-28 22:13)
-
+        ☐ Create function control register(s)  @timestamp(2018-05-29 20:39)
+        ☐ Add alarm 1 and 2 functions
+            ☐ Alarm one functions
+            ☐ Alarm two functions
     BUGS:

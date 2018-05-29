@@ -76,6 +76,21 @@ public:
 	void getCurrentTimestamp(timestamp& ts);
 
 public:
+	// Alarm 1 only
+	uint8_t getAlarmOneSeconds();
+	void setAlarmOneSeconds(uint8_t newSeconds);
+
+	// Alarm 1 = 0 | Alarm 2 = 1
+	uint8_t getAlarmMinutes(bool alarm);
+	void setAlarmMinutes(bool alarm, uint8_t newMinutes);
+
+	uint8_t getAlarmHours(bool alarm);
+	void setAlarmHours(bool alarm, uint8_t newHours);
+
+	uint8_t getAlarmDayDate(bool alarm);
+	void setAlarmDayDate(bool alarm, uint8_t newDayDate);
+
+public:
 	void update();
 
 };

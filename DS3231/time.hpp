@@ -5,23 +5,23 @@
 
 class time {
 private:
-    static const uint8_t centuryIncreaseValue = 100;
+    const static uint8_t centuryIncreaseValue = 100;
 
 public:
-    static const uint8_t minSeconds = 0;
-    static const uint8_t minMinutes = 0;
-    static const uint8_t minDate = 0;
-    static const uint8_t minYear = 0;
-    static const uint8_t minHours = 1;
-    static const uint8_t minDay = 1;
-    static const uint8_t minMonth = 1;
-    static const uint8_t maxDay = 7;
-    static const uint8_t maxDate = 31;
-    static const uint8_t maxMonth = 12;
-    static const uint8_t maxSeconds = 59;
-    static const uint8_t maxMinutes = 59;
-    static const uint8_t maxHours = 23;
-    static const uint8_t maxYear = 99;
+    const static uint8_t minSeconds = 0;
+    const static uint8_t minMinutes = 0;
+    const static uint8_t minDate = 0;
+    const static uint8_t minYear = 0;
+    const static uint8_t minHours = 1;
+    const static uint8_t minDay = 1;
+    const static uint8_t minMonth = 1;
+    const static uint8_t maxDay = 7;
+    const static uint8_t maxDate = 31;
+    const static uint8_t maxMonth = 12;
+    const static uint8_t maxSeconds = 59;
+    const static uint8_t maxMinutes = 59;
+    const static uint8_t maxHours = 23;
+    const static uint8_t maxYear = 99;
 
 public:
     static int currentCentury;
