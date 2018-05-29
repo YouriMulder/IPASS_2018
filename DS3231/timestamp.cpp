@@ -30,8 +30,7 @@ int timestamp::sizeOfInt(int number) {
 }
 
 void timestamp::setSeconds(uint8_t newSeconds) {
-	seconds = (newSeconds >= minSeconds && newSeconds <= maxSeconds)
-	          ? newSeconds : minSeconds;
+	seconds = time::isSecondsValid(newSeconds) ? newSeconds : minSeconds;
 }
 
 uint8_t timestamp::getSeconds() const {
@@ -39,16 +38,14 @@ uint8_t timestamp::getSeconds() const {
 }
 
 void timestamp::setMinutes(uint8_t newMinutes) {
-	minutes = (newMinutes >= minMinutes && newMinutes <= maxMinutes)
-	          ? newMinutes : minMinutes;
+	minutes = time::isMinutesValid(newMinutes) ? newMinutes : minMinutes;
 }
 uint8_t timestamp::getMinutes() const {
 	return minutes;
 }
 
 void timestamp::setHours(uint8_t newHours) {
-	hours = (newHours >= minHours && newHours <= maxHours)
-	        ? newHours : minHours;
+	hours = time::isHoursValid(newHours) ? newHours : minHours;
 }
 
 uint8_t timestamp::getHours() const {
@@ -56,8 +53,7 @@ uint8_t timestamp::getHours() const {
 }
 
 void timestamp::setDay(uint8_t newDay) {
-	day = (newDay >= minDay && newDay <= maxDay)
-	      ? newDay : minDay;
+	day = time::isDayValid(newDay) ? newDay : minDay;
 }
 
 uint8_t timestamp::getDay() const {
@@ -65,8 +61,7 @@ uint8_t timestamp::getDay() const {
 }
 
 void timestamp::setDate(uint8_t newDate) {
-	date = (newDate >= minDate && newDate <= maxDate)
-	       ? newDate : minDate;
+	date = time::isDateValid(newDate) ? newDate : minDate;
 }
 
 uint8_t timestamp::getDate() const {
@@ -74,8 +69,7 @@ uint8_t timestamp::getDate() const {
 }
 
 void timestamp::setMonth(uint8_t newMonth) {
-	month = (newMonth >= minMonth && newMonth <= maxMonth)
-	        ? newMonth : minMonth;
+	month = time::isMonthValid(newMonth) ? newMonth : minMonth;
 }
 
 uint8_t timestamp::getMonth() const {
@@ -83,14 +77,29 @@ uint8_t timestamp::getMonth() const {
 }
 
 void timestamp::setYear(uint16_t newYear) {
-	if(newYear < 100) {
-		year = (newYear >= minYear && newYear <= maxYear)
-		       ? newYear : minYear;
-	} else {
-		year = newYear / (sizeOfInt(newYear) - 2);
-	}
+    year = time::isYearValid(newYear) ? newYear : minYear;
 }
 
 uint8_t timestamp::getYear() const {
 	return year;
+}
+
+void timestamp::setCentury(int newCentury) {
+    century = time::isCenturyValid(newCentury) ? newCentury : 0;
+}
+
+int timestamp::getCentury() const {
+    return century;
+}
+
+hwlib::ostream& operator<<(hwlib::ostream& lhs, const timestamp& rhs) {
+    lhs  << "Seconds: " << (unsigned)rhs.seconds
+        << "\nMinutes: " << (unsigned)rhs.minutes
+        << "\nHours: " << (unsigned)rhs.hours
+        << "\nday: " << (unsigned)rhs.day
+        << "\ndate: " << (unsigned)rhs.date
+        <<"\nmonth: " << (unsigned)rhs.month
+        << "\nyear: " << (unsigned)rhs.year
+        << "\ncentury: " << rhs.century << "\n";
+    return lhs;
 }

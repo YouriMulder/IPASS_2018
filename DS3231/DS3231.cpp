@@ -16,8 +16,10 @@ uint8_t DS3231::getCurrentSeconds() {
 }
 
 void DS3231::setCurrentSeconds(uint8_t newSeconds) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteToBCDInRegister(REG_SECONDS, newSeconds);
+	if(time::isSecondsValid(newSeconds)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteToBCDInRegister(REG_SECONDS, newSeconds);
+	}
 }
 
 uint8_t DS3231::getCurrentMinutes() {
@@ -26,8 +28,10 @@ uint8_t DS3231::getCurrentMinutes() {
 }
 
 void DS3231::setCurrentMinutes(uint8_t newMinutes) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteToBCDInRegister(REG_MINUTES, newMinutes);
+	if(time::isMinutesValid(newMinutes)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteToBCDInRegister(REG_MINUTES, newMinutes);
+	}
 }
 
 uint8_t DS3231::getCurrentHours() {
@@ -36,18 +40,22 @@ uint8_t DS3231::getCurrentHours() {
 }
 
 void DS3231::setCurrentHours(uint8_t newHours) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteToBCDInRegister(REG_HOURS, newHours);
-}
+	if(time::isHoursValid(newHours)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteToBCDInRegister(REG_HOURS, newHours);
+	}
 
+}
 uint8_t DS3231::getCurrentDay() {
 	setI2CBusCurrentAddress();
 	return I2CBus.getDECFromBCDRegister(REG_DAY);
 }
 
 void DS3231::setCurrentDay(uint8_t newDay) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteToBCDInRegister(REG_DAY, newDay);
+	if(time::isDayValid(newDay)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteToBCDInRegister(REG_DAY, newDay);
+	}
 }
 
 uint8_t DS3231::getCurrentDate() {
@@ -56,8 +64,10 @@ uint8_t DS3231::getCurrentDate() {
 }
 
 void DS3231::setCurrentDate(uint8_t newDate) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteToBCDInRegister(REG_DATE, newDate);
+	if(time::isDateValid(newDate)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteToBCDInRegister(REG_DATE, newDate);
+	}
 }
 
 uint8_t DS3231::getCurrentMonth() {
@@ -66,8 +76,10 @@ uint8_t DS3231::getCurrentMonth() {
 }
 
 void DS3231::setCurrentMonth(uint8_t newMonth) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteInRegister(REG_MONTH_CENTURY, bitParser::DECToBCD(newMonth) | getCurrentCenturyBit() << 7);
+	if(time::isMonthValid(newMonth)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteInRegister(REG_MONTH_CENTURY, bitParser::DECToBCD(newMonth) | getCurrentCenturyBit() << 7);
+	}
 }
 
 bool DS3231::getCurrentCenturyBit() {
@@ -88,8 +100,10 @@ uint8_t DS3231::getCurrentYear() {
 }
 
 void DS3231::setCurrentYear(uint8_t newYear) {
-	setI2CBusCurrentAddress();
-	I2CBus.setByteToBCDInRegister(REG_YEAR, newYear);
+	if(time::isYearValid(newYear)) {
+		setI2CBusCurrentAddress();
+		I2CBus.setByteToBCDInRegister(REG_YEAR, newYear);
+	}
 }
 
 int DS3231::getCurrentTemperatureCelsius() {
@@ -101,6 +115,26 @@ int DS3231::getCurrentTemperatureCelsius() {
 
 int DS3231::getCurrentTemperatureFahrenheit() {
 	return getCurrentTemperatureCelsius() * 1.8 + 32;
+}
+
+timestamp DS3231::getCurrentTimestamp() {
+	setI2CBusCurrentAddress();
+	I2CBus.setRegister(REG_SECONDS);
+	const int amountOfBytes = 7;
+	uint8_t data[amountOfBytes];
+	I2CBus.read(DS3231Address, data, amountOfBytes);
+
+	timestamp ts;
+	ts.setSeconds(bitParser::BCDToDEC(data[0]));
+	ts.setMinutes(bitParser::BCDToDEC(data[1]));
+	ts.setHours(bitParser::BCDToDEC(data[2]));
+	ts.setDay(bitParser::BCDToDEC(data[3]));
+	ts.setDate(bitParser::BCDToDEC(data[4]));
+	ts.setMonth(bitParser::BCDToDEC(data[5] & 0x1F));
+	ts.setYear(bitParser::BCDToDEC(data[6]));
+	ts.setCentury(time::currentCentury);
+
+	return ts;
 }
 
 void DS3231::update() {

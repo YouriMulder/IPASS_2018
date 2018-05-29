@@ -4,6 +4,7 @@
 #include "hwlib.hpp"
 #include "i2cBus.hpp"
 #include "time.hpp"
+#include "timestamp.hpp"
 
 class DS3231 : public time {
 private:
@@ -69,7 +70,8 @@ public:
 
 	int getCurrentTemperatureCelsius();
 	int getCurrentTemperatureFahrenheit();
-	uint8_t getCurrentTimestamp();
+
+	timestamp getCurrentTimestamp();
 
 public:
 	void update();

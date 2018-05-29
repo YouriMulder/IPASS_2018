@@ -26,6 +26,8 @@ int main(int argc, char **argv) {
 	realTimeClock.setCurrentYear(99);
 
 	for(;;) {
+		timestamp ts = realTimeClock.getCurrentTimestamp();
+		hwlib::cout << "TS\n" << ts; 
 		hwlib::cout << "Sec: " << (unsigned int)realTimeClock.getCurrentSeconds() << "\n";
 		hwlib::cout << "Min: " << (unsigned int)realTimeClock.getCurrentMinutes() << "\n";
 		hwlib::cout << "Hrs: " << (unsigned int)realTimeClock.getCurrentHours() << "\n";

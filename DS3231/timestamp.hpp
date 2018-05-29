@@ -1,6 +1,7 @@
 #ifndef TIMESTAMP_HPP
 #define TIMESTAMP_HPP
 
+#include "hwlib-ostream.hpp"
 #include <stdint.h>
 #include "time.hpp"
 
@@ -12,6 +13,7 @@ class timestamp : public time {
 	uint8_t date;
 	uint8_t month;
 	uint8_t year;
+	int century;
 
 	unsigned int amountOfYearShortDigits = 2;
 
@@ -41,11 +43,13 @@ public:
 	void setMonth(uint8_t newMonth);
 	uint8_t getMonth() const;
 
-	void setCentury(uint8_t newCentury);
-	uint8_t getCentury() const;
-
 	void setYear(uint16_t newYear);
 	uint8_t getYear() const;
+
+	void setCentury(int newCentury);
+	int getCentury() const;
+
+	friend hwlib::ostream& operator<<(hwlib::ostream& lhs, const timestamp& rhs);
 };
 
 #endif // TIMESTAMP_HPP
