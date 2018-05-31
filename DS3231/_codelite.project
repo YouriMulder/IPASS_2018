@@ -29,13 +29,17 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
-    <File Name="timestamp.cpp"/>
-    <File Name="timestamp.hpp"/>
+    <File Name="main.cpp"/>
     <File Name="bitParser.cpp"/>
     <File Name="bitParser.hpp"/>
     <File Name="DS3231.cpp"/>
     <File Name="DS3231.hpp"/>
-    <File Name="main.cpp"/>
+    <File Name="i2cBus.cpp"/>
+    <File Name="i2cBus.hpp"/>
+    <File Name="time.cpp"/>
+    <File Name="time.hpp"/>
+    <File Name="timestamp.cpp"/>
+    <File Name="timestamp.hpp"/>
     <File Name="Makefile"/>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">

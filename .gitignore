@@ -1,0 +1,7 @@
+*.bin
+*.map
+*.o
+*.ld
+*.elf
+*.hpp.gch
+bmptk_*

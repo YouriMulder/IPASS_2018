@@ -26,16 +26,15 @@ int main(int argc, char **argv) {
 	realTimeClock.setCurrentYear(18);
 	timestamp ts;
 
-
 	for(;;) {
-		realTimeClock.setAlarmOneSeconds(10);
-		realTimeClock.getCurrentTimestamp(ts);
-		hwlib::cout << ts << "\n";
-		hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
-		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
-		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
+		realTimeClock.setAlarmDayDate(1, 22);
+		// realTimeClock.getCurrentTimestamp(ts);
+		//hwlib::cout << ts << "\n";
+		//hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
+		//hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
+		//hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
 
-		hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmOneSeconds() << "\n\n";
+		hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
 		realTimeClock.update();
 		hwlib::wait_ms(1000);
 	}

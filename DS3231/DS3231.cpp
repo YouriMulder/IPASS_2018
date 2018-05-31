@@ -46,6 +46,7 @@ void DS3231::setCurrentHours(uint8_t newHours) {
 	}
 
 }
+
 uint8_t DS3231::getCurrentDay() {
 	setI2CBusCurrentAddress();
 	return I2CBus.getDECFromBCDRegister(REG_DAY);
@@ -140,7 +141,6 @@ timestamp DS3231::getCurrentTimestamp() {
 		bitParser::BCDToDEC(data[6])
 	);
 	ts.setCentury(time::currentCentury);
-
 	return ts;
 }
 
@@ -160,29 +160,61 @@ void DS3231::getCurrentTimestamp(timestamp& ts) {
 }
 
 // Alarm
-uint8_t DS3231::getAlarmOneSeconds() {
+uint8_t DS3231::getAlarmBCDRegisterExMSB(uint8_t alarmRegister) {
 	setI2CBusCurrentAddress();
-	return bitParser::BCDToDEC(
-		I2CBus.getByteFromRegister(REG_ALARM_1_SEC) & ~(0x01 << 7));
+	uint8_t byte = I2CBus.getByteFromRegister(alarmRegister);
+	return bitParser::BCDToDEC(byte & ~(0x01 << ALARM_AxMx_BIT));
+}
+
+void DS3231::setAlarmBCDRegisterExMSB(uint8_t alarmRegister, uint8_t newByte) {
+	setI2CBusCurrentAddress();
+	bool MSB = (I2CBus.getByteFromRegister(alarmRegister) >> ALARM_AxMx_BIT) & 1;
+	I2CBus.setByteInRegister(alarmRegister,
+		bitParser::DECToBCD(newByte) | MSB << ALARM_AxMx_BIT);
+}
+
+uint8_t DS3231::getAlarmOneSeconds() {
+	return getAlarmBCDRegisterExMSB(REG_ALARM_1_SEC);
 }
 
 void DS3231::setAlarmOneSeconds(uint8_t newSeconds) {
-	setI2CBusCurrentAddress();
 	if(time::isSecondsValid(newSeconds)) {
-		bool A1M1 = (I2CBus.getByteFromRegister(REG_ALARM_1_SEC) >> 7) & 1;
-		I2CBus.setByteInRegister(REG_ALARM_1_SEC,
-			bitParser::DECToBCD(newSeconds) | A1M1 << 7);
+		setAlarmBCDRegisterExMSB(REG_ALARM_1_SEC, newSeconds);
 	}
 }
 
-uint8_t getAlarmMinutes(bool alarm);
-void setAlarmOneMinutes(bool alarm, uint8_t newMinutes);
+uint8_t DS3231::getAlarmMinutes(bool alarm) {
+	uint8_t alarmRegister = !alarm ? REG_ALARM_1_MIN : REG_ALARM_2_MIN;
+	return getAlarmBCDRegisterExMSB(alarmRegister);
+}
+void DS3231::setAlarmMinutes(bool alarm, uint8_t newMinutes) {
+	if(time::isMinutesValid(newMinutes)) {
+		uint8_t alarmRegister = !alarm ? REG_ALARM_1_MIN : REG_ALARM_2_MIN;
+		setAlarmBCDRegisterExMSB(alarmRegister, newMinutes);
+	}
+}
 
-uint8_t getAlarmHours(bool alarm);
-void setAlarmHours(bool alarm, uint8_t newHours);
+uint8_t DS3231::getAlarmHours(bool alarm) {
+	uint8_t alarmRegister = !alarm ? REG_ALARM_1_HOURS : REG_ALARM_2_HOURS;
+	return getAlarmBCDRegisterExMSB(alarmRegister);
+}
 
-uint8_t etAlarmDayDate(bool alarm);
-void setAlarmDayDate(bool alarm, uint8_t newDayDate);
+void DS3231::setAlarmHours(bool alarm, uint8_t newHours) {
+	if(time::isHoursValid(newHours)) {
+		uint8_t alarmRegister = !alarm ? REG_ALARM_1_HOURS : REG_ALARM_2_HOURS;
+		setAlarmBCDRegisterExMSB(alarmRegister, newHours);
+	}
+}
+uint8_t DS3231::getAlarmDayDate(bool alarm) {
+	uint8_t alarmRegister = !alarm ? REG_ALARM_1_DAY_DATE : REG_ALARM_2_DAY_DATE;
+	return getAlarmBCDRegisterExMSB(alarmRegister);
+}
+void DS3231::setAlarmDayDate(bool alarm, uint8_t newDayDate) {
+	if(time::isDateValid(newDayDate)) {
+		uint8_t alarmRegister = !alarm ? REG_ALARM_1_DAY_DATE : REG_ALARM_2_DAY_DATE;
+		setAlarmBCDRegisterExMSB(alarmRegister, newDayDate);
+	}
+}
 
 void DS3231::update() {
 	if(getCurrentCenturyBit() && !newCentury) {
