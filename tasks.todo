@@ -10,12 +10,18 @@ DS3231:
         ✔ Add timestamp DS3231 setter and getter  @timestamp(2018-05-28 22:38) @done(2018-05-29 20:19) @project(DS3231 / PRIORITY 1)
             ✔ Add timestamp getter  @timestamp(2018-05-29 15:53) @done(2018-05-29 15:53) @project(DS3231 / PRIORITY 1 / TIMESTAMP)
             ✔ Add timestamp setter  @timestamp(2018-05-29 15:53) @done(2018-05-29 20:19) @project(DS3231 / PRIORITY 1)
-        ☐ Make time conversion. (timestamp)  @timestamp(2018-05-28 20:40)
         ☐ Century bit reset ~(1 << 7) error while smaller than byte(DS3231)  @timestamp(2018-05-28 22:13)
-        ☐ Create function control register(s)  @timestamp(2018-05-29 20:39)
+        ✔ Create function control register(s)  @timestamp(2018-05-29 20:39) @done(2018-06-01 14:34) @project(DS3231 / PRIORITY 1)
+        ☐ Create functions for the status register
         ✔ Add alarm 1 and 2 functions @done(2018-05-30 19:16) @project(DS3231 / PRIORITY 1)
             ✔ Alarm one functions @done(2018-05-30 19:16) @project(DS3231 / PRIORITY 1)
             ✔ Alarm two functions @done(2019-05-30 19:16) @project(DS3231 / PRIORITY 1)
+        ☐ Add negative temparture values
+        ☐ Add aging offset
     BUGS:
         ✔ static const register variables cant be passed to functions @done(2018-05-30 19:17) @project(DS3231 / BUGS)
             ✔ Made them uint8_t static int @done(2018-05-30 19:17) @project(DS3231 / BUGS)
+
+    CANCELLED:
+        ✘ Make time conversion. (timestamp)  @timestamp(2018-05-28 20:40) @cancelled(2018-06-02 00:09) @project(DS3231 / PRIORITY 1)
+            - Dont touch timezones https://www.youtube.com/watch?v=hWt63kmVRKI

@@ -44,3 +44,21 @@ void i2cBus::setByteToBCDInRegister(uint8_t chipRegAddress, uint8_t byte) {
 	setRegister(chipRegAddress);
 	write(currentChipAddress, data, amountOfBytes + 1);
 }
+
+bool i2cBus::getBitFromRegister(uint8_t chipRegAddress, uint8_t bitNumber) {
+	return (getByteFromRegister(chipRegAddress) >> bitNumber) & 0x01;
+}
+
+void i2cBus::setBitInRegister(uint8_t chipRegAddress, uint8_t bitNumber) {
+	setByteInRegister(
+		chipRegAddress,
+		getByteFromRegister(chipRegAddress) | (0x01 << bitNumber)
+	);
+}
+
+void i2cBus::clearBitInRegister(uint8_t chipRegAddress, uint8_t bitNumber) {
+	setByteInRegister(
+		chipRegAddress,
+		getByteFromRegister(chipRegAddress) & ~(0x01) << bitNumber
+	);
+}

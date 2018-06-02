@@ -1,7 +1,7 @@
 #ifndef DS3231_HPP
 #define DS3231_HPP
 
-#include "hwlib.hpp"
+#include "hwlib-ostream.hpp"
 #include "i2cBus.hpp"
 #include "time.hpp"
 #include "timestamp.hpp"
@@ -39,7 +39,17 @@ private:
 	const uint8_t REG_TEMPERATURE_MSB = 0x11;
 	const uint8_t REG_TEMPERATURE_LSB = 0x12;
 
-	const uint8_t ALARM_AxMx_BIT = 7;
+	const uint8_t BIT_ALARM_AxMx = 7;
+
+public:
+	const uint8_t BIT_CONTROL_ALARM_1_INTERRUPT_ENABLE = 0;
+	const uint8_t BIT_CONTROL_ALARM_2_INTERRUPT_ENABLE = 1;
+	const uint8_t BIT_CONTROL_INTERRUPT_CONTROL = 2;
+	const uint8_t BIT_CONTOL_RATE_SELECT_1 = 3;
+	const uint8_t BIT_CONTROL_RATE_SELECT_2 = 4;
+	const uint8_t BIT_CONTROL_TEMPERATURE_CONVERT = 5;
+	const uint8_t BIT_CONTROL_BATTERY_BACKED_SQW = 6;
+	const uint8_t BIT_CONTROL_OSCILLATOR = 7;
 
 public:
 	DS3231(i2cBus& I2CBus, uint8_t address = defaultDS3231Address);
@@ -72,8 +82,8 @@ public:
 	uint8_t getCurrentYear();
 	void setCurrentYear(uint8_t newYear);
 
-	int getCurrentTemperatureCelsius();
-	int getCurrentTemperatureFahrenheit();
+	int16_t getCurrentTemperatureCelsius();
+	int16_t getCurrentTemperatureFahrenheit();
 
 	void getCurrentTimeData(uint8_t data[7]);
 	timestamp getCurrentTimestamp();
@@ -95,6 +105,18 @@ public:
 
 	uint8_t getAlarmDayDate(bool alarm);
 	void setAlarmDayDate(bool alarm, uint8_t newDayDate);
+
+public:
+	// CB = Control Bit
+	uint8_t getControlRegister();
+	void setControlRegister(uint8_t newByte);
+
+	bool getControlRegisterBit(uint8_t bitNumber);
+	void setControlRegisterBit(uint8_t bitNumber, bool newBit);
+
+public:
+	uint8_t getAgingOffset();
+	void setAgingOffset(uint8_t newAgingOffset);
 
 public:
 	void update();

@@ -18,21 +18,21 @@ int main(int argc, char **argv) {
 	DS3231 realTimeClock(I2CBus, 0x68);
 
 	realTimeClock.setCurrentSeconds(0); // 0 - 59
-	realTimeClock.setCurrentMinutes(46); // 0 - 59
-	realTimeClock.setCurrentHours(8);
-	realTimeClock.setCurrentDay(2);
-	realTimeClock.setCurrentDate(29);
-	realTimeClock.setCurrentMonth(5);
+	realTimeClock.setCurrentMinutes(21); // 0 - 59
+	realTimeClock.setCurrentHours(17);
+	realTimeClock.setCurrentDay(5);
+	realTimeClock.setCurrentDate(1);
+	realTimeClock.setCurrentMonth(6);
 	realTimeClock.setCurrentYear(18);
 	timestamp ts;
 
 	for(;;) {
-		realTimeClock.setAlarmDayDate(1, 22);
-		// realTimeClock.getCurrentTimestamp(ts);
-		//hwlib::cout << ts << "\n";
-		//hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
-		//hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
-		//hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
+		bitParser::printByte(realTimeClock.getAgingOffset());
+		realTimeClock.getCurrentTimestamp(ts);
+		hwlib::cout << ts << "\n";
+		hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
+		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
+		hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
 
 		hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
 		realTimeClock.update();
