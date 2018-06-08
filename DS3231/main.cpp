@@ -44,12 +44,7 @@ int main(int argc, char **argv) {
 	// realTimeClock.setCurrentMonth(6);
 	// realTimeClock.setCurrentYear(18);
 	// timestamp ts;
-	uint8_t reg = 0x02;
 	for(;;) {
-		bitParser::printByte(rfid.readRegister(reg));
-		rfid.writeRegister(reg, 1 | 1 <<3);
-		bitParser::printByte(rfid.readRegister(reg));
-		bitParser::printByte(rfid.getVersion());
 		// realTimeClock.getCurrentTimestamp(ts);
 		// hwlib::cout << ts << "\n";
 		// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
