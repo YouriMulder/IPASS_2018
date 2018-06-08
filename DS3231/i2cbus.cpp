@@ -1,7 +1,7 @@
 #include "i2cBus.hpp"
 #include "bitparser.hpp"
 
-i2cBus::i2cBus(hwlib::target::pin_oc& scl, hwlib::target::pin_oc& sda):
+i2cBus::i2cBus(hwlib::pin_oc& scl, hwlib::pin_oc& sda):
 	hwlib::i2c_bus_bit_banged_scl_sda(scl, sda)
 {}
 

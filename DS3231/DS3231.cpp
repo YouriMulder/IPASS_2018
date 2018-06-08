@@ -240,12 +240,17 @@ void DS3231::setControlRegisterBit(uint8_t bitNumber, bool newBit) {
 	}
 }
 
-uint8_t DS3231::getAgingOffset() {
+uint8_t DS3231::getStatusRegister() {
+	setI2CBusCurrentAddress();
+	return I2CBus.getByteFromRegister(REG_STATUS);
+}
+
+int8_t DS3231::getAgingOffset() {
 	setI2CBusCurrentAddress();
 	return I2CBus.getByteFromRegister(REG_AGING_OFFSET);
 }
 
-void DS3231::setAgingOffset(uint8_t newAgingOffset) {
+void DS3231::setAgingOffset(int8_t newAgingOffset) {
 	setI2CBusCurrentAddress();
 	I2CBus.setByteInRegister(REG_AGING_OFFSET, newAgingOffset);
 }

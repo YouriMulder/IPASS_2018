@@ -5,7 +5,7 @@
 
 class i2cBus : public hwlib::i2c_bus_bit_banged_scl_sda {
 public:
-	i2cBus(hwlib::target::pin_oc& scl, hwlib::target::pin_oc& sda);
+	i2cBus(hwlib::pin_oc& scl, hwlib::pin_oc& sda);
 private:
 	uint8_t currentChipAddress = 0x00;
 public:

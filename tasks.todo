@@ -16,8 +16,9 @@ DS3231:
         ✔ Add alarm 1 and 2 functions @done(2018-05-30 19:16) @project(DS3231 / PRIORITY 1)
             ✔ Alarm one functions @done(2018-05-30 19:16) @project(DS3231 / PRIORITY 1)
             ✔ Alarm two functions @done(2019-05-30 19:16) @project(DS3231 / PRIORITY 1)
-        ☐ Add negative temparture values
-        ☐ Add aging offset
+        ✔ Add negative temparture values  @done(2018-06-02 13:58) @project(DS3231 / PRIORITY 1)
+        ✔ Add aging offset @timestamp(2018-06-02 13:58) @done(2018-06-02 14:08) @project(DS3231 / PRIORITY 1)
+        ☐ Create all time setter without timestamp @timestamp(2018-06-02 16:32)
     BUGS:
         ✔ static const register variables cant be passed to functions @done(2018-05-30 19:17) @project(DS3231 / BUGS)
             ✔ Made them uint8_t static int @done(2018-05-30 19:17) @project(DS3231 / BUGS)
@@ -25,3 +26,17 @@ DS3231:
     CANCELLED:
         ✘ Make time conversion. (timestamp)  @timestamp(2018-05-28 20:40) @cancelled(2018-06-02 00:09) @project(DS3231 / PRIORITY 1)
             - Dont touch timezones https://www.youtube.com/watch?v=hWt63kmVRKI
+
+MCFR522:
+    CHOICES:
+        ✘ I2C  @cancelled(2018-06-02 16:52) @project(MCFR522 / CHOICES)
+            - Requires the board to be resoldered
+        ✘ UART @cancelled(2018-06-02 16:52) @project(MCFR522 / CHOICES)
+            - Requires the board to be resoldered
+        ✔ SPI @done(2018-06-02 16:52) @project(MCFR522 / CHOICES)
+            - Board is hard wired to be used with SPI
+        PRIORITY 1:
+            ✔ Create SPI bus  @timestamp(2018-06-08 00:10) @done(2018-06-08 00:10) @project(MCFR522 / CHOICES / PRIORITY 1)
+            ✔ Create functions to read the a card  @timestamp(2018-06-02 16:57) @done(2018-06-08 00:10) @project(MCFR522 / CHOICES / PRIORITY 1)
+            ✔ Create functions to write to the card  @timestamp(2018-06-02 16:57) @done(2018-06-08 00:10) @project(MCFR522 / CHOICES / PRIORITY 1)
+            ☐ Find out where the reset pin is used for (some weird behaviour occurred while reading and writing)  @timestamp(2018-06-08 00:10)

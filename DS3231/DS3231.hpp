@@ -115,8 +115,12 @@ public:
 	void setControlRegisterBit(uint8_t bitNumber, bool newBit);
 
 public:
-	uint8_t getAgingOffset();
-	void setAgingOffset(uint8_t newAgingOffset);
+	uint8_t getStatusRegister();
+	void setStatusRegister();
+
+public:
+	int8_t getAgingOffset();
+	void setAgingOffset(int8_t newAgingOffset);
 
 public:
 	void update();

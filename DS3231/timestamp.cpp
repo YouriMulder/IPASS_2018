@@ -16,23 +16,6 @@ timestamp::timestamp():
     setCentury(time::currentCentury);
 }
 
-int timestamp::toThePowerOf(int base, int power) {
-	int result = base;
-	if(result == 0) { return 0; }
-
-	for(int i = 1; i < power; power++) { result *= base; }
-	return result;
-}
-
-int timestamp::sizeOfInt(int number) {
-	unsigned int counter = 0;
-	while(number > 0) {
-		counter++;
-		number /= 10;
-	}
-	return counter;
-}
-
 void timestamp::setSeconds(uint8_t newSeconds) {
 	seconds = time::isSecondsValid(newSeconds) ? newSeconds : minSeconds;
 }
