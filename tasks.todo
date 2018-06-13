@@ -39,4 +39,8 @@ MCFR522:
             ✔ Create SPI bus  @timestamp(2018-06-08 00:10) @done(2018-06-08 00:10) @project(MCFR522 / CHOICES / PRIORITY 1)
             ✔ Create functions to read the a card  @timestamp(2018-06-02 16:57) @done(2018-06-08 00:10) @project(MCFR522 / CHOICES / PRIORITY 1)
             ✔ Create functions to write to the card  @timestamp(2018-06-02 16:57) @done(2018-06-08 00:10) @project(MCFR522 / CHOICES / PRIORITY 1)
-            ☐ Find out where the reset pin is used for (some weird behaviour occurred while reading and writing)  @timestamp(2018-06-08 00:10)
+            ✔ Find out where the reset pin is used for (some weird behaviour occurred while reading and writing)  @timestamp(2018-06-09 15:47) @done(2018-06-09 15:47) @project(MCFR522 / CHOICES / PRIORITY 1)
+                - When low all the digits are either 0 or 1. Resets on positive edge
+                - First reading after hard reset is inaccurate. Always 15
+            ☐ Turn antenna on/off
+            ☐ Check if a card is presented (within the range of the antenna)

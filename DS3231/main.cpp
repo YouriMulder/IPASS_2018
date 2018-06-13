@@ -53,6 +53,7 @@ int main(int argc, char **argv) {
 		//
 		// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
 		// realTimeClock.update();
+		hwlib::cout << (unsigned) rfid.getVersion() << "\n";
 		hwlib::wait_ms(1000);
 	}
 }

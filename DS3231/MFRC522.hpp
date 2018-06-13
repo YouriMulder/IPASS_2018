@@ -54,7 +54,6 @@ public:
     /* RESERVED     = 0x1E,*/
     SerialSpeedReg  = 0x1F, // Selects the speed of the serial UART interface
 
-    // --------------------------------
     //  CONFIGURATION REGISTERS
     // --------------------------------
     /* RESERVED     = 0x20,*/
@@ -71,7 +70,6 @@ public:
     TPrescalerReg,          // Defines the 16-bit timer reload value
     TCounterValReg,         // Shows the 16-bit times value
 
-    // --------------------------------
     //  TEST REGISTERS
     // --------------------------------
     /* RESERVED     = 0x30,*/
@@ -98,11 +96,17 @@ public:
         hwlib::pin_out& reset);
 
 public:
+    void hardReset();
+public:
+    // REGISTER FUNCTIONS
     uint8_t readRegister(REG registerAddress);
     void writeRegister(REG registerAddress, uint8_t byte);
-    void setBitsInRegister(REG registerAddress, uint8_t mask);
+    void setMaskInRegister(REG registerAddress, uint8_t mask);
 public:
+    bool isCardPresented();
 
+public:
+    // TEST FUNCTIONS
     uint8_t getVersion();
 
 };
