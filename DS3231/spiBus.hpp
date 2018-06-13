@@ -15,8 +15,13 @@ private:
 public:
 	uint8_t getByteFromRegister(uint8_t chipRegAddress,
 		hwlib::pin_out& slaveSelect);
+	void getBytesFromRegister(uint8_t chipRegAddress, uint8_t data[],
+							uint8_t amountOfBytes, hwlib::pin_out& slaveSelect);
+
 	void setByteInRegister(uint8_t chipRegAddress, uint8_t byte,
 							hwlib::pin_out& slaveSelect);
+	void setBytesInRegister(uint8_t chipRegAddress, uint8_t newBytes[],
+							uint8_t amountOfBytes, hwlib::pin_out& slaveSelect);
 };
 
 #endif // SPIBUS_HPP

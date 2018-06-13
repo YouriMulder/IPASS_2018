@@ -23,9 +23,36 @@ uint8_t spiBus::getByteFromRegister(uint8_t chipRegAddress,
 	return read[1];
 }
 
+// NOT WORKING
+void spiBus::getBytesFromRegister(uint8_t chipRegAddress, uint8_t data[],
+									uint8_t amountOfBytes, hwlib::pin_out& slaveSelect) {
+	const uint16_t arraySize = amountOfBytes + 1;
+	uint8_t write[arraySize] = {0};
+	write[0] = getReadByte(chipRegAddress);
+	uint8_t read[arraySize];
+
+	write_and_read(slaveSelect, amountOfBytes, write, read);
+	for(uint8_t i = 0; i < amountOfBytes; i++) {
+		data[i] = read[i + 1];
+	}
+}
+
 void spiBus::setByteInRegister(uint8_t chipRegAddress, uint8_t newByte,
 								hwlib::pin_out& slaveSelect) {
 	uint8_t write[2] = {getWriteByte(chipRegAddress), newByte};
-	hwlib::cout << (unsigned)newByte << "\n";
 	write_and_read(slaveSelect, 2, write, nullptr);
+}
+
+void spiBus::setBytesInRegister(uint8_t chipRegAddress, uint8_t newBytes[],
+								uint8_t amountOfBytes, hwlib::pin_out& slaveSelect) {
+	const uint16_t arraySize = amountOfBytes + 1;
+	uint8_t write[arraySize] = {0};
+	write[0] = getWriteByte(chipRegAddress);
+	for(uint8_t i = 0; i < amountOfBytes; i++) {
+		if(i + 1 < arraySize) {
+			write[i + 1] = newBytes[i];
+		}
+	}
+
+	write_and_read(slaveSelect, arraySize, write, nullptr);
 }

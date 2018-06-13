@@ -42,5 +42,9 @@ MCFR522:
             ✔ Find out where the reset pin is used for (some weird behaviour occurred while reading and writing)  @timestamp(2018-06-09 15:47) @done(2018-06-09 15:47) @project(MCFR522 / CHOICES / PRIORITY 1)
                 - When low all the digits are either 0 or 1. Resets on positive edge
                 - First reading after hard reset is inaccurate. Always 15
+            ☐ Self test
+                ✔ Soft reset @done(2018-06-13 15:47) @project(MCFR522 / CHOICES / PRIORITY 1)
+                ☐ Clear internal buffer
+                
             ☐ Turn antenna on/off
             ☐ Check if a card is presented (within the range of the antenna)

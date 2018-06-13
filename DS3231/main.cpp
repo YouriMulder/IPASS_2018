@@ -44,6 +44,7 @@ int main(int argc, char **argv) {
 	// realTimeClock.setCurrentMonth(6);
 	// realTimeClock.setCurrentYear(18);
 	// timestamp ts;
+
 	for(;;) {
 		// realTimeClock.getCurrentTimestamp(ts);
 		// hwlib::cout << ts << "\n";
@@ -53,7 +54,8 @@ int main(int argc, char **argv) {
 		//
 		// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
 		// realTimeClock.update();
-		hwlib::cout << (unsigned) rfid.getVersion() << "\n";
+		//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
+		rfid.selfTest();
 		hwlib::wait_ms(1000);
 	}
 }

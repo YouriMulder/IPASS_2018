@@ -12,25 +12,25 @@ private:
     hwlib::pin_out& reset;
 
 public:
-    enum REG {
+    enum REG : uint8_t {
 
     // --------------------------------
     // COMMAND AND STATUS REGISTERS
     // --------------------------------
     /* RESERVED     = 0x00,*/
     CommandReg      = 0x01, // Starts/stops command execution
-    ComlEnReg,              // Enable/disable interrupt request control bits
-    DivlEnReg,              // Enable/disable interrupt request control bits
-    ComIrlReg,              // interrupt request bits
-    DivLrqReg,              // interrupt request bits
+    ComIEnReg,              // Enable/disable interrupt request control bits
+    DivIEnReg,              // Enable/disable interrupt request control bits
+    ComIrqReg,              // interrupt request bits
+    DivIrqReg,              // interrupt request bits
     ErrorReg,               // Error bits, error status of last command
     Status1Reg,             // Communication status bits
     Status2Reg,             // Receiver and transmitter status bits
-    FIFODataReg,            // Input/output of 64 byte FIFO buffer
-    FIFOLevelReg,           // Number of byte stored in the FIFO buffer
+    FIFODataReg,            // Input/output of 64 uint8_t FIFO buffer
+    FIFOLevelReg,           // Number of uint8_t stored in the FIFO buffer
     WaterLevelReg,          // Level for FIFO underflow and overflow warning
     ControlReg,             // Miscellaneous control register
-    BitFarmingReg,          // Adjustments for bit-oriented frames
+    BitFramingReg,          // Adjustments for bit-oriented frames
     CollReg,                // Bit position of the first bit-collision detected of RF interface
     /* RESERVED     = 0x0F,*/
 
@@ -67,7 +67,9 @@ public:
     CWGsPReg,               // Defines the conductance of the p-driver output during periods of no modulation
     ModGsPReg,              // Defines the conductance of the p-driver output during periods of modulation
     TModeReg,               // Defines settings for the internal timer
-    TPrescalerReg,          // Defines the 16-bit timer reload value
+    TPrescalerReg,          // Defines settings for the internal timer
+    TReloadReg1,            // Defines the 16-bit timer reload value
+    TReloadReg2,           // Defines the 16-bit timer reload value
     TCounterValReg,         // Shows the 16-bit times value
 
     //  TEST REGISTERS
@@ -88,26 +90,57 @@ public:
     /* RESERVED     = 0x3D,*/
     /* RESERVED     = 0x3E,*/
     /* RESERVED     = 0x3F,*/
-};
+    };
+
+
+    enum COMMANDS : uint8_t {
+        Idle        = 0x00,
+        Mem,
+        Generate_RandomID,
+        CalcCRC,
+        NoCmdChange,
+        Receive,
+        Transeive,
+        /* RESERVED = 0x0D, */
+        MFAuthent   = 0x0E,
+        SoftReset
+    };
+
+    const uint8_t FIFOAmountOfBytes = 64;
+    //request checks
+    const uint8_t MI_OK = 0;///Everything is ok return value
+    const uint8_t MI_NOTAGERR = 1;///Incorrect data error return value
+    const uint8_t MI_ERR = 2;///Error return value
 
 public:
     MFRC522(spiBus& SPIBus,
         hwlib::pin_out& slaveSelect,
         hwlib::pin_out& reset);
 
+private:
+    void waitTillStarted();
 public:
     void hardReset();
+    void softReset();
 public:
     // REGISTER FUNCTIONS
     uint8_t readRegister(REG registerAddress);
-    void writeRegister(REG registerAddress, uint8_t byte);
+    void readRegister(REG registerAddress, uint8_t read[], uint8_t amountOfBytes);
+    void writeRegister(REG registerAddress, uint8_t newByte);
+    void writeRegister(REG registerAddress, uint8_t newBytes[], int amountOfBytes);
     void setMaskInRegister(REG registerAddress, uint8_t mask);
+    void clearMaskInRegister(REG registerAddress, uint8_t mask);
 public:
+    void setAntennas(bool state);
     bool isCardPresented();
+
+private:
+    void clearFIFOBuffer();
 
 public:
     // TEST FUNCTIONS
     uint8_t getVersion();
+    bool selfTest();
 
 };
 
