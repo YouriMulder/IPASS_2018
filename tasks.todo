@@ -42,9 +42,19 @@ MCFR522:
             ✔ Find out where the reset pin is used for (some weird behaviour occurred while reading and writing)  @timestamp(2018-06-09 15:47) @done(2018-06-09 15:47) @project(MCFR522 / CHOICES / PRIORITY 1)
                 - When low all the digits are either 0 or 1. Resets on positive edge
                 - First reading after hard reset is inaccurate. Always 15
-            ☐ Self test
+            ✔ Self test @done(2018-06-14 15:55) @project(MCFR522 / CHOICES / PRIORITY 1)
                 ✔ Soft reset @done(2018-06-13 15:47) @project(MCFR522 / CHOICES / PRIORITY 1)
-                ☐ Clear internal buffer
-                
-            ☐ Turn antenna on/off
+                ✔ Clear internal buffer @done(2018-06-14 15:55) @project(MCFR522 / CHOICES / PRIORITY 1)
+
+            ✔ Turn antenna on/off @done(2018-06-14 15:55) @project(MCFR522 / CHOICES / PRIORITY 1)
             ☐ Check if a card is presented (within the range of the antenna)
+                ☐ Receive data from card
+                    ☐ How to receive data? Register settings?
+                        - StatusReg2, RxModeReg, RxSelReg, mfRxReg, RFCfgReg (gain), CommandReg (receiver turned off?)
+                            BitFramingReg? RxIRq
+                        - Check for any errors in ErrorReg
+
+
+
+References:
+    http://www.nedapidentification.com/news/insights/understanding-the-confusing-world-of-rfid-tags-and-readers-in-access-control.html

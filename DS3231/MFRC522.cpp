@@ -91,12 +91,7 @@ void MFRC522::setAntennas(bool state) {
 	}
 }
 
-bool MFRC522::isCardPresented() {
-	//writeRegister(CommandReg, 0x05);
-	return 0;
-}
-
-void MFRC522::clearFIFOBuffer(const int amountOfBytes) {
+void MFRC522::clearFIFOBuffer(const uint8_t amountOfBytes) {
 	// clears the FIFO read and write pointer, ErrorReg and BufferOvfl
 	writeRegister(FIFOLevelReg, 0x80);
 	uint8_t FIFOnewBytes[amountOfBytes] = {0};
@@ -107,6 +102,17 @@ void MFRC522::clearInternalBuffer() {
 	clearFIFOBuffer(25);
 	writeRegister(CommandReg, Mem);
 }
+
+
+
+bool MFRC522::isCardPresented() {
+	return 1;
+}
+
+
+
+
+
 
 // TEST FUNCTIONS
 uint8_t MFRC522::getVersion() {
@@ -125,24 +131,30 @@ bool MFRC522::selfTest() {
 	// 2. Clear the internal buffer by writing 25 bytes of 00h
 	clearInternalBuffer();
 	// 3. Enable the self test by writing 09h to the AutoTestReg
-	writeRegister(AutoTestReg, 0x09);
+	writeRegister(AutoTestReg, (1 << 3 | 1));
 	// 4. Write 00h to the FIFO buffer
 	writeRegister(FIFODataReg, 0x00);
 	// 5. Start the self test with the CalcCRC command
 	writeRegister(CommandReg, CalcCRC);
 	// 6. The self test is initiated (WAIT TILL THE FIFO IS FILLED)
 	while(readRegister(FIFOLevelReg) < FIFOAmountOfBytes) {}
-	writeRegister(CommandReg, Idle);
+
+	writeRegister(AutoTestReg, 0x00);
 
 	uint8_t selfTestResult[FIFOAmountOfBytes] = {0};
 	readRegister(FIFODataReg, selfTestResult, FIFOAmountOfBytes);
 
 	const uint8_t* FIFOBytesCheckSpecificVersion = firmwareVersion == 1 ? selfTestFIFOBufferV1 : selfTestFIFOBufferV2;
+	if(FIFOBytesCheckSpecificVersion == nullptr) {
+		return false;
+	}
+
 	for(unsigned int i = 0; i < FIFOAmountOfBytes; i++) {
-		hwlib::cout << hwlib::dec <<  i << ' ' << hwlib::hex << (unsigned)selfTestResult[i] << ' ' << (unsigned)FIFOBytesCheckSpecificVersion[i] << "\n";
 		if(selfTestResult[i] != FIFOBytesCheckSpecificVersion[i]) {
 			return false;
 		}
 	}
+
+	hwlib::cout << (unsigned)readRegister(AutoTestReg);
 	return true;
 }

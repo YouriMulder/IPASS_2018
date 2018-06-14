@@ -40,17 +40,18 @@ int main(int argc, char **argv) {
 	// realTimeClock.setCurrentYear(18);
 	// timestamp ts;
 
-	//for(;;) {
-	// realTimeClock.getCurrentTimestamp(ts);
-	// hwlib::cout << ts << "\n";
-	// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
-	// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
-	// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
-	//
-	// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
-	// realTimeClock.update();
-	//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
-	hwlib::cout << rfid.selfTest() << (unsigned)rfid.getVersion() << "\n";
-	hwlib::wait_ms(1000);
-	//}
+	for(;;) {
+		// realTimeClock.getCurrentTimestamp(ts);
+		// hwlib::cout << ts << "\n";
+		// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
+		// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
+		// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
+		//
+		// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
+		// realTimeClock.update();
+		//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
+
+		hwlib::cout << rfid.isCardPresented() << "\n";
+		hwlib::wait_ms(1000);
+	}
 }

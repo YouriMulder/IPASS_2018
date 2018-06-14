@@ -98,7 +98,7 @@ public:
 		CalcCRC,
 		NoCmdChange,
 		Receive,
-		Transeive,
+		Transceive,
 		/* RESERVED = 0x0D, */
 		MFAuthent   = 0x0E,
 		SoftReset
@@ -126,6 +126,18 @@ public:
 		0x5D, 0x48, 0x76, 0xD5, 0x71, 0x61, 0x21, 0xA9,
 		0x86, 0x96, 0x83, 0x38, 0xCF, 0x9D, 0x5B, 0x6D,
 		0xDC, 0x15, 0xBA, 0x3E, 0x7D, 0x95, 0x3B, 0x2F
+	};
+
+	enum StatusCode : uint8_t {
+		STATUS_OK				,	// Success
+		STATUS_ERROR			,	// Error in communication
+		STATUS_COLLISION		,	// Collission detected
+		STATUS_TIMEOUT			,	// Timeout in communication.
+		STATUS_NO_ROOM			,	// A buffer is not big enough.
+		STATUS_INTERNAL_ERROR	,	// Internal error in the code. Should not happen ;-)
+		STATUS_INVALID			,	// Invalid argument.
+		STATUS_CRC_WRONG		,	// The CRC_A does not match
+		STATUS_MIFARE_NACK		= 0xff	// A MIFARE PICC responded with NAK.
 	};
 
 	//request checks
@@ -156,7 +168,7 @@ public:
 	bool isCardPresented();
 
 private:
-	void clearFIFOBuffer(const int amountOfBytes = 64);
+	void clearFIFOBuffer(const uint8_t amountOfBytes = 64);
 	void clearInternalBuffer();
 
 public:
