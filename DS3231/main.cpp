@@ -19,19 +19,14 @@ int main(int argc, char **argv) {
 	auto I2CBus = i2cBus(I2CScl, I2CSda);
 
 	// SPI bus
-	auto SPIMosi 	 = 	hwlib::target::pin_out(hwlib::target::pins::d11);
-	auto SPIMiso	 = 	hwlib::target::pin_in(hwlib::target::pins::d12);
-	auto SPIScl  	 =	hwlib::target::pin_out(hwlib::target::pins::scl1);
+	auto SPIMosi 	 	= 	hwlib::target::pin_out(hwlib::target::pins::d11);
+	auto SPIMiso	 	= 	hwlib::target::pin_in(hwlib::target::pins::d12);
+	auto SPIScl  	 	=	hwlib::target::pin_out(hwlib::target::pins::scl1);
 
-	auto SPIBus = spiBus(
-					SPIScl,
-					SPIMosi,
-					SPIMiso
-					);
+	auto SPIBus = spiBus(SPIScl, SPIMosi, SPIMiso);
 
-
-	auto SPISSMFRC522 = hwlib::target::pin_out(hwlib::target::pins::d10);
-	auto MFRC522Reset = hwlib::target::pin_out(hwlib::target::pins::d9);
+	auto SPISSMFRC522	= hwlib::target::pin_out(hwlib::target::pins::d10);
+	auto MFRC522Reset 	= hwlib::target::pin_out(hwlib::target::pins::d9);
 
 	auto rfid = MFRC522(SPIBus, SPISSMFRC522, MFRC522Reset);
 	// DS3231 realTimeClock(I2CBus, 0x68);
@@ -45,17 +40,17 @@ int main(int argc, char **argv) {
 	// realTimeClock.setCurrentYear(18);
 	// timestamp ts;
 
-	for(;;) {
-		// realTimeClock.getCurrentTimestamp(ts);
-		// hwlib::cout << ts << "\n";
-		// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
-		// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
-		// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
-		//
-		// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
-		// realTimeClock.update();
-		//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
-		rfid.selfTest();
-		hwlib::wait_ms(1000);
-	}
+	//for(;;) {
+	// realTimeClock.getCurrentTimestamp(ts);
+	// hwlib::cout << ts << "\n";
+	// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
+	// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
+	// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
+	//
+	// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
+	// realTimeClock.update();
+	//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
+	hwlib::cout << rfid.selfTest() << (unsigned)rfid.getVersion() << "\n";
+	hwlib::wait_ms(1000);
+	//}
 }

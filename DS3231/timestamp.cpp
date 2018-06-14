@@ -4,16 +4,14 @@ timestamp::timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours,
                      uint8_t day, uint8_t date, uint8_t month,
                      uint16_t year):
 	seconds(seconds), minutes(minutes), hours(hours), day(day),
-	date(date),	month(month), year(year)
-{
-    setCentury(time::currentCentury);
+	date(date),	month(month), year(year) {
+	setCentury(time::currentCentury);
 }
 
 timestamp::timestamp():
 	seconds(minSeconds), minutes(minMinutes), hours(minHours), day(minDay),
-	date(minDate),	month(minMonth), year(minYear)
-{
-    setCentury(time::currentCentury);
+	date(minDate),	month(minMonth), year(minYear) {
+	setCentury(time::currentCentury);
 }
 
 void timestamp::setSeconds(uint8_t newSeconds) {
@@ -64,7 +62,7 @@ uint8_t timestamp::getMonth() const {
 }
 
 void timestamp::setYear(uint16_t newYear) {
-    year = time::isYearValid(newYear) ? newYear : minYear;
+	year = time::isYearValid(newYear) ? newYear : minYear;
 }
 
 uint8_t timestamp::getYear() const {
@@ -72,21 +70,21 @@ uint8_t timestamp::getYear() const {
 }
 
 void timestamp::setCentury(int newCentury) {
-    century = time::isCenturyValid(newCentury) ? newCentury : 0;
+	century = time::isCenturyValid(newCentury) ? newCentury : 0;
 }
 
 int timestamp::getCentury() const {
-    return century;
+	return century;
 }
 
 hwlib::ostream& operator<<(hwlib::ostream& lhs, const timestamp& rhs) {
-    lhs  << "Seconds: " << (unsigned)rhs.seconds
-        << "\nMinutes: " << (unsigned)rhs.minutes
-        << "\nHours: " << (unsigned)rhs.hours
-        << "\nday: " << (unsigned)rhs.day
-        << "\ndate: " << (unsigned)rhs.date
-        <<"\nmonth: " << (unsigned)rhs.month
-        << "\nyear: " << (unsigned)rhs.year
-        << "\ncentury: " << rhs.century << "\n";
-    return lhs;
+	lhs  << "Seconds: " 	<<	(unsigned)rhs.seconds
+	     << "\nMinutes: " 	<< (unsigned)rhs.minutes
+	     << "\nHours: " 		<<	(unsigned)rhs.hours
+	     << "\nday: " 		<<	(unsigned)rhs.day
+	     << "\ndate: " 		<<	(unsigned)rhs.date
+	     << "\nmonth: " 		<<	(unsigned)rhs.month
+	     << "\nyear: " 		<<	(unsigned)rhs.year
+	     << "\ncentury: " 	<<	rhs.century << "\n";
+	return lhs;
 }

@@ -10,18 +10,18 @@ private:
 public:
 	spiBus(hwlib::pin_out& scl, hwlib::pin_out& mosi, hwlib::pin_in& miso);
 private:
-	uint8_t getReadByte(uint8_t chipRegAddress);
-	uint8_t getWriteByte(uint8_t chipRegAddress);
+	uint8_t getReadByte(const uint8_t chipRegAddress);
+	uint8_t getWriteByte(const uint8_t chipRegAddress);
 public:
-	uint8_t getByteFromRegister(uint8_t chipRegAddress,
-		hwlib::pin_out& slaveSelect);
-	void getBytesFromRegister(uint8_t chipRegAddress, uint8_t data[],
-							uint8_t amountOfBytes, hwlib::pin_out& slaveSelect);
+	uint8_t getByteFromRegister(const uint8_t chipRegAddress,
+	                            hwlib::pin_out& slaveSelect);
+	void getBytesFromRegister(const uint8_t chipRegAddress, uint8_t data[],
+	                          const uint8_t amountOfBytes, hwlib::pin_out& slaveSelect);
 
-	void setByteInRegister(uint8_t chipRegAddress, uint8_t byte,
-							hwlib::pin_out& slaveSelect);
-	void setBytesInRegister(uint8_t chipRegAddress, uint8_t newBytes[],
-							uint8_t amountOfBytes, hwlib::pin_out& slaveSelect);
+	void setByteInRegister(const uint8_t chipRegAddress, uint8_t byte,
+	                       hwlib::pin_out& slaveSelect);
+	void setBytesInRegister(const uint8_t chipRegAddress, uint8_t newBytes[],
+	                        const uint8_t amountOfBytes, hwlib::pin_out& slaveSelect);
 };
 
 #endif // SPIBUS_HPP

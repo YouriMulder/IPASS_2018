@@ -205,10 +205,12 @@ void DS3231::setAlarmHours(bool alarm, uint8_t newHours) {
 		setAlarmBCDRegisterExMSB(alarmRegister, newHours);
 	}
 }
+
 uint8_t DS3231::getAlarmDayDate(bool alarm) {
 	uint8_t alarmRegister = !alarm ? REG_ALARM_1_DAY_DATE : REG_ALARM_2_DAY_DATE;
 	return getAlarmBCDRegisterExMSB(alarmRegister);
 }
+
 void DS3231::setAlarmDayDate(bool alarm, uint8_t newDayDate) {
 	if(time::isDateValid(newDayDate)) {
 		uint8_t alarmRegister = !alarm ? REG_ALARM_1_DAY_DATE : REG_ALARM_2_DAY_DATE;

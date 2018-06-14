@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="DS3231" InternalType="" Version="10.0.0">
+<CodeLite_Project Name="DS3231" InternalType="">
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
@@ -36,6 +36,10 @@
     <File Name="DS3231.hpp"/>
     <File Name="i2cBus.cpp"/>
     <File Name="i2cBus.hpp"/>
+    <File Name="MFRC522.cpp"/>
+    <File Name="MFRC522.hpp"/>
+    <File Name="spiBus.cpp"/>
+    <File Name="spiBus.hpp"/>
     <File Name="time.cpp"/>
     <File Name="time.hpp"/>
     <File Name="timestamp.cpp"/>
@@ -53,7 +57,7 @@
       <ResourceCompiler Options=""/>
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="MinGW ( TDM-GCC-32 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-O0;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="no" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+       <Compiler Options="-g;-O0;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="no" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value=".;../Catch/include"/>
       </Compiler>
       <Linker Options="" Required="yes"/>
@@ -129,4 +133,4 @@
       </Completion>
     </Configuration>
   </Settings>
-</CodeLite_Project>
+</CodeLite_Project>   
