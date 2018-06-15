@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
 	// realTimeClock.setCurrentYear(18);
 	// timestamp ts;
 
-	for(;;) {
+	//for(;;) {
 		// realTimeClock.getCurrentTimestamp(ts);
 		// hwlib::cout << ts << "\n";
 		// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
@@ -50,8 +50,16 @@ int main(int argc, char **argv) {
 		// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
 		// realTimeClock.update();
 		//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
+	//}
+	
+	int status, len;
+	uint8_t result[10] = {0};
+  result[0] = rfid.PICC_CMD_MF_READ;
+  result[1] = 1;
+  rfid.calculateCRC(result, 2, &result[2]);
+  status = rfid.transceive(result, 4, result, &len);
 
-		hwlib::cout << rfid.isCardPresented() << "\n";
-		hwlib::wait_ms(1000);
-	}
+  if ((status != rfid.MI_OK) || (len != 0x90)) {
+    status = rfid.MI_ERR;
+  }
 }

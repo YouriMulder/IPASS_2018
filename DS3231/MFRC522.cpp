@@ -81,7 +81,6 @@ void MFRC522::clearMaskInRegister(REG registerAddress, uint8_t mask) {
 	writeRegister(registerAddress, currentByte);
 }
 
-
 // sets the first 2 bits to turn the antenna on and clears to set off
 void MFRC522::setAntennas(bool state) {
 	if(state) {
@@ -103,16 +102,102 @@ void MFRC522::clearInternalBuffer() {
 	writeRegister(CommandReg, Mem);
 }
 
+void MFRC522::calculateCRC(uint8_t *data, int len, uint8_t *result) {
+  int i;
+  uint8_t n;
 
+  clearMaskInRegister(DivIrqReg, 0x04);   // CRCIrq = 0
+  setMaskInRegister(FIFOLevelReg, 0x80);  // Clear the FIFO pointer
+
+  //Writing data to the FIFO.
+  for (i = 0; i < len; i++) {
+    writeRegister(FIFODataReg, data[i]);
+  }
+  writeRegister(CommandReg, CalcCRC);
+
+  // Wait for the CRC calculation to complete.
+  i = 0xFF;
+  do {
+    n = readRegister(DivIrqReg);
+    i--;
+  } while ((i != 0) && !(n & 0x04));  //CRCIrq = 1
+
+  // Read the result from the CRC calculation.
+  result[0] = readRegister(CRCResult1Reg);
+  result[1] = readRegister(CRCResult2Reg);
+}
+
+uint8_t MFRC522::transceive(uint8_t *sendData, int sendLen, uint8_t *backData, int *backLen) {
+	//int status = MI_ERR;
+	uint8_t irqEn = 0x77;
+	//uint8_t waitIRq = 0x30;
+	//uint8_t lastBits, n;
+	//int i;
+	
+	
+	writeRegister(ComIEnReg, irqEn | 1 << 7);
+	clearMaskInRegister(ComIrqReg, 1 << 7);	// Clear interupts
+	writeRegister(FIFOLevelReg, 1 << 7);					// reset the FIFO pointer
+	writeRegister(CommandReg, Idle); 	// Stop any previous command		
+	
+	for(int i = 0; i < sendLen; i++) {
+		writeRegister(FIFODataReg, sendData[i]);
+	}
+	
+	writeRegister(CommandReg, Transceive);
+	writeRegister(BitFramingReg, 1 << 7);
+	
+	for(unsigned int i = 0; i < 25; i++) {
+		uint8_t interrupt = readRegister(ComIrqReg);
+//		hwlib::cout << "IRQ ";
+//		bitParser::printByte(readRegister(ComIrqReg));
+//		hwlib::cout << "Error ";
+//		bitParser::printByte(readRegister(ErrorReg));
+//		hwlib::cout << "Status ";
+//		bitParser::printByte(readRegister(Status1Reg));
+		//bitParser::printByte(readRegister(TCounterValReg1));
+		//bitParser::printByte(readRegister(TCounterValReg2));
+
+		
+		if(interrupt & 0x30) {
+			break;
+		}
+		
+		if(interrupt & 0x01 || i > 1999) {
+			return STATUS_TIMEOUT;
+		}
+		hwlib::wait_ms(1);
+	}
+	
+	clearMaskInRegister(BitFramingReg, 1 << 7);
+	
+	uint8_t errorRegValue = readRegister(ErrorReg);
+	if (errorRegValue & 0x13) {	 // BufferOvfl ParityErr ProtocolErr
+		return STATUS_ERROR;
+	}	
+	
+	hwlib::cout << (unsigned)readRegister(FIFOLevelReg) << "\n";
+	if (errorRegValue & 0x08) { // CollErr
+		return STATUS_COLLISION;
+	}
+	
+	
+	if(readRegister(FIFOLevelReg) > *backLen) {
+		return STATUS_NO_ROOM;
+	}
+	
+	*backLen = readRegister(FIFOLevelReg);
+	readRegister(FIFODataReg, backData, *backLen);
+	for(int i = 0; i < *backLen; i++) {
+		hwlib::cout << (unsigned)backData[i] << "\n";
+	}
+	
+	return 0;
+}
 
 bool MFRC522::isCardPresented() {
 	return 1;
 }
-
-
-
-
-
 
 // TEST FUNCTIONS
 uint8_t MFRC522::getVersion() {
@@ -154,7 +239,6 @@ bool MFRC522::selfTest() {
 			return false;
 		}
 	}
-
-	hwlib::cout << (unsigned)readRegister(AutoTestReg);
+	
 	return true;
 }
