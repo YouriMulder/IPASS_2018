@@ -16,8 +16,8 @@ public:
 
 		// COMMAND AND STATUS REGISTERS
 		// --------------------------------
-		/* RESERVED     = 0x00,*/
-		CommandReg      = 0x01, // Starts/stops command execution
+		RESERVED1     	= 0x00,
+		CommandReg,				// Starts/stops command execution
 		ComIEnReg,              // Enable/disable interrupt request control bits
 		DivIEnReg,              // Enable/disable interrupt request control bits
 		ComIrqReg,              // interrupt request bits
@@ -31,12 +31,12 @@ public:
 		ControlReg,             // Miscellaneous control register
 		BitFramingReg,          // Adjustments for bit-oriented frames
 		CollReg,                // Bit position of the first bit-collision detected of RF interface
-		/* RESERVED     = 0x0F,*/
+		RESERVED2,
 
 		// COMMAND REGISTERS
 		// --------------------------------
-		/* RESERVED     = 0x10,*/
-		ModeReg         = 0x11, // Defines general modes for transmitting and receiving
+		RESERVED3,
+		ModeReg, 				// Defines general modes for transmitting and receiving
 		TxModeReg,              // Defines transmission data rate and framing
 		RxModeReg,              // Defines reception data rate and framing
 		TxControlReg,           // Controls the logical behaviour of the antenna driver pins TX1/2
@@ -45,36 +45,36 @@ public:
 		RxSelReg,               // Selects interal reciever settings
 		rxThresholdReg,         // Selects thresholds for the bit decoder
 		DemodReg,               // Defines demodulator settings
-		/* RESERVED     = 0x1A,*/
-		/* RESERVED     = 0x1B,*/
-		MfTxReg         = 0x1C, // Controls some MIFARE communication transmit parameters
+		RESERVED4,
+		RESERVED5,
+		MfTxReg, 				// Controls some MIFARE communication transmit parameters
 		MfRxReg,                // Controls some MIFARE communication receive parameters
-		/* RESERVED     = 0x1E,*/
-		SerialSpeedReg  = 0x1F, // Selects the speed of the serial UART interface
+		RESERVED6,
+		SerialSpeedReg, // Selects the speed of the serial UART interface
 
 		//  CONFIGURATION REGISTERS
 		// --------------------------------
-		/* RESERVED     = 0x20,*/
-		CRCResult1Reg   = 0x21, // Shows the MSB and LSB values of the CRC calculation
+		RESERVED7,
+		CRCResult1Reg, 			// Shows the MSB and LSB values of the CRC calculation
 		CRCResult2Reg,          // Shows the MSB and LSB values of the CRC calculation
-		/* RESERVED     = 0x23,*/
-		ModWidthReg     = 0x24, // Control the ModWidth setting
-		/* RESERVED     = 0x25,*/
-		RFCfgReg        = 0x26, // Configures the receiver gain
+		RESERVED8,
+		ModWidthReg, 			// Control the ModWidth setting
+		RESERVED9,
+		RFCfgReg, 				// Configures the receiver gain
 		GsNReg,                 // Selects the conductance of the antenna driver pins tx1/2
 		CWGsPReg,               // Defines the conductance of the p-driver output during periods of no modulation
 		ModGsPReg,              // Defines the conductance of the p-driver output during periods of modulation
 		TModeReg,               // Defines settings for the internal timer
 		TPrescalerReg,          // Defines settings for the internal timer
 		TReloadReg1,            // Defines the 16-bit timer reload value
-		TReloadReg2,           // Defines the 16-bit timer reload value
-		TCounterValReg1,         // Shows the 16-bit times value
+		TReloadReg2,           	// Defines the 16-bit timer reload value
+		TCounterValReg1,        // Shows the 16-bit times value
 		TCounterValReg2,		// Shows the 16-bit times value
 
 		//  TEST REGISTERS
 		// --------------------------------
-		/* RESERVED     = 0x30,*/
-		TestSel1Reg     = 0x31, // General test signal configuration
+		RESERVED10,
+		TestSel1Reg, 			// General test signal configuration
 		TestSel2Reg,            // General test signal configuration and PRBS control
 		TestPinEnReg,           // Enables pin output driver on pins D1-7
 		TestPinValueReg,        // Defines the values for D1-7 when it is used as an I/O bus
@@ -97,37 +97,38 @@ public:
 		Mem,
 		Generate_RandomID,
 		CalcCRC,
-		NoCmdChange,
+		NoCmdChange	= 0x07,
 		Receive,
-		Transceive,
+		Transceive	= 0x0C,
 		/* RESERVED = 0x0D, */
 		MFAuthent   = 0x0E,
 		SoftReset
 	};
-	
+
+
+	// http://www.orangetags.com/wp-content/downloads/datasheet/NXP/Mifare%20EV1%201K.pdf
+	// Table 9
 	enum MIFARECOMMANDS : uint8_t {
-		// The commands used by the PCD to manage communication with several PICCs (ISO 14443-3, Type A, section 6.4)
-		PICC_CMD_REQA			= 0x26,		// Request command, Type A. Invites PICCs in state IDLE to go to READY and prepare for anticollision or selection. 7 bit frame.
-		PICC_CMD_WUPA			= 0x52,		// Wake-UP command, Type A. Invites PICCs in state IDLE and HALT to go to READY(*) and prepare for anticollision or selection. 7 bit frame.
-		PICC_CMD_CT				= 0x88,		// Cascade Tag. Not really a command, but used during anti collision.
-		PICC_CMD_SEL_CL1		= 0x93,		// Anti collision/Select, Cascade Level 1
-		PICC_CMD_SEL_CL2		= 0x95,		// Anti collision/Select, Cascade Level 1
-		PICC_CMD_SEL_CL3		= 0x97,		// Anti collision/Select, Cascade Level 1
-		PICC_CMD_HLTA			= 0x50,		// HaLT command, Type A. Instructs an ACTIVE PICC to go to state HALT.
-		// The commands used for MIFARE Classic (from http://www.nxp.com/documents/data_sheet/MF1S503x.pdf, Section 9)
-		// Use PCD_MFAuthent to authenticate access to a sector, then use these commands to read/write/modify the blocks on the sector.
-		// The read/write commands can also be used for MIFARE Ultralight.
-		PICC_CMD_MF_AUTH_KEY_A	= 0x60,		// Perform authentication with Key A
-		PICC_CMD_MF_AUTH_KEY_B	= 0x61,		// Perform authentication with Key B
-		PICC_CMD_MF_READ		= 0x30,		// Reads one 16 byte block from the authenticated sector of the PICC. Also used for MIFARE Ultralight.
-		PICC_CMD_MF_WRITE		= 0xA0,		// Writes one 16 byte block to the authenticated sector of the PICC. Called "COMPATIBILITY WRITE" for MIFARE Ultralight.
-		PICC_CMD_MF_DECREMENT	= 0xC0,		// Decrements the contents of a block and stores the result in the internal data register.
-		PICC_CMD_MF_INCREMENT	= 0xC1,		// Increments the contents of a block and stores the result in the internal data register.
-		PICC_CMD_MF_RESTORE		= 0xC2,		// Reads the contents of a block into the internal data register.
-		PICC_CMD_MF_TRANSFER	= 0xB0,		// Writes the contents of the internal data register to a block.
-		// The commands used for MIFARE Ultralight (from http://www.nxp.com/documents/data_sheet/MF0ICU1.pdf, Section 8.6)
-		// The PICC_CMD_MF_READ and PICC_CMD_MF_WRITE can also be used for MIFARE Ultralight.
-		PICC_CMD_UL_WRITE		= 0xA2		// Writes one 4 byte page to the PICC.
+		RequestCommand 			= 0x26,
+		WakeUpCommand 			= 0x52,
+		CL1Command 				= 0x93,
+		CL2Command 				= 0x95,
+		AnticollisionCommand 	= 0x20,
+		SelectCommand 			= 0x70,
+		HaltPart1Command		= 0x50,
+		HaltPart2Command		= 0x00,
+
+		// Specific MIFARE commands (Requires authentication)
+		AuthKeyACommand				= 0x60,
+		AuthKeyBCommand				= 0x61,
+		PersonalizeUIDUsageCommand	= 0x40,
+		SetModTypeCommand			= 0x43,
+		ReadCommand					= 0x30,
+		WriteCommand				= 0xA0,
+		DecrementCommand			= 0xC0,
+		IncrementCommand			= 0xC1,
+		RestoreCommand				= 0xC2,
+		TransferCommand				= 0xB0
 	};
 
 	const uint8_t FIFOAmountOfBytes = 64;
@@ -154,29 +155,32 @@ public:
 		0xDC, 0x15, 0xBA, 0x3E, 0x7D, 0x95, 0x3B, 0x2F
 	};
 
-	enum StatusCode : uint8_t {
-		STATUS_OK				,	// Success
-		STATUS_ERROR			,	// Error in communication
-		STATUS_COLLISION		,	// Collission detected
-		STATUS_TIMEOUT			,	// Timeout in communication.
-		STATUS_NO_ROOM			,	// A buffer is not big enough.
-		STATUS_INTERNAL_ERROR	,	// Internal error in the code. Should not happen ;-)
-		STATUS_INVALID			,	// Invalid argument.
-		STATUS_CRC_WRONG		,	// The CRC_A does not match
-		STATUS_MIFARE_NACK		= 0xff	// A MIFARE PICC responded with NAK.
+	enum COMMUNICATION_STATUS {
+		OkStatus,		// Everything went as planned
+		TimeOutStatus,	// No card found in the given time span.
+		// ERRORS
+		ProtocolErr,
+		ParityErr,
+		CRCErr,
+		CollErr,
+		BufferOvfl,
+		TempErr,
+		WrErr,
+
 	};
 
 	//request checks
-	const uint8_t MI_OK = 0;///Everything is ok return value
-	const uint8_t MI_NOTAGERR = 1;///Incorrect data error return value
-	const uint8_t MI_ERR = 2;///Error return value
+	const uint8_t MI_OK = 0;		///Everything is ok return value
+	const uint8_t MI_NOTAGERR = 1;	///Incorrect data error return value
+	const uint8_t MI_ERR = 2;		///Error return value
 
 public:
 	MFRC522(spiBus& SPIBus,
 	        hwlib::pin_out& slaveSelect,
-	        hwlib::pin_out& reset);
+	        hwlib::pin_out& reset, bool init = true);
 
 private:
+	void initialize();
 	void waitTillStarted();
 public:
 	void hardReset();
@@ -192,9 +196,12 @@ public:
 public:
 	void setAntennas(bool state);
 	void calculateCRC(uint8_t *data, int len, uint8_t *result);
-	uint8_t PICC_REQA_or_WUPA(uint8_t command, uint8_t *bufferATQA, uint8_t *bufferSize);
-	uint8_t transceive(uint8_t *sendData, int sendLen, uint8_t *backData, int *backLen);
-	bool isCardPresented();
+	uint8_t checkForErrors();
+	uint8_t communicate(COMMANDS command, uint8_t transmitData[],
+	                    int transmitLength, uint8_t receivedData[],
+	                    int & receivedLength);
+	bool isCardInRange();
+	bool getCardUID(uint8_t UID[]);
 
 private:
 	void clearFIFOBuffer(const uint8_t amountOfBytes = 64);

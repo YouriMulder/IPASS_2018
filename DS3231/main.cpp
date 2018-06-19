@@ -4,6 +4,7 @@
 #include "i2cBus.hpp"
 #include "spiBus.hpp"
 #include "MFRC522.hpp"
+#include "HCSR501.hpp"
 
 int main(int argc, char **argv) {
 
@@ -25,10 +26,16 @@ int main(int argc, char **argv) {
 
 	auto SPIBus = spiBus(SPIScl, SPIMosi, SPIMiso);
 
+	// MFRC522
 	auto SPISSMFRC522	= hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto MFRC522Reset 	= hwlib::target::pin_out(hwlib::target::pins::d9);
 
-	auto rfid = MFRC522(SPIBus, SPISSMFRC522, MFRC522Reset);
+	// PIR HCSR501
+	auto HCSR501Input	= hwlib::target::pin_in(hwlib::target::pins::d2);
+
+	auto rfid 			= MFRC522(SPIBus, SPISSMFRC522, MFRC522Reset);
+	auto motionSensor	= HCSR501(HCSR501Input);
+
 	// DS3231 realTimeClock(I2CBus, 0x68);
 	//
 	// realTimeClock.setCurrentSeconds(0); // 0 - 59
@@ -41,25 +48,34 @@ int main(int argc, char **argv) {
 	// timestamp ts;
 
 	//for(;;) {
-		// realTimeClock.getCurrentTimestamp(ts);
-		// hwlib::cout << ts << "\n";
-		// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
-		// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
-		// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
-		//
-		// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
-		// realTimeClock.update();
-		//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
+	// realTimeClock.getCurrentTimestamp(ts);
+	// hwlib::cout << ts << "\n";
+	// hwlib::cout << "century: " << realTimeClock.getCurrentCenturyBit() << "\n";
+	// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureCelsius() << "\n";
+	// hwlib::cout << "Temperature: " << realTimeClock.getCurrentTemperatureFahrenheit() << "\n\n";
+	//
+	// hwlib::cout << "Alarm one seconds: " << (unsigned)realTimeClock.getAlarmDayDate(1) << "\n\n";
+	// realTimeClock.update();
+	//hwlib::cout << (unsigned) rfid.getVersion() << "\n";
 	//}
-	
-	int status, len;
-	uint8_t result[10] = {0};
-  result[0] = rfid.PICC_CMD_MF_READ;
-  result[1] = 1;
-  rfid.calculateCRC(result, 2, &result[2]);
-  status = rfid.transceive(result, 4, result, &len);
+	//hwlib::cout << "Self Test: " << rfid.selfTest() << "\n";
 
-  if ((status != rfid.MI_OK) || (len != 0x90)) {
-    status = rfid.MI_ERR;
-  }
+
+
+//	for(;;) {
+//		if(rfid.isCardInRange()) {
+//			uint8_t UID[4] = {0};
+//			hwlib::cout << "status: " << rfid.getCardUID(UID) << "\n";
+//			for(auto d : UID) {
+//				hwlib::cout << (unsigned)d << " , ";
+//			}
+//			hwlib::cout << "\n";
+//		}
+//		//hwlib::wait_ms(1000);
+//}
+	for(;;) {
+		hwlib::cout << motionSensor.getInput() << "\n";
+
+	}
+
 }

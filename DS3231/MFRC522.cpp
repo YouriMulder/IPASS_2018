@@ -4,28 +4,27 @@
 
 MFRC522::MFRC522(spiBus& SPIBus,
                  hwlib::pin_out& slaveSelect,
-                 hwlib::pin_out& reset):
+                 hwlib::pin_out& reset, bool init):
 	SPIBus(SPIBus), slaveSelect(slaveSelect), reset(reset) {
+	if(init) {
+		initialize();
+		setAntennas(1);
+	}
+}
+
+void MFRC522::initialize() {
 	hardReset();
 
-	// Reset baud rates
-	writeRegister(TxModeReg, 0x00);
-	writeRegister(RxModeReg, 0x00);
-	// Reset ModWidthReg
-	writeRegister(ModWidthReg, 0x26);
+	writeRegister(TModeReg, 0x8D);      // Tauto=1; f(Timer) = 6.78MHz/TPreScaler
+	writeRegister(TxModeReg, 0); 		// Set speed to 106 kBd to be able to use some extra functionality
+	writeRegister(TxModeReg, 0);		// Set speed to 106 kBd to be able to use some extra functionality
 
-	// When communicating with a PICC we need a timeout if something goes wrong.
-	// f_timer = 13.56 MHz / (2*TPreScaler+1) where TPreScaler = [TPrescaler_Hi:TPrescaler_Lo].
-	// TPrescaler_Hi are the four low bits in TModeReg. TPrescaler_Lo is TPrescalerReg.
-	writeRegister(TModeReg, 0x80);			// TAuto=1; timer starts automatically at the end of the transmission in all communication modes at all speeds
-	writeRegister(TPrescalerReg, 0xA9);		// TPreScaler = TModeReg[3..0]:TPrescalerReg, ie 0x0A9 = 169 => f_timer=40kHz, ie a timer period of 25μs.
-	writeRegister(TReloadReg1, 0x03);		// Reload timer with 0x3E8 = 1000, ie 25ms before timeout.
-	writeRegister(TReloadReg2, 0xE8);
+	writeRegister(TPrescalerReg, 0x3E); // TModeReg[3..0] + TPrescalerReg
+	writeRegister(TReloadReg1, 0x03);	// 25ms timeout
+	writeRegister(TReloadReg2, 0xE8);	// 25ms timeout
 
-	writeRegister(TxASKReg, 0x40);			// Default 0x00. Force a 100 % ASK modulation independent of the ModGsPReg register setting
-	writeRegister(ModeReg, 0x3D);
-
-	setAntennas(1);
+	writeRegister(TxASKReg, 0x40);      // 100%ASK
+	writeRegister(ModeReg, 0x3D);       // CRC initial value 0x6363
 }
 
 void MFRC522::waitTillStarted() {
@@ -103,101 +102,154 @@ void MFRC522::clearInternalBuffer() {
 }
 
 void MFRC522::calculateCRC(uint8_t *data, int len, uint8_t *result) {
-  int i;
-  uint8_t n;
+	int i;
+	uint8_t n;
 
-  clearMaskInRegister(DivIrqReg, 0x04);   // CRCIrq = 0
-  setMaskInRegister(FIFOLevelReg, 0x80);  // Clear the FIFO pointer
+	clearMaskInRegister(DivIrqReg, 0x04);   // CRCIrq = 0
+	setMaskInRegister(FIFOLevelReg, 0x80);  // Clear the FIFO pointer
 
-  //Writing data to the FIFO.
-  for (i = 0; i < len; i++) {
-    writeRegister(FIFODataReg, data[i]);
-  }
-  writeRegister(CommandReg, CalcCRC);
+	//Writing data to the FIFO.
+	for(i = 0; i < len; i++) {
+		writeRegister(FIFODataReg, data[i]);
+	}
+	writeRegister(CommandReg, CalcCRC);
 
-  // Wait for the CRC calculation to complete.
-  i = 0xFF;
-  do {
-    n = readRegister(DivIrqReg);
-    i--;
-  } while ((i != 0) && !(n & 0x04));  //CRCIrq = 1
+	// Wait for the CRC calculation to complete.
+	i = 0xFF;
+	do {
+		n = readRegister(DivIrqReg);
+		i--;
+	} while((i != 0) && !(n & 0x04));   //CRCIrq = 1
 
-  // Read the result from the CRC calculation.
-  result[0] = readRegister(CRCResult1Reg);
-  result[1] = readRegister(CRCResult2Reg);
+	// Read the result from the CRC calculation.
+	result[0] = readRegister(CRCResult1Reg);
+	result[1] = readRegister(CRCResult2Reg);
 }
 
-uint8_t MFRC522::transceive(uint8_t *sendData, int sendLen, uint8_t *backData, int *backLen) {
-	//int status = MI_ERR;
-	uint8_t irqEn = 0x77;
-	//uint8_t waitIRq = 0x30;
-	//uint8_t lastBits, n;
-	//int i;
-	
-	
-	writeRegister(ComIEnReg, irqEn | 1 << 7);
-	clearMaskInRegister(ComIrqReg, 1 << 7);	// Clear interupts
-	writeRegister(FIFOLevelReg, 1 << 7);					// reset the FIFO pointer
-	writeRegister(CommandReg, Idle); 	// Stop any previous command		
-	
-	for(int i = 0; i < sendLen; i++) {
-		writeRegister(FIFODataReg, sendData[i]);
+uint8_t MFRC522::checkForErrors() {
+	// Checking all the possible errors in the error register
+	switch(readRegister(ErrorReg)) {
+	case(1 << 0):
+		return ProtocolErr;
+	case(1 << 1):
+		return ParityErr;
+	case(1 << 2):
+		return CRCErr;
+	case(1 << 3):
+		return CollErr;
+	case(1 << 4):
+		return BufferOvfl;
+	case(1 << 6):
+		return TempErr;
+	case(1 << 7):
+		return WrErr;
+	default:
+		return OkStatus;
 	}
-	
-	writeRegister(CommandReg, Transceive);
-	writeRegister(BitFramingReg, 1 << 7);
-	
-	for(unsigned int i = 0; i < 25; i++) {
-		uint8_t interrupt = readRegister(ComIrqReg);
-//		hwlib::cout << "IRQ ";
-//		bitParser::printByte(readRegister(ComIrqReg));
-//		hwlib::cout << "Error ";
-//		bitParser::printByte(readRegister(ErrorReg));
-//		hwlib::cout << "Status ";
-//		bitParser::printByte(readRegister(Status1Reg));
-		//bitParser::printByte(readRegister(TCounterValReg1));
-		//bitParser::printByte(readRegister(TCounterValReg2));
+}
 
-		
-		if(interrupt & 0x30) {
-			break;
-		}
-		
-		if(interrupt & 0x01 || i > 1999) {
-			return STATUS_TIMEOUT;
+// RETURNS A ENUM CONNECTION_STATUS
+uint8_t MFRC522::communicate(COMMANDS command, uint8_t transmitData[],
+                             int transmitLength, uint8_t receivedData[],
+                             int & receivedLength) {
+	//setAntennas(1);
+	uint8_t irqEn = 0x77;
+
+	uint8_t completedIrqReg = 0x30;
+
+	writeRegister(ComIEnReg, irqEn|0x80);    // interrupt request
+	clearMaskInRegister(ComIrqReg, 0x80);             // Clear all interrupt requests bits.
+	setMaskInRegister(FIFOLevelReg, 0x80);             // FlushBuffer=1, FIFO initialization.
+
+	writeRegister(CommandReg, Idle);  // No action, cancel the current command.
+	// Write to FIFO
+	for(int i = 0; i < transmitLength; i++) {
+		writeRegister(FIFODataReg, transmitData[i]);
+	}
+
+	// Execute the command.
+	writeRegister(CommandReg, Transceive);
+
+	if(/* cmd == MFRC522_TRANSCEIVE */ true) {
+		setMaskInRegister(BitFramingReg, 0x80);  // transmission of data starts
+	}
+
+	int msTillTimedOut = 25;
+	uint8_t currentInterruptRR = readRegister(ComIrqReg);
+	for(int i = 0; !(currentInterruptRR & completedIrqReg); i++) {
+		currentInterruptRR = readRegister(ComIrqReg);
+
+		// Timeout in time-out bit is active or after 25 milliseconds
+		if(currentInterruptRR & 0x01 || (i > msTillTimedOut)) {
+			return TimeOutStatus;
 		}
 		hwlib::wait_ms(1);
 	}
-	
-	clearMaskInRegister(BitFramingReg, 1 << 7);
-	
-	uint8_t errorRegValue = readRegister(ErrorReg);
-	if (errorRegValue & 0x13) {	 // BufferOvfl ParityErr ProtocolErr
-		return STATUS_ERROR;
-	}	
-	
-	hwlib::cout << (unsigned)readRegister(FIFOLevelReg) << "\n";
-	if (errorRegValue & 0x08) { // CollErr
-		return STATUS_COLLISION;
+
+	// Error checking
+	uint8_t errorCode = checkForErrors();
+	if(errorCode) {
+		return errorCode;
 	}
-	
-	
-	if(readRegister(FIFOLevelReg) > *backLen) {
-		return STATUS_NO_ROOM;
+
+	// setting backLen
+	receivedLength = readRegister(FIFOLevelReg);
+
+	// Reading the recieved data from FIFO.
+	for(int i = 0; i < receivedLength; i++) {
+		receivedData[i] = readRegister(FIFODataReg);
 	}
-	
-	*backLen = readRegister(FIFOLevelReg);
-	readRegister(FIFODataReg, backData, *backLen);
-	for(int i = 0; i < *backLen; i++) {
-		hwlib::cout << (unsigned)backData[i] << "\n";
-	}
-	
-	return 0;
+
+	//setAntennas(0);
+	writeRegister(CommandReg, Idle);
+	return OkStatus;
 }
 
-bool MFRC522::isCardPresented() {
-	return 1;
+bool MFRC522::isCardInRange() {
+	writeRegister(BitFramingReg, 0x07); //
+
+	const uint8_t sendDataLength = 1;
+	uint8_t sendData[sendDataLength] = {0x26};
+
+	int receivedLength = 0;
+	uint8_t receivedData[2] = {0};
+
+	uint8_t status = communicate(Transceive, sendData, sendDataLength, receivedData, receivedLength);
+
+	if((status != MI_OK)) {
+		return false;
+	}
+	return true;
+
 }
+
+
+// returns status, param will become unique identifier.
+bool MFRC522::getCardUID(uint8_t UID[]) {
+	uint8_t serNum[2] = {0x93, 0x20};//Put collision check data in the array
+	writeRegister(BitFramingReg, 0x00);//Change the amount of bits transmitted from the last byte
+
+	int length;
+	uint8_t status = communicate(Transceive, serNum, 2, UID, length);
+	auto serNumCheck = 0;
+	if(status == 0) {
+		if((length) == 5) { //Change from amount of bits to amount of bytes and then check
+			int i = 0;
+			while(i<4) {
+				serNumCheck = serNumCheck ^ UID[i];
+				i++;
+			}
+			if(serNumCheck != UID[i]) {
+				status = ParityErr;
+			}
+		} else {
+			status = ParityErr;
+		}
+	}
+
+	return status; //return the status
+}
+
 
 // TEST FUNCTIONS
 uint8_t MFRC522::getVersion() {
@@ -239,6 +291,6 @@ bool MFRC522::selfTest() {
 			return false;
 		}
 	}
-	
+
 	return true;
 }

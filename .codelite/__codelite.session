@@ -1,54 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="D:\Windows\School\Blok_D\IPASS\Code\__codelite.workspace">
-  <int Value="1" Name="m_selectedTab"/>
-  <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\__codelite.workspace" Name="m_workspaceName"/>
+<Session Name="F:\Programming\C++\IPASS_2018\__codelite.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="F:\Programming\C++\IPASS_2018\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\MFRC522.cpp" Name="FileName"/>
-      <int Value="115" Name="FirstVisibleLine"/>
-      <int Value="129" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\MFRC522.cpp" Name="FileName"/>
+      <int Value="134" Name="FirstVisibleLine"/>
+      <int Value="176" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\MFRC522.hpp" Name="FileName"/>
-      <int Value="147" Name="FirstVisibleLine"/>
-      <int Value="151" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\MFRC522.hpp" Name="FileName"/>
+      <int Value="159" Name="FirstVisibleLine"/>
+      <int Value="10" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\main.cpp" Name="FileName"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\main.cpp" Name="FileName"/>
       <int Value="48" Name="FirstVisibleLine"/>
-      <int Value="61" Name="CurrentLine"/>
+      <int Value="69" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\bitParser.cpp" Name="FileName"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\HCSR501.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="12" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\bitParser.hpp" Name="FileName"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\HCSR501.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="2" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\i2cBus.cpp" Name="FileName"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\Makefile" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="5" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="D:\Windows\School\Blok_D\IPASS\Code\DS3231\Makefile" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="14" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

@@ -47,12 +47,22 @@ MCFR522:
                 ✔ Clear internal buffer @done(2018-06-14 15:55) @project(MCFR522 / CHOICES / PRIORITY 1)
 
             ✔ Turn antenna on/off @done(2018-06-14 15:55) @project(MCFR522 / CHOICES / PRIORITY 1)
-            ☐ Check if a card is presented (within the range of the antenna)
-                ☐ Receive data from card
+            ✔ Check if a card is presented (within the range of the antenna) @done(2018-06-16 14:02) @project(MCFR522 / CHOICES / PRIORITY 1)
+                ✔ Receive data from card (UID) @done(2018-06-18 19:38) @project(MCFR522 / CHOICES / PRIORITY 1)
                     ☐ How to receive data? Register settings?
                         - StatusReg2, RxModeReg, RxSelReg, mfRxReg, RFCfgReg (gain), CommandReg (receiver turned off?)
                             BitFramingReg? RxIRq
                         - Check for any errors in ErrorReg
+
+            ☐ Check RxLastBits in the transceive function
+
+        BUGS:
+        ✔ Seconds time you call isCardInRage() it will always be false @done(2018-06-16 14:16) @project(MCFR522 / BUGS)
+            ✔ ComIrqReg bit 5 wont go active () NO VALID BIT STREAM BACK @done(2018-06-16 14:16) @project(MCFR522 / BUGS)
+            ✔ Using another card after reading the first card works @done(2018-06-16 14:16) @project(MCFR522 / BUGS)
+                ✔ Turning antenna's on and off made it work @done(2018-06-16 14:16) @project(MCFR522 / BUGS)
+                    ✔ Turning the antenna's on before executing and after executing probably even saves some energy (NOT CHECKED, JUST AN ASSUMPTION) @done(2018-06-16 14:17) @project(MCFR522 / BUGS)
+                        - THIS OPTION DIDN'T WORK. After turning on/requesting the card the connection the antenna's have to be on the whole time to execute for example a collision check  
 
 
 
