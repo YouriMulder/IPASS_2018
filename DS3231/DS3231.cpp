@@ -80,7 +80,7 @@ void DS3231::setCurrentMonth(uint8_t newMonth) {
 	if(time::isMonthValid(newMonth)) {
 		setI2CBusCurrentAddress();
 		I2CBus.setByteInRegister(REG_MONTH_CENTURY, bitParser::DECToBCD(newMonth)
-								| getCurrentCenturyBit() << 7);
+		                         | getCurrentCenturyBit() << 7);
 	}
 }
 
@@ -111,7 +111,7 @@ void DS3231::setCurrentYear(uint8_t newYear) {
 int16_t DS3231::getCurrentTemperatureCelsius() {
 	setI2CBusCurrentAddress();
 	int16_t temp = I2CBus.getByteFromRegister(REG_TEMPERATURE_MSB) << 8 |
-					I2CBus.getByteFromRegister(REG_TEMPERATURE_LSB);
+	               I2CBus.getByteFromRegister(REG_TEMPERATURE_LSB);
 	return temp/256;
 }
 
@@ -132,13 +132,13 @@ timestamp DS3231::getCurrentTimestamp() {
 	getCurrentTimeData(data);
 
 	timestamp ts(
-		bitParser::BCDToDEC(data[0]),
-		bitParser::BCDToDEC(data[1]),
-		bitParser::BCDToDEC(data[2]),
-		bitParser::BCDToDEC(data[3]),
-		bitParser::BCDToDEC(data[4]),
-		bitParser::BCDToDEC(data[5] & 0x1F),
-		bitParser::BCDToDEC(data[6])
+	    bitParser::BCDToDEC(data[0]),
+	    bitParser::BCDToDEC(data[1]),
+	    bitParser::BCDToDEC(data[2]),
+	    bitParser::BCDToDEC(data[3]),
+	    bitParser::BCDToDEC(data[4]),
+	    bitParser::BCDToDEC(data[5] & 0x1F),
+	    bitParser::BCDToDEC(data[6])
 	);
 	ts.setCentury(time::currentCentury);
 	return ts;
@@ -170,7 +170,7 @@ void DS3231::setAlarmBCDRegisterExMSB(uint8_t alarmRegister, uint8_t newByte) {
 	setI2CBusCurrentAddress();
 	bool MSB = (I2CBus.getByteFromRegister(alarmRegister) >> BIT_ALARM_AxMx) & 1;
 	I2CBus.setByteInRegister(alarmRegister,
-		bitParser::DECToBCD(newByte) | MSB << BIT_ALARM_AxMx);
+	                         bitParser::DECToBCD(newByte) | MSB << BIT_ALARM_AxMx);
 }
 
 uint8_t DS3231::getAlarmOneSeconds() {
@@ -187,6 +187,7 @@ uint8_t DS3231::getAlarmMinutes(bool alarm) {
 	uint8_t alarmRegister = !alarm ? REG_ALARM_1_MIN : REG_ALARM_2_MIN;
 	return getAlarmBCDRegisterExMSB(alarmRegister);
 }
+
 void DS3231::setAlarmMinutes(bool alarm, uint8_t newMinutes) {
 	if(time::isMinutesValid(newMinutes)) {
 		uint8_t alarmRegister = !alarm ? REG_ALARM_1_MIN : REG_ALARM_2_MIN;
@@ -247,6 +248,11 @@ uint8_t DS3231::getStatusRegister() {
 	return I2CBus.getByteFromRegister(REG_STATUS);
 }
 
+void DS3231::setStatusRegister(uint8_t newByte) {
+	setI2CBusCurrentAddress();
+	I2CBus.setByteInRegister(REG_STATUS, newByte);
+}
+
 int8_t DS3231::getAgingOffset() {
 	setI2CBusCurrentAddress();
 	return I2CBus.getByteFromRegister(REG_AGING_OFFSET);
@@ -262,8 +268,8 @@ void DS3231::update() {
 		newCentury++;
 		time::increaseCentury();
 		hwlib::cout << "The century bit is active."
-		<< "You should change the currentCentury in the class - time - \n"
-		<< "The current century is now: " << time::currentCentury << "\n";
+		            << "You should change the currentCentury in the class - time - \n"
+		            << "The current century is now: " << time::currentCentury << "\n";
 		ResetCurentCenturyBit();
 	}
 }

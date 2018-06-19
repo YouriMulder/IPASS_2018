@@ -1,6 +1,7 @@
 #include "MFRC522.hpp"
 
 #include "bitParser.hpp"
+#include "rfid.hpp"
 
 MFRC522::MFRC522(spiBus& SPIBus,
                  hwlib::pin_out& slaveSelect,
@@ -149,7 +150,7 @@ uint8_t MFRC522::checkForErrors() {
 }
 
 // RETURNS A ENUM CONNECTION_STATUS
-uint8_t MFRC522::communicate(COMMANDS command, uint8_t transmitData[],
+uint8_t MFRC522::communicate(COMMAND command, uint8_t transmitData[],
                              int transmitLength, uint8_t receivedData[],
                              int & receivedLength) {
 	//setAntennas(1);
@@ -216,7 +217,7 @@ bool MFRC522::isCardInRange() {
 
 	uint8_t status = communicate(Transceive, sendData, sendDataLength, receivedData, receivedLength);
 
-	if((status != MI_OK)) {
+	if((status != OkStatus)) {
 		return false;
 	}
 	return true;

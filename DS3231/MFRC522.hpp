@@ -3,8 +3,9 @@
 
 #include "hwlib.hpp"
 #include "spiBus.hpp"
+#include "rfid.hpp"
 
-class MFRC522 {
+class MFRC522 : public rfid {
 
 private:
 	spiBus& SPIBus;
@@ -92,7 +93,7 @@ public:
 	};
 
 
-	enum COMMANDS : uint8_t {
+	enum COMMAND : uint8_t {
 		Idle        = 0x00,
 		Mem,
 		Generate_RandomID,
@@ -131,6 +132,22 @@ public:
 		TransferCommand				= 0xB0
 	};
 
+
+	enum COMMUNICATION_STATUS {
+		OkStatus,		// Everything went as planned
+		TimeOutStatus,	// No card found in the given time span.
+		// ERRORS
+		ProtocolErr,
+		ParityErr,
+		CRCErr,
+		CollErr,
+		BufferOvfl,
+		TempErr,
+		WrErr,
+
+	};
+
+	// Self test variables
 	const uint8_t FIFOAmountOfBytes = 64;
 
 	const uint8_t selfTestFIFOBufferV1[64] = {
@@ -155,37 +172,19 @@ public:
 		0xDC, 0x15, 0xBA, 0x3E, 0x7D, 0x95, 0x3B, 0x2F
 	};
 
-	enum COMMUNICATION_STATUS {
-		OkStatus,		// Everything went as planned
-		TimeOutStatus,	// No card found in the given time span.
-		// ERRORS
-		ProtocolErr,
-		ParityErr,
-		CRCErr,
-		CollErr,
-		BufferOvfl,
-		TempErr,
-		WrErr,
-
-	};
-
-	//request checks
-	const uint8_t MI_OK = 0;		///Everything is ok return value
-	const uint8_t MI_NOTAGERR = 1;	///Incorrect data error return value
-	const uint8_t MI_ERR = 2;		///Error return value
-
 public:
 	MFRC522(spiBus& SPIBus,
 	        hwlib::pin_out& slaveSelect,
 	        hwlib::pin_out& reset, bool init = true);
 
-private:
-	void initialize();
-	void waitTillStarted();
 public:
-	void hardReset();
-	void softReset();
+	void initialize() override;
+protected:
+	void waitTillStarted() override;
 public:
+	void hardReset() override;
+	void softReset() override;
+protected:
 	// REGISTER FUNCTIONS
 	uint8_t readRegister(REG registerAddress);
 	void readRegister(REG registerAddress, uint8_t read[], uint8_t amountOfBytes);
@@ -193,24 +192,26 @@ public:
 	void writeRegister(REG registerAddress, uint8_t newBytes[], int amountOfBytes);
 	void setMaskInRegister(REG registerAddress, uint8_t mask);
 	void clearMaskInRegister(REG registerAddress, uint8_t mask);
-public:
-	void setAntennas(bool state);
-	void calculateCRC(uint8_t *data, int len, uint8_t *result);
-	uint8_t checkForErrors();
-	uint8_t communicate(COMMANDS command, uint8_t transmitData[],
-	                    int transmitLength, uint8_t receivedData[],
-	                    int & receivedLength);
-	bool isCardInRange();
-	bool getCardUID(uint8_t UID[]);
 
 private:
 	void clearFIFOBuffer(const uint8_t amountOfBytes = 64);
 	void clearInternalBuffer();
 
+protected:
+	void setAntennas(bool state);
+	void calculateCRC(uint8_t *data, int len, uint8_t *result);
+	uint8_t checkForErrors();
+	uint8_t communicate(COMMAND command, uint8_t transmitData[],
+	                    int transmitLength, uint8_t receivedData[],
+	                    int & receivedLength);
+public:
+	bool isCardInRange() override;
+	bool getCardUID(uint8_t UID[]) override;
+
 public:
 	// TEST FUNCTIONS
-	uint8_t getVersion();
-	bool selfTest();
+	uint8_t getVersion() override;
+	bool selfTest() override;
 
 };
 

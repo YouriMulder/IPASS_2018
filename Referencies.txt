@@ -1,0 +1,4 @@
+https://www.mpja.com/download/31227sc.pdf
+https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
+https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf
+https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf

@@ -5,8 +5,9 @@
 #include "i2cBus.hpp"
 #include "time.hpp"
 #include "timestamp.hpp"
+#include "realTimeClock.hpp"
 
-class DS3231 : public time {
+class DS3231 : public realTimeClock {
 private:
 	i2cBus& I2CBus;
 	uint8_t DS3231Address;
@@ -58,72 +59,74 @@ private:
 	void setI2CBusCurrentAddress();
 
 public:
-	uint8_t getCurrentSeconds();
-	void setCurrentSeconds(uint8_t newSeconds);
+	uint8_t getCurrentSeconds() override;
+	void setCurrentSeconds(uint8_t newSeconds) override;
 
-	uint8_t getCurrentMinutes();
-	void setCurrentMinutes(uint8_t newMinutes);
+	uint8_t getCurrentMinutes() override;
+	void setCurrentMinutes(uint8_t newMinutes) override;
 
-	uint8_t getCurrentHours();
-	void setCurrentHours(uint8_t newHours);
+	uint8_t getCurrentHours() override;
+	void setCurrentHours(uint8_t newHours) override;
 
-	uint8_t getCurrentDay();
-	void setCurrentDay(uint8_t newDay);
+	uint8_t getCurrentDay() override;
+	void setCurrentDay(uint8_t newDay) override;
 
-	uint8_t getCurrentDate();
-	void setCurrentDate(uint8_t newDate);
+	uint8_t getCurrentDate() override;
+	void setCurrentDate(uint8_t newDate) override;
 
-	uint8_t getCurrentMonth();
-	void setCurrentMonth(uint8_t newMonth);
+	uint8_t getCurrentMonth() override;
+	void setCurrentMonth(uint8_t newMonth) override;
 
-	bool getCurrentCenturyBit();
-	void ResetCurentCenturyBit();
+	bool getCurrentCenturyBit() override;
+	void ResetCurentCenturyBit() override;
 
-	uint8_t getCurrentYear();
-	void setCurrentYear(uint8_t newYear);
+	uint8_t getCurrentYear() override;
+	void setCurrentYear(uint8_t newYear) override;
 
-	int16_t getCurrentTemperatureCelsius();
-	int16_t getCurrentTemperatureFahrenheit();
+	int16_t getCurrentTemperatureCelsius() override;
+	int16_t getCurrentTemperatureFahrenheit() override;
 
-	void getCurrentTimeData(uint8_t data[7]);
-	timestamp getCurrentTimestamp();
-	void getCurrentTimestamp(timestamp& ts);
+	void getCurrentTimeData(uint8_t data[7]) override;
+	timestamp getCurrentTimestamp() override;
+	void getCurrentTimestamp(timestamp& ts) override;
 
-public:
+private:
 	uint8_t getAlarmBCDRegisterExMSB(uint8_t alarmRegister);
 	void setAlarmBCDRegisterExMSB(uint8_t alarmRegister, uint8_t newByte);
+
+public:
 	// Alarm 1 only
-	uint8_t getAlarmOneSeconds();
-	void setAlarmOneSeconds(uint8_t newSeconds);
+	uint8_t getAlarmOneSeconds() override;
+	void setAlarmOneSeconds(uint8_t newSeconds) override;
 
 	// Alarm 1 = 0 | Alarm 2 = 1
-	uint8_t getAlarmMinutes(bool alarm);
-	void setAlarmMinutes(bool alarm, uint8_t newMinutes);
+	uint8_t getAlarmMinutes(bool alarm) override;
+	void setAlarmMinutes(bool alarm, uint8_t newMinutes) override;
 
-	uint8_t getAlarmHours(bool alarm);
-	void setAlarmHours(bool alarm, uint8_t newHours);
+	uint8_t getAlarmHours(bool alarm) override;
+	void setAlarmHours(bool alarm, uint8_t newHours) override;
 
-	uint8_t getAlarmDayDate(bool alarm);
-	void setAlarmDayDate(bool alarm, uint8_t newDayDate);
+	uint8_t getAlarmDayDate(bool alarm) override;
+	void setAlarmDayDate(bool alarm, uint8_t newDayDate) override;
 
 public:
 	// CB = Control Bit
-	uint8_t getControlRegister();
-	void setControlRegister(uint8_t newByte);
+	uint8_t getControlRegister() override;
+	void setControlRegister(uint8_t newByte) override;
 
-	bool getControlRegisterBit(uint8_t bitNumber);
-	void setControlRegisterBit(uint8_t bitNumber, bool newBit);
-
-public:
-	uint8_t getStatusRegister();
-	void setStatusRegister();
+	bool getControlRegisterBit(uint8_t bitNumber) override;
+	void setControlRegisterBit(uint8_t bitNumber, bool newBit) override;
 
 public:
-	int8_t getAgingOffset();
-	void setAgingOffset(int8_t newAgingOffset);
+	uint8_t getStatusRegister() override;
+	void setStatusRegister(uint8_t newByte) override;
 
 public:
-	void update();
+	int8_t getAgingOffset() override;
+	void setAgingOffset(int8_t newAgingOffset) override;
+
+public:
+	void update() override;
 };
 
 #endif // DS3231_HPP

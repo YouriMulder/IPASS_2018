@@ -9,10 +9,10 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := i2cBus.cpp time.cpp DS3231.cpp bitParser.cpp timestamp.cpp MFRC522.cpp spiBus.cpp HCSR501.cpp
+SOURCES := i2cBus.cpp time.cpp 					 DS3231.cpp bitParser.cpp timestamp.cpp 		 MFRC522.cpp spiBus.cpp HCSR501.cpp alarm.cpp			
 
 # header files in this project
-HEADERS := i2cBus.hpp time.hpp DS3231.hpp bitParser.hpp timestamp.hpp MFRC522.hpp spiBus.hpp HCSR501.hpp
+HEADERS := i2cBus.hpp time.hpp realTimeClock.hpp DS3231.hpp bitParser.hpp timestamp.hpp rfid.hpp MFRC522.hpp spiBus.hpp HCSR501.hpp alarm.hpp
 
 # other places to look for files for this project
 SEARCH  :=

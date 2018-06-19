@@ -29,6 +29,10 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="rfid.hpp"/>
+    <File Name="realTimeClock.hpp"/>
+    <File Name="alarm.cpp"/>
+    <File Name="alarm.hpp"/>
     <File Name="HCSR501.cpp"/>
     <File Name="HCSR501.hpp"/>
     <File Name="main.cpp"/>
