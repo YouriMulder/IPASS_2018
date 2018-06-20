@@ -29,6 +29,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="personalData.hpp"/>
+    <File Name="motionSensor.hpp"/>
     <File Name="rfid.hpp"/>
     <File Name="realTimeClock.hpp"/>
     <File Name="alarm.cpp"/>

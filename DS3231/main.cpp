@@ -25,20 +25,22 @@ int main(int argc, char **argv) {
 	auto SPIMosi 	 	= 	hwlib::target::pin_out(hwlib::target::pins::d11);
 	auto SPIMiso	 	= 	hwlib::target::pin_in(hwlib::target::pins::d12);
 	auto SPIScl  	 	=	hwlib::target::pin_out(hwlib::target::pins::scl1);
-
 	auto SPIBus = spiBus(SPIScl, SPIMosi, SPIMiso);
 
 	// MFRC522
 	auto SPISSMFRC522	= hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto MFRC522Reset 	= hwlib::target::pin_out(hwlib::target::pins::d9);
+	auto rfidReader 	= MFRC522(SPIBus, SPISSMFRC522, MFRC522Reset);
 
 	// PIR HCSR501
 	auto HCSR501Input	= hwlib::target::pin_in(hwlib::target::pins::d2);
+	auto motionDetector	= HCSR501(HCSR501Input);
 
-	auto rfidReader 	= MFRC522(SPIBus, SPISSMFRC522, MFRC522Reset);
-	auto motionSensor	= HCSR501(HCSR501Input);
+	// Buzzer
+	auto buzzerOutput	= hwlib::target::pin_out(hwlib::target::pins::d18);
 
 	DS3231 realTimeClock(I2CBus, 0x68);
+	alarm theftAlarm(realTimeClock, rfidReader, motionDetector);
 
 	realTimeClock.setCurrentSeconds(0); // 0 - 59
 	realTimeClock.setCurrentMinutes(21); // 0 - 59
@@ -48,13 +50,17 @@ int main(int argc, char **argv) {
 	realTimeClock.setCurrentMonth(6);
 	realTimeClock.setCurrentYear(18);
 
-	alarm theftAlarm(realTimeClock, rfidReader);
 	timestamp ts;
 
 	for(;;) {
-		theftAlarm.test();
+		if(!theftAlarm.getIsActive()) {
+			theftAlarm.activate();
+		} else {
+			theftAlarm.deactivate();
+		}
+		hwlib::wait_ms(1000);
+		hwlib::cout << "Active: " << theftAlarm.getIsActive() << "\n";
 	}
-
 
 	/*for(;;) {
 		rtc.getCurrentTimestamp(ts);
@@ -70,19 +76,19 @@ int main(int argc, char **argv) {
 	hwlib::cout << "Self Test: " << rfid.selfTest() << "\n";
 
 	*/
-//
-//	for(;;) {
-//		if(rfid.isCardInRange()) {
-//			uint8_t UID[4] = {0};
-//			hwlib::cout << "status: " << rfid.getCardUID(UID) << "\n";
-//			for(auto d : UID) {
-//				hwlib::cout << (unsigned)d << " , ";
-//			}
-//			hwlib::cout << "\n";
-//		}
-//		hwlib::wait_ms(1000);
-//	}
-//
+
+	/*	for(;;) {
+			if(rfidReader.isCardInRange()) {
+				uint8_t UID[5] = {0};
+				hwlib::cout << "status: " << (unsigned)rfidReader.getCardUID(UID) << "\n";
+				for(auto d : UID) {
+					hwlib::cout << (unsigned)d << " , ";
+				}
+				hwlib::cout << "\n";
+			}
+			hwlib::wait_ms(1000);
+		}*/
+
 	/*	for(;;) {
 			hwlib::cout << motionSensor.getInput() << "\n";
 

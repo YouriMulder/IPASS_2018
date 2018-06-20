@@ -171,7 +171,7 @@ uint8_t MFRC522::communicate(COMMAND command, uint8_t transmitData[],
 	// Execute the command.
 	writeRegister(CommandReg, Transceive);
 
-	if(/* cmd == MFRC522_TRANSCEIVE */ true) {
+	if(true) {
 		setMaskInRegister(BitFramingReg, 0x80);  // transmission of data starts
 	}
 
@@ -193,8 +193,14 @@ uint8_t MFRC522::communicate(COMMAND command, uint8_t transmitData[],
 		return errorCode;
 	}
 
-	// setting backLen
+	// setting backLen if enough room
+	hwlib::cout << receivedLength << " : " << (unsigned)readRegister(FIFOLevelReg) <<  "\n";
+	if(receivedLength < readRegister(FIFOLevelReg)) {
+		return NoRoom;
+	}
 	receivedLength = readRegister(FIFOLevelReg);
+
+
 
 	// Reading the recieved data from FIFO.
 	for(int i = 0; i < receivedLength; i++) {
@@ -212,11 +218,10 @@ bool MFRC522::isCardInRange() {
 	const uint8_t sendDataLength = 1;
 	uint8_t sendData[sendDataLength] = {0x26};
 
-	int receivedLength = 0;
-	uint8_t receivedData[2] = {0};
+	int receivedLength = 2;
+	uint8_t receivedData[receivedLength] = {0};
 
 	uint8_t status = communicate(Transceive, sendData, sendDataLength, receivedData, receivedLength);
-
 	if((status != OkStatus)) {
 		return false;
 	}
@@ -226,31 +231,44 @@ bool MFRC522::isCardInRange() {
 
 
 // returns status, param will become unique identifier.
-bool MFRC522::getCardUID(uint8_t UID[]) {
-	uint8_t serNum[2] = {0x93, 0x20};//Put collision check data in the array
-	writeRegister(BitFramingReg, 0x00);//Change the amount of bits transmitted from the last byte
+// CASCADE LEVEL 1 used only
+// https://www.nxp.com/docs/en/application-note/AN10927.pdf
+uint8_t MFRC522::getCardUID(uint8_t UID[5]) {
+	uint8_t serNum[2] = {CL1Command, 0x20};		//Put collision check data in the array
+	writeRegister(BitFramingReg, 0x00);			//Change the amount of bits transmitted from the last byte
 
-	int length;
+	int length = 5;
 	uint8_t status = communicate(Transceive, serNum, 2, UID, length);
-	auto serNumCheck = 0;
-	if(status == 0) {
-		if((length) == 5) { //Change from amount of bits to amount of bytes and then check
-			int i = 0;
-			while(i<4) {
-				serNumCheck = serNumCheck ^ UID[i];
-				i++;
-			}
-			if(serNumCheck != UID[i]) {
-				status = ParityErr;
-			}
-		} else {
-			status = ParityErr;
-		}
+
+	if(status != OkStatus) {
+		return status;
 	}
 
-	return status; //return the status
+	if(length != 5 || checkUID4BCC(UID)) {
+		return BCCErr;
+	}
+	return OkStatus;
 }
 
+bool MFRC522::getCardUIDSimple(uint8_t UID[5]) {
+	if(isCardInRange()) {
+		if(getCardUID(UID) == OkStatus) {
+			return true;
+		}
+	}
+	return false;
+
+}
+
+void MFRC522::waitForCardUID(uint8_t UID[5]) {
+	while(true) {
+		if(isCardInRange()) {
+			if(getCardUID(UID) == OkStatus) {
+				return;
+			}
+		}
+	}
+}
 
 // TEST FUNCTIONS
 uint8_t MFRC522::getVersion() {

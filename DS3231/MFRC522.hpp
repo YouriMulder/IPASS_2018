@@ -109,7 +109,7 @@ public:
 
 	// http://www.orangetags.com/wp-content/downloads/datasheet/NXP/Mifare%20EV1%201K.pdf
 	// Table 9
-	enum MIFARECOMMANDS : uint8_t {
+	enum MIFARE_COMMAND : uint8_t {
 		RequestCommand 			= 0x26,
 		WakeUpCommand 			= 0x52,
 		CL1Command 				= 0x93,
@@ -133,9 +133,10 @@ public:
 	};
 
 
-	enum COMMUNICATION_STATUS {
+	enum COMMUNICATION_STATUS : uint8_t {
 		OkStatus,		// Everything went as planned
 		TimeOutStatus,	// No card found in the given time span.
+		NoRoom,			// Not big enough received array to store all the data
 		// ERRORS
 		ProtocolErr,
 		ParityErr,
@@ -144,7 +145,7 @@ public:
 		BufferOvfl,
 		TempErr,
 		WrErr,
-
+		BCCErr
 	};
 
 	// Self test variables
@@ -206,7 +207,9 @@ protected:
 	                    int & receivedLength);
 public:
 	bool isCardInRange() override;
-	bool getCardUID(uint8_t UID[]) override;
+	uint8_t getCardUID(uint8_t UID[5]) override;
+	bool getCardUIDSimple(uint8_t UID[5]) override;
+	void waitForCardUID(uint8_t UID[5]) override;
 
 public:
 	// TEST FUNCTIONS

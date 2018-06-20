@@ -2,17 +2,16 @@
 #define HCSR501_HPP
 
 #include "hwlib-pin.hpp"
+#include "motionSensor.hpp"
 
-
-class HCSR501 {
+class HCSR501 : public motionSensor {
 	hwlib::pin_in& input;
 
 public:
 	HCSR501(hwlib::pin_in & input);
 
-	bool getInput() {
-		return input.get();
-	}
+public:
+	bool detect() override;
 
 };
 
