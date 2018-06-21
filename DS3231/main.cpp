@@ -5,6 +5,7 @@
 #include "spiBus.hpp"
 #include "MFRC522.hpp"
 #include "HCSR501.hpp"
+#include "buzzer.hpp"
 
 #include "alarm.hpp"
 
@@ -38,9 +39,10 @@ int main(int argc, char **argv) {
 
 	// Buzzer
 	auto buzzerOutput	= hwlib::target::pin_out(hwlib::target::pins::d18);
+	auto horn 			= buzzer(buzzerOutput);
 
 	DS3231 realTimeClock(I2CBus, 0x68);
-	alarm theftAlarm(realTimeClock, rfidReader, motionDetector);
+	alarm theftAlarm(realTimeClock, rfidReader, motionDetector, horn);
 
 	realTimeClock.setCurrentSeconds(0); // 0 - 59
 	realTimeClock.setCurrentMinutes(21); // 0 - 59
@@ -53,13 +55,7 @@ int main(int argc, char **argv) {
 	timestamp ts;
 
 	for(;;) {
-		if(!theftAlarm.getIsActive()) {
-			theftAlarm.activate();
-		} else {
-			theftAlarm.deactivate();
-		}
-		hwlib::wait_ms(1000);
-		hwlib::cout << "Active: " << theftAlarm.getIsActive() << "\n";
+		theftAlarm.update();
 	}
 
 	/*for(;;) {

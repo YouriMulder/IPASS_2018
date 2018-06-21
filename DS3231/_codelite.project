@@ -29,6 +29,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="buzzer.cpp"/>
+    <File Name="buzzer.hpp"/>
     <File Name="personalData.hpp"/>
     <File Name="motionSensor.hpp"/>
     <File Name="rfid.hpp"/>

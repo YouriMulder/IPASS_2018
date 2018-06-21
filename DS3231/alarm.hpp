@@ -6,13 +6,15 @@
 #include "motionSensor.hpp"
 #include "hwlib.hpp"
 #include "personalData.hpp"
+#include "buzzer.hpp"
 
 class alarm {
 private:
 	// Hardware
+	realTimeClock& rtc;
 	rfid& rfidReader;
 	motionSensor& motionDetector;
-	realTimeClock& rtc;
+	buzzer& horn;
 
 	enum ACCESS_LEVEL : uint8_t {
 		Normal = 1,
@@ -21,25 +23,26 @@ private:
 
 	// Alarm users
 	personalData youri = {"Youri", FullControl, {154, 45, 198, 89, 40}};
-	personalData hank = {"Hank", Normal, {0,0,0,0,0}};
+
+	uint8_t amountOfMembers = 1;
+	personalData* members[10] = {&youri};
 
 	// STATIC WORKAROUND
 	// THE VARIABLE ABOVE SHOULD BE THE SAME AS THE ARRAY SIZES
 	const uint8_t UIDSize = 5;
-	uint8_t UID[5] = {0};
-
-
 private:
 	bool isActive;
 	bool isRinging = false;
 
 public:
+	alarm(realTimeClock& rtc, rfid& rfidReader, motionSensor& motionDetector, buzzer& horn,
+	      bool isActive = false);
+
+public:
 	bool getIsActive();
 	bool getIsRinging();
-	void clearUID();
-public:
-	alarm(realTimeClock& rtc, rfid& rfidReader, motionSensor& motionDetector,
-	      bool isActive = false);
+	bool isMember(personalData& member, uint8_t UID[]);
+	bool checkAllMembers(personalData& foundMember, uint8_t UID[]);
 
 private:
 	bool toggle(bool newValue);
@@ -47,6 +50,8 @@ private:
 public:
 	bool activate();
 	bool deactivate();
+
+	void update();
 };
 
 #endif // ALARM_HPP

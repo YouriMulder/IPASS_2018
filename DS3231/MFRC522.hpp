@@ -185,6 +185,7 @@ protected:
 public:
 	void hardReset() override;
 	void softReset() override;
+	void resetAntennas() override;
 protected:
 	// REGISTER FUNCTIONS
 	uint8_t readRegister(REG registerAddress);
@@ -207,6 +208,7 @@ protected:
 	                    int & receivedLength);
 public:
 	bool isCardInRange() override;
+	bool isCardInRangeCheck() override;
 	uint8_t getCardUID(uint8_t UID[5]) override;
 	bool getCardUIDSimple(uint8_t UID[5]) override;
 	void waitForCardUID(uint8_t UID[5]) override;

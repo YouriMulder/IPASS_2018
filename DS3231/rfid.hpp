@@ -11,8 +11,10 @@ protected:
 public:
 	virtual void hardReset() = 0;
 	virtual void softReset() = 0;
+	virtual void resetAntennas() = 0;
 public:
 	virtual bool isCardInRange() = 0;
+	virtual bool isCardInRangeCheck() = 0;
 	virtual uint8_t getCardUID(uint8_t UID[5]) = 0;
 	virtual bool getCardUIDSimple(uint8_t UID[5]) = 0;
 	virtual void waitForCardUID(uint8_t UID[5]) = 0;

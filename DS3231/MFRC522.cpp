@@ -51,6 +51,11 @@ void MFRC522::softReset() {
 	waitTillStarted();
 }
 
+void MFRC522::resetAntennas() {
+	setAntennas(0);
+	setAntennas(1);
+}
+
 uint8_t MFRC522::readRegister(REG registerAddress) {
 	return SPIBus.getByteFromRegister((uint8_t)registerAddress, slaveSelect);
 }
@@ -194,7 +199,6 @@ uint8_t MFRC522::communicate(COMMAND command, uint8_t transmitData[],
 	}
 
 	// setting backLen if enough room
-	hwlib::cout << receivedLength << " : " << (unsigned)readRegister(FIFOLevelReg) <<  "\n";
 	if(receivedLength < readRegister(FIFOLevelReg)) {
 		return NoRoom;
 	}
@@ -227,6 +231,15 @@ bool MFRC522::isCardInRange() {
 	}
 	return true;
 
+}
+
+// You can call this command after each other. IsCardInRange() requires another rfid command to execute before executing again.
+bool MFRC522::isCardInRangeCheck() {
+	if(isCardInRange()) {
+		resetAntennas();
+		return true;
+	}
+	return false;
 }
 
 
