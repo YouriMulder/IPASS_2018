@@ -49,7 +49,6 @@ void displayManager::updateMessage(const char message[]) {
 	alarmPartChanged = true;
 	alarmWindow << "\f";
 	updateAlarm(currentAlarmState);
-	hwlib::cout << message << "\n";
 	alarmWindow << "\t0001" << message;
 }
 

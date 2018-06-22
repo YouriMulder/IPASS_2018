@@ -40,6 +40,7 @@ bool alarm::toggle(bool newValue) {
 	if(rfidReader.getCardUIDSimple(UID)) {
 		personalData foundMember;
 		if(checkAllMembers(foundMember, UID)) {
+			dManager.updateMessage("Known card");
 			// When ringing you should've full control
 			if(newValue) {
 				return turnOn();
@@ -76,6 +77,11 @@ bool alarm::turnOn() {
 	horn.alarmEnabled();
 	isActive = true;
 	isRinging = false;
+	dManager.updateMessage("15 sec to leave!");
+	dManager.draw();
+	hwlib::wait_ms(1000 * 15);
+	dManager.updateMessage("");
+
 	return true;
 }
 

@@ -107,31 +107,6 @@ void MFRC522::clearInternalBuffer() {
 	writeRegister(CommandReg, Mem);
 }
 
-void MFRC522::calculateCRC(uint8_t *data, int len, uint8_t *result) {
-	int i;
-	uint8_t n;
-
-	clearMaskInRegister(DivIrqReg, 0x04);   // CRCIrq = 0
-	setMaskInRegister(FIFOLevelReg, 0x80);  // Clear the FIFO pointer
-
-	//Writing data to the FIFO.
-	for(i = 0; i < len; i++) {
-		writeRegister(FIFODataReg, data[i]);
-	}
-	writeRegister(CommandReg, CalcCRC);
-
-	// Wait for the CRC calculation to complete.
-	i = 0xFF;
-	do {
-		n = readRegister(DivIrqReg);
-		i--;
-	} while((i != 0) && !(n & 0x04));   //CRCIrq = 1
-
-	// Read the result from the CRC calculation.
-	result[0] = readRegister(CRCResult1Reg);
-	result[1] = readRegister(CRCResult2Reg);
-}
-
 uint8_t MFRC522::checkForErrors() {
 	// Checking all the possible errors in the error register
 	switch(readRegister(ErrorReg)) {
