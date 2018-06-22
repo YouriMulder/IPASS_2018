@@ -29,6 +29,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="displayManager.cpp"/>
+    <File Name="displayManager.hpp"/>
     <File Name="buzzer.cpp"/>
     <File Name="buzzer.hpp"/>
     <File Name="personalData.hpp"/>

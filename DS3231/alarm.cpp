@@ -1,8 +1,9 @@
 #include "alarm.hpp"
 
 alarm::alarm(realTimeClock& rtc, rfid& rfidReader, motionSensor& motionDetector, buzzer& horn,
-             bool isActive):
-	rtc(rtc), rfidReader(rfidReader), motionDetector(motionDetector), horn(horn), isActive(isActive)
+             displayManager& dManager, bool isActive):
+	rtc(rtc), rfidReader(rfidReader), motionDetector(motionDetector),
+	horn(horn), dManager(dManager), isActive(isActive)
 {}
 
 
@@ -40,31 +41,42 @@ bool alarm::toggle(bool newValue) {
 		personalData foundMember;
 		if(checkAllMembers(foundMember, UID)) {
 			// When ringing you should've full control
-			if(isRinging) {
-				if(foundMember.accessLevel == FullControl) {
-					horn.alarmDisabled();
-					isRinging = false;
-					isActive = false;
-					return true;
-				}
-
-				return false;
-			}
-
-			isActive = newValue;
 			if(newValue) {
-				horn.alarmEnabled();
-			} else {
-				horn.alarmDisabled();
+				return turnOn();
 			}
-			return true;
-		} else {
-			horn.singleSound(500);
-			return false;
+			return turnOff(foundMember);
 		}
 	}
-
+	dManager.updateMessage("Unknown card");
+	horn.wrongSound();
 	return false;
+}
+
+bool alarm::turnOff(personalData& member) {
+	if(isRinging) {
+		if(member.accessLevel == FullControl) {
+			horn.alarmDisabled();
+			isActive = false;
+			isRinging = false;
+			return true;
+		}
+		dManager.updateMessage("Not allowed");
+		horn.wrongSound();
+		return false;
+	}
+
+	horn.alarmDisabled();
+	isActive = false;
+	isRinging = false;
+	return true;
+}
+
+
+bool alarm::turnOn() {
+	horn.alarmEnabled();
+	isActive = true;
+	isRinging = false;
+	return true;
 }
 
 bool alarm::activate() {
@@ -81,13 +93,10 @@ void alarm::update() {
 		isRinging = true;
 	}
 
-	if(isRinging) {
-
-	}
-
 	// Turn on the horn
 	if(isRinging) {
 		horn.turnOn();
+		dManager.updateMessage("INTRUDER!");
 	} else {
 		horn.turnOff();
 	}
@@ -100,4 +109,6 @@ void alarm::update() {
 		}
 
 	}
+
+	dManager.updateAlarm(isActive);
 }

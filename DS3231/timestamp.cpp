@@ -78,13 +78,7 @@ int timestamp::getCentury() const {
 }
 
 hwlib::ostream& operator<<(hwlib::ostream& lhs, const timestamp& rhs) {
-	lhs  << "Seconds: " 	<<	(unsigned)rhs.seconds
-	     << "\nMinutes: " 	<< (unsigned)rhs.minutes
-	     << "\nHours: " 		<<	(unsigned)rhs.hours
-	     << "\nday: " 		<<	(unsigned)rhs.day
-	     << "\ndate: " 		<<	(unsigned)rhs.date
-	     << "\nmonth: " 		<<	(unsigned)rhs.month
-	     << "\nyear: " 		<<	(unsigned)rhs.year
-	     << "\ncentury: " 	<<	rhs.century << "\n";
+	lhs  <<	(unsigned)rhs.hours << "::" << (unsigned)rhs.minutes << "::" <<	(unsigned)rhs.seconds << "\n"
+	     <<	(unsigned)rhs.date << '/' << (unsigned)rhs.month << '/' << (rhs.century + (unsigned)rhs.year);
 	return lhs;
 }

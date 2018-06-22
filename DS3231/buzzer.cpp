@@ -2,9 +2,10 @@
 
 #include "hwlib-wait.hpp"
 
-buzzer::buzzer(hwlib::pin_out& output):
-	output(output)
-{}
+buzzer::buzzer(hwlib::pin_in_out& output):
+	output(output) {
+	output.direction_set_output();
+}
 
 void buzzer::toggle(bool state) {
 	output.set(state);
@@ -19,16 +20,26 @@ void buzzer::turnOff() {
 }
 
 void buzzer::singleSound(int delay) {
+	if(output.get()) {
+		toggle(0);
+		hwlib::wait_ms(200);
+	}
 	toggle(1);
 	hwlib::wait_ms(delay);
 	toggle(0);
-	hwlib::wait_ms(delay);
 }
 
 void buzzer::moreSounds(int amount, int delay) {
 	for(int i = 0; i < amount; i++) {
 		singleSound(delay);
+		hwlib::wait_ms(100);
 	}
+}
+
+void buzzer::wrongSound() {
+	hwlib::wait_ms(200);
+	singleSound(200);
+	hwlib::wait_ms(200);
 }
 
 void buzzer::alarmEnabled() {

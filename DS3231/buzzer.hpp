@@ -4,9 +4,9 @@
 #include "hwlib-pin.hpp"
 
 class buzzer {
-	hwlib::pin_out& output;
+	hwlib::pin_in_out& output;
 public:
-	buzzer(hwlib::pin_out& output);
+	buzzer(hwlib::pin_in_out& output);
 
 public:
 	void toggle(bool state);
@@ -16,6 +16,7 @@ public:
 	void moreSounds(int amount = 2, int delay = 150);
 	void alarmEnabled();
 	void alarmDisabled();
+	void wrongSound();
 };
 
 #endif // BUZZER_HPP

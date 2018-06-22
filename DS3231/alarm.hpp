@@ -7,6 +7,7 @@
 #include "hwlib.hpp"
 #include "personalData.hpp"
 #include "buzzer.hpp"
+#include "displayManager.hpp"
 
 class alarm {
 private:
@@ -15,6 +16,7 @@ private:
 	rfid& rfidReader;
 	motionSensor& motionDetector;
 	buzzer& horn;
+	displayManager dManager;
 
 	enum ACCESS_LEVEL : uint8_t {
 		Normal = 1,
@@ -36,7 +38,7 @@ private:
 
 public:
 	alarm(realTimeClock& rtc, rfid& rfidReader, motionSensor& motionDetector, buzzer& horn,
-	      bool isActive = false);
+	      displayManager& dManager, bool isActive = false);
 
 public:
 	bool getIsActive();
@@ -46,6 +48,8 @@ public:
 
 private:
 	bool toggle(bool newValue);
+	bool turnOff(personalData & member);
+	bool turnOn();
 
 public:
 	bool activate();
