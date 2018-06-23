@@ -1,0 +1,300 @@
+\hypertarget{class_m_f_r_c522}{}\section{M\+F\+R\+C522 Class Reference}
+\label{class_m_f_r_c522}\index{M\+F\+R\+C522@{M\+F\+R\+C522}}
+Inheritance diagram for M\+F\+R\+C522\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_f_r_c522}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}} 
+enum {\bfseries R\+EG} \+: uint8\+\_\+t \{ \newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D1} = 0x00, 
+{\bfseries Command\+Reg}, 
+{\bfseries Com\+I\+En\+Reg}, 
+{\bfseries Div\+I\+En\+Reg}, 
+\newline
+{\bfseries Com\+Irq\+Reg}, 
+{\bfseries Div\+Irq\+Reg}, 
+{\bfseries Error\+Reg}, 
+{\bfseries Status1\+Reg}, 
+\newline
+{\bfseries Status2\+Reg}, 
+{\bfseries F\+I\+F\+O\+Data\+Reg}, 
+{\bfseries F\+I\+F\+O\+Level\+Reg}, 
+{\bfseries Water\+Level\+Reg}, 
+\newline
+{\bfseries Control\+Reg}, 
+{\bfseries Bit\+Framing\+Reg}, 
+{\bfseries Coll\+Reg}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D2}, 
+\newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D3}, 
+{\bfseries Mode\+Reg}, 
+{\bfseries Tx\+Mode\+Reg}, 
+{\bfseries Rx\+Mode\+Reg}, 
+\newline
+{\bfseries Tx\+Control\+Reg}, 
+{\bfseries Tx\+A\+S\+K\+Reg}, 
+{\bfseries Tx\+Sel\+Reg}, 
+{\bfseries Rx\+Sel\+Reg}, 
+\newline
+{\bfseries rx\+Threshold\+Reg}, 
+{\bfseries Demod\+Reg}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D4}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D5}, 
+\newline
+{\bfseries Mf\+Tx\+Reg}, 
+{\bfseries Mf\+Rx\+Reg}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D6}, 
+{\bfseries Serial\+Speed\+Reg}, 
+\newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D7}, 
+{\bfseries C\+R\+C\+Result1\+Reg}, 
+{\bfseries C\+R\+C\+Result2\+Reg}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D8}, 
+\newline
+{\bfseries Mod\+Width\+Reg}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D9}, 
+{\bfseries R\+F\+Cfg\+Reg}, 
+{\bfseries Gs\+N\+Reg}, 
+\newline
+{\bfseries C\+W\+Gs\+P\+Reg}, 
+{\bfseries Mod\+Gs\+P\+Reg}, 
+{\bfseries T\+Mode\+Reg}, 
+{\bfseries T\+Prescaler\+Reg}, 
+\newline
+{\bfseries T\+Reload\+Reg1}, 
+{\bfseries T\+Reload\+Reg2}, 
+{\bfseries T\+Counter\+Val\+Reg1}, 
+{\bfseries T\+Counter\+Val\+Reg2}, 
+\newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D10}, 
+{\bfseries Test\+Sel1\+Reg}, 
+{\bfseries Test\+Sel2\+Reg}, 
+{\bfseries Test\+Pin\+En\+Reg}, 
+\newline
+{\bfseries Test\+Pin\+Value\+Reg}, 
+{\bfseries Test\+Bus\+Reg}, 
+{\bfseries Auto\+Test\+Reg}, 
+{\bfseries Version\+Reg}, 
+\newline
+{\bfseries Analog\+Test\+Reg}, 
+{\bfseries Test\+D\+A\+C1\+Reg}, 
+{\bfseries Test\+D\+A\+C2\+Reg}, 
+{\bfseries Test\+A\+D\+C\+Reg}
+ \}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}} 
+enum {\bfseries C\+O\+M\+M\+A\+ND} \+: uint8\+\_\+t \{ \newline
+{\bfseries Idle} = 0x00, 
+{\bfseries Mem}, 
+{\bfseries Generate\+\_\+\+Random\+ID}, 
+{\bfseries Calc\+C\+RC}, 
+\newline
+{\bfseries No\+Cmd\+Change} = 0x07, 
+{\bfseries Receive}, 
+{\bfseries Transceive} = 0x0C, 
+{\bfseries M\+F\+Authent} = 0x0E, 
+\newline
+{\bfseries Soft\+Reset}
+ \}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}\label{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}} 
+enum {\bfseries M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND} \+: uint8\+\_\+t \{ \newline
+{\bfseries Request\+Command} = 0x26, 
+{\bfseries Wake\+Up\+Command} = 0x52, 
+{\bfseries C\+L1\+Command} = 0x93, 
+{\bfseries C\+L2\+Command} = 0x95, 
+\newline
+{\bfseries Anticollision\+Command} = 0x20, 
+{\bfseries Select\+Command} = 0x70, 
+{\bfseries Halt\+Part1\+Command} = 0x50, 
+{\bfseries Halt\+Part2\+Command} = 0x00, 
+\newline
+{\bfseries Auth\+Key\+A\+Command} = 0x60, 
+{\bfseries Auth\+Key\+B\+Command} = 0x61, 
+{\bfseries Personalize\+U\+I\+D\+Usage\+Command} = 0x40, 
+{\bfseries Set\+Mod\+Type\+Command} = 0x43, 
+\newline
+{\bfseries Read\+Command} = 0x30, 
+{\bfseries Write\+Command} = 0x\+A0, 
+{\bfseries Decrement\+Command} = 0x\+C0, 
+{\bfseries Increment\+Command} = 0x\+C1, 
+\newline
+{\bfseries Restore\+Command} = 0x\+C2, 
+{\bfseries Transfer\+Command} = 0x\+B0
+ \}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}} 
+enum {\bfseries C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US} \+: uint8\+\_\+t \{ \newline
+{\bfseries Ok\+Status}, 
+{\bfseries Time\+Out\+Status}, 
+{\bfseries No\+Room}, 
+{\bfseries Protocol\+Err}, 
+\newline
+{\bfseries Parity\+Err}, 
+{\bfseries C\+R\+C\+Err}, 
+{\bfseries Coll\+Err}, 
+{\bfseries Buffer\+Ovfl}, 
+\newline
+{\bfseries Temp\+Err}, 
+{\bfseries Wr\+Err}, 
+{\bfseries B\+C\+C\+Err}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a70e6c463aec08918c71c2e0c77742b4b}\label{class_m_f_r_c522_a70e6c463aec08918c71c2e0c77742b4b}} 
+{\bfseries M\+F\+R\+C522} (\mbox{\hyperlink{classspi_bus}{spi\+Bus}} \&S\+P\+I\+Bus, hwlib\+::pin\+\_\+out \&slave\+Select, hwlib\+::pin\+\_\+out \&reset, bool init=true)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a5f589b09eaf150551b369052ce125fa1}\label{class_m_f_r_c522_a5f589b09eaf150551b369052ce125fa1}} 
+void {\bfseries initialize} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}\label{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}} 
+void {\bfseries hard\+Reset} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ae51e1e0bee2b7a65d6314bfb48121f1d}\label{class_m_f_r_c522_ae51e1e0bee2b7a65d6314bfb48121f1d}} 
+void {\bfseries soft\+Reset} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}\label{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}} 
+void {\bfseries reset\+Antennas} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}\label{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}} 
+bool {\bfseries is\+Card\+In\+Range} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a29ce0dd04495f9352e32ada5ecc5fd03}\label{class_m_f_r_c522_a29ce0dd04495f9352e32ada5ecc5fd03}} 
+bool {\bfseries is\+Card\+In\+Range\+Check} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}\label{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}} 
+uint8\+\_\+t {\bfseries get\+Card\+U\+ID} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]}) override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a33c20be6030f635d986984db4999a1eb}\label{class_m_f_r_c522_a33c20be6030f635d986984db4999a1eb}} 
+bool {\bfseries get\+Card\+U\+I\+D\+Simple} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]}) override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_aeb05c83c2d139eb2c57f400399982691}\label{class_m_f_r_c522_aeb05c83c2d139eb2c57f400399982691}} 
+void {\bfseries wait\+For\+Card\+U\+ID} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]}) override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a25fb0a50bf7db51ab9c5bc2ff4fa84e3}\label{class_m_f_r_c522_a25fb0a50bf7db51ab9c5bc2ff4fa84e3}} 
+uint8\+\_\+t {\bfseries get\+Version} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}\label{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}} 
+bool {\bfseries self\+Test} () override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a56c8309a003cf1a5d8479c7783826f8e}\label{class_m_f_r_c522_a56c8309a003cf1a5d8479c7783826f8e}} 
+const uint8\+\_\+t {\bfseries F\+I\+F\+O\+Amount\+Of\+Bytes} = 64
+\item 
+const uint8\+\_\+t {\bfseries self\+Test\+F\+I\+F\+O\+Buffer\+V1} \mbox{[}64\mbox{]}
+\item 
+const uint8\+\_\+t {\bfseries self\+Test\+F\+I\+F\+O\+Buffer\+V2} \mbox{[}64\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a6bfefd877c6060dde4eff2c25b7f96f2}\label{class_m_f_r_c522_a6bfefd877c6060dde4eff2c25b7f96f2}} 
+void {\bfseries wait\+Till\+Started} () override
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_afe0e86db047ef36af49349e7fdc7fa65}\label{class_m_f_r_c522_afe0e86db047ef36af49349e7fdc7fa65}} 
+uint8\+\_\+t {\bfseries read\+Register} (R\+EG register\+Address)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a559408e38c2c8fea3316f6e2b4477b81}\label{class_m_f_r_c522_a559408e38c2c8fea3316f6e2b4477b81}} 
+void {\bfseries read\+Register} (R\+EG register\+Address, uint8\+\_\+t read\mbox{[}$\,$\mbox{]}, uint8\+\_\+t amount\+Of\+Bytes)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_aa976c78dde5b2dfbbd5bcbedaad14a7a}\label{class_m_f_r_c522_aa976c78dde5b2dfbbd5bcbedaad14a7a}} 
+void {\bfseries write\+Register} (R\+EG register\+Address, uint8\+\_\+t new\+Byte)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a3558d379575863072c711721b061bb75}\label{class_m_f_r_c522_a3558d379575863072c711721b061bb75}} 
+void {\bfseries write\+Register} (R\+EG register\+Address, uint8\+\_\+t new\+Bytes\mbox{[}$\,$\mbox{]}, int amount\+Of\+Bytes)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ae30686cdd50f6fdb821908a2547e5153}\label{class_m_f_r_c522_ae30686cdd50f6fdb821908a2547e5153}} 
+void {\bfseries set\+Mask\+In\+Register} (R\+EG register\+Address, uint8\+\_\+t mask)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a9935264b559702a3a4ad2b87735b4f8f}\label{class_m_f_r_c522_a9935264b559702a3a4ad2b87735b4f8f}} 
+void {\bfseries clear\+Mask\+In\+Register} (R\+EG register\+Address, uint8\+\_\+t mask)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ad33cc8218440b30747fba97aa59c0583}\label{class_m_f_r_c522_ad33cc8218440b30747fba97aa59c0583}} 
+void {\bfseries set\+Antennas} (bool state)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a4df3a992241adac22f7e0464471c3b94}\label{class_m_f_r_c522_a4df3a992241adac22f7e0464471c3b94}} 
+void {\bfseries calculate\+C\+RC} (uint8\+\_\+t $\ast$data, int len, uint8\+\_\+t $\ast$result)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a6d831a60a08c5f37a264c61f7c79c372}\label{class_m_f_r_c522_a6d831a60a08c5f37a264c61f7c79c372}} 
+uint8\+\_\+t {\bfseries check\+For\+Errors} ()
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ab605cd58a59f1d6cbc48ef0be252e593}\label{class_m_f_r_c522_ab605cd58a59f1d6cbc48ef0be252e593}} 
+uint8\+\_\+t {\bfseries communicate} (C\+O\+M\+M\+A\+ND command, uint8\+\_\+t transmit\+Data\mbox{[}$\,$\mbox{]}, int transmit\+Length, uint8\+\_\+t received\+Data\mbox{[}$\,$\mbox{]}, int \&received\+Length)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a0fa1703360d0c741cf915b22e26c2631}\label{class_m_f_r_c522_a0fa1703360d0c741cf915b22e26c2631}} 
+void {\bfseries clear\+F\+I\+F\+O\+Buffer} (const uint8\+\_\+t amount\+Of\+Bytes=64)
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a9d2c5ad7b977944e8bcbbcc9c1bb9b75}\label{class_m_f_r_c522_a9d2c5ad7b977944e8bcbbcc9c1bb9b75}} 
+void {\bfseries clear\+Internal\+Buffer} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a76b0186fcad01aafd3d7d7ae4da6a68c}\label{class_m_f_r_c522_a76b0186fcad01aafd3d7d7ae4da6a68c}} 
+\mbox{\hyperlink{classspi_bus}{spi\+Bus}} \& {\bfseries S\+P\+I\+Bus}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ab945c275a8644e226def9f3eee6698a2}\label{class_m_f_r_c522_ab945c275a8644e226def9f3eee6698a2}} 
+hwlib\+::pin\+\_\+out \& {\bfseries slave\+Select}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a924c7dced5cb615461a0c9f353076407}\label{class_m_f_r_c522_a924c7dced5cb615461a0c9f353076407}} 
+hwlib\+::pin\+\_\+out \& {\bfseries reset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m_f_r_c522_a7d19c9869a7fbbe0d9825d5653d6af7b}\label{class_m_f_r_c522_a7d19c9869a7fbbe0d9825d5653d6af7b}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!self\+Test\+F\+I\+F\+O\+Buffer\+V1@{self\+Test\+F\+I\+F\+O\+Buffer\+V1}}
+\index{self\+Test\+F\+I\+F\+O\+Buffer\+V1@{self\+Test\+F\+I\+F\+O\+Buffer\+V1}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{self\+Test\+F\+I\+F\+O\+Buffer\+V1}{selfTestFIFOBufferV1}}
+{\footnotesize\ttfamily const uint8\+\_\+t M\+F\+R\+C522\+::self\+Test\+F\+I\+F\+O\+Buffer\+V1\mbox{[}64\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+        0x00, 0xC6, 0x37, 0xD5, 0x32, 0xB7, 0x57, 0x5C,
+        0xC2, 0xD8, 0x7C, 0x4D, 0xD9, 0x70, 0xC7, 0x73,
+        0x10, 0xE6, 0xD2, 0xAA, 0x5E, 0xA1, 0x3E, 0x5A,
+        0x14, 0xAF, 0x30, 0x61, 0xC9, 0x70, 0xDB, 0x2E,
+        0x64, 0x22, 0x72, 0xB5, 0xBD, 0x65, 0xF4, 0xEC,
+        0x22, 0xBC, 0xD3, 0x72, 0x35, 0xCD, 0xAA, 0x41,
+        0x1F, 0xA7, 0xF3, 0x53, 0x14, 0xDE, 0x7E, 0x02,
+        0xD9, 0x0F, 0xB5, 0x5E, 0x25, 0x1D, 0x29, 0x79
+    \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_m_f_r_c522_a6973b73a8a922ac09b9d89489bdbc333}\label{class_m_f_r_c522_a6973b73a8a922ac09b9d89489bdbc333}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!self\+Test\+F\+I\+F\+O\+Buffer\+V2@{self\+Test\+F\+I\+F\+O\+Buffer\+V2}}
+\index{self\+Test\+F\+I\+F\+O\+Buffer\+V2@{self\+Test\+F\+I\+F\+O\+Buffer\+V2}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{self\+Test\+F\+I\+F\+O\+Buffer\+V2}{selfTestFIFOBufferV2}}
+{\footnotesize\ttfamily const uint8\+\_\+t M\+F\+R\+C522\+::self\+Test\+F\+I\+F\+O\+Buffer\+V2\mbox{[}64\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        0x00, 0xEB, 0x66, 0xBA, 0x57, 0xBF, 0x23, 0x95,
+        0xD0, 0xE3, 0x0D, 0x3D, 0x27, 0x89, 0x5C, 0xDE,
+        0x9D, 0x3B, 0xA7, 0x00, 0x21, 0x5B, 0x89, 0x82,
+        0x51, 0x3A, 0xEB, 0x02, 0x0C, 0xA5, 0x00, 0x49,
+        0x7C, 0x84, 0x4D, 0xB3, 0xCC, 0xD2, 0x1B, 0x81,
+        0x5D, 0x48, 0x76, 0xD5, 0x71, 0x61, 0x21, 0xA9,
+        0x86, 0x96, 0x83, 0x38, 0xCF, 0x9D, 0x5B, 0x6D,
+        0xDC, 0x15, 0xBA, 0x3E, 0x7D, 0x95, 0x3B, 0x2F
+    \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Demo/M\+F\+R\+C522.\+hpp\item 
+Demo/M\+F\+R\+C522.\+cpp\end{DoxyCompactItemize}

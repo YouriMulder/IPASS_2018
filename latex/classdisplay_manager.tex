@@ -1,0 +1,110 @@
+\hypertarget{classdisplay_manager}{}\section{display\+Manager Class Reference}
+\label{classdisplay_manager}\index{display\+Manager@{display\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdisplay_manager_adf4a6eb6d80c74b0892256458c6b44cc}\label{classdisplay_manager_adf4a6eb6d80c74b0892256458c6b44cc}} 
+{\bfseries display\+Manager} (hwlib\+::window \&display)
+\item 
+\mbox{\Hypertarget{classdisplay_manager_abd5b651d977ae49f8601e3083e3bb692}\label{classdisplay_manager_abd5b651d977ae49f8601e3083e3bb692}} 
+void {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a05ebc1c74ae4ef0c3b8d1b1373467eff}\label{classdisplay_manager_a05ebc1c74ae4ef0c3b8d1b1373467eff}} 
+void {\bfseries update\+Time} (\mbox{\hyperlink{classtimestamp}{timestamp}} \&ts)
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a128805abc4ce7dadf37f8ab602561314}\label{classdisplay_manager_a128805abc4ce7dadf37f8ab602561314}} 
+void {\bfseries update\+Temperature} (int temperature)
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a7dc28bb62d0ff4789e00e8182185836f}\label{classdisplay_manager_a7dc28bb62d0ff4789e00e8182185836f}} 
+void {\bfseries update\+Alarm} (bool alarm\+State)
+\item 
+\mbox{\Hypertarget{classdisplay_manager_af143f0563c82c2668deb2aa3a0afc091}\label{classdisplay_manager_af143f0563c82c2668deb2aa3a0afc091}} 
+void {\bfseries update\+Message} (const char message\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a0781e8ab8eb8531dcf22a16cf32542be}\label{classdisplay_manager_a0781e8ab8eb8531dcf22a16cf32542be}} 
+void {\bfseries draw} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a53639ecfad50e9cec8a09962819b891e}\label{classdisplay_manager_a53639ecfad50e9cec8a09962819b891e}} 
+hwlib\+::window \& {\bfseries display}
+\item 
+\mbox{\Hypertarget{classdisplay_manager_adf8ef128e6a7dafe6924494af28e66a7}\label{classdisplay_manager_adf8ef128e6a7dafe6924494af28e66a7}} 
+int {\bfseries current\+Temperature} = 0
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a591987c4992ab693174597b0ec6d7ea3}\label{classdisplay_manager_a591987c4992ab693174597b0ec6d7ea3}} 
+bool {\bfseries temp\+Part\+Changed} = true
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a0a62d97a19a572162ea16ccd9608c4b2}\label{classdisplay_manager_a0a62d97a19a572162ea16ccd9608c4b2}} 
+bool {\bfseries alarm\+Part\+Changed} = true
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a19bc6605b16391020185be9a714a6ba6}\label{classdisplay_manager_a19bc6605b16391020185be9a714a6ba6}} 
+bool {\bfseries current\+Alarm\+State} = false
+\item 
+hwlib\+::window\+\_\+part {\bfseries time\+Part}
+\item 
+hwlib\+::window\+\_\+part {\bfseries temp\+Part}
+\item 
+hwlib\+::window\+\_\+part {\bfseries alarm\+Part}
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a6d9538b5c815dd79746a309d3d5471a2}\label{classdisplay_manager_a6d9538b5c815dd79746a309d3d5471a2}} 
+hwlib\+::font\+\_\+default\+\_\+8x8 {\bfseries f1} = hwlib\+::font\+\_\+default\+\_\+8x8()
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a15e04593fdc2bbbcf457dc04a31c1678}\label{classdisplay_manager_a15e04593fdc2bbbcf457dc04a31c1678}} 
+hwlib\+::window\+\_\+ostream {\bfseries time\+Window} = hwlib\+::window\+\_\+ostream(time\+Part, f1)
+\item 
+\mbox{\Hypertarget{classdisplay_manager_a0a3743dd8cd6c38a82eb1d6334fe742c}\label{classdisplay_manager_a0a3743dd8cd6c38a82eb1d6334fe742c}} 
+hwlib\+::window\+\_\+ostream {\bfseries temp\+Window} = hwlib\+::window\+\_\+ostream(temp\+Part, f1)
+\item 
+\mbox{\Hypertarget{classdisplay_manager_af6440b079952dff0c1ad26257158c188}\label{classdisplay_manager_af6440b079952dff0c1ad26257158c188}} 
+hwlib\+::window\+\_\+ostream {\bfseries alarm\+Window} = hwlib\+::window\+\_\+ostream(alarm\+Part, f1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdisplay_manager_a73d646fd98bc65ff9c7b07de99beff16}\label{classdisplay_manager_a73d646fd98bc65ff9c7b07de99beff16}} 
+\index{display\+Manager@{display\+Manager}!alarm\+Part@{alarm\+Part}}
+\index{alarm\+Part@{alarm\+Part}!display\+Manager@{display\+Manager}}
+\subsubsection{\texorpdfstring{alarm\+Part}{alarmPart}}
+{\footnotesize\ttfamily hwlib\+::window\+\_\+part display\+Manager\+::alarm\+Part\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= hwlib::window\_part(
+                                       display,
+                                       hwlib::location(0, 32),
+                                       hwlib::location(128, 32))
+\end{DoxyCode}
+\mbox{\Hypertarget{classdisplay_manager_a5b264a2f367cf0ed9889600ddfc2df50}\label{classdisplay_manager_a5b264a2f367cf0ed9889600ddfc2df50}} 
+\index{display\+Manager@{display\+Manager}!temp\+Part@{temp\+Part}}
+\index{temp\+Part@{temp\+Part}!display\+Manager@{display\+Manager}}
+\subsubsection{\texorpdfstring{temp\+Part}{tempPart}}
+{\footnotesize\ttfamily hwlib\+::window\+\_\+part display\+Manager\+::temp\+Part\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= hwlib::window\_part(
+                                       display,
+                                       hwlib::location(90, 0),
+                                       hwlib::location(90, 33))
+\end{DoxyCode}
+\mbox{\Hypertarget{classdisplay_manager_a4b9db493edbfbe3c2f159de0c2efa11f}\label{classdisplay_manager_a4b9db493edbfbe3c2f159de0c2efa11f}} 
+\index{display\+Manager@{display\+Manager}!time\+Part@{time\+Part}}
+\index{time\+Part@{time\+Part}!display\+Manager@{display\+Manager}}
+\subsubsection{\texorpdfstring{time\+Part}{timePart}}
+{\footnotesize\ttfamily hwlib\+::window\+\_\+part display\+Manager\+::time\+Part\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= hwlib::window\_part(
+                                      display,
+                                      hwlib::location(0, 0),
+                                      hwlib::location(90, 32))
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Demo/display\+Manager.\+hpp\item 
+Demo/display\+Manager.\+cpp\end{DoxyCompactItemize}

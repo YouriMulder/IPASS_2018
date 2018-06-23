@@ -1,96 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="F:\Programming\C++\IPASS_2018\__codelite.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="6" Name="m_selectedTab"/>
   <wxString Value="F:\Programming\C++\IPASS_2018\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\main.cpp" Name="FileName"/>
-      <int Value="59" Name="FirstVisibleLine"/>
-      <int Value="60" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\DS3231.cpp" Name="FileName"/>
+      <int Value="224" Name="FirstVisibleLine"/>
+      <int Value="239" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\alarm.hpp" Name="FileName"/>
-      <int Value="23" Name="FirstVisibleLine"/>
-      <int Value="18" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\DS3231.hpp" Name="FileName"/>
+      <int Value="36" Name="FirstVisibleLine"/>
+      <int Value="52" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\alarm.cpp" Name="FileName"/>
-      <int Value="59" Name="FirstVisibleLine"/>
-      <int Value="82" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\MFRC522.cpp" Name="FileName"/>
-      <int Value="96" Name="FirstVisibleLine"/>
-      <int Value="107" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\personalData.hpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="7" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\buzzer.hpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="14" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\buzzer.cpp" Name="FileName"/>
-      <int Value="30" Name="FirstVisibleLine"/>
-      <int Value="30" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\displayManager.hpp" Name="FileName"/>
-      <int Value="21" Name="FirstVisibleLine"/>
-      <int Value="44" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\displayManager.cpp" Name="FileName"/>
-      <int Value="3" Name="FirstVisibleLine"/>
-      <int Value="50" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\timestamp.cpp" Name="FileName"/>
-      <int Value="66" Name="FirstVisibleLine"/>
-      <int Value="84" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\i2cBus.cpp" Name="FileName"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\HCSR501.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\i2cBus.hpp" Name="FileName"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\HCSR501.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\DS3231\DS3231.cpp" Name="FileName"/>
-      <int Value="112" Name="FirstVisibleLine"/>
-      <int Value="113" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\i2cBus.cpp" Name="FileName"/>
+      <int Value="24" Name="FirstVisibleLine"/>
+      <int Value="48" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\i2cBus.hpp" Name="FileName"/>
+      <int Value="76" Name="FirstVisibleLine"/>
+      <int Value="121" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\spiBus.hpp" Name="FileName"/>
+      <int Value="81" Name="FirstVisibleLine"/>
+      <int Value="112" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\spiBus.cpp" Name="FileName"/>
+      <int Value="18" Name="FirstVisibleLine"/>
+      <int Value="45" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

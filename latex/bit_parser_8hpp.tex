@@ -1,0 +1,42 @@
+\hypertarget{bit_parser_8hpp}{}\section{Demo/bit\+Parser.hpp File Reference}
+\label{bit_parser_8hpp}\index{Demo/bit\+Parser.\+hpp@{Demo/bit\+Parser.\+hpp}}
+
+
+get a decimal value from a register containing B\+CD value.  
+
+
+{\ttfamily \#include \char`\"{}hwlib.\+hpp\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bit_parser_8cpp_a59838a77502d6d7f71258ff348055510}\label{bit_parser_8cpp_a59838a77502d6d7f71258ff348055510}} 
+void {\bfseries bit\+Parser\+::print\+Byte} (uint8\+\_\+t byte)
+\item 
+\mbox{\Hypertarget{bit_parser_8cpp_a25b5179d0eec3cf5d3f465c7b2c179b6}\label{bit_parser_8cpp_a25b5179d0eec3cf5d3f465c7b2c179b6}} 
+void {\bfseries bit\+Parser\+::print\+Bytes} (uint16\+\_\+t bytes)
+\item 
+\mbox{\Hypertarget{bit_parser_8cpp_ad207f006665a21b8cbdb0148d81b80c1}\label{bit_parser_8cpp_ad207f006665a21b8cbdb0148d81b80c1}} 
+uint8\+\_\+t {\bfseries bit\+Parser\+::\+B\+C\+D\+To\+D\+EC} (uint8\+\_\+t B\+CD)
+\item 
+\mbox{\Hypertarget{bit_parser_8cpp_abf889c80952fe124c224fd61c59704d1}\label{bit_parser_8cpp_abf889c80952fe124c224fd61c59704d1}} 
+uint8\+\_\+t {\bfseries bit\+Parser\+::\+D\+E\+C\+To\+B\+CD} (uint8\+\_\+t D\+EC)
+\item 
+\mbox{\Hypertarget{bit_parser_8cpp_a2cdf3099581569732367d0fc965e0a7e}\label{bit_parser_8cpp_a2cdf3099581569732367d0fc965e0a7e}} 
+int {\bfseries bit\+Parser\+::uint8\+\_\+t\+To\+Int} (uint8\+\_\+t byte)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+get a decimal value from a register containing B\+CD value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want the decimal value from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a uint8\+\_\+t containing the decimal value
+\end{DoxyReturn}
+test
+
+\#\+B\+C\+Dto\+D\+E\+C() 
