@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="F:\Programming\C++\IPASS_2018\__codelite.workspace">
-  <int Value="6" Name="m_selectedTab"/>
+  <int Value="8" Name="m_selectedTab"/>
   <wxString Value="F:\Programming\C++\IPASS_2018\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="F:\Programming\C++\IPASS_2018\Demo\DS3231.cpp" Name="FileName"/>
-      <int Value="224" Name="FirstVisibleLine"/>
-      <int Value="239" Name="CurrentLine"/>
+      <int Value="120" Name="FirstVisibleLine"/>
+      <int Value="151" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -54,8 +54,22 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="F:\Programming\C++\IPASS_2018\Demo\spiBus.cpp" Name="FileName"/>
-      <int Value="18" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="45" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\realTimeClock.hpp" Name="FileName"/>
+      <int Value="150" Name="FirstVisibleLine"/>
+      <int Value="149" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\time.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
