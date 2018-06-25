@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['read_5fmask',['READ_MASK',['../classspi_bus.html#a0dda31f7fa031ef8913e029d2eb4acf9',1,'spiBus']]],
-  ['register_5fmask',['REGISTER_MASK',['../classspi_bus.html#acd898d08216428963563e20f033423b3',1,'spiBus']]]
+  ['date',['date',['../classtimestamp.html#a7eb2eee5f6ef4258aab7779a639a93fd',1,'timestamp']]],
+  ['day',['day',['../classtimestamp.html#a0102d6c44b2cc194a8186a42ff2bd58b',1,'timestamp']]],
+  ['ds3231address',['DS3231Address',['../class_d_s3231.html#a905b445bb664b52529b3acbccbbaccb3',1,'DS3231']]]
 ];

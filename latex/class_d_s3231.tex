@@ -1,5 +1,14 @@
 \hypertarget{class_d_s3231}{}\section{D\+S3231 Class Reference}
 \label{class_d_s3231}\index{D\+S3231@{D\+S3231}}
+
+
+This class is used to communicate with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip.  
+
+
+
+
+{\ttfamily \#include $<$D\+S3231.\+hpp$>$}
+
 Inheritance diagram for D\+S3231\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,41 +18,40 @@ Inheritance diagram for D\+S3231\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_d_s3231_a316537e9a09ce7ef57c1955785f1fa24}\label{class_d_s3231_a316537e9a09ce7ef57c1955785f1fa24}} 
-{\bfseries D\+S3231} (\mbox{\hyperlink{classi2c_bus}{i2c\+Bus}} \&I2\+C\+Bus, uint8\+\_\+t address=default\+D\+S3231\+Address)
-\item 
+\mbox{\hyperlink{class_d_s3231_ac1f8a5e8553eebfb90dbb432f00812a3}{D\+S3231}} (\mbox{\hyperlink{classi2c_bus}{i2c\+Bus}} \&\mbox{\hyperlink{class_d_s3231_acffbcfc655349fd392b97dff5f18a56f}{I2\+C\+Bus}}, uint8\+\_\+t address=0x68)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a8a5357eae07991d94f8f7610a3f3073a}{get\+Current\+Seconds}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value of the seconds register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_ac73512cc6c2a37ffb21bee74ea835a09}{set\+Current\+Seconds}} (uint8\+\_\+t new\+Seconds) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the seconds register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the seconds register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a08f384e1897214d4a201aaaecde3b8a4}{get\+Current\+Minutes}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value of the minutes register of the realtimeclock chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a221f92091b813108b3515f6676be29c8}{set\+Current\+Minutes}} (uint8\+\_\+t new\+Minutes) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the minutes register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the minutes register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a019d8ed8074a02937c0777424be3d0ae}{get\+Current\+Hours}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value of the hours register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_ae59c15abcccd8e27eadebcd150db810e}{set\+Current\+Hours}} (uint8\+\_\+t new\+Hours) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the hours register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the hours register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a813bbe55a08e1911d498511795721477}{get\+Current\+Day}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value in the day register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_ae43a887db6022008c066a257acd68ae8}{set\+Current\+Day}} (uint8\+\_\+t new\+Day) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the day register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the day register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a346341a4d3c6615103b33fbff7a12884}{get\+Current\+Date}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value in the date register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a597a0d5cb33f8b60f81dba9050ca1363}{set\+Current\+Date}} (uint8\+\_\+t new\+Date) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the date register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the date register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a8d7a965802afacc16b4d5af86e0ed11e}{get\+Current\+Month}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value in the month register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a122611bf693cdd538178b99b893a7115}{set\+Current\+Month}} (uint8\+\_\+t new\+Month) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the month register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the month register. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_d_s3231_a38dfc1567d3419d5aeecd2062d4121c7}{get\+Current\+Century\+Bit}} () override
 \begin{DoxyCompactList}\small\item\em Get the current century bit in the centrury register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a6477bd1bb91d3df6a088c369692f46a3}{Reset\+Curent\+Century\+Bit}} () override
-\begin{DoxyCompactList}\small\item\em Set the current value in the month register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the month register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a28a340b10b045ad1e8b94532a57c3759}{get\+Current\+Year}} () override
 \begin{DoxyCompactList}\small\item\em Get the current value in the year register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a59a60a725581bc8e5dcf857ea52c6281}{set\+Current\+Year}} (uint8\+\_\+t new\+Year) override
-\begin{DoxyCompactList}\small\item\em Set the current value in the year register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the year register. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{class_d_s3231_abd46c1cf5f5c78e3222c3677e70a1272}{get\+Current\+Temperature\+Celsius}} () override
 \begin{DoxyCompactList}\small\item\em Get the current temperature in degrees celsius. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{class_d_s3231_aa31acb133cc63aa7a2a25eda6244c9df}{get\+Current\+Temperature\+Fahrenheit}} () override
@@ -51,52 +59,43 @@ int16\+\_\+t \mbox{\hyperlink{class_d_s3231_aa31acb133cc63aa7a2a25eda6244c9df}{g
 void \mbox{\hyperlink{class_d_s3231_a0ca41c2242367c5ff1424d1b12f909c5}{get\+Current\+Time\+Data}} (uint8\+\_\+t data\mbox{[}7\mbox{]}) override
 \begin{DoxyCompactList}\small\item\em Get the current timestamp in an array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtimestamp}{timestamp}} \mbox{\hyperlink{class_d_s3231_a04e087a918d2d48b0cdd2e3c6c2f595f}{get\+Current\+Timestamp}} () override
-\begin{DoxyCompactList}\small\item\em Get the a current timestamp /ref \mbox{\hyperlink{timestamp_8hpp_source}{timestamp.\+hpp}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the a current timestamp \mbox{\hyperlink{timestamp_8hpp_source}{timestamp.\+hpp}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_ad94d54ed265fb5b911b4281f0103b0b0}{get\+Current\+Timestamp}} (\mbox{\hyperlink{classtimestamp}{timestamp}} \&ts) override
 \begin{DoxyCompactList}\small\item\em Update a existing timestamp. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_afd2b16482de8abc10981fdfca0e181a6}{get\+Alarm\+One\+Seconds}} () override
 \begin{DoxyCompactList}\small\item\em Get the value of the alarm one seconds register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_ae294f3c8c8634a058846cf9864ccc5c8}{set\+Alarm\+One\+Seconds}} (uint8\+\_\+t new\+Seconds) override
-\begin{DoxyCompactList}\small\item\em Set a value in the alarm one seconds register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the alarm one seconds register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_ae11a0dcc34e9c8a9b875989172339957}{get\+Alarm\+Minutes}} (bool \mbox{\hyperlink{classalarm}{alarm}}) override
 \begin{DoxyCompactList}\small\item\em Get the value of the alarm 1/2 minutes register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a9c1f5b183c24f3062c1c8c299f46023c}{set\+Alarm\+Minutes}} (bool \mbox{\hyperlink{classalarm}{alarm}}, uint8\+\_\+t new\+Minutes) override
-\begin{DoxyCompactList}\small\item\em Set a value in the alarm 1/2 minutes register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the alarm 1/2 minutes register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a8dc2f4546600209d16f109764c2f4434}{get\+Alarm\+Hours}} (bool \mbox{\hyperlink{classalarm}{alarm}}) override
 \begin{DoxyCompactList}\small\item\em Get the value of the alarm 1/2 hours register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a0bcc7e2285869ffbe29d19c593f5a447}{set\+Alarm\+Hours}} (bool \mbox{\hyperlink{classalarm}{alarm}}, uint8\+\_\+t new\+Hours) override
-\begin{DoxyCompactList}\small\item\em Set a value in the alarm 1/2 hours register. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set a new value in the alarm 1/2 hours register. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a0b013c68f96b5145c1c9feb9270855a7}{get\+Alarm\+Day\+Date}} (bool \mbox{\hyperlink{classalarm}{alarm}}) override
 \begin{DoxyCompactList}\small\item\em Get the value of the alarm 1/2 day and date register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_aa2048cc766ca58f707e84cbc564c1276}{set\+Alarm\+Day\+Date}} (bool \mbox{\hyperlink{classalarm}{alarm}}, uint8\+\_\+t new\+Day\+Date) override
-\begin{DoxyCompactList}\small\item\em Set a value in the alarm 1/2 day and date register. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_d_s3231_a2e023e091c63208290e275874552a716}\label{class_d_s3231_a2e023e091c63208290e275874552a716}} 
-uint8\+\_\+t {\bfseries get\+Control\+Register} () override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a1151a22a8dd47470b22562cedae114e9}\label{class_d_s3231_a1151a22a8dd47470b22562cedae114e9}} 
-void {\bfseries set\+Control\+Register} (uint8\+\_\+t new\+Byte) override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a5b22edafc0d475fd6e33936c286654d5}\label{class_d_s3231_a5b22edafc0d475fd6e33936c286654d5}} 
-bool {\bfseries get\+Control\+Register\+Bit} (uint8\+\_\+t bit\+Number) override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a9ed1255adb58ecd03a541a4d481496c4}\label{class_d_s3231_a9ed1255adb58ecd03a541a4d481496c4}} 
-void {\bfseries set\+Control\+Register\+Bit} (uint8\+\_\+t bit\+Number, bool new\+Bit) override
-\item 
-\mbox{\Hypertarget{class_d_s3231_aee77c6ecb3c292d375eebe7e58ebb024}\label{class_d_s3231_aee77c6ecb3c292d375eebe7e58ebb024}} 
-uint8\+\_\+t {\bfseries get\+Status\+Register} () override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a303a9a5123f66987e209396d60e329e8}\label{class_d_s3231_a303a9a5123f66987e209396d60e329e8}} 
-void {\bfseries set\+Status\+Register} (uint8\+\_\+t new\+Byte) override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a94e9f40f1b453dc4d8894b63bc0ec7d6}\label{class_d_s3231_a94e9f40f1b453dc4d8894b63bc0ec7d6}} 
-int8\+\_\+t {\bfseries get\+Aging\+Offset} () override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a0a9dc2668139654b261c2feeb1d6e663}\label{class_d_s3231_a0a9dc2668139654b261c2feeb1d6e663}} 
-void {\bfseries set\+Aging\+Offset} (int8\+\_\+t new\+Aging\+Offset) override
-\item 
-\mbox{\Hypertarget{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}\label{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}} 
-void {\bfseries update} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set a new value in the alarm 1/2 day and date register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a2e023e091c63208290e275874552a716}{get\+Control\+Register}} () override
+\begin{DoxyCompactList}\small\item\em Get the current value in the control register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s3231_a1151a22a8dd47470b22562cedae114e9}{set\+Control\+Register}} (uint8\+\_\+t new\+Byte) override
+\begin{DoxyCompactList}\small\item\em Set a new value in the control register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_s3231_a5b22edafc0d475fd6e33936c286654d5}{get\+Control\+Register\+Bit}} (uint8\+\_\+t bit\+Number) override
+\begin{DoxyCompactList}\small\item\em Get only one bit from the control register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s3231_a9ed1255adb58ecd03a541a4d481496c4}{set\+Control\+Register\+Bit}} (uint8\+\_\+t bit\+Number, bool new\+Bit) override
+\begin{DoxyCompactList}\small\item\em Set only one bit in the control register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_aee77c6ecb3c292d375eebe7e58ebb024}{get\+Status\+Register}} () override
+\begin{DoxyCompactList}\small\item\em Get a new value in the status register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s3231_a303a9a5123f66987e209396d60e329e8}{set\+Status\+Register}} (uint8\+\_\+t new\+Byte) override
+\begin{DoxyCompactList}\small\item\em Set only one bit in the control register. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{class_d_s3231_a94e9f40f1b453dc4d8894b63bc0ec7d6}{get\+Aging\+Offset}} () override
+\begin{DoxyCompactList}\small\item\em Get the current value in the aging offset register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s3231_a0a9dc2668139654b261c2feeb1d6e663}{set\+Aging\+Offset}} (int8\+\_\+t new\+Aging\+Offset) override
+\begin{DoxyCompactList}\small\item\em Set a new value in the aging offset register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}{update}} () override
+\begin{DoxyCompactList}\small\item\em Every time this method is called the century bit will be checked and further action will be taken. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,101 +123,133 @@ const uint8\+\_\+t {\bfseries B\+I\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+B\+A\+T\
 \mbox{\Hypertarget{class_d_s3231_aa65496ef80d4dc0a91c9c3386068593f}\label{class_d_s3231_aa65496ef80d4dc0a91c9c3386068593f}} 
 const uint8\+\_\+t {\bfseries B\+I\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+O\+S\+C\+I\+L\+L\+A\+T\+OR} = 7
 \end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s3231_a0b898a5f3a0c06bc6a6d8fb94d34dd02}\label{class_d_s3231_a0b898a5f3a0c06bc6a6d8fb94d34dd02}} 
+enum \mbox{\hyperlink{class_d_s3231_a0b898a5f3a0c06bc6a6d8fb94d34dd02}{R\+EG}} \+: uint8\+\_\+t \{ \newline
+{\bfseries R\+E\+G\+\_\+\+S\+E\+C\+O\+N\+DS} = 0x00, 
+{\bfseries R\+E\+G\+\_\+\+M\+I\+N\+U\+T\+ES}, 
+{\bfseries R\+E\+G\+\_\+\+H\+O\+U\+RS}, 
+{\bfseries R\+E\+G\+\_\+\+D\+AY}, 
+\newline
+{\bfseries R\+E\+G\+\_\+\+D\+A\+TE}, 
+{\bfseries R\+E\+G\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+E\+N\+T\+U\+RY}, 
+{\bfseries R\+E\+G\+\_\+\+Y\+E\+AR}, 
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+S\+EC}, 
+\newline
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+M\+IN}, 
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+H\+O\+U\+RS}, 
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+D\+A\+Y\+\_\+\+D\+A\+TE}, 
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+2\+\_\+\+M\+IN}, 
+\newline
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+2\+\_\+\+H\+O\+U\+RS}, 
+{\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+2\+\_\+\+D\+A\+Y\+\_\+\+D\+A\+TE}, 
+{\bfseries R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL}, 
+{\bfseries R\+E\+G\+\_\+\+S\+T\+A\+T\+US}, 
+\newline
+{\bfseries R\+E\+G\+\_\+\+A\+G\+I\+N\+G\+\_\+\+O\+F\+F\+S\+ET}, 
+{\bfseries R\+E\+G\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+M\+SB}, 
+{\bfseries R\+E\+G\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+SB}
+ \}
+\begin{DoxyCompactList}\small\item\em All the interal registers the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip has. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}\label{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}} 
 void {\bfseries set\+I2\+C\+Bus\+Current\+Address} ()
 \item 
-\mbox{\Hypertarget{class_d_s3231_a70033a61ca1965fa0aed9af31679355f}\label{class_d_s3231_a70033a61ca1965fa0aed9af31679355f}} 
-uint8\+\_\+t {\bfseries get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB} (uint8\+\_\+t alarm\+Register)
-\item 
-\mbox{\Hypertarget{class_d_s3231_a79280f7161eaa45b50fe649eda9c480a}\label{class_d_s3231_a79280f7161eaa45b50fe649eda9c480a}} 
-void {\bfseries set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB} (uint8\+\_\+t alarm\+Register, uint8\+\_\+t new\+Byte)
-\end{DoxyCompactItemize}
+uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a70033a61ca1965fa0aed9af31679355f}{get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}} (uint8\+\_\+t alarm\+Register)
+\begin{DoxyCompactList}\small\item\em this used to get a alarm register. The M\+SB is not needed because that is the alarm rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s3231_a79280f7161eaa45b50fe649eda9c480a}{set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}} (uint8\+\_\+t alarm\+Register, uint8\+\_\+t new\+Byte)
+\begin{DoxyCompactList}\small\item\em this used to set a alarm register. The M\+SB is not set because that is the alarm rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_d_s3231_acffbcfc655349fd392b97dff5f18a56f}\label{class_d_s3231_acffbcfc655349fd392b97dff5f18a56f}} 
-\mbox{\hyperlink{classi2c_bus}{i2c\+Bus}} \& {\bfseries I2\+C\+Bus}
-\item 
+\mbox{\hyperlink{classi2c_bus}{i2c\+Bus}} \& \mbox{\hyperlink{class_d_s3231_acffbcfc655349fd392b97dff5f18a56f}{I2\+C\+Bus}}
+\begin{DoxyCompactList}\small\item\em The bus which is used to communicate with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_d_s3231_a905b445bb664b52529b3acbccbbaccb3}\label{class_d_s3231_a905b445bb664b52529b3acbccbbaccb3}} 
-uint8\+\_\+t {\bfseries D\+S3231\+Address}
-\item 
-\mbox{\Hypertarget{class_d_s3231_a15fb987b624cdddde40a15db36665221}\label{class_d_s3231_a15fb987b624cdddde40a15db36665221}} 
-int {\bfseries new\+Century}
-\item 
-\mbox{\Hypertarget{class_d_s3231_aaede356dfbcd2f22e8ac4103e67d4f8e}\label{class_d_s3231_aaede356dfbcd2f22e8ac4103e67d4f8e}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+S\+E\+C\+O\+N\+DS} = 0x00
-\item 
-\mbox{\Hypertarget{class_d_s3231_affe134ab59f11a0fe7243f1172466fc2}\label{class_d_s3231_affe134ab59f11a0fe7243f1172466fc2}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+M\+I\+N\+U\+T\+ES} = 0x01
-\item 
-\mbox{\Hypertarget{class_d_s3231_a80f6664a64967b5383933d314b57c7bc}\label{class_d_s3231_a80f6664a64967b5383933d314b57c7bc}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+H\+O\+U\+RS} = 0x02
-\item 
-\mbox{\Hypertarget{class_d_s3231_a7fc54a4d1b80a74b003b451ee8fa6eda}\label{class_d_s3231_a7fc54a4d1b80a74b003b451ee8fa6eda}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+D\+AY} = 0x03
-\item 
-\mbox{\Hypertarget{class_d_s3231_ad51434b6ef3bbc02bb2ddb18c1b70f2b}\label{class_d_s3231_ad51434b6ef3bbc02bb2ddb18c1b70f2b}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+D\+A\+TE} = 0x04
-\item 
-\mbox{\Hypertarget{class_d_s3231_a20ac9f897ca08f0968c24c9a66703159}\label{class_d_s3231_a20ac9f897ca08f0968c24c9a66703159}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+E\+N\+T\+U\+RY} = 0x05
-\item 
-\mbox{\Hypertarget{class_d_s3231_ada659ad8327043d2dc7e92988a943c03}\label{class_d_s3231_ada659ad8327043d2dc7e92988a943c03}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+Y\+E\+AR} = 0x06
-\item 
-\mbox{\Hypertarget{class_d_s3231_a90aab5b318631c1d5bfb38ebcee822ac}\label{class_d_s3231_a90aab5b318631c1d5bfb38ebcee822ac}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+S\+EC} = 0x07
-\item 
-\mbox{\Hypertarget{class_d_s3231_a31ea11d7f117cd181868b76c7580ff9a}\label{class_d_s3231_a31ea11d7f117cd181868b76c7580ff9a}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+M\+IN} = 0x08
-\item 
-\mbox{\Hypertarget{class_d_s3231_a38f8b765f3a23dcf6e1e402b6b4955a4}\label{class_d_s3231_a38f8b765f3a23dcf6e1e402b6b4955a4}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+H\+O\+U\+RS} = 0x09
-\item 
-\mbox{\Hypertarget{class_d_s3231_ae16ac34f6a6d25ec7709745b1671a34c}\label{class_d_s3231_ae16ac34f6a6d25ec7709745b1671a34c}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+1\+\_\+\+D\+A\+Y\+\_\+\+D\+A\+TE} = 0x0A
-\item 
-\mbox{\Hypertarget{class_d_s3231_aca2b9311735fff7dded9877d48e8284d}\label{class_d_s3231_aca2b9311735fff7dded9877d48e8284d}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+2\+\_\+\+M\+IN} = 0x0B
-\item 
-\mbox{\Hypertarget{class_d_s3231_ac8f2d234a9e303fe71b52a32a3571d7d}\label{class_d_s3231_ac8f2d234a9e303fe71b52a32a3571d7d}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+2\+\_\+\+H\+O\+U\+RS} = 0x0C
-\item 
-\mbox{\Hypertarget{class_d_s3231_a05deee6f4c941a37c95f773cc7a369a3}\label{class_d_s3231_a05deee6f4c941a37c95f773cc7a369a3}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+\_\+2\+\_\+\+D\+A\+Y\+\_\+\+D\+A\+TE} = 0x0D
-\item 
-\mbox{\Hypertarget{class_d_s3231_adc5a414930fd2cf9038dd3096ed4da1f}\label{class_d_s3231_adc5a414930fd2cf9038dd3096ed4da1f}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL} = 0x0E
-\item 
-\mbox{\Hypertarget{class_d_s3231_a242154f8eff5f7005d47c394b02251de}\label{class_d_s3231_a242154f8eff5f7005d47c394b02251de}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+S\+T\+A\+T\+US} = 0x0F
-\item 
-\mbox{\Hypertarget{class_d_s3231_a8a48b6c5dc799fce792806d8307a869e}\label{class_d_s3231_a8a48b6c5dc799fce792806d8307a869e}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+A\+G\+I\+N\+G\+\_\+\+O\+F\+F\+S\+ET} = 0x10
-\item 
-\mbox{\Hypertarget{class_d_s3231_a0334c3d383e5f28df368f21062672228}\label{class_d_s3231_a0334c3d383e5f28df368f21062672228}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+M\+SB} = 0x11
-\item 
-\mbox{\Hypertarget{class_d_s3231_a6bc742bfa52c83f252787045c9952a45}\label{class_d_s3231_a6bc742bfa52c83f252787045c9952a45}} 
-const uint8\+\_\+t {\bfseries R\+E\+G\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+SB} = 0x12
-\item 
+uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a905b445bb664b52529b3acbccbbaccb3}{D\+S3231\+Address}}
+\begin{DoxyCompactList}\small\item\em The address the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip uses to communicate. (default 0x68) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_d_s3231_a15fb987b624cdddde40a15db36665221}{new\+Century}}
+\begin{DoxyCompactList}\small\item\em The amount of centuries have passed when started. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_d_s3231_a5f55646a365acc7123c76b2c363eb416}\label{class_d_s3231_a5f55646a365acc7123c76b2c363eb416}} 
 const uint8\+\_\+t {\bfseries B\+I\+T\+\_\+\+A\+L\+A\+R\+M\+\_\+\+Ax\+Mx} = 7
-\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_d_s3231_a9c6b5e3dea008155e78dfc6623fe41b9}\label{class_d_s3231_a9c6b5e3dea008155e78dfc6623fe41b9}} 
-static const uint8\+\_\+t {\bfseries default\+D\+S3231\+Address} = 0x68
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
+\subsection{Detailed Description}
+This class is used to communicate with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip. 
+
+This is a basic library for the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip. Using the pure virtual class \mbox{\hyperlink{classreal_time_clock}{real\+Time\+Clock}}. Execute the tests when you\textquotesingle{}re not sure the chip is connected correctly. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_s3231_ac1f8a5e8553eebfb90dbb432f00812a3}\label{class_d_s3231_ac1f8a5e8553eebfb90dbb432f00812a3}} 
+\index{D\+S3231@{D\+S3231}!D\+S3231@{D\+S3231}}
+\index{D\+S3231@{D\+S3231}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{D\+S3231()}{DS3231()}}
+{\footnotesize\ttfamily D\+S3231\+::\+D\+S3231 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classi2c_bus}{i2c\+Bus}} \&}]{I2\+C\+Bus,  }\item[{uint8\+\_\+t}]{address = {\ttfamily 0x68} }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classi2c_bus}{i2c\+Bus}}} & the bus which is used to communicate with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{i2c_bus_8hpp_source}{i2c\+Bus.\+hpp}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em address} & the address which is used to communicate with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} chip. (default = 0x68) \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_d_s3231_a0b013c68f96b5145c1c9feb9270855a7}\label{class_d_s3231_a0b013c68f96b5145c1c9feb9270855a7}} 
+\mbox{\Hypertarget{class_d_s3231_a94e9f40f1b453dc4d8894b63bc0ec7d6}\label{class_d_s3231_a94e9f40f1b453dc4d8894b63bc0ec7d6}} 
+\index{D\+S3231@{D\+S3231}!get\+Aging\+Offset@{get\+Aging\+Offset}}
+\index{get\+Aging\+Offset@{get\+Aging\+Offset}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{get\+Aging\+Offset()}{getAgingOffset()}}
+{\footnotesize\ttfamily int8\+\_\+t D\+S3231\+::get\+Aging\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current value in the aging offset register. 
+
+\begin{DoxyReturn}{Returns}
+An int8\+\_\+t containing the current value in the aging offset register.
+\end{DoxyReturn}
+"Positive aging values add capacitance to the array, slowing the oscillator frequency. Negative values remove capacitance from the array, increasing the oscillator frequency." For further information about the aging offset look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 14} 
+
+Implements \mbox{\hyperlink{classreal_time_clock_a2bc081385a6ad8273201d66217f8b2f0}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_a70033a61ca1965fa0aed9af31679355f}\label{class_d_s3231_a70033a61ca1965fa0aed9af31679355f}} 
+\index{D\+S3231@{D\+S3231}!get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB@{get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}}
+\index{get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB@{get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+S\+B()}{getAlarmBCDRegisterExMSB()}}
+{\footnotesize\ttfamily uint8\+\_\+t D\+S3231\+::get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{alarm\+Register }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+this used to get a alarm register. The M\+SB is not needed because that is the alarm rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alarm\+Register} & the alarm register you want to get the value of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of the alarm register without the M\+SB bit.
+\end{DoxyReturn}
+This method is used to get the alarm registers. The M\+SB is a part of the alarm rate. More info about the alarm rate can be found at\+: \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 12, table 2} \mbox{\Hypertarget{class_d_s3231_a0b013c68f96b5145c1c9feb9270855a7}\label{class_d_s3231_a0b013c68f96b5145c1c9feb9270855a7}} 
 \index{D\+S3231@{D\+S3231}!get\+Alarm\+Day\+Date@{get\+Alarm\+Day\+Date}}
 \index{get\+Alarm\+Day\+Date@{get\+Alarm\+Day\+Date}!D\+S3231@{D\+S3231}}
 \subsubsection{\texorpdfstring{get\+Alarm\+Day\+Date()}{getAlarmDayDate()}}
@@ -237,7 +268,7 @@ Get the value of the alarm 1/2 day and date register.
 An uint8\+\_\+t containing the current value in alarm 1/2 day and date register.
 \end{DoxyReturn}
 This method will get you the current value of the any alarm day and date register. You can choose which alarm register using the parameter alarm. 0 = alarm one, 1 = alarm two. \begin{DoxyWarning}{Warning}
-note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
+Note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
 \end{DoxyWarning}
 
 
@@ -262,7 +293,7 @@ Get the value of the alarm 1/2 hours register.
 An uint8\+\_\+t containing the current value in alarm 1/2 hours register.
 \end{DoxyReturn}
 This method will get you the current value of the any alarm hours register. You can choose which alarm register using the parameter alarm. 0 = alarm one, 1 = alarm two. \begin{DoxyWarning}{Warning}
-note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
+Note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
 \end{DoxyWarning}
 
 
@@ -287,7 +318,7 @@ Get the value of the alarm 1/2 minutes register.
 An uint8\+\_\+t containing the current value in alarm 1/2 minutes register.
 \end{DoxyReturn}
 This method will get you the current value of the any alarm minutes register. You can choose which alarm register using the parameter alarm. 0 = alarm one, 1 = alarm two. \begin{DoxyWarning}{Warning}
-note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
+Note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
 \end{DoxyWarning}
 
 
@@ -309,6 +340,54 @@ An uint8\+\_\+t containing the current value in alarm 1 seconds register.
 
 
 Implements \mbox{\hyperlink{classreal_time_clock_af4ff1775432a08af7e41db135d16bf65}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_a2e023e091c63208290e275874552a716}\label{class_d_s3231_a2e023e091c63208290e275874552a716}} 
+\index{D\+S3231@{D\+S3231}!get\+Control\+Register@{get\+Control\+Register}}
+\index{get\+Control\+Register@{get\+Control\+Register}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{get\+Control\+Register()}{getControlRegister()}}
+{\footnotesize\ttfamily uint8\+\_\+t D\+S3231\+::get\+Control\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current value in the control register. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the current value in the control register.
+\end{DoxyReturn}
+\mbox{\hyperlink{class_d_s3231}{D\+S3231}} control register bits\+: ~\newline
+Bit 0 = Alarm one interrupt enable. (logic 1) Bit 1 = Alarm two interrupt enable. (logic 1) Bit 2 = Interrupt control. (S\+QW pin) Bit 3/4 = Rate select. (S\+QW frequency) Bit 5 = Convert temperature. Bit 6 = Battery-\/\+Backed Square-\/\+Wave enable Bit 7 = Enable oscillator (logic 0) For further information about the bits look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 13} 
+
+Reimplemented from \mbox{\hyperlink{classreal_time_clock_a13820319507d89a62a5b37b252ea6d0d}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_a5b22edafc0d475fd6e33936c286654d5}\label{class_d_s3231_a5b22edafc0d475fd6e33936c286654d5}} 
+\index{D\+S3231@{D\+S3231}!get\+Control\+Register\+Bit@{get\+Control\+Register\+Bit}}
+\index{get\+Control\+Register\+Bit@{get\+Control\+Register\+Bit}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{get\+Control\+Register\+Bit()}{getControlRegisterBit()}}
+{\footnotesize\ttfamily bool D\+S3231\+::get\+Control\+Register\+Bit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bit\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get only one bit from the control register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Number} & the bit you want to set in the control register. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool containing the value of the bit\+Number in the control register.
+\end{DoxyReturn}
+\mbox{\hyperlink{class_d_s3231}{D\+S3231}} control register bits\+: ~\newline
+ Bit 0 = Alarm one interrupt enable. (logic 1) ~\newline
+ Bit 1 = Alarm two interrupt enable. (logic 1) ~\newline
+ Bit 2 = Interrupt control. (S\+QW pin) ~\newline
+ Bit 3/4 = Rate select. (S\+QW frequency) ~\newline
+ Bit 5 = Convert temperature. ~\newline
+ Bit 6 = Battery-\/\+Backed Square-\/\+Wave enable ~\newline
+ Bit 7 = Enable oscillator (logic 0) ~\newline
+ For further information about the bits look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 13} 
+
+Reimplemented from \mbox{\hyperlink{classreal_time_clock_a762441ffb1fbee666cd1642edfb8c929}{real\+Time\+Clock}}.
 
 \mbox{\Hypertarget{class_d_s3231_a38dfc1567d3419d5aeecd2062d4121c7}\label{class_d_s3231_a38dfc1567d3419d5aeecd2062d4121c7}} 
 \index{D\+S3231@{D\+S3231}!get\+Current\+Century\+Bit@{get\+Current\+Century\+Bit}}
@@ -478,7 +557,7 @@ Get the current timestamp in an array.
 {\em data\mbox{[}7\mbox{]}} & is a pointer to an array where the current timestamp will be stored in.\\
 \hline
 \end{DoxyParams}
-This method returns a array with raw data (B\+CD values) of the following registers\+: array\mbox{[}0\mbox{]} = seconds array\mbox{[}1\mbox{]} = minutes array\mbox{[}2\mbox{]} = hours array\mbox{[}3\mbox{]} = day array\mbox{[}4\mbox{]} = date array\mbox{[}5\mbox{]} = month array\mbox{[}6\mbox{]} = year array\mbox{[}7\mbox{]} = century (/ref \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} current\+Century) \begin{DoxyWarning}{Warning}
+This method returns a array with raw data (B\+CD values) of the following registers\+: array\mbox{[}0\mbox{]} = seconds array\mbox{[}1\mbox{]} = minutes array\mbox{[}2\mbox{]} = hours array\mbox{[}3\mbox{]} = day array\mbox{[}4\mbox{]} = date array\mbox{[}5\mbox{]} = month array\mbox{[}6\mbox{]} = year array\mbox{[}7\mbox{]} = century (\mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} current\+Century) \begin{DoxyWarning}{Warning}
 The array will be filled with raw data. Most registers are B\+CD register. This means that the decimal value might not be what you expected. 
 
 Note that the array must have a size of 7. All the data in the array will be overritten. 
@@ -495,12 +574,12 @@ Implements \mbox{\hyperlink{classreal_time_clock_a2d1613b3cd572f62bc9faaea6a0f82
 
 
 
-Get the a current timestamp /ref \mbox{\hyperlink{timestamp_8hpp_source}{timestamp.\+hpp}}. 
+Get the a current timestamp \mbox{\hyperlink{timestamp_8hpp_source}{timestamp.\+hpp}}. 
 
 \begin{DoxyReturn}{Returns}
 a timestamp with the containing the current time.
 \end{DoxyReturn}
-This method returns a timestamp with the same data as \mbox{\hyperlink{class_d_s3231_a0ca41c2242367c5ff1424d1b12f909c5}{get\+Current\+Time\+Data}}. You might want to use this over \mbox{\hyperlink{class_d_s3231_a0ca41c2242367c5ff1424d1b12f909c5}{get\+Current\+Time\+Data}} because there is extra functionality in the timestamp class. Look at /ref \mbox{\hyperlink{timestamp_8hpp_source}{timestamp.\+hpp}} for further information about the timestamp format. 
+This method returns a timestamp with the same data as \mbox{\hyperlink{class_d_s3231_a0ca41c2242367c5ff1424d1b12f909c5}{get\+Current\+Time\+Data}}. You might want to use this over \mbox{\hyperlink{class_d_s3231_a0ca41c2242367c5ff1424d1b12f909c5}{get\+Current\+Time\+Data}} because there is extra functionality in the timestamp class. Look at \mbox{\hyperlink{timestamp_8hpp_source}{timestamp.\+hpp}} for further information about the timestamp format. 
 
 Implements \mbox{\hyperlink{classreal_time_clock_a08a7854ef9cef638996a267a953c9b14}{real\+Time\+Clock}}.
 
@@ -540,11 +619,37 @@ Get the current value in the year register.
 A uin8\+\_\+t containing the current value of the year register (0 -\/ 99) 
 \end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
-Most chips will set the century bit when the year register went past 99. Note when the century bit is high you\textquotesingle{}re in a new century. \#update will automaticly update the current century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} and reset the century bit. 
+Most chips will set the century bit when the year register went past 99. Note when the century bit is high you\textquotesingle{}re in a new century. \mbox{\hyperlink{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}{update}} will update the current\+Century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} and reset the century bit. 
 \end{DoxyWarning}
 
 
 Implements \mbox{\hyperlink{classreal_time_clock_a0cb99c34e2d6a089a62c8bea760c5add}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_aee77c6ecb3c292d375eebe7e58ebb024}\label{class_d_s3231_aee77c6ecb3c292d375eebe7e58ebb024}} 
+\index{D\+S3231@{D\+S3231}!get\+Status\+Register@{get\+Status\+Register}}
+\index{get\+Status\+Register@{get\+Status\+Register}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{get\+Status\+Register()}{getStatusRegister()}}
+{\footnotesize\ttfamily uint8\+\_\+t D\+S3231\+::get\+Status\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get a new value in the status register. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the current value in the status register.
+\end{DoxyReturn}
+\mbox{\hyperlink{class_d_s3231}{D\+S3231}} status register bits\+: ~\newline
+ Bit 0 = Alarm one flag. (Time matched in the alarm registers) ~\newline
+ Bit 1 = Alarm two flag. (Time matched in the alarm registers) ~\newline
+ Bit 2 = Busy. (T\+C\+XO functions executing) ~\newline
+ Bit 3 = Enable 32k\+Hz output. ~\newline
+ Bit 4 = R\+E\+S\+E\+R\+V\+ED. ~\newline
+ Bit 5 = R\+E\+S\+E\+R\+V\+ED. ~\newline
+ Bit 6 = R\+E\+S\+E\+R\+V\+ED. ~\newline
+ Bit 7 = Oscillator stop flag. (logic 1) ~\newline
+ For further information about the bits look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 14} 
+
+Implements \mbox{\hyperlink{classreal_time_clock_a38dcc51b0b30a5e480ea7f18f2c792ba}{real\+Time\+Clock}}.
 
 \mbox{\Hypertarget{class_d_s3231_a6477bd1bb91d3df6a088c369692f46a3}\label{class_d_s3231_a6477bd1bb91d3df6a088c369692f46a3}} 
 \index{D\+S3231@{D\+S3231}!Reset\+Curent\+Century\+Bit@{Reset\+Curent\+Century\+Bit}}
@@ -554,23 +659,62 @@ Implements \mbox{\hyperlink{classreal_time_clock_a0cb99c34e2d6a089a62c8bea760c5a
 
 
 
-Set the current value in the month register. 
+Set a new value in the month register. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em new\+Month} & the value you want to set into the month register. (1 -\/ 12)\\
 \hline
 \end{DoxyParams}
-The current\+Century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} will automaticly be updated after this bit was high when you call update. \begin{DoxyWarning}{Warning}
+The current\+Century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} will be updated after this bit was high when you call update. \begin{DoxyWarning}{Warning}
 This method will override the current value in the month register. 
 
-Only use this function if you know what you\textquotesingle{}re doing. The current\+Century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} will automaticly be updated after this bit was high when you call \#update. 
+Only use this function if you know what you\textquotesingle{}re doing. The current\+Century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} will be updated after this bit was high when you call \mbox{\hyperlink{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}{update}}. 
 \end{DoxyWarning}
 
 
 Implements \mbox{\hyperlink{classreal_time_clock_a50e19a6b0aef44719e91e3e753da0dce}{real\+Time\+Clock}}.
 
-\mbox{\Hypertarget{class_d_s3231_aa2048cc766ca58f707e84cbc564c1276}\label{class_d_s3231_aa2048cc766ca58f707e84cbc564c1276}} 
+\mbox{\Hypertarget{class_d_s3231_a0a9dc2668139654b261c2feeb1d6e663}\label{class_d_s3231_a0a9dc2668139654b261c2feeb1d6e663}} 
+\index{D\+S3231@{D\+S3231}!set\+Aging\+Offset@{set\+Aging\+Offset}}
+\index{set\+Aging\+Offset@{set\+Aging\+Offset}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{set\+Aging\+Offset()}{setAgingOffset()}}
+{\footnotesize\ttfamily void D\+S3231\+::set\+Aging\+Offset (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{new\+Aging\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set a new value in the aging offset register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Aging\+Offset} & the new value you want to set into the aging offset register.\\
+\hline
+\end{DoxyParams}
+"Positive aging values add capacitance to the array, slowing the oscillator frequency. Negative values remove capacitance from the array, increasing the oscillator frequency." For further information about the aging offset look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 14} \begin{DoxyWarning}{Warning}
+The real-\/time clock might become inaccurate after changing this value. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classreal_time_clock_aacf97da86677ee3fb55b5180ba5c0727}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_a79280f7161eaa45b50fe649eda9c480a}\label{class_d_s3231_a79280f7161eaa45b50fe649eda9c480a}} 
+\index{D\+S3231@{D\+S3231}!set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB@{set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}}
+\index{set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB@{set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+S\+B()}{setAlarmBCDRegisterExMSB()}}
+{\footnotesize\ttfamily void D\+S3231\+::set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{alarm\+Register,  }\item[{uint8\+\_\+t}]{new\+Byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+this used to set a alarm register. The M\+SB is not set because that is the alarm rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alarm\+Register} & the alarm register you want to get the value of. \\
+\hline
+{\em new\+Byte} & the byte you want to set into the alarm register. The M\+SB will be removed in copy of this value.\\
+\hline
+\end{DoxyParams}
+This method is used to set the alarm registers. The M\+SB is a part of the alarm rate which doesn\textquotesingle{}t has to be changed. More info about the alarm rate can be found at\+: \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 12, table 2} \mbox{\Hypertarget{class_d_s3231_aa2048cc766ca58f707e84cbc564c1276}\label{class_d_s3231_aa2048cc766ca58f707e84cbc564c1276}} 
 \index{D\+S3231@{D\+S3231}!set\+Alarm\+Day\+Date@{set\+Alarm\+Day\+Date}}
 \index{set\+Alarm\+Day\+Date@{set\+Alarm\+Day\+Date}!D\+S3231@{D\+S3231}}
 \subsubsection{\texorpdfstring{set\+Alarm\+Day\+Date()}{setAlarmDayDate()}}
@@ -578,7 +722,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a50e19a6b0aef44719e91e3e753da0d
 
 
 
-Set a value in the alarm 1/2 day and date register. 
+Set a new value in the alarm 1/2 day and date register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -588,9 +732,9 @@ Set a value in the alarm 1/2 day and date register.
 \hline
 \end{DoxyParams}
 This method will set a new value into the chosen alarm day and date register. You can choose which alarm register using the parameter alarm. 0 = alarm one, 1 = alarm two. \begin{DoxyWarning}{Warning}
-note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
+Note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
 
-the value in the chosen alarm day and date register will change. 
+The value in the chosen alarm day and date register will change. 
 \end{DoxyWarning}
 
 
@@ -604,7 +748,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a2c2bb16a7fc59f463fb3aaed2fcd19
 
 
 
-Set a value in the alarm 1/2 hours register. 
+Set a new value in the alarm 1/2 hours register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -614,9 +758,9 @@ Set a value in the alarm 1/2 hours register.
 \hline
 \end{DoxyParams}
 This method will set a new value into the chosen alarm hours register. You can choose which alarm register using the parameter alarm. 0 = alarm one, 1 = alarm two. \begin{DoxyWarning}{Warning}
-note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
+Note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
 
-the value in the chosen alarm hours register will change. 
+The value in the chosen alarm hours register will change. 
 \end{DoxyWarning}
 
 
@@ -630,7 +774,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a9f0cd64ce9a783f149fcbb9f7eb365
 
 
 
-Set a value in the alarm 1/2 minutes register. 
+Set a new value in the alarm 1/2 minutes register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -642,7 +786,7 @@ Set a value in the alarm 1/2 minutes register.
 This method will set a new value into the chosen alarm minutes register. You can choose which alarm register using the parameter alarm. 0 = alarm one, 1 = alarm two. \begin{DoxyWarning}{Warning}
 note that the paramether is a boolean. Therefore alarm one = 0 and alarm two = 1. 
 
-the value in the chosen alarm minutes register will change. 
+The value in the chosen alarm minutes register will change. 
 \end{DoxyWarning}
 
 
@@ -656,7 +800,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a53ffba88cd87d05af58288fb4fc589
 
 
 
-Set a value in the alarm one seconds register. 
+Set a new value in the alarm one seconds register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -670,6 +814,62 @@ The value in the alarm one seconds register will change.
 
 Implements \mbox{\hyperlink{classreal_time_clock_a448cbe8ab7f6649ee32eeb415721707f}{real\+Time\+Clock}}.
 
+\mbox{\Hypertarget{class_d_s3231_a1151a22a8dd47470b22562cedae114e9}\label{class_d_s3231_a1151a22a8dd47470b22562cedae114e9}} 
+\index{D\+S3231@{D\+S3231}!set\+Control\+Register@{set\+Control\+Register}}
+\index{set\+Control\+Register@{set\+Control\+Register}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{set\+Control\+Register()}{setControlRegister()}}
+{\footnotesize\ttfamily void D\+S3231\+::set\+Control\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set a new value in the control register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Byte} & the new value you want to store in the control register.\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_d_s3231}{D\+S3231}} control register bits\+: ~\newline
+ Bit 0 = Alarm one interrupt enable. (logic 1) ~\newline
+ Bit 1 = Alarm two interrupt enable. (logic 1) ~\newline
+ Bit 2 = Interrupt control. (S\+QW pin) ~\newline
+ Bit 3/4 = Rate select. (S\+QW frequency) ~\newline
+ Bit 5 = Convert temperature. ~\newline
+ Bit 6 = Battery-\/\+Backed Square-\/\+Wave enable ~\newline
+ Bit 7 = Enable oscillator (logic 0) ~\newline
+ For further information about the bits look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 13} 
+
+Reimplemented from \mbox{\hyperlink{classreal_time_clock_ab4034ba75fb65a55fb725c37e89f7626}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_a9ed1255adb58ecd03a541a4d481496c4}\label{class_d_s3231_a9ed1255adb58ecd03a541a4d481496c4}} 
+\index{D\+S3231@{D\+S3231}!set\+Control\+Register\+Bit@{set\+Control\+Register\+Bit}}
+\index{set\+Control\+Register\+Bit@{set\+Control\+Register\+Bit}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{set\+Control\+Register\+Bit()}{setControlRegisterBit()}}
+{\footnotesize\ttfamily void D\+S3231\+::set\+Control\+Register\+Bit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bit\+Number,  }\item[{bool}]{new\+Bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set only one bit in the control register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Number} & the bit you want to set in the control register. \\
+\hline
+{\em new\+Bit} & the value the bit\+Number will be set to.\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_d_s3231}{D\+S3231}} control register bits\+: ~\newline
+ Bit 0 = Alarm one interrupt enable. (logic 1) ~\newline
+ Bit 1 = Alarm two interrupt enable. (logic 1) ~\newline
+ Bit 2 = Interrupt control. (S\+QW pin) ~\newline
+ Bit 3/4 = Rate select. (S\+QW frequency) ~\newline
+ Bit 5 = Convert temperature. ~\newline
+ Bit 6 = Battery-\/\+Backed Square-\/\+Wave enable ~\newline
+ Bit 7 = Enable oscillator (logic 0) ~\newline
+ For further information about the bits look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 13} 
+
+Reimplemented from \mbox{\hyperlink{classreal_time_clock_af9b7db85f78d01060772bdb3b397ea3c}{real\+Time\+Clock}}.
+
 \mbox{\Hypertarget{class_d_s3231_a597a0d5cb33f8b60f81dba9050ca1363}\label{class_d_s3231_a597a0d5cb33f8b60f81dba9050ca1363}} 
 \index{D\+S3231@{D\+S3231}!set\+Current\+Date@{set\+Current\+Date}}
 \index{set\+Current\+Date@{set\+Current\+Date}!D\+S3231@{D\+S3231}}
@@ -678,7 +878,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a448cbe8ab7f6649ee32eeb41572170
 
 
 
-Set the current value in the date register. 
+Set a new value in the date register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -700,7 +900,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a7db563a518ae7b87ca6d77860906e5
 
 
 
-Set the current value in the day register. 
+Set a new value in the day register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -722,7 +922,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a4a80a695cbb55860921f92509fae0c
 
 
 
-Set the current value in the hours register. 
+Set a new value in the hours register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -744,7 +944,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a515d9de6067ae563bff5217da5100a
 
 
 
-Set the current value in the minutes register. 
+Set a new value in the minutes register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -766,7 +966,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a52da7366cd5f1e4c270eb87e7298da
 
 
 
-Set the current value in the month register. 
+Set a new value in the month register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -788,7 +988,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a2edeb084630a78309bc574eceaf5d6
 
 
 
-Set the current value in the seconds register. 
+Set a new value in the seconds register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -810,7 +1010,7 @@ Implements \mbox{\hyperlink{classreal_time_clock_a463a64d4861c75e26a80712e1dd50e
 
 
 
-Set the current value in the year register. 
+Set a new value in the year register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -820,13 +1020,87 @@ Set the current value in the year register.
 \begin{DoxyWarning}{Warning}
 This method will override the current value in the year register. 
 
-Most chips will set the century bit when the year register went past 99. Note when the century bit is high you\textquotesingle{}re in a new century. \#update will automaticly update the current century in /ref \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} and reset the century bit. 
+Most chips will set the century bit when the year register went past 99. Note when the century bit is high you\textquotesingle{}re in a new century. \mbox{\hyperlink{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}{update}} will update the current\+Century in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} and reset the century bit. 
 \end{DoxyWarning}
 
 
 Implements \mbox{\hyperlink{classreal_time_clock_a4d6e8056f52cea52bab5c635c0860c12}{real\+Time\+Clock}}.
 
+\mbox{\Hypertarget{class_d_s3231_a303a9a5123f66987e209396d60e329e8}\label{class_d_s3231_a303a9a5123f66987e209396d60e329e8}} 
+\index{D\+S3231@{D\+S3231}!set\+Status\+Register@{set\+Status\+Register}}
+\index{set\+Status\+Register@{set\+Status\+Register}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{set\+Status\+Register()}{setStatusRegister()}}
+{\footnotesize\ttfamily void D\+S3231\+::set\+Status\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Set only one bit in the control register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Byte} & the new value you want to store in the status register\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_d_s3231}{D\+S3231}} status register bits\+: ~\newline
+ Bit 0 = Alarm one flag. (Time matched in the alarm registers) ~\newline
+ Bit 1 = Alarm two flag. (Time matched in the alarm registers) ~\newline
+ Bit 2 = Busy. (T\+C\+XO functions executing) ~\newline
+ Bit 3 = Enable 32k\+Hz output. ~\newline
+ Bit 4 = R\+E\+S\+E\+R\+V\+ED. ~\newline
+ Bit 5 = R\+E\+S\+E\+R\+V\+ED. ~\newline
+ Bit 6 = R\+E\+S\+E\+R\+V\+ED. ~\newline
+ Bit 7 = Oscillator stop flag. (logic 1) ~\newline
+ For further information about the bits look at the datasheet of the chip you\textquotesingle{}re using. \href{https://datasheets.maximintegrated.com/en/ds/DS3231.pdf}{\tt D\+S3231 Datasheet page 14} \begin{DoxyWarning}{Warning}
+Most of the bits in the status register are not meant to be changed by the user. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classreal_time_clock_aa8ee80a7056c67543834508d0f04a218}{real\+Time\+Clock}}.
+
+\mbox{\Hypertarget{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}\label{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}} 
+\index{D\+S3231@{D\+S3231}!update@{update}}
+\index{update@{update}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void D\+S3231\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Every time this method is called the century bit will be checked and further action will be taken. 
+
+When the century bit is active it means that we are in a new century from now on. The current\+Century value will be changed accordingly in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}}. \begin{DoxyWarning}{Warning}
+Note that the current\+Century value in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} is shared between instances. Because it is static. You should only call this function if you want to change the current\+Century of all the instances. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classreal_time_clock_afb5132ca3cbe80552a88041cead0a2b3}{real\+Time\+Clock}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_s3231_acffbcfc655349fd392b97dff5f18a56f}\label{class_d_s3231_acffbcfc655349fd392b97dff5f18a56f}} 
+\index{D\+S3231@{D\+S3231}!I2\+C\+Bus@{I2\+C\+Bus}}
+\index{I2\+C\+Bus@{I2\+C\+Bus}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{I2\+C\+Bus}{I2CBus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classi2c_bus}{i2c\+Bus}}\& D\+S3231\+::\+I2\+C\+Bus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The bus which is used to communicate with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}}. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{i2c_bus_8hpp_source}{i2c\+Bus.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_d_s3231_a15fb987b624cdddde40a15db36665221}\label{class_d_s3231_a15fb987b624cdddde40a15db36665221}} 
+\index{D\+S3231@{D\+S3231}!new\+Century@{new\+Century}}
+\index{new\+Century@{new\+Century}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{new\+Century}{newCentury}}
+{\footnotesize\ttfamily int D\+S3231\+::new\+Century\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The amount of centuries have passed when started. 
+
+This value will increase when the century bit went high using \mbox{\hyperlink{class_d_s3231_a143ec57122d892ea0ec671a153352f2c}{update}}. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

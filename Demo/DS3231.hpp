@@ -7,41 +7,57 @@
 #include "timestamp.hpp"
 #include "realTimeClock.hpp"
 
+/// @brief
+///	This class is used to communicate with the DS3231 chip.
+/// @details
+/// This is a basic library for the DS3231 chip.
+/// Using the pure virtual class @ref realTimeClock.
+/// Execute the tests when you're not sure the chip is connected correctly.
+/// @warning
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 class DS3231 : public realTimeClock {
 private:
+	/// @brief The bus which is used to communicate with the DS3231.
+	/// @see
+	/// @ref i2cBus.hpp
 	i2cBus& I2CBus;
+
+	/// @brief The address the DS3231 chip uses to communicate. (default 0x68)
 	uint8_t DS3231Address;
 
+	/// @brief The amount of centuries have passed when started.
+	/// @details
+	/// This value will increase when the century bit went high using #update.
 	int newCentury;
 
-	static const uint8_t defaultDS3231Address = 0x68;
+	/// @brief All the interal registers the DS3231 chip has.
+	enum REG : uint8_t {
+		REG_SECONDS = 0x00,
+		REG_MINUTES,
+		REG_HOURS,
+		REG_DAY,
+		REG_DATE,
+		REG_MONTH_CENTURY,
+		REG_YEAR,
 
-	const uint8_t REG_SECONDS = 0x00;
-	const uint8_t REG_MINUTES = 0x01;
-	const uint8_t REG_HOURS = 0x02;
-	const uint8_t REG_DAY = 0x03;
-	const uint8_t REG_DATE = 0x04;
-	const uint8_t REG_MONTH_CENTURY = 0x05;
-	const uint8_t REG_YEAR = 0x06;
+		REG_ALARM_1_SEC,
+		REG_ALARM_1_MIN,
+		REG_ALARM_1_HOURS,
+		REG_ALARM_1_DAY_DATE,
 
-	const uint8_t REG_ALARM_1_SEC = 0x07;
-	const uint8_t REG_ALARM_1_MIN = 0x08;
-	const uint8_t REG_ALARM_1_HOURS = 0x09;
-	const uint8_t REG_ALARM_1_DAY_DATE = 0x0A;
+		REG_ALARM_2_MIN,
+		REG_ALARM_2_HOURS,
+		REG_ALARM_2_DAY_DATE,
 
-	const uint8_t REG_ALARM_2_MIN = 0x0B;
-	const uint8_t REG_ALARM_2_HOURS = 0x0C;
-	const uint8_t REG_ALARM_2_DAY_DATE = 0x0D;
+		REG_CONTROL,
+		REG_STATUS,
+		REG_AGING_OFFSET,
 
-	const uint8_t REG_CONTROL = 0x0E;
-	const uint8_t REG_STATUS = 0x0F;
-	const uint8_t REG_AGING_OFFSET = 0x10;
-
-	const uint8_t REG_TEMPERATURE_MSB = 0x11;
-	const uint8_t REG_TEMPERATURE_LSB = 0x12;
+		REG_TEMPERATURE_MSB,
+		REG_TEMPERATURE_LSB
+	};
 
 	const uint8_t BIT_ALARM_AxMx = 7;
-
 public:
 	const uint8_t BIT_CONTROL_ALARM_1_INTERRUPT_ENABLE = 0;
 	const uint8_t BIT_CONTROL_ALARM_2_INTERRUPT_ENABLE = 1;
@@ -53,9 +69,15 @@ public:
 	const uint8_t BIT_CONTROL_OSCILLATOR = 7;
 
 public:
-	DS3231(i2cBus& I2CBus, uint8_t address = defaultDS3231Address);
+	/// @brief
+	/// Constructor for the DS3231 chip.
+	/// @param i2cBus the bus which is used to communicate with the DS3231. @see i2cBus.hpp
+	/// @param address the address which is used to communicate with the DS3231 chip. (default = 0x68)
+	DS3231(i2cBus& I2CBus, uint8_t address = 0x68);
 
 private:
+	/// @brief
+	///
 	void setI2CBusCurrentAddress();
 
 public:
@@ -91,7 +113,22 @@ public:
 	void getCurrentTimestamp(timestamp& ts) override;
 
 private:
+	/// @brief this used to get a alarm register. The MSB is not needed because that is the alarm rate.
+	/// @param alarmRegister the alarm register you want to get the value of.
+	/// @return An uint8_t containing the value of the alarm register without the MSB bit.
+	/// @details
+	/// This method is used to get the alarm registers. The MSB is a part of the alarm rate.
+	/// More info about the alarm rate can be found at:
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 12, table 2</a>
 	uint8_t getAlarmBCDRegisterExMSB(uint8_t alarmRegister);
+
+	/// @brief this used to set a alarm register. The MSB is not set because that is the alarm rate.
+	/// @param alarmRegister the alarm register you want to get the value of.
+	/// @param newByte the byte you want to set into the alarm register. The MSB will be removed in copy of this value.
+	/// @details
+	/// This method is used to set the alarm registers. The MSB is a part of the alarm rate which doesn't has to be changed.
+	/// More info about the alarm rate can be found at:
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 12, table 2</a>
 	void setAlarmBCDRegisterExMSB(uint8_t alarmRegister, uint8_t newByte);
 
 public:

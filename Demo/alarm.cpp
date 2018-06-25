@@ -79,7 +79,13 @@ bool alarm::turnOn() {
 	isRinging = false;
 	dManager.updateMessage("15 sec to leave!");
 	dManager.draw();
-	hwlib::wait_ms(1000 * 15);
+
+	uint8_t endSeconds = rtc.getCurrentSeconds() + 15;
+	if(endSeconds > rtc.maxSeconds) {
+		endSeconds -= rtc.maxSeconds;
+	}
+	while(rtc.getCurrentSeconds() != endSeconds) {}
+
 	dManager.updateMessage("");
 
 	return true;

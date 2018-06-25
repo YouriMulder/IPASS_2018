@@ -1,21 +1,4 @@
 var searchData=
 [
-  ['setalarmdaydate',['setAlarmDayDate',['../class_d_s3231.html#aa2048cc766ca58f707e84cbc564c1276',1,'DS3231::setAlarmDayDate()'],['../classreal_time_clock.html#a2c2bb16a7fc59f463fb3aaed2fcd1926',1,'realTimeClock::setAlarmDayDate()']]],
-  ['setalarmhours',['setAlarmHours',['../class_d_s3231.html#a0bcc7e2285869ffbe29d19c593f5a447',1,'DS3231::setAlarmHours()'],['../classreal_time_clock.html#a9f0cd64ce9a783f149fcbb9f7eb36524',1,'realTimeClock::setAlarmHours()']]],
-  ['setalarmminutes',['setAlarmMinutes',['../class_d_s3231.html#a9c1f5b183c24f3062c1c8c299f46023c',1,'DS3231::setAlarmMinutes()'],['../classreal_time_clock.html#a53ffba88cd87d05af58288fb4fc589b5',1,'realTimeClock::setAlarmMinutes()']]],
-  ['setalarmoneseconds',['setAlarmOneSeconds',['../class_d_s3231.html#ae294f3c8c8634a058846cf9864ccc5c8',1,'DS3231::setAlarmOneSeconds()'],['../classreal_time_clock.html#a448cbe8ab7f6649ee32eeb415721707f',1,'realTimeClock::setAlarmOneSeconds()']]],
-  ['setbitinregister',['setBitInRegister',['../classi2c_bus.html#a3b2f595372a05bde8e1cf9d6a86f2bdb',1,'i2cBus']]],
-  ['setbyteinregister',['setByteInRegister',['../classi2c_bus.html#a8bed9bf37dee74b691ab4c92723dd206',1,'i2cBus::setByteInRegister()'],['../classspi_bus.html#a3322a039f33a7180a9a57da662607b7d',1,'spiBus::setByteInRegister()']]],
-  ['setbytesinregister',['setBytesInRegister',['../classspi_bus.html#a734591a2184ce01cac6dcf875ac424d4',1,'spiBus']]],
-  ['setbytetobcdinregister',['setByteToBCDInRegister',['../classi2c_bus.html#a31c36069cff15f73aa54703a6ee8b951',1,'i2cBus']]],
-  ['setcurrentchipaddress',['setCurrentChipAddress',['../classi2c_bus.html#a5f3a99851f437473a00f1216ba2a1517',1,'i2cBus']]],
-  ['setcurrentdate',['setCurrentDate',['../class_d_s3231.html#a597a0d5cb33f8b60f81dba9050ca1363',1,'DS3231::setCurrentDate()'],['../classreal_time_clock.html#a7db563a518ae7b87ca6d77860906e517',1,'realTimeClock::setCurrentDate()']]],
-  ['setcurrentday',['setCurrentDay',['../class_d_s3231.html#ae43a887db6022008c066a257acd68ae8',1,'DS3231::setCurrentDay()'],['../classreal_time_clock.html#a4a80a695cbb55860921f92509fae0cd0',1,'realTimeClock::setCurrentDay()']]],
-  ['setcurrenthours',['setCurrentHours',['../class_d_s3231.html#ae59c15abcccd8e27eadebcd150db810e',1,'DS3231::setCurrentHours()'],['../classreal_time_clock.html#a515d9de6067ae563bff5217da5100a23',1,'realTimeClock::setCurrentHours()']]],
-  ['setcurrentminutes',['setCurrentMinutes',['../class_d_s3231.html#a221f92091b813108b3515f6676be29c8',1,'DS3231::setCurrentMinutes()'],['../classreal_time_clock.html#a52da7366cd5f1e4c270eb87e7298da42',1,'realTimeClock::setCurrentMinutes()']]],
-  ['setcurrentmonth',['setCurrentMonth',['../class_d_s3231.html#a122611bf693cdd538178b99b893a7115',1,'DS3231::setCurrentMonth()'],['../classreal_time_clock.html#a2edeb084630a78309bc574eceaf5d6ae',1,'realTimeClock::setCurrentMonth()']]],
-  ['setcurrentseconds',['setCurrentSeconds',['../class_d_s3231.html#ac73512cc6c2a37ffb21bee74ea835a09',1,'DS3231::setCurrentSeconds()'],['../classreal_time_clock.html#a463a64d4861c75e26a80712e1dd50e6b',1,'realTimeClock::setCurrentSeconds()']]],
-  ['setcurrentyear',['setCurrentYear',['../class_d_s3231.html#a59a60a725581bc8e5dcf857ea52c6281',1,'DS3231::setCurrentYear()'],['../classreal_time_clock.html#a4d6e8056f52cea52bab5c635c0860c12',1,'realTimeClock::setCurrentYear()']]],
-  ['setregister',['setRegister',['../classi2c_bus.html#adee2545c8b692474b6814b4605e48ec3',1,'i2cBus']]],
-  ['spibus',['spiBus',['../classspi_bus.html',1,'spiBus'],['../classspi_bus.html#a042e32891d6fffd4b4eb706600244062',1,'spiBus::spiBus()']]]
+  ['personaldata',['personalData',['../structpersonal_data.html',1,'']]]
 ];

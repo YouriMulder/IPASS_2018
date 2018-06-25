@@ -1,5 +1,14 @@
 \hypertarget{classtimestamp}{}\section{timestamp Class Reference}
 \label{classtimestamp}\index{timestamp@{timestamp}}
+
+
+This class is used to store a timestamp. Using a timestamp makes it easier to store and get any time value.  
+
+
+
+
+{\ttfamily \#include $<$timestamp.\+hpp$>$}
+
 Inheritance diagram for timestamp\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,103 +18,415 @@ Inheritance diagram for timestamp\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtimestamp_adcd43bf86d093792baa6b406e0acafd3}\label{classtimestamp_adcd43bf86d093792baa6b406e0acafd3}} 
-{\bfseries timestamp} (uint8\+\_\+t seconds, uint8\+\_\+t minutes, uint8\+\_\+t hours, uint8\+\_\+t day, uint8\+\_\+t date, uint8\+\_\+t month, uint16\+\_\+t year)
-\item 
-\mbox{\Hypertarget{classtimestamp_a7d2a5311e064fb9fe0ebbb74e603091c}\label{classtimestamp_a7d2a5311e064fb9fe0ebbb74e603091c}} 
-void {\bfseries set\+Seconds} (uint8\+\_\+t new\+Seconds)
-\item 
-\mbox{\Hypertarget{classtimestamp_a9212a15c81b0f77b576257cba2805253}\label{classtimestamp_a9212a15c81b0f77b576257cba2805253}} 
-uint8\+\_\+t {\bfseries get\+Seconds} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_a95383562b21c79d2d3279f4c06a8cc18}\label{classtimestamp_a95383562b21c79d2d3279f4c06a8cc18}} 
-void {\bfseries set\+Minutes} (uint8\+\_\+t new\+Minutes)
-\item 
-\mbox{\Hypertarget{classtimestamp_a77adde4c8da3bfc1076882f2627938f7}\label{classtimestamp_a77adde4c8da3bfc1076882f2627938f7}} 
-uint8\+\_\+t {\bfseries get\+Minutes} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_ae074684cb0c1f937c9ab985692522217}\label{classtimestamp_ae074684cb0c1f937c9ab985692522217}} 
-void {\bfseries set\+Hours} (uint8\+\_\+t new\+Hours)
-\item 
-\mbox{\Hypertarget{classtimestamp_a9857c77d68def8f77737f3c3840b6b95}\label{classtimestamp_a9857c77d68def8f77737f3c3840b6b95}} 
-uint8\+\_\+t {\bfseries get\+Hours} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_af280dd8ed37274b31a548619f21dddd9}\label{classtimestamp_af280dd8ed37274b31a548619f21dddd9}} 
-void {\bfseries set\+Day} (uint8\+\_\+t new\+Day)
-\item 
-\mbox{\Hypertarget{classtimestamp_a70baea53133ff4b05eb49332e3ef36bb}\label{classtimestamp_a70baea53133ff4b05eb49332e3ef36bb}} 
-uint8\+\_\+t {\bfseries get\+Day} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_a7392ce4abda5f63e95462bd99691b719}\label{classtimestamp_a7392ce4abda5f63e95462bd99691b719}} 
-void {\bfseries set\+Date} (uint8\+\_\+t new\+Date)
-\item 
-\mbox{\Hypertarget{classtimestamp_a0ee0b3188b94fd8151f4525ea0de1078}\label{classtimestamp_a0ee0b3188b94fd8151f4525ea0de1078}} 
-uint8\+\_\+t {\bfseries get\+Date} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_ac95d923ad675c4a2bff8b4b0384b6222}\label{classtimestamp_ac95d923ad675c4a2bff8b4b0384b6222}} 
-void {\bfseries set\+Month} (uint8\+\_\+t new\+Month)
-\item 
-\mbox{\Hypertarget{classtimestamp_a7225435b1a1ee20ae0dd8708f8e68ee8}\label{classtimestamp_a7225435b1a1ee20ae0dd8708f8e68ee8}} 
-uint8\+\_\+t {\bfseries get\+Month} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_a2ad3d28f226c8f2ed74c06c609e29aff}\label{classtimestamp_a2ad3d28f226c8f2ed74c06c609e29aff}} 
-void {\bfseries set\+Year} (uint16\+\_\+t new\+Year)
-\item 
-\mbox{\Hypertarget{classtimestamp_a21c6dd709bb29c95cea2641f26c6c088}\label{classtimestamp_a21c6dd709bb29c95cea2641f26c6c088}} 
-uint8\+\_\+t {\bfseries get\+Year} () const
-\item 
-\mbox{\Hypertarget{classtimestamp_ad7c219bebf2b101f13f0a48e435ad888}\label{classtimestamp_ad7c219bebf2b101f13f0a48e435ad888}} 
-void {\bfseries set\+Century} (int new\+Century)
-\item 
-\mbox{\Hypertarget{classtimestamp_a91ed1d395dd3d230607c4cb936b6004a}\label{classtimestamp_a91ed1d395dd3d230607c4cb936b6004a}} 
-int {\bfseries get\+Century} () const
-\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classtimestamp_a34adc7a84c55ebf7d493fc095c5160f4}\label{classtimestamp_a34adc7a84c55ebf7d493fc095c5160f4}} 
-int {\bfseries to\+The\+Power\+Of} (int base, int power)
-\item 
-\mbox{\Hypertarget{classtimestamp_a9809b3f8756727082be42a1c4b241540}\label{classtimestamp_a9809b3f8756727082be42a1c4b241540}} 
-int {\bfseries size\+Of\+Int} (int number)
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\mbox{\hyperlink{classtimestamp_adcd43bf86d093792baa6b406e0acafd3}{timestamp}} (uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}, uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}, uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}, uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}, uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}, uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}, uint16\+\_\+t \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}})
+\begin{DoxyCompactList}\small\item\em The constructor to set every variable in this class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtimestamp_a155539f65cabcec4ed8120e7d531d92a}{timestamp}} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_a7d2a5311e064fb9fe0ebbb74e603091c}{set\+Seconds}} (uint8\+\_\+t new\+Seconds)
+\begin{DoxyCompactList}\small\item\em Set the amount of seconds of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a9212a15c81b0f77b576257cba2805253}{get\+Seconds}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_a95383562b21c79d2d3279f4c06a8cc18}{set\+Minutes}} (uint8\+\_\+t new\+Minutes)
+\begin{DoxyCompactList}\small\item\em Set the amount of minutes of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a77adde4c8da3bfc1076882f2627938f7}{get\+Minutes}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_ae074684cb0c1f937c9ab985692522217}{set\+Hours}} (uint8\+\_\+t new\+Hours)
+\begin{DoxyCompactList}\small\item\em Set the amount of hours of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a9857c77d68def8f77737f3c3840b6b95}{get\+Hours}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_af280dd8ed37274b31a548619f21dddd9}{set\+Day}} (uint8\+\_\+t new\+Day)
+\begin{DoxyCompactList}\small\item\em Set the the day of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a70baea53133ff4b05eb49332e3ef36bb}{get\+Day}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_a7392ce4abda5f63e95462bd99691b719}{set\+Date}} (uint8\+\_\+t new\+Date)
+\begin{DoxyCompactList}\small\item\em Set the the date of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a0ee0b3188b94fd8151f4525ea0de1078}{get\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_ac95d923ad675c4a2bff8b4b0384b6222}{set\+Month}} (uint8\+\_\+t new\+Month)
+\begin{DoxyCompactList}\small\item\em Set the the month of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a7225435b1a1ee20ae0dd8708f8e68ee8}{get\+Month}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_a2ad3d28f226c8f2ed74c06c609e29aff}{set\+Year}} (uint16\+\_\+t new\+Year)
+\begin{DoxyCompactList}\small\item\em set the the year of the timestamp. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a21c6dd709bb29c95cea2641f26c6c088}{get\+Year}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtimestamp_ad7c219bebf2b101f13f0a48e435ad888}{set\+Century}} (int new\+Century)
+\begin{DoxyCompactList}\small\item\em set the the century of the timestamp. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtimestamp_a91ed1d395dd3d230607c4cb936b6004a}{get\+Century}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}\label{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}} 
-uint8\+\_\+t {\bfseries seconds}
-\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}
+\begin{DoxyCompactList}\small\item\em The seconds you want to store. (0 -\/ 59) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}\label{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}} 
-uint8\+\_\+t {\bfseries minutes}
-\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}
+\begin{DoxyCompactList}\small\item\em The minutes you want to store. (0 -\/ 59) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classtimestamp_a3b2f11626563cca00d60b323ceb15191}\label{classtimestamp_a3b2f11626563cca00d60b323ceb15191}} 
-uint8\+\_\+t {\bfseries hours}
-\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}
+\begin{DoxyCompactList}\small\item\em The hours you want to store. (0 -\/ 23) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}\label{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}} 
-uint8\+\_\+t {\bfseries day}
-\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}
+\begin{DoxyCompactList}\small\item\em The hours you want to store. (1 = monday -\/ 7 = sunday) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}\label{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}} 
-uint8\+\_\+t {\bfseries date}
-\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}
+\begin{DoxyCompactList}\small\item\em The date you want to store. (0 -\/ 31) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}\label{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}} 
-uint8\+\_\+t {\bfseries month}
-\item 
-\mbox{\Hypertarget{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}\label{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}} 
-uint8\+\_\+t {\bfseries year}
-\item 
-\mbox{\Hypertarget{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}\label{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}} 
-int {\bfseries century}
-\item 
-\mbox{\Hypertarget{classtimestamp_a609e9db2ee9245b5b007c384ca22b7b8}\label{classtimestamp_a609e9db2ee9245b5b007c384ca22b7b8}} 
-unsigned int {\bfseries amount\+Of\+Year\+Short\+Digits} = 2
-\end{DoxyCompactItemize}
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}
+\begin{DoxyCompactList}\small\item\em The month you want to store. (1 -\/ 12) \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}}
+\begin{DoxyCompactList}\small\item\em The year you want to store. (0 -\/ 99) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}
+\begin{DoxyCompactList}\small\item\em The century you want to store. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtimestamp_a0625abe0748dbab228b73920dfc33c4c}\label{classtimestamp_a0625abe0748dbab228b73920dfc33c4c}} 
-hwlib\+::ostream \& {\bfseries operator$<$$<$} (hwlib\+::ostream \&lhs, const \mbox{\hyperlink{classtimestamp}{timestamp}} \&rhs)
-\end{DoxyCompactItemize}
+hwlib\+::ostream \& \mbox{\hyperlink{classtimestamp_a0625abe0748dbab228b73920dfc33c4c}{operator$<$$<$}} (hwlib\+::ostream \&lhs, const \mbox{\hyperlink{classtimestamp}{timestamp}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Send the current timestamp to an ostream. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is used to store a timestamp. Using a timestamp makes it easier to store and get any time value. 
+
+This timestamp is made to make it easier for the user to store a given point in time. The class checks the values before storing for extra safety. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtimestamp_adcd43bf86d093792baa6b406e0acafd3}\label{classtimestamp_adcd43bf86d093792baa6b406e0acafd3}} 
+\index{timestamp@{timestamp}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{timestamp()}{timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily timestamp\+::timestamp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{seconds,  }\item[{uint8\+\_\+t}]{minutes,  }\item[{uint8\+\_\+t}]{hours,  }\item[{uint8\+\_\+t}]{day,  }\item[{uint8\+\_\+t}]{date,  }\item[{uint8\+\_\+t}]{month,  }\item[{uint16\+\_\+t}]{year }\end{DoxyParamCaption})}
+
+
+
+The constructor to set every variable in this class. 
+
+I recommend using this constructor when you already know the values you want to store. When you use the default constructor every variable will set to the minimum value. ~\newline
+ \begin{DoxySeeAlso}{See also}
+For the minimum values check \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_a155539f65cabcec4ed8120e7d531d92a}\label{classtimestamp_a155539f65cabcec4ed8120e7d531d92a}} 
+\index{timestamp@{timestamp}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{timestamp()}{timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily timestamp\+::timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructor. 
+
+Every variable will set to the minimum value. ~\newline
+ \begin{DoxySeeAlso}{See also}
+For the minimum values check \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}}. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtimestamp_a91ed1d395dd3d230607c4cb936b6004a}\label{classtimestamp_a91ed1d395dd3d230607c4cb936b6004a}} 
+\index{timestamp@{timestamp}!get\+Century@{get\+Century}}
+\index{get\+Century@{get\+Century}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Century()}{getCentury()}}
+{\footnotesize\ttfamily int timestamp\+::get\+Century (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}. 
+
+\begin{DoxyReturn}{Returns}
+An int containing the value of \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a0ee0b3188b94fd8151f4525ea0de1078}\label{classtimestamp_a0ee0b3188b94fd8151f4525ea0de1078}} 
+\index{timestamp@{timestamp}!get\+Date@{get\+Date}}
+\index{get\+Date@{get\+Date}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Date()}{getDate()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a70baea53133ff4b05eb49332e3ef36bb}\label{classtimestamp_a70baea53133ff4b05eb49332e3ef36bb}} 
+\index{timestamp@{timestamp}!get\+Day@{get\+Day}}
+\index{get\+Day@{get\+Day}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Day()}{getDay()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a9857c77d68def8f77737f3c3840b6b95}\label{classtimestamp_a9857c77d68def8f77737f3c3840b6b95}} 
+\index{timestamp@{timestamp}!get\+Hours@{get\+Hours}}
+\index{get\+Hours@{get\+Hours}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Hours()}{getHours()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Hours (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a77adde4c8da3bfc1076882f2627938f7}\label{classtimestamp_a77adde4c8da3bfc1076882f2627938f7}} 
+\index{timestamp@{timestamp}!get\+Minutes@{get\+Minutes}}
+\index{get\+Minutes@{get\+Minutes}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Minutes()}{getMinutes()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Minutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a7225435b1a1ee20ae0dd8708f8e68ee8}\label{classtimestamp_a7225435b1a1ee20ae0dd8708f8e68ee8}} 
+\index{timestamp@{timestamp}!get\+Month@{get\+Month}}
+\index{get\+Month@{get\+Month}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Month()}{getMonth()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a9212a15c81b0f77b576257cba2805253}\label{classtimestamp_a9212a15c81b0f77b576257cba2805253}} 
+\index{timestamp@{timestamp}!get\+Seconds@{get\+Seconds}}
+\index{get\+Seconds@{get\+Seconds}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Seconds()}{getSeconds()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_a21c6dd709bb29c95cea2641f26c6c088}\label{classtimestamp_a21c6dd709bb29c95cea2641f26c6c088}} 
+\index{timestamp@{timestamp}!get\+Year@{get\+Year}}
+\index{get\+Year@{get\+Year}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{get\+Year()}{getYear()}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimestamp_ad7c219bebf2b101f13f0a48e435ad888}\label{classtimestamp_ad7c219bebf2b101f13f0a48e435ad888}} 
+\index{timestamp@{timestamp}!set\+Century@{set\+Century}}
+\index{set\+Century@{set\+Century}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Century()}{setCentury()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Century (\begin{DoxyParamCaption}\item[{int}]{new\+Century }\end{DoxyParamCaption})}
+
+
+
+set the the century of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Century} & the the century you want to store in \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}, new\+Century is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_a01413b7e5754345cf032cc7afa13efb0}{time\+::is\+Century\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_a7392ce4abda5f63e95462bd99691b719}\label{classtimestamp_a7392ce4abda5f63e95462bd99691b719}} 
+\index{timestamp@{timestamp}!set\+Date@{set\+Date}}
+\index{set\+Date@{set\+Date}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Date()}{setDate()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Date (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Date }\end{DoxyParamCaption})}
+
+
+
+Set the the date of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Date} & the the date you want to store in \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a7eb2eee5f6ef4258aab7779a639a93fd}{date}}, new\+Date is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_aa678e8f53a12adda2f807e6a44ebc46d}{time\+::is\+Date\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_af280dd8ed37274b31a548619f21dddd9}\label{classtimestamp_af280dd8ed37274b31a548619f21dddd9}} 
+\index{timestamp@{timestamp}!set\+Day@{set\+Day}}
+\index{set\+Day@{set\+Day}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Day()}{setDay()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Day (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Day }\end{DoxyParamCaption})}
+
+
+
+Set the the day of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Day} & the the day you want to store in \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a0102d6c44b2cc194a8186a42ff2bd58b}{day}}, new\+Day is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_a126cf22d6b3a7a36603e2cb390082d2f}{time\+::is\+Day\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_ae074684cb0c1f937c9ab985692522217}\label{classtimestamp_ae074684cb0c1f937c9ab985692522217}} 
+\index{timestamp@{timestamp}!set\+Hours@{set\+Hours}}
+\index{set\+Hours@{set\+Hours}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Hours()}{setHours()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Hours (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Hours }\end{DoxyParamCaption})}
+
+
+
+Set the amount of hours of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Hours} & the amount of hours you want to store in \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a3b2f11626563cca00d60b323ceb15191}{hours}}, new\+Hours is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_afe3fbaa007cbc8072b36c8bd2a556365}{time\+::is\+Hours\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_a95383562b21c79d2d3279f4c06a8cc18}\label{classtimestamp_a95383562b21c79d2d3279f4c06a8cc18}} 
+\index{timestamp@{timestamp}!set\+Minutes@{set\+Minutes}}
+\index{set\+Minutes@{set\+Minutes}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Minutes()}{setMinutes()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Minutes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Minutes }\end{DoxyParamCaption})}
+
+
+
+Set the amount of minutes of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Minutes} & the amount of minutes you want to store in \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a45c06ef17b96bdd37cd168faf772c63c}{minutes}}, new\+Minutes is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_adafa6fb7a20aee5e865a51576ab9340b}{time\+::is\+Minutes\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_ac95d923ad675c4a2bff8b4b0384b6222}\label{classtimestamp_ac95d923ad675c4a2bff8b4b0384b6222}} 
+\index{timestamp@{timestamp}!set\+Month@{set\+Month}}
+\index{set\+Month@{set\+Month}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Month()}{setMonth()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Month (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Month }\end{DoxyParamCaption})}
+
+
+
+Set the the month of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Month} & the the month you want to store in \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a71df69b7ebb5a6dd228f4ae70b954505}{month}}, new\+Month is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_a92c265ce96b24f9bdfa960144a0bce11}{time\+::is\+Month\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_a7d2a5311e064fb9fe0ebbb74e603091c}\label{classtimestamp_a7d2a5311e064fb9fe0ebbb74e603091c}} 
+\index{timestamp@{timestamp}!set\+Seconds@{set\+Seconds}}
+\index{set\+Seconds@{set\+Seconds}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Seconds()}{setSeconds()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Seconds (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Seconds }\end{DoxyParamCaption})}
+
+
+
+Set the amount of seconds of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Seconds} & the amount of seconds you want to store in \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a15ad236c6963bfbd6ae18416697c91c2}{seconds}}, new\+Seconds is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_aeba296b9c9c6ec09250f98a20062a500}{time\+::is\+Seconds\+Valid}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classtimestamp_a2ad3d28f226c8f2ed74c06c609e29aff}\label{classtimestamp_a2ad3d28f226c8f2ed74c06c609e29aff}} 
+\index{timestamp@{timestamp}!set\+Year@{set\+Year}}
+\index{set\+Year@{set\+Year}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{set\+Year()}{setYear()}}
+{\footnotesize\ttfamily void timestamp\+::set\+Year (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{new\+Year }\end{DoxyParamCaption})}
+
+
+
+set the the year of the timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Year} & the the year you want to store in \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}}.\\
+\hline
+\end{DoxyParams}
+Before setting the value in \mbox{\hyperlink{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}{year}}, new\+Year is checked. Using a function in \mbox{\hyperlink{time_8hpp_source}{time.\+hpp}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtime_ad6269d0f650cfc32e0ac83b09816abad}{time\+::is\+Year\+Valid}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtimestamp_a0625abe0748dbab228b73920dfc33c4c}\label{classtimestamp_a0625abe0748dbab228b73920dfc33c4c}} 
+\index{timestamp@{timestamp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily hwlib\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{hwlib\+::ostream \&}]{lhs,  }\item[{const \mbox{\hyperlink{classtimestamp}{timestamp}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Send the current timestamp to an ostream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & the ostream you want to change. \\
+\hline
+{\em rhs} & the timestamp you want to set in the ostream. (lhs) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A hwlib\+::ostream (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl} 2017) containing the previous values and the timestamp.
+\end{DoxyReturn}
+This method is used to for example print a timestamp the simple way. \begin{DoxyWarning}{Warning}
+Note that the given ostream will be changed during the execution. 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}\label{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}} 
+\index{timestamp@{timestamp}!century@{century}}
+\index{century@{century}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{century}{century}}
+{\footnotesize\ttfamily int timestamp\+::century\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The century you want to store. 
+
+The century will be set using the \mbox{\hyperlink{classtime_acab6780ebb25862cb83316cb967b8b57}{time\+::current\+Century}} variable. \mbox{\Hypertarget{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}\label{classtimestamp_a6df342bdd1101cf67f9a4831d5372d58}} 
+\index{timestamp@{timestamp}!year@{year}}
+\index{year@{year}!timestamp@{timestamp}}
+\subsubsection{\texorpdfstring{year}{year}}
+{\footnotesize\ttfamily uint8\+\_\+t timestamp\+::year\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The year you want to store. (0 -\/ 99) 
+
+\begin{DoxyWarning}{Warning}
+Note that the value ranges between 0 -\/ 99. The century is store in another variable \mbox{\hyperlink{classtimestamp_afe83888ffa38c1615a3d12b012f235b3}{century}}. 
+\end{DoxyWarning}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

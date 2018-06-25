@@ -3,6 +3,14 @@
 
 #include "timestamp.hpp"
 
+/// @brief
+///	A pure virtual class for a real-time clock chip like the DS3231.
+/// @details
+/// This class is a pure virtual class.
+/// This means that you can access methods of the derived class when using reference or pointers.
+/// This makes the code easier to expand.
+/// @warning
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 class realTimeClock : public time {
 public:
 	/// @brief
@@ -12,7 +20,7 @@ public:
 	virtual uint8_t getCurrentSeconds() = 0;
 
 	/// @brief
-	/// Set the current value in the seconds register.
+	/// Set a new value in the seconds register.
 	/// @param newSeconds the value you want to set into the seconds register. (0 - 59)
 	/// @warning
 	/// This method will override the current value in the seconds register.
@@ -25,7 +33,7 @@ public:
 	virtual uint8_t getCurrentMinutes() = 0;
 
 	/// @brief
-	/// Set the current value in the minutes register.
+	/// Set a new value in the minutes register.
 	/// @param newMinutes the value you want to set into the minutes register.
 	/// @warning
 	/// This method will override the current value in the minutes register. (0 - 59)
@@ -38,7 +46,7 @@ public:
 	virtual uint8_t getCurrentHours() = 0;
 
 	/// @brief
-	/// Set the current value in the hours register.
+	/// Set a new value in the hours register.
 	/// @param newHours the value you want to set into the hours register. (0 - 23)
 	/// @warning
 	/// This method will override the current value in the hours register.
@@ -52,7 +60,7 @@ public:
 	virtual uint8_t getCurrentDay() = 0;
 
 	/// @brief
-	/// Set the current value in the day register.
+	/// Set a new value in the day register.
 	/// @param newDay the value you want to set into the day register. (1 = monday 7 == sunday)
 	/// @warning
 	/// This method will override the current value in the day register.
@@ -65,7 +73,7 @@ public:
 	virtual uint8_t getCurrentDate() = 0;
 
 	/// @brief
-	/// Set the current value in the date register.
+	/// Set a new value in the date register.
 	/// @param newDate the value you want to set into the date register. (1 - ~32)
 	/// @warning
 	/// This method will override the current value in the date register.
@@ -78,7 +86,7 @@ public:
 	virtual uint8_t getCurrentMonth() = 0;
 
 	/// @brief
-	/// Set the current value in the month register.
+	/// Set a new value in the month register.
 	/// @param newMonth the value you want to set into the month register. (1 - 12)
 	/// @warning
 	/// This method will override the current value in the month register.
@@ -91,15 +99,15 @@ public:
 	virtual bool getCurrentCenturyBit() = 0;
 
 	/// @brief
-	/// Set the current value in the month register.
+	/// Set a new value in the month register.
 	/// @param newMonth the value you want to set into the month register. (1 - 12)
 	/// @details
-	/// The currentCentury in @ref time.hpp will automaticly be updated after this bit was high
+	/// The currentCentury in @ref time.hpp will be updated after this bit was high
 	/// when you call update.
 	/// @warning
 	/// This method will override the current value in the month register.
 	/// @warning Only use this function if you know what you're doing.
-	/// The currentCentury in @ref time.hpp will automaticly be updated after this bit was high
+	/// The currentCentury in @ref time.hpp will be updated after this bit was high
 	/// when you call #update.
 	virtual void ResetCurentCenturyBit() = 0;
 
@@ -110,19 +118,19 @@ public:
 	/// @warning
 	/// Most chips will set the century bit when the year register went past 99.
 	/// Note when the century bit is high you're in a new century.
-	/// #update will automaticly update the current century in @ref time.hpp
+	/// #update will update the currentCentury in @ref time.hpp
 	/// and reset the century bit.
 	virtual uint8_t getCurrentYear() = 0;
 
 	/// @brief
-	/// Set the current value in the year register.
+	/// Set a new value in the year register.
 	/// @param newYear the value you want to set into the year register. (0 - 99)
 	/// @warning
 	/// This method will override the current value in the year register.
 	/// @warning
 	/// Most chips will set the century bit when the year register went past 99.
 	/// Note when the century bit is high you're in a new century.
-	/// #update will automaticly update the current century in @ref time.hpp
+	/// #update will update the currentCentury in @ref time.hpp
 	/// and reset the century bit.
 	virtual void setCurrentYear(uint8_t newYear) = 0;
 
@@ -172,7 +180,7 @@ public:
 	virtual uint8_t getAlarmOneSeconds() = 0;
 
 	/// @brief
-	/// Set a value in the alarm one seconds register.
+	/// Set a new value in the alarm one seconds register.
 	/// @param newSeconds The value you want to store in the alarm 1 seconds register.
 	/// @warning
 	/// The value in the alarm one seconds register will change.
@@ -186,12 +194,12 @@ public:
 	/// This method will get you the current value of the any alarm minutes register.
 	/// You can choose which alarm register using the parameter alarm.
 	/// 0 = alarm one, 1 = alarm two.
-	/// @warning note that the paramether is a boolean.
+	/// @warning Note that the paramether is a boolean.
 	/// Therefore alarm one = 0 and alarm two = 1.
 	virtual uint8_t getAlarmMinutes(bool alarm) = 0;
 
 	/// @brief
-	/// Set a value in the alarm 1/2 minutes register.
+	/// Set a new value in the alarm 1/2 minutes register.
 	/// @param alarm The alarm you want the value of (0 or 1).
 	/// @param newMinutes The value you want to store in the alarm 1/2 register.
 	/// @details
@@ -200,7 +208,7 @@ public:
 	/// 0 = alarm one, 1 = alarm two.
 	/// @warning note that the paramether is a boolean.
 	/// Therefore alarm one = 0 and alarm two = 1.
-	/// @warning the value in the chosen alarm minutes register will change.
+	/// @warning The value in the chosen alarm minutes register will change.
 	virtual void setAlarmMinutes(bool alarm, uint8_t newMinutes) = 0;
 
 	/// @brief
@@ -211,21 +219,21 @@ public:
 	/// This method will get you the current value of the any alarm hours register.
 	/// You can choose which alarm register using the parameter alarm.
 	/// 0 = alarm one, 1 = alarm two.
-	/// @warning note that the paramether is a boolean.
+	/// @warning Note that the paramether is a boolean.
 	/// Therefore alarm one = 0 and alarm two = 1.
 	virtual uint8_t getAlarmHours(bool alarm) = 0;
 
 	/// @brief
-	/// Set a value in the alarm 1/2 hours register.
+	/// Set a new value in the alarm 1/2 hours register.
 	/// @param alarm The alarm you want the value of (0 or 1).
 	/// @param newHours The value you want to store in the alarm 1/2 register.
 	/// @details
 	/// This method will set a new value into the chosen alarm hours register.
 	/// You can choose which alarm register using the parameter alarm.
 	/// 0 = alarm one, 1 = alarm two.
-	/// @warning note that the paramether is a boolean.
+	/// @warning Note that the paramether is a boolean.
 	/// Therefore alarm one = 0 and alarm two = 1.
-	/// @warning the value in the chosen alarm hours register will change.
+	/// @warning The value in the chosen alarm hours register will change.
 	virtual void setAlarmHours(bool alarm, uint8_t newHours) = 0;
 
 	/// @brief
@@ -236,21 +244,21 @@ public:
 	/// This method will get you the current value of the any alarm day and date register.
 	/// You can choose which alarm register using the parameter alarm.
 	/// 0 = alarm one, 1 = alarm two.
-	/// @warning note that the paramether is a boolean.
+	/// @warning Note that the paramether is a boolean.
 	/// Therefore alarm one = 0 and alarm two = 1.
 	virtual uint8_t getAlarmDayDate(bool alarm) = 0;
 
 	/// @brief
-	/// Set a value in the alarm 1/2 day and date register.
+	/// Set a new value in the alarm 1/2 day and date register.
 	/// @param alarm The alarm you want the value of (0 or 1).
 	/// @param newDayDate The value you want to store in the alarm 1/2 day and date register.
 	/// @details
 	/// This method will set a new value into the chosen alarm day and date register.
 	/// You can choose which alarm register using the parameter alarm.
 	/// 0 = alarm one, 1 = alarm two.
-	/// @warning note that the paramether is a boolean.
+	/// @warning Note that the paramether is a boolean.
 	/// Therefore alarm one = 0 and alarm two = 1.
-	/// @warning the value in the chosen alarm day and date register will change.
+	/// @warning The value in the chosen alarm day and date register will change.
 	virtual void setAlarmDayDate(bool alarm, uint8_t newDayDate) = 0;
 
 public:
@@ -281,7 +289,7 @@ public:
 	/// Get the current value in the control register.
 	/// @return An uint8_t containing the current value in the control register.
 	/// @details
-	/// DS3231 bits:
+	/// DS3231 control register bits: \n
 	/// Bit 0 	= Alarm one interrupt enable. (logic 1)
 	/// Bit 1 	= Alarm two interrupt enable. (logic 1)
 	/// Bit 2 	= Interrupt control. (SQW pin)
@@ -290,23 +298,23 @@ public:
 	/// Bit 6 	= Battery-Backed Square-Wave enable
 	/// Bit 7 	= Enable oscillator (logic 0)
 	/// For further information about the bits look at the datasheet of the chip you're using.
-	/// <href:"https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet</a>
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 13</a>
 	virtual uint8_t getControlRegister();
 
 	/// @brief
-	/// Set the current value in the control register.
-	/// @param newByte The new value you want to store in the control register.
+	/// Set a new value in the control register.
+	/// @param newByte the new value you want to store in the control register.
 	/// @details
-	/// DS3231 bits:
-	/// Bit 0 	= Alarm one interrupt enable. (logic 1)
-	/// Bit 1 	= Alarm two interrupt enable. (logic 1)
-	/// Bit 2 	= Interrupt control. (SQW pin)
-	/// Bit 3/4 = Rate select. (SQW frequency)
-	/// Bit 5	= Convert temperature.
-	/// Bit 6 	= Battery-Backed Square-Wave enable
-	/// Bit 7 	= Enable oscillator (logic 0)
+	/// DS3231 control register bits: <br>
+	/// Bit 0 	= Alarm one interrupt enable. (logic 1) <br>
+	/// Bit 1 	= Alarm two interrupt enable. (logic 1) <br>
+	/// Bit 2 	= Interrupt control. (SQW pin) <br>
+	/// Bit 3/4 = Rate select. (SQW frequency) <br>
+	/// Bit 5	= Convert temperature. <br>
+	/// Bit 6 	= Battery-Backed Square-Wave enable <br>
+	/// Bit 7 	= Enable oscillator (logic 0) <br>
 	/// For further information about the bits look at the datasheet of the chip you're using.
-	/// <href:"https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet</a>
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 13</a>
 	virtual void setControlRegister(uint8_t newByte);
 
 	/// @brief
@@ -314,16 +322,16 @@ public:
 	/// @param bitNumber the bit you want to set in the control register.
 	/// @return A bool containing the value of the bitNumber in the control register.
 	/// @details
-	/// DS3231 bits:
-	/// Bit 0 	= Alarm one interrupt enable. (logic 1)
-	/// Bit 1 	= Alarm two interrupt enable. (logic 1)
-	/// Bit 2 	= Interrupt control. (SQW pin)
-	/// Bit 3/4 = Rate select. (SQW frequency)
-	/// Bit 5	= Convert temperature.
-	/// Bit 6 	= Battery-Backed Square-Wave enable
-	/// Bit 7 	= Enable oscillator (logic 0)
+	/// DS3231 control register bits: <br>
+	/// Bit 0 	= Alarm one interrupt enable. (logic 1) <br>
+	/// Bit 1 	= Alarm two interrupt enable. (logic 1) <br>
+	/// Bit 2 	= Interrupt control. (SQW pin) <br>
+	/// Bit 3/4 = Rate select. (SQW frequency) <br>
+	/// Bit 5	= Convert temperature. <br>
+	/// Bit 6 	= Battery-Backed Square-Wave enable <br>
+	/// Bit 7 	= Enable oscillator (logic 0) <br>
 	/// For further information about the bits look at the datasheet of the chip you're using.
-	/// <href:"https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet</a>
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 13</a>
 	virtual bool getControlRegisterBit(uint8_t bitNumber);
 
 	/// @brief
@@ -331,43 +339,89 @@ public:
 	/// @param bitNumber the bit you want to set in the control register.
 	/// @param newBit the value the bitNumber will be set to.
 	/// @details
-	/// DS3231 bits:
-	/// Bit 0 	= Alarm one interrupt enable. (logic 1)
-	/// Bit 1 	= Alarm two interrupt enable. (logic 1)
-	/// Bit 2 	= Interrupt control. (SQW pin)
-	/// Bit 3/4 = Rate select. (SQW frequency)
-	/// Bit 5	= Convert temperature.
-	/// Bit 6 	= Battery-Backed Square-Wave enable
-	/// Bit 7 	= Enable oscillator (logic 0)
+	/// DS3231 control register bits: <br>
+	/// Bit 0 	= Alarm one interrupt enable. (logic 1) <br>
+	/// Bit 1 	= Alarm two interrupt enable. (logic 1) <br>
+	/// Bit 2 	= Interrupt control. (SQW pin) <br>
+	/// Bit 3/4 = Rate select. (SQW frequency) <br>
+	/// Bit 5	= Convert temperature. <br>
+	/// Bit 6 	= Battery-Backed Square-Wave enable <br>
+	/// Bit 7 	= Enable oscillator (logic 0) <br>
 	/// For further information about the bits look at the datasheet of the chip you're using.
-	/// <href:"https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 13</a>
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 13</a>
 	virtual void setControlRegisterBit(uint8_t bitNumber, bool newBit);
 
 public:
 	/// @brief
-	/// Set only one bit in the control register.
-	/// @param bitNumber the bit you want to set in the control register.
-	/// @param newBit the value the bitNumber will be set to.
+	/// Get a new value in the status register.
+	/// @return An uint8_t containing the current value in the status register.
 	/// @details
-	/// DS3231 bits:
-	/// Bit 0 = Alarm one flag. (Time matched in the alarm registers)
-	/// Bit 1 = Alarm two flag. (Time matched in the alarm registers)
-	/// Bit 2 = Busy. (TCXO functions executing)
-	/// Bit 3 = Enable 32kHz output.
-	/// Bit 4 = RESERVED.
-	/// Bit 5 = RESERVED.
-	/// Bit 6 = RESERVED.
-	/// Bit 7 = Oscillator stop flag. (logic 1)
+	/// DS3231 status register bits: <br>
+	/// Bit 0 = Alarm one flag. (Time matched in the alarm registers) <br>
+	/// Bit 1 = Alarm two flag. (Time matched in the alarm registers) <br>
+	/// Bit 2 = Busy. (TCXO functions executing) <br>
+	/// Bit 3 = Enable 32kHz output. <br>
+	/// Bit 4 = RESERVED. <br>
+	/// Bit 5 = RESERVED. <br>
+	/// Bit 6 = RESERVED. <br>
+	/// Bit 7 = Oscillator stop flag. (logic 1) <br>
 	/// For further information about the bits look at the datasheet of the chip you're using.
-	/// <href:"https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 14</a>
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 14</a>
 	virtual uint8_t getStatusRegister() = 0;
+
+	/// @brief
+	/// Set only one bit in the control register.
+	/// @param newByte the new value you want to store in the status register
+	/// @details
+	/// DS3231 status register bits: <br>
+	/// Bit 0 = Alarm one flag. (Time matched in the alarm registers) <br>
+	/// Bit 1 = Alarm two flag. (Time matched in the alarm registers) <br>
+	/// Bit 2 = Busy. (TCXO functions executing) <br>
+	/// Bit 3 = Enable 32kHz output. <br>
+	/// Bit 4 = RESERVED. <br>
+	/// Bit 5 = RESERVED. <br>
+	/// Bit 6 = RESERVED. <br>
+	/// Bit 7 = Oscillator stop flag. (logic 1) <br>
+	/// For further information about the bits look at the datasheet of the chip you're using.
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 14</a>
+	/// @warning
+	/// Most of the bits in the status register are not meant to be changed by the user.
 	virtual void setStatusRegister(uint8_t newByte) = 0;
 
 public:
+	/// @brief
+	/// Get the current value in the aging offset register.
+	/// @return An int8_t containing the current value in the aging offset register.
+	/// @details
+	/// "Positive aging values add capacitance to the array, slowing
+	/// the oscillator frequency. Negative values remove
+	/// capacitance from the array, increasing the oscillator frequency."
+	/// For further information about the aging offset look at the datasheet of the chip you're using.
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 14</a>
 	virtual int8_t getAgingOffset() = 0;
+
+	/// @brief
+	/// Set a new value in the aging offset register.
+	/// @param newAgingOffset the new value you want to set into the aging offset register.
+	/// @details
+	/// "Positive aging values add capacitance to the array, slowing
+	/// the oscillator frequency. Negative values remove
+	/// capacitance from the array, increasing the oscillator frequency."
+	/// For further information about the aging offset look at the datasheet of the chip you're using.
+	/// <a href="https://datasheets.maximintegrated.com/en/ds/DS3231.pdf">DS3231 Datasheet page 14</a>
+	/// @warning The real-time clock might become inaccurate after changing this value.
 	virtual void setAgingOffset(int8_t newAgingOffset) = 0;
 
 public:
+
+	/// @brief
+	/// Every time this method is called the century bit will be checked and further action will be taken.
+	/// @details
+	/// When the century bit is active it means that we are in a new century from now on.
+	/// The currentCentury value will be changed accordingly in @ref time.hpp.
+	/// @warning
+	/// Note that the currentCentury value in @ref time.hpp is shared between instances. Because it is static.
+	/// You should only call this function if you want to change the currentCentury of all the instances.
 	virtual void update() = 0;
 };
 

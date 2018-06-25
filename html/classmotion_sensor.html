@@ -68,22 +68,58 @@ $(function() {
 <div class="title">motionSensor Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A pure virtual class for a motion sensor chip like the <a class="el" href="class_h_c_s_r501.html" title="This class is used to communicate with the HCSR501 chip. ">HCSR501</a>.  
+ <a href="classmotion_sensor.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="motion_sensor_8hpp_source.html">motionSensor.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for motionSensor:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classmotion_sensor.png" usemap="#motionSensor_map" alt=""/>
   <map id="motionSensor_map" name="motionSensor_map">
-<area href="class_h_c_s_r501.html" alt="HCSR501" shape="rect" coords="0,56,88,80"/>
+<area href="class_h_c_s_r501.html" title="This class is used to communicate with the HCSR501 chip. " alt="HCSR501" shape="rect" coords="0,56,88,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0b8701a41516d8b1140c39474b1db9db"><td class="memItemLeft" align="right" valign="top"><a id="a0b8701a41516d8b1140c39474b1db9db"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>detect</b> ()=0</td></tr>
+<tr class="memitem:a0b8701a41516d8b1140c39474b1db9db"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_sensor.html#a0b8701a41516d8b1140c39474b1db9db">detect</a> ()=0</td></tr>
 <tr class="separator:a0b8701a41516d8b1140c39474b1db9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A pure virtual class for a motion sensor chip like the <a class="el" href="class_h_c_s_r501.html" title="This class is used to communicate with the HCSR501 chip. ">HCSR501</a>. </p>
+<p>This class is a pure virtual class. This means that you can access methods of the derived class when using reference or pointers. This makes the code easier to expand. </p><dl class="section warning"><dt>Warning</dt><dd>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0b8701a41516d8b1140c39474b1db9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b8701a41516d8b1140c39474b1db9db">&#9670;&nbsp;</a></span>detect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool motionSensor::detect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>detect whether there is anything is moving in the field of the motion sensor or not. </p><dl class="section return"><dt>Returns</dt><dd>A bool containing a 0 when nothing is detected and 1 when somthing is detected. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_h_c_s_r501.html#a75456a573bf0066ee648f8f1a39d4966">HCSR501</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Demo/<a class="el" href="motion_sensor_8hpp_source.html">motionSensor.hpp</a></li>
 </ul>
