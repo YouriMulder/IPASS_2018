@@ -5,10 +5,10 @@
 
 namespace bitParser {
 
-static const int nBitsinByte = 8;
-static const int nBitsinHalfAByte = 4;
-static const uint8_t leftHalfByteMask = 0x78;
-static const uint8_t rightHalfgByteMask = 0xF;
+const int nBitsinByte = 8;
+const int nBitsinHalfAByte = 4;
+const uint8_t leftHalfByteMask = 0x78;
+const uint8_t rightHalfgByteMask = 0xF;
 
 // LSB to MSB
 void printByte(uint8_t byte) ;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hours',['hours',['../classtimestamp.html#a3b2f11626563cca00d60b323ceb15191',1,'timestamp']]]
+  ['fifoamountofbytes',['FIFOAmountOfBytes',['../class_m_f_r_c522.html#a56c8309a003cf1a5d8479c7783826f8e',1,'MFRC522']]]
 ];

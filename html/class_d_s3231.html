@@ -336,8 +336,8 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ae6ef1547a0d2c2653ae3fe4c0f6a62ff"><td class="memItemLeft" align="right" valign="top"><a id="ae6ef1547a0d2c2653ae3fe4c0f6a62ff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setI2CBusCurrentAddress</b> ()</td></tr>
+<tr class="memitem:ae6ef1547a0d2c2653ae3fe4c0f6a62ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s3231.html#ae6ef1547a0d2c2653ae3fe4c0f6a62ff">setI2CBusCurrentAddress</a> ()</td></tr>
+<tr class="memdesc:ae6ef1547a0d2c2653ae3fe4c0f6a62ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classi2c_bus.html#a64ff87527c88619d72ede947d73eac3a" title="This variable stores the address of the chip you want to talk with. ">i2cBus::currentChipAddress</a> to the address of the <a class="el" href="class_d_s3231.html" title="This class is used to communicate with the DS3231 chip. ">DS3231</a>.  <a href="#ae6ef1547a0d2c2653ae3fe4c0f6a62ff">More...</a><br /></td></tr>
 <tr class="separator:ae6ef1547a0d2c2653ae3fe4c0f6a62ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70033a61ca1965fa0aed9af31679355f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s3231.html#a70033a61ca1965fa0aed9af31679355f">getAlarmBCDRegisterExMSB</a> (uint8_t alarmRegister)</td></tr>
 <tr class="memdesc:a70033a61ca1965fa0aed9af31679355f"><td class="mdescLeft">&#160;</td><td class="mdescRight">this used to get a alarm register. The MSB is not needed because that is the alarm rate.  <a href="#a70033a61ca1965fa0aed9af31679355f">More...</a><br /></td></tr>
@@ -1827,6 +1827,34 @@ The value in the chosen alarm minutes register will change. </dd></dl>
 Most chips will set the century bit when the year register went past 99. Note when the century bit is high you're in a new century. <a class="el" href="class_d_s3231.html#a143ec57122d892ea0ec671a153352f2c" title="Every time this method is called the century bit will be checked and further action will be taken...">update</a> will update the currentCentury in <a class="el" href="time_8hpp_source.html">time.hpp</a> and reset the century bit. </dd></dl>
 
 <p>Implements <a class="el" href="classreal_time_clock.html#a4d6e8056f52cea52bab5c635c0860c12">realTimeClock</a>.</p>
+
+</div>
+</div>
+<a id="ae6ef1547a0d2c2653ae3fe4c0f6a62ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ef1547a0d2c2653ae3fe4c0f6a62ff">&#9670;&nbsp;</a></span>setI2CBusCurrentAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DS3231::setI2CBusCurrentAddress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classi2c_bus.html#a64ff87527c88619d72ede947d73eac3a" title="This variable stores the address of the chip you want to talk with. ">i2cBus::currentChipAddress</a> to the address of the <a class="el" href="class_d_s3231.html" title="This class is used to communicate with the DS3231 chip. ">DS3231</a>. </p>
+<p>Everytime before communicating with the <a class="el" href="class_d_s3231.html" title="This class is used to communicate with the DS3231 chip. ">DS3231</a> this function is called. Because any other chip might have changed the <a class="el" href="classi2c_bus.html#a64ff87527c88619d72ede947d73eac3a" title="This variable stores the address of the chip you want to talk with. ">i2cBus::currentChipAddress</a> variable. </p>
 
 </div>
 </div>

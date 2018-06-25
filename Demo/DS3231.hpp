@@ -77,7 +77,10 @@ public:
 
 private:
 	/// @brief
-	///
+	/// Set the i2cBus::currentChipAddress to the address of the DS3231
+	/// @details
+	/// Everytime before communicating with the DS3231 this function is called.
+	/// Because any other chip might have changed the i2cBus::currentChipAddress variable.
 	void setI2CBusCurrentAddress();
 
 public:

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['newcentury',['newCentury',['../class_d_s3231.html#a15fb987b624cdddde40a15db36665221',1,'DS3231']]]
+  ['minutes',['minutes',['../classtimestamp.html#a45c06ef17b96bdd37cd168faf772c63c',1,'timestamp']]],
+  ['month',['month',['../classtimestamp.html#a71df69b7ebb5a6dd228f4ae70b954505',1,'timestamp']]]
 ];

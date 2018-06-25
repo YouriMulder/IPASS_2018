@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['seconds',['seconds',['../classtimestamp.html#a15ad236c6963bfbd6ae18416697c91c2',1,'timestamp']]]
+  ['read_5fmask',['READ_MASK',['../classspi_bus.html#a0dda31f7fa031ef8913e029d2eb4acf9',1,'spiBus']]],
+  ['register_5fmask',['REGISTER_MASK',['../classspi_bus.html#acd898d08216428963563e20f033423b3',1,'spiBus']]]
 ];

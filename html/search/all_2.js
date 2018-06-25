@@ -2,7 +2,18 @@ var searchData=
 [
   ['century',['century',['../classtimestamp.html#afe83888ffa38c1615a3d12b012f235b3',1,'timestamp']]],
   ['centuryincreasevalue',['centuryIncreaseValue',['../classtime.html#af12b7ed0d7ff922e00ecb46dabdaede6',1,'time']]],
+  ['checkuid4bcc',['checkUID4BCC',['../classrfid.html#a4ca2918b2b7011a6eb685ea547c21826',1,'rfid']]],
   ['clearbitinregister',['clearBitInRegister',['../classi2c_bus.html#a30c140f08712618bc46f7c98ba1da3c3',1,'i2cBus']]],
+  ['collreg',['CollReg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7afafb7ec88f79c9b1f195195497d0ca07',1,'MFRC522']]],
+  ['comienreg',['ComIEnReg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7ad956725472615518dfb99f2d7dccc50e',1,'MFRC522']]],
+  ['comirqreg',['ComIrqReg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a76b2a615444982e04566784bdb5c9841',1,'MFRC522']]],
+  ['command',['COMMAND',['../class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7',1,'MFRC522']]],
+  ['commandreg',['CommandReg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a0ec37643fa721f476b0cd4359e3c7ef1',1,'MFRC522']]],
+  ['communication_5fstatus',['COMMUNICATION_STATUS',['../class_m_f_r_c522.html#a1160642f3b2b60b5ea7309374a8d760a',1,'MFRC522']]],
+  ['controlreg',['ControlReg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a9d0df9e03ad6706004b003e20127a76a',1,'MFRC522']]],
+  ['crcresult1reg',['CRCResult1Reg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a93ba2171ffd0724c539ea656627e3944',1,'MFRC522']]],
+  ['crcresult2reg',['CRCResult2Reg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a38946dab95c184fd8ca72747d51dc0c5',1,'MFRC522']]],
   ['currentcentury',['currentCentury',['../classtime.html#acab6780ebb25862cb83316cb967b8b57',1,'time']]],
-  ['currentchipaddress',['currentChipAddress',['../classi2c_bus.html#a64ff87527c88619d72ede947d73eac3a',1,'i2cBus']]]
+  ['currentchipaddress',['currentChipAddress',['../classi2c_bus.html#a64ff87527c88619d72ede947d73eac3a',1,'i2cBus']]],
+  ['cwgspreg',['CWGsPReg',['../class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a02925dc7a230fcf039c597bf8cfa113f',1,'MFRC522']]]
 ];

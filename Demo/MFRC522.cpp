@@ -9,23 +9,23 @@ MFRC522::MFRC522(spiBus& SPIBus,
 	SPIBus(SPIBus), slaveSelect(slaveSelect), reset(reset) {
 	if(init) {
 		initialize();
-		setAntennas(1);
 	}
 }
 
 void MFRC522::initialize() {
 	hardReset();
 
-	writeRegister(TModeReg, 0x8D);      // Tauto=1; f(Timer) = 6.78MHz/TPreScaler
+	writeRegister(TModeReg, 0x80);       // Timer auto start timer
 	writeRegister(TxModeReg, 0); 		// Set speed to 106 kBd to be able to use some extra functionality
 	writeRegister(TxModeReg, 0);		// Set speed to 106 kBd to be able to use some extra functionality
 
-	writeRegister(TPrescalerReg, 0x3E); // TModeReg[3..0] + TPrescalerReg
-	writeRegister(TReloadReg1, 0x03);	// 25ms timeout
-	writeRegister(TReloadReg2, 0xE8);	// 25ms timeout
+	writeRegister(TPrescalerReg, 0xA9); // 0x0A9 = 30khz timer aka 25 us
+	writeRegister(TReloadReg1, 0x03);	// 25 us x 1000 = 25ms timeout
+	writeRegister(TReloadReg2, 0xE8);	// 25 us x 1000 = 25ms timeout
 
-	writeRegister(TxASKReg, 0x40);      // 100%ASK
+	writeRegister(TxASKReg, 0x40);      // 100%ASK http://www.rfwireless-world.com/Terminology/10-ASK-modulation-vs-100-ASK-modulation.html 100% is used for type A which i'm using
 	writeRegister(ModeReg, 0x3D);       // CRC initial value 0x6363
+	setAntennas(1);						// Resetting causes the antennas to go off.
 }
 
 void MFRC522::waitTillStarted() {
@@ -193,7 +193,10 @@ uint8_t MFRC522::communicate(COMMAND command, uint8_t transmitData[],
 }
 
 bool MFRC522::isCardInRange() {
-	writeRegister(BitFramingReg, 0x07); //
+	// Request REQA 26h(7 bit)
+	// Wake-up WUPA 52h(7 bit)
+	// So the framing is set to 7/111b/0x07
+	writeRegister(BitFramingReg, 0x07); // amount of last bits 111b
 
 	const uint8_t sendDataLength = 1;
 	uint8_t sendData[sendDataLength] = {0x26};
@@ -224,6 +227,8 @@ bool MFRC522::isCardInRangeCheck() {
 // https://www.nxp.com/docs/en/application-note/AN10927.pdf
 uint8_t MFRC522::getCardUID(uint8_t UID[5]) {
 	uint8_t serNum[2] = {CL1Command, 0x20};		//Put collision check data in the array
+
+	// Only wake-up and request need 7 bit framing
 	writeRegister(BitFramingReg, 0x00);			//Change the amount of bits transmitted from the last byte
 
 	int length = 5;

@@ -69,64 +69,489 @@ $(function() {
 <div class="title">rfid Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A pure virtual class for a rfid chip like the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a>.  
+ <a href="classrfid.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="rfid_8hpp_source.html">rfid.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for rfid:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classrfid.png" usemap="#rfid_map" alt=""/>
   <map id="rfid_map" name="rfid_map">
-<area href="class_m_f_r_c522.html" alt="MFRC522" shape="rect" coords="0,56,69,80"/>
+<area href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. " alt="MFRC522" shape="rect" coords="0,56,69,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a76f857b77fbea6776048aab6ba835a29"><td class="memItemLeft" align="right" valign="top"><a id="a76f857b77fbea6776048aab6ba835a29"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()=0</td></tr>
+<tr class="memitem:a76f857b77fbea6776048aab6ba835a29"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a76f857b77fbea6776048aab6ba835a29">initialize</a> ()=0</td></tr>
+<tr class="memdesc:a76f857b77fbea6776048aab6ba835a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the rfid chip for.  <a href="#a76f857b77fbea6776048aab6ba835a29">More...</a><br /></td></tr>
 <tr class="separator:a76f857b77fbea6776048aab6ba835a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f993197e5aa12e7b3bfb1576552bbf1"><td class="memItemLeft" align="right" valign="top"><a id="a7f993197e5aa12e7b3bfb1576552bbf1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>hardReset</b> ()=0</td></tr>
+<tr class="memitem:a7f993197e5aa12e7b3bfb1576552bbf1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a7f993197e5aa12e7b3bfb1576552bbf1">hardReset</a> ()=0</td></tr>
+<tr class="memdesc:a7f993197e5aa12e7b3bfb1576552bbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hard reset the rfid chip probably with a hwlib::pin_out (<a href="#" onclick="location.href='mai'+'lto:'+'wou'+'te'+'r@v'+'ot'+'i.n'+'l'; return false;">woute<span style="display: none;">.nosp@m.</span>r@vo<span style="display: none;">.nosp@m.</span>ti.nl</a>) 2017.  <a href="#a7f993197e5aa12e7b3bfb1576552bbf1">More...</a><br /></td></tr>
 <tr class="separator:a7f993197e5aa12e7b3bfb1576552bbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a880add72f6db49af0b1d23878308d733"><td class="memItemLeft" align="right" valign="top"><a id="a880add72f6db49af0b1d23878308d733"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>softReset</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a880add72f6db49af0b1d23878308d733">softReset</a> ()=0</td></tr>
+<tr class="memdesc:a880add72f6db49af0b1d23878308d733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soft reset the rfid chip. <br /></td></tr>
 <tr class="separator:a880add72f6db49af0b1d23878308d733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf4826e77ab7b02f04c8f01d969149c1"><td class="memItemLeft" align="right" valign="top"><a id="abf4826e77ab7b02f04c8f01d969149c1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAntennas</b> ()=0</td></tr>
+<tr class="memitem:abf4826e77ab7b02f04c8f01d969149c1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#abf4826e77ab7b02f04c8f01d969149c1">resetAntennas</a> ()=0</td></tr>
+<tr class="memdesc:abf4826e77ab7b02f04c8f01d969149c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the Tx and Rx antennas.  <a href="#abf4826e77ab7b02f04c8f01d969149c1">More...</a><br /></td></tr>
 <tr class="separator:abf4826e77ab7b02f04c8f01d969149c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23fc4ec0bc3790c5e68269d4f32771b9"><td class="memItemLeft" align="right" valign="top"><a id="a23fc4ec0bc3790c5e68269d4f32771b9"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCardInRange</b> ()=0</td></tr>
+<tr class="memitem:a23fc4ec0bc3790c5e68269d4f32771b9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a23fc4ec0bc3790c5e68269d4f32771b9">isCardInRange</a> ()=0</td></tr>
+<tr class="memdesc:a23fc4ec0bc3790c5e68269d4f32771b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a card within the radio frequency field.  <a href="#a23fc4ec0bc3790c5e68269d4f32771b9">More...</a><br /></td></tr>
 <tr class="separator:a23fc4ec0bc3790c5e68269d4f32771b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9790d273f2385c8fb48bb85ca2aa0d10"><td class="memItemLeft" align="right" valign="top"><a id="a9790d273f2385c8fb48bb85ca2aa0d10"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCardInRangeCheck</b> ()=0</td></tr>
+<tr class="memitem:a9790d273f2385c8fb48bb85ca2aa0d10"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a9790d273f2385c8fb48bb85ca2aa0d10">isCardInRangeCheck</a> ()=0</td></tr>
+<tr class="memdesc:a9790d273f2385c8fb48bb85ca2aa0d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a card within the radio frequency field.  <a href="#a9790d273f2385c8fb48bb85ca2aa0d10">More...</a><br /></td></tr>
 <tr class="separator:a9790d273f2385c8fb48bb85ca2aa0d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb2a321694ceaf84db793f5efb3a750"><td class="memItemLeft" align="right" valign="top"><a id="afeb2a321694ceaf84db793f5efb3a750"></a>
-virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getCardUID</b> (uint8_t UID[5])=0</td></tr>
+<tr class="memitem:afeb2a321694ceaf84db793f5efb3a750"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#afeb2a321694ceaf84db793f5efb3a750">getCardUID</a> (uint8_t UID[5])=0</td></tr>
+<tr class="memdesc:afeb2a321694ceaf84db793f5efb3a750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the UID/NUID of 4 bytes UID card with the BCC byte.  <a href="#afeb2a321694ceaf84db793f5efb3a750">More...</a><br /></td></tr>
 <tr class="separator:afeb2a321694ceaf84db793f5efb3a750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeb826495120d8d29683f0ea1b985d77"><td class="memItemLeft" align="right" valign="top"><a id="aaeb826495120d8d29683f0ea1b985d77"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>getCardUIDSimple</b> (uint8_t UID[5])=0</td></tr>
+<tr class="memitem:aaeb826495120d8d29683f0ea1b985d77"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#aaeb826495120d8d29683f0ea1b985d77">getCardUIDSimple</a> (uint8_t UID[5])=0</td></tr>
+<tr class="memdesc:aaeb826495120d8d29683f0ea1b985d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around <a class="el" href="classrfid.html#afeb2a321694ceaf84db793f5efb3a750" title="Get the UID/NUID of 4 bytes UID card with the BCC byte. ">getCardUID</a> to make it simpler.  <a href="#aaeb826495120d8d29683f0ea1b985d77">More...</a><br /></td></tr>
 <tr class="separator:aaeb826495120d8d29683f0ea1b985d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b324cb1e7b4c377eca4b3495d4189fd"><td class="memItemLeft" align="right" valign="top"><a id="a1b324cb1e7b4c377eca4b3495d4189fd"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>waitForCardUID</b> (uint8_t UID[5])=0</td></tr>
+<tr class="memitem:a1b324cb1e7b4c377eca4b3495d4189fd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a1b324cb1e7b4c377eca4b3495d4189fd">waitForCardUID</a> (uint8_t UID[5])=0</td></tr>
+<tr class="memdesc:a1b324cb1e7b4c377eca4b3495d4189fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function waits till there is a card in range and gives the UID back.  <a href="#a1b324cb1e7b4c377eca4b3495d4189fd">More...</a><br /></td></tr>
 <tr class="separator:a1b324cb1e7b4c377eca4b3495d4189fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c239b8e42f20d4310c44368bd5030a7"><td class="memItemLeft" align="right" valign="top"><a id="a8c239b8e42f20d4310c44368bd5030a7"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isUIDEqual</b> (uint8_t UID1[5], uint8_t UID2[5], unsigned int UIDSize)</td></tr>
+<tr class="memitem:a8c239b8e42f20d4310c44368bd5030a7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a8c239b8e42f20d4310c44368bd5030a7">isUIDEqual</a> (uint8_t UID1[5], uint8_t UID2[5], unsigned int UIDSize)</td></tr>
+<tr class="memdesc:a8c239b8e42f20d4310c44368bd5030a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">check whether two UIDs are equal  <a href="#a8c239b8e42f20d4310c44368bd5030a7">More...</a><br /></td></tr>
 <tr class="separator:a8c239b8e42f20d4310c44368bd5030a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add22fd6bae25ed7baa9ce6d9a61d2053"><td class="memItemLeft" align="right" valign="top"><a id="add22fd6bae25ed7baa9ce6d9a61d2053"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkUID4BCC</b> (uint8_t UID[5])</td></tr>
-<tr class="separator:add22fd6bae25ed7baa9ce6d9a61d2053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27619628e718bb781f912aead770079a"><td class="memItemLeft" align="right" valign="top"><a id="a27619628e718bb781f912aead770079a"></a>
-virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getVersion</b> ()=0</td></tr>
+<tr class="memitem:a4ca2918b2b7011a6eb685ea547c21826"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a4ca2918b2b7011a6eb685ea547c21826">checkUID4BCC</a> (const uint8_t UID[5])</td></tr>
+<tr class="memdesc:a4ca2918b2b7011a6eb685ea547c21826"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will check if the UID is valid using BCC.  <a href="#a4ca2918b2b7011a6eb685ea547c21826">More...</a><br /></td></tr>
+<tr class="separator:a4ca2918b2b7011a6eb685ea547c21826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27619628e718bb781f912aead770079a"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a27619628e718bb781f912aead770079a">getVersion</a> ()=0</td></tr>
+<tr class="memdesc:a27619628e718bb781f912aead770079a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the version of the rfid chip to perform for instance a <a class="el" href="classrfid.html#a93e5430380a14fd652e7ca1ce6443198" title="Let the rfid chip perform a self test. ">selfTest</a>.  <a href="#a27619628e718bb781f912aead770079a">More...</a><br /></td></tr>
 <tr class="separator:a27619628e718bb781f912aead770079a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93e5430380a14fd652e7ca1ce6443198"><td class="memItemLeft" align="right" valign="top"><a id="a93e5430380a14fd652e7ca1ce6443198"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>selfTest</b> ()=0</td></tr>
+<tr class="memitem:a93e5430380a14fd652e7ca1ce6443198"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a93e5430380a14fd652e7ca1ce6443198">selfTest</a> ()=0</td></tr>
+<tr class="memdesc:a93e5430380a14fd652e7ca1ce6443198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let the rfid chip perform a self test.  <a href="#a93e5430380a14fd652e7ca1ce6443198">More...</a><br /></td></tr>
 <tr class="separator:a93e5430380a14fd652e7ca1ce6443198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa8c64df0877a6bad52b08cfdcaea02bc"><td class="memItemLeft" align="right" valign="top"><a id="aa8c64df0877a6bad52b08cfdcaea02bc"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>waitTillStarted</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#aa8c64df0877a6bad52b08cfdcaea02bc">waitTillStarted</a> ()=0</td></tr>
+<tr class="memdesc:aa8c64df0877a6bad52b08cfdcaea02bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait till the is started correctly after for example a soft reset. <br /></td></tr>
 <tr class="separator:aa8c64df0877a6bad52b08cfdcaea02bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A pure virtual class for a rfid chip like the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a>. </p>
+<p>This class is a pure virtual class. This means that you can access methods of the derived class when using reference or pointers. This makes the code easier to expand. </p><dl class="section warning"><dt>Warning</dt><dd>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4ca2918b2b7011a6eb685ea547c21826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca2918b2b7011a6eb685ea547c21826">&#9670;&nbsp;</a></span>checkUID4BCC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rfid::checkUID4BCC </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This will check if the UID is valid using BCC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UID[5]</td><td>the array where the UID including the BCC is store.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The UID[5] will NOT be changed using this function. This check was found on the following site: <a href="http://www.proxmark.org/forum/viewtopic.php?id=2274">BCC check</a> </p>
+
+</div>
+</div>
+<a id="afeb2a321694ceaf84db793f5efb3a750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeb2a321694ceaf84db793f5efb3a750">&#9670;&nbsp;</a></span>getCardUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint8_t rfid::getCardUID </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the UID/NUID of 4 bytes UID card with the BCC byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UID[5]</td><td>The array you want the UID to get stored into. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An uint8_t containing a possible error or succes code. (These codes are in the derived class)</dd></dl>
+<p>The UID of a card is a unique identifier. This UID can be used to know which card you're communicating with. The UID is used when more than one card is in the radio frequency field, also known as collision detection.<br />
+ The last byte of UID[5] will be the bcc. This can be used to check if the UID is valid. </p><dl class="section warning"><dt>Warning</dt><dd>Note that the UID might not be as unique as you might expect. Some cards have a feature to rewrite the UID block. </dd>
+<dd>
+Note that the UID[5] array will be overridden. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#ad3c7ab4c70988e80c400f36f724a12b7">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="aaeb826495120d8d29683f0ea1b985d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb826495120d8d29683f0ea1b985d77">&#9670;&nbsp;</a></span>getCardUIDSimple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rfid::getCardUIDSimple </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper around <a class="el" href="classrfid.html#afeb2a321694ceaf84db793f5efb3a750" title="Get the UID/NUID of 4 bytes UID card with the BCC byte. ">getCardUID</a> to make it simpler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UID[5]</td><td>The array you want the UID to get stored into. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool which will be 1 when everything went fine and 0 when there was an error.</dd></dl>
+<p>When the function returns a zero you should try  instead because that function returns a more accurate return status. </p><dl class="section warning"><dt>Warning</dt><dd>Note that the UID might not be as unique as you might expect. Some cards have a feature to rewrite the UID block. </dd>
+<dd>
+Note that the UID[5] array will be overridden. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#a33c20be6030f635d986984db4999a1eb">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a27619628e718bb781f912aead770079a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27619628e718bb781f912aead770079a">&#9670;&nbsp;</a></span>getVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint8_t rfid::getVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the version of the rfid chip to perform for instance a <a class="el" href="classrfid.html#a93e5430380a14fd652e7ca1ce6443198" title="Let the rfid chip perform a self test. ">selfTest</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>An uint8_t containing the version value 1 or 2 </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#a25fb0a50bf7db51ab9c5bc2ff4fa84e3">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a7f993197e5aa12e7b3bfb1576552bbf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f993197e5aa12e7b3bfb1576552bbf1">&#9670;&nbsp;</a></span>hardReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rfid::hardReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hard reset the rfid chip probably with a hwlib::pin_out (<a href="#" onclick="location.href='mai'+'lto:'+'wou'+'te'+'r@v'+'ot'+'i.n'+'l'; return false;">woute<span style="display: none;">.nosp@m.</span>r@vo<span style="display: none;">.nosp@m.</span>ti.nl</a>) 2017. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Note if the chip requires a external pin to reset the whole chip. The pin must me connected correctly. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#a016df9ed0421397c634cc79c475dbe3b">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a76f857b77fbea6776048aab6ba835a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f857b77fbea6776048aab6ba835a29">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rfid::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the rfid chip for. </p>
+<p>This will reset the chip and initilize all the register. </p>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#a5f589b09eaf150551b369052ce125fa1">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a23fc4ec0bc3790c5e68269d4f32771b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23fc4ec0bc3790c5e68269d4f32771b9">&#9670;&nbsp;</a></span>isCardInRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rfid::isCardInRange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if there is a card within the radio frequency field. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool which will be 1 if a card is detected and 0 when not.</dd></dl>
+<p>This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. </p><dl class="section warning"><dt>Warning</dt><dd>After requesting the rfid card expects the user to send another command. When you you only want to check if a card is in the radio frequency field you should use isCardInRangeCheck </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#a019f76569bddf9c2f9f94eca13a618d7">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a9790d273f2385c8fb48bb85ca2aa0d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9790d273f2385c8fb48bb85ca2aa0d10">&#9670;&nbsp;</a></span>isCardInRangeCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rfid::isCardInRangeCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if there is a card within the radio frequency field. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool which will be 1 if a card is detected and 0 when not.</dd></dl>
+<p>This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. After sending the request command both antennas are reset (<a class="el" href="classrfid.html#abf4826e77ab7b02f04c8f01d969149c1" title="Reset the Tx and Rx antennas. ">resetAntennas</a>) to stop communicating with the card. </p><dl class="section warning"><dt>Warning</dt><dd>Use <a class="el" href="classrfid.html#a23fc4ec0bc3790c5e68269d4f32771b9" title="Check if there is a card within the radio frequency field. ">isCardInRange</a> when you want to send some commands after you send a request to the card. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#a29ce0dd04495f9352e32ada5ecc5fd03">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a8c239b8e42f20d4310c44368bd5030a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c239b8e42f20d4310c44368bd5030a7">&#9670;&nbsp;</a></span>isUIDEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rfid::isUIDEqual </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID1</em>[5], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID2</em>[5], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>UIDSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check whether two UIDs are equal </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UID1[5]</td><td>the first UID you want to check. </td></tr>
+    <tr><td class="paramname">UID2[5]</td><td>the seconds UID you want to check. </td></tr>
+    <tr><td class="paramname">UIDSize</td><td>the size of the arrays. NOTE THAT FOR NOW THEY HAVE TO BE 5. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool containing a 1 when they're the same and a zero when the're not.</dd></dl>
+<p>This method will check if every value of the same index in the arrays are equal. The BCC is also checked for equality. </p>
+
+</div>
+</div>
+<a id="abf4826e77ab7b02f04c8f01d969149c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4826e77ab7b02f04c8f01d969149c1">&#9670;&nbsp;</a></span>resetAntennas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rfid::resetAntennas </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the Tx and Rx antennas. </p>
+<p>This function is mostly used to stop communicating with a card without using the halt command. </p>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#ac981022cc3ae79f727b2365e309cf691">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a93e5430380a14fd652e7ca1ce6443198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e5430380a14fd652e7ca1ce6443198">&#9670;&nbsp;</a></span>selfTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rfid::selfTest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Let the rfid chip perform a self test. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool containing a 1 when passed and 0 when failed the self test.</dd></dl>
+<p>The rfid chip performs a self test. The self testing sequence can be found in the datasheet <a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">MFRC522 datasheet page 85</a> </p><dl class="section warning"><dt>Warning</dt><dd>Only version 1 and 2 are supported at the moment! Some clones might have another version. It might work fine when not passing the test. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#adcc4f5eb212c1a94e462eab459bd685e">MFRC522</a>.</p>
+
+</div>
+</div>
+<a id="a1b324cb1e7b4c377eca4b3495d4189fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b324cb1e7b4c377eca4b3495d4189fd">&#9670;&nbsp;</a></span>waitForCardUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rfid::waitForCardUID </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function waits till there is a card in range and gives the UID back. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function blocks everything! And will continue when there is a card detected with valid UID. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_m_f_r_c522.html#aeb05c83c2d139eb2c57f400399982691">MFRC522</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Demo/<a class="el" href="rfid_8hpp_source.html">rfid.hpp</a></li>
 </ul>

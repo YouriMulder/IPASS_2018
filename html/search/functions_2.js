@@ -9,6 +9,8 @@ var searchData=
   ['getbitfromregister',['getBitFromRegister',['../classi2c_bus.html#aeedd7fa6ab6640fe86bcfb8a3ac3f306',1,'i2cBus']]],
   ['getbytefromregister',['getByteFromRegister',['../classi2c_bus.html#a7f83afc0264e758214db63cca336846d',1,'i2cBus::getByteFromRegister()'],['../classspi_bus.html#ab6b195b235dd0a1dad2f7cec3d997ffb',1,'spiBus::getByteFromRegister()']]],
   ['getbytesfromregister',['getBytesFromRegister',['../classspi_bus.html#a58318fdc7b4ff1869be4f0f321a853a8',1,'spiBus']]],
+  ['getcarduid',['getCardUID',['../class_m_f_r_c522.html#ad3c7ab4c70988e80c400f36f724a12b7',1,'MFRC522::getCardUID()'],['../classrfid.html#afeb2a321694ceaf84db793f5efb3a750',1,'rfid::getCardUID()']]],
+  ['getcarduidsimple',['getCardUIDSimple',['../class_m_f_r_c522.html#a33c20be6030f635d986984db4999a1eb',1,'MFRC522::getCardUIDSimple()'],['../classrfid.html#aaeb826495120d8d29683f0ea1b985d77',1,'rfid::getCardUIDSimple()']]],
   ['getcentury',['getCentury',['../classtimestamp.html#a91ed1d395dd3d230607c4cb936b6004a',1,'timestamp']]],
   ['getcontrolregister',['getControlRegister',['../class_d_s3231.html#a2e023e091c63208290e275874552a716',1,'DS3231::getControlRegister()'],['../classreal_time_clock.html#a13820319507d89a62a5b37b252ea6d0d',1,'realTimeClock::getControlRegister()']]],
   ['getcontrolregisterbit',['getControlRegisterBit',['../class_d_s3231.html#a5b22edafc0d475fd6e33936c286654d5',1,'DS3231::getControlRegisterBit()'],['../classreal_time_clock.html#a762441ffb1fbee666cd1642edfb8c929',1,'realTimeClock::getControlRegisterBit()']]],
@@ -34,6 +36,7 @@ var searchData=
   ['getreadbyte',['getReadByte',['../classspi_bus.html#a6e5f0193b056b4b58db49e1c6ce5d807',1,'spiBus']]],
   ['getseconds',['getSeconds',['../classtimestamp.html#a9212a15c81b0f77b576257cba2805253',1,'timestamp']]],
   ['getstatusregister',['getStatusRegister',['../class_d_s3231.html#aee77c6ecb3c292d375eebe7e58ebb024',1,'DS3231::getStatusRegister()'],['../classreal_time_clock.html#a38dcc51b0b30a5e480ea7f18f2c792ba',1,'realTimeClock::getStatusRegister()']]],
+  ['getversion',['getVersion',['../class_m_f_r_c522.html#a25fb0a50bf7db51ab9c5bc2ff4fa84e3',1,'MFRC522::getVersion()'],['../classrfid.html#a27619628e718bb781f912aead770079a',1,'rfid::getVersion()']]],
   ['getwritebyte',['getWriteByte',['../classspi_bus.html#af09ae8625cbb1c5353e3777af6bf5ae3',1,'spiBus']]],
   ['getyear',['getYear',['../classtimestamp.html#a21c6dd709bb29c95cea2641f26c6c088',1,'timestamp']]]
 ];

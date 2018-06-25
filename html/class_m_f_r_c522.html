@@ -73,97 +73,103 @@ $(function() {
 <div class="title">MFRC522 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is used to communicate with the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> chip.  
+ <a href="class_m_f_r_c522.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_m_f_r_c522_8hpp_source.html">MFRC522.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MFRC522:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_m_f_r_c522.png" usemap="#MFRC522_map" alt=""/>
   <map id="MFRC522_map" name="MFRC522_map">
-<area href="classrfid.html" alt="rfid" shape="rect" coords="0,0,69,24"/>
+<area href="classrfid.html" title="A pure virtual class for a rfid chip like the MFRC522. " alt="rfid" shape="rect" coords="0,0,69,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae7ec09eb8c9c61288a4770175b4b8db7"><td class="memItemLeft" align="right" valign="top"><a id="ae7ec09eb8c9c61288a4770175b4b8db7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>REG</b> : uint8_t { <br />
+<tr class="memitem:ae7ec09eb8c9c61288a4770175b4b8db7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> : uint8_t { <br />
 &#160;&#160;<b>RESERVED1</b> = 0x00, 
-<b>CommandReg</b>, 
-<b>ComIEnReg</b>, 
-<b>DivIEnReg</b>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a0ec37643fa721f476b0cd4359e3c7ef1">CommandReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7ad956725472615518dfb99f2d7dccc50e">ComIEnReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7afb4527cc3e364cce3fe3e62cdcde7da0">DivIEnReg</a>, 
 <br />
-&#160;&#160;<b>ComIrqReg</b>, 
-<b>DivIrqReg</b>, 
-<b>ErrorReg</b>, 
-<b>Status1Reg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a76b2a615444982e04566784bdb5c9841">ComIrqReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a95e26d5ece97ae43c34d08797205a356">DivIrqReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796">ErrorReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a9f8b10dda6868e74226ab7ccca8d5be0">Status1Reg</a>, 
 <br />
-&#160;&#160;<b>Status2Reg</b>, 
-<b>FIFODataReg</b>, 
-<b>FIFOLevelReg</b>, 
-<b>WaterLevelReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a8fb1a8c28b7a860793831566373f172f">Status2Reg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328">FIFODataReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7">FIFOLevelReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7aee5f7c4d0d34d93e5ac67a47e886b224">WaterLevelReg</a>, 
 <br />
-&#160;&#160;<b>ControlReg</b>, 
-<b>BitFramingReg</b>, 
-<b>CollReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a9d0df9e03ad6706004b003e20127a76a">ControlReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7aaf8beb5a739cd8bf94b8b5c8d2d109ce">BitFramingReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7afafb7ec88f79c9b1f195195497d0ca07">CollReg</a>, 
 <b>RESERVED2</b>, 
 <br />
 &#160;&#160;<b>RESERVED3</b>, 
-<b>ModeReg</b>, 
-<b>TxModeReg</b>, 
-<b>RxModeReg</b>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a2cd647ad1ac1327d2a632115cd9c4477">ModeReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7ad4fe18ad01abc83d4559369226fe7992">TxModeReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a7e0d6ae1fdd25be6d80d1b76b2274764">RxModeReg</a>, 
 <br />
-&#160;&#160;<b>TxControlReg</b>, 
-<b>TxASKReg</b>, 
-<b>TxSelReg</b>, 
-<b>RxSelReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a73dc12b03f05177a400263e5e2bcf0cc">TxControlReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7ac9de33ca066ca9481bd01d5642a0c879">TxASKReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a6cf11e077148648aaec0492317be5177">TxSelReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a669c0c9418d5437566b4b42da326c05f">RxSelReg</a>, 
 <br />
-&#160;&#160;<b>rxThresholdReg</b>, 
-<b>DemodReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a5dfb7b5c8983d07d7df4fa915902db4c">rxThresholdReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a37b01e93fff19ca62364e8f4f797a5c4">DemodReg</a>, 
 <b>RESERVED4</b>, 
 <b>RESERVED5</b>, 
 <br />
-&#160;&#160;<b>MfTxReg</b>, 
-<b>MfRxReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a08eb51f4d08a41ceb4b34189bb712dc7">MfTxReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a92fbf63612de021d242465d4685f1754">MfRxReg</a>, 
 <b>RESERVED6</b>, 
-<b>SerialSpeedReg</b>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a23529258de3c3f5655afa2849f547f68">SerialSpeedReg</a>, 
 <br />
 &#160;&#160;<b>RESERVED7</b>, 
-<b>CRCResult1Reg</b>, 
-<b>CRCResult2Reg</b>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a93ba2171ffd0724c539ea656627e3944">CRCResult1Reg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a38946dab95c184fd8ca72747d51dc0c5">CRCResult2Reg</a>, 
 <b>RESERVED8</b>, 
 <br />
-&#160;&#160;<b>ModWidthReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7ad69a6a3d883ebfc993fc6fbdbc035508">ModWidthReg</a>, 
 <b>RESERVED9</b>, 
-<b>RFCfgReg</b>, 
-<b>GsNReg</b>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a0c99eea491c71e9d2a02bf8a86988adf">RFCfgReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a2f81aa5f433fa51bb4b41cd8955de794">GsNReg</a>, 
 <br />
-&#160;&#160;<b>CWGsPReg</b>, 
-<b>ModGsPReg</b>, 
-<b>TModeReg</b>, 
-<b>TPrescalerReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a02925dc7a230fcf039c597bf8cfa113f">CWGsPReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7acf6ed89766ba2a4e6483b3209b1aa74e">ModGsPReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a1ed52e7f88c8bf3fda91bf31bb62afe4">TModeReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a88c2ad7cdfb7178ea775c157f4ce5213">TPrescalerReg</a>, 
 <br />
-&#160;&#160;<b>TReloadReg1</b>, 
-<b>TReloadReg2</b>, 
-<b>TCounterValReg1</b>, 
-<b>TCounterValReg2</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a1b5d7dfad8ec2fbc93d7b7c67cb0d94c">TReloadReg1</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a5dbae491d9100c3437ff1ae30873e583">TReloadReg2</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7af5d128e56733edcb6a36f2e62003b914">TCounterValReg1</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a90426989ff0e68a88f71fa5e12da987a">TCounterValReg2</a>, 
 <br />
 &#160;&#160;<b>RESERVED10</b>, 
-<b>TestSel1Reg</b>, 
-<b>TestSel2Reg</b>, 
-<b>TestPinEnReg</b>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a3fd81beec1ed6566ff1897aac235890f">TestSel1Reg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7ac1053bcb64682eba4a767caaea677807">TestSel2Reg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a62a7871c0d3452a8f642bbea0ca7cb34">TestPinEnReg</a>, 
 <br />
-&#160;&#160;<b>TestPinValueReg</b>, 
-<b>TestBusReg</b>, 
-<b>AutoTestReg</b>, 
-<b>VersionReg</b>, 
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7aa5bb4445abb525ddf46c6efcb21e8811">TestPinValueReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a37bc0188996dc1ee5332d40961bffb4b">TestBusReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a9583618ad17a8a20b7a735c7677c8e56">AutoTestReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a4281c25cf6743163ed2e2f903cf17ba9">VersionReg</a>, 
 <br />
-&#160;&#160;<b>AnalogTestReg</b>, 
-<b>TestDAC1Reg</b>, 
-<b>TestDAC2Reg</b>, 
-<b>TestADCReg</b>
+&#160;&#160;<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7af1d5966b064c10a672e0064d3ccc55c3">AnalogTestReg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a25334abb5ff680a530e95e6fb0e48a5b">TestDAC1Reg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a505b75aac860302b2959da7fe607e5eb">TestDAC2Reg</a>, 
+<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a1042587aeb71f82f884975ca54c8854a">TestADCReg</a>
 <br />
  }</td></tr>
+<tr class="memdesc:ae7ec09eb8c9c61288a4770175b4b8db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the internal register used in the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> chip.  <a href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">More...</a><br /></td></tr>
 <tr class="separator:ae7ec09eb8c9c61288a4770175b4b8db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf038692c9cf33ed59b44a612e6ed1c7"><td class="memItemLeft" align="right" valign="top"><a id="abf038692c9cf33ed59b44a612e6ed1c7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>COMMAND</b> : uint8_t { <br />
+<tr class="memitem:abf038692c9cf33ed59b44a612e6ed1c7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7">COMMAND</a> : uint8_t { <br />
 &#160;&#160;<b>Idle</b> = 0x00, 
 <b>Mem</b>, 
 <b>Generate_RandomID</b>, 
@@ -177,8 +183,9 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>SoftReset</b>
 <br />
  }</td></tr>
+<tr class="memdesc:abf038692c9cf33ed59b44a612e6ed1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The possible commands the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> has.  <a href="class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7">More...</a><br /></td></tr>
 <tr class="separator:abf038692c9cf33ed59b44a612e6ed1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79bd44224bb1ad85e28a0937a6715818"><td class="memItemLeft" align="right" valign="top"><a id="a79bd44224bb1ad85e28a0937a6715818"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>MIFARE_COMMAND</b> : uint8_t { <br />
+<tr class="memitem:a79bd44224bb1ad85e28a0937a6715818"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a79bd44224bb1ad85e28a0937a6715818">MIFARE_COMMAND</a> : uint8_t { <br />
 &#160;&#160;<b>RequestCommand</b> = 0x26, 
 <b>WakeUpCommand</b> = 0x52, 
 <b>CL1Command</b> = 0x93, 
@@ -203,8 +210,9 @@ Public Types</h2></td></tr>
 <b>TransferCommand</b> = 0xB0
 <br />
  }</td></tr>
+<tr class="memdesc:a79bd44224bb1ad85e28a0937a6715818"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the MIFARE Classic EV1 with 1K commands.  <a href="class_m_f_r_c522.html#a79bd44224bb1ad85e28a0937a6715818">More...</a><br /></td></tr>
 <tr class="separator:a79bd44224bb1ad85e28a0937a6715818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1160642f3b2b60b5ea7309374a8d760a"><td class="memItemLeft" align="right" valign="top"><a id="a1160642f3b2b60b5ea7309374a8d760a"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>COMMUNICATION_STATUS</b> : uint8_t { <br />
+<tr class="memitem:a1160642f3b2b60b5ea7309374a8d760a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a1160642f3b2b60b5ea7309374a8d760a">COMMUNICATION_STATUS</a> : uint8_t { <br />
 &#160;&#160;<b>OkStatus</b>, 
 <b>TimeOutStatus</b>, 
 <b>NoRoom</b>, 
@@ -220,86 +228,92 @@ Public Types</h2></td></tr>
 <b>BCCErr</b>
 <br />
  }</td></tr>
+<tr class="memdesc:a1160642f3b2b60b5ea7309374a8d760a"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the communication status values.  <a href="class_m_f_r_c522.html#a1160642f3b2b60b5ea7309374a8d760a">More...</a><br /></td></tr>
 <tr class="separator:a1160642f3b2b60b5ea7309374a8d760a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a70e6c463aec08918c71c2e0c77742b4b"><td class="memItemLeft" align="right" valign="top"><a id="a70e6c463aec08918c71c2e0c77742b4b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MFRC522</b> (<a class="el" href="classspi_bus.html">spiBus</a> &amp;SPIBus, hwlib::pin_out &amp;slaveSelect, hwlib::pin_out &amp;reset, bool init=true)</td></tr>
+<tr class="memitem:a70e6c463aec08918c71c2e0c77742b4b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a70e6c463aec08918c71c2e0c77742b4b">MFRC522</a> (<a class="el" href="classspi_bus.html">spiBus</a> &amp;SPIBus, hwlib::pin_out &amp;slaveSelect, hwlib::pin_out &amp;reset, bool init=true)</td></tr>
+<tr class="memdesc:a70e6c463aec08918c71c2e0c77742b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> class constructor.  <a href="#a70e6c463aec08918c71c2e0c77742b4b">More...</a><br /></td></tr>
 <tr class="separator:a70e6c463aec08918c71c2e0c77742b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f589b09eaf150551b369052ce125fa1"><td class="memItemLeft" align="right" valign="top"><a id="a5f589b09eaf150551b369052ce125fa1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> () override</td></tr>
+<tr class="memitem:a5f589b09eaf150551b369052ce125fa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a5f589b09eaf150551b369052ce125fa1">initialize</a> () override</td></tr>
+<tr class="memdesc:a5f589b09eaf150551b369052ce125fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the rfid chip for.  <a href="#a5f589b09eaf150551b369052ce125fa1">More...</a><br /></td></tr>
 <tr class="separator:a5f589b09eaf150551b369052ce125fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a016df9ed0421397c634cc79c475dbe3b"><td class="memItemLeft" align="right" valign="top"><a id="a016df9ed0421397c634cc79c475dbe3b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>hardReset</b> () override</td></tr>
+<tr class="memitem:a016df9ed0421397c634cc79c475dbe3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a016df9ed0421397c634cc79c475dbe3b">hardReset</a> () override</td></tr>
+<tr class="memdesc:a016df9ed0421397c634cc79c475dbe3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hard reset the rfid chip probably with a hwlib::pin_out (<a href="#" onclick="location.href='mai'+'lto:'+'wou'+'te'+'r@v'+'ot'+'i.n'+'l'; return false;">woute<span style="display: none;">.nosp@m.</span>r@vo<span style="display: none;">.nosp@m.</span>ti.nl</a>) 2017.  <a href="#a016df9ed0421397c634cc79c475dbe3b">More...</a><br /></td></tr>
 <tr class="separator:a016df9ed0421397c634cc79c475dbe3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae51e1e0bee2b7a65d6314bfb48121f1d"><td class="memItemLeft" align="right" valign="top"><a id="ae51e1e0bee2b7a65d6314bfb48121f1d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>softReset</b> () override</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#ae51e1e0bee2b7a65d6314bfb48121f1d">softReset</a> () override</td></tr>
+<tr class="memdesc:ae51e1e0bee2b7a65d6314bfb48121f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soft reset the rfid chip. <br /></td></tr>
 <tr class="separator:ae51e1e0bee2b7a65d6314bfb48121f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac981022cc3ae79f727b2365e309cf691"><td class="memItemLeft" align="right" valign="top"><a id="ac981022cc3ae79f727b2365e309cf691"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAntennas</b> () override</td></tr>
+<tr class="memitem:ac981022cc3ae79f727b2365e309cf691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#ac981022cc3ae79f727b2365e309cf691">resetAntennas</a> () override</td></tr>
+<tr class="memdesc:ac981022cc3ae79f727b2365e309cf691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the Tx and Rx antennas.  <a href="#ac981022cc3ae79f727b2365e309cf691">More...</a><br /></td></tr>
 <tr class="separator:ac981022cc3ae79f727b2365e309cf691"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a019f76569bddf9c2f9f94eca13a618d7"><td class="memItemLeft" align="right" valign="top"><a id="a019f76569bddf9c2f9f94eca13a618d7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCardInRange</b> () override</td></tr>
+<tr class="memitem:a019f76569bddf9c2f9f94eca13a618d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a019f76569bddf9c2f9f94eca13a618d7">isCardInRange</a> () override</td></tr>
+<tr class="memdesc:a019f76569bddf9c2f9f94eca13a618d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a card within the radio frequency field.  <a href="#a019f76569bddf9c2f9f94eca13a618d7">More...</a><br /></td></tr>
 <tr class="separator:a019f76569bddf9c2f9f94eca13a618d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ce0dd04495f9352e32ada5ecc5fd03"><td class="memItemLeft" align="right" valign="top"><a id="a29ce0dd04495f9352e32ada5ecc5fd03"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCardInRangeCheck</b> () override</td></tr>
+<tr class="memitem:a29ce0dd04495f9352e32ada5ecc5fd03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a29ce0dd04495f9352e32ada5ecc5fd03">isCardInRangeCheck</a> () override</td></tr>
+<tr class="memdesc:a29ce0dd04495f9352e32ada5ecc5fd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a card within the radio frequency field.  <a href="#a29ce0dd04495f9352e32ada5ecc5fd03">More...</a><br /></td></tr>
 <tr class="separator:a29ce0dd04495f9352e32ada5ecc5fd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c7ab4c70988e80c400f36f724a12b7"><td class="memItemLeft" align="right" valign="top"><a id="ad3c7ab4c70988e80c400f36f724a12b7"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getCardUID</b> (uint8_t UID[5]) override</td></tr>
+<tr class="memitem:ad3c7ab4c70988e80c400f36f724a12b7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#ad3c7ab4c70988e80c400f36f724a12b7">getCardUID</a> (uint8_t UID[5]) override</td></tr>
+<tr class="memdesc:ad3c7ab4c70988e80c400f36f724a12b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the UID/NUID of 4 bytes UID card with the BCC byte.  <a href="#ad3c7ab4c70988e80c400f36f724a12b7">More...</a><br /></td></tr>
 <tr class="separator:ad3c7ab4c70988e80c400f36f724a12b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c20be6030f635d986984db4999a1eb"><td class="memItemLeft" align="right" valign="top"><a id="a33c20be6030f635d986984db4999a1eb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getCardUIDSimple</b> (uint8_t UID[5]) override</td></tr>
+<tr class="memitem:a33c20be6030f635d986984db4999a1eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a33c20be6030f635d986984db4999a1eb">getCardUIDSimple</a> (uint8_t UID[5]) override</td></tr>
+<tr class="memdesc:a33c20be6030f635d986984db4999a1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around <a class="el" href="class_m_f_r_c522.html#ad3c7ab4c70988e80c400f36f724a12b7" title="Get the UID/NUID of 4 bytes UID card with the BCC byte. ">getCardUID</a> to make it simpler.  <a href="#a33c20be6030f635d986984db4999a1eb">More...</a><br /></td></tr>
 <tr class="separator:a33c20be6030f635d986984db4999a1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb05c83c2d139eb2c57f400399982691"><td class="memItemLeft" align="right" valign="top"><a id="aeb05c83c2d139eb2c57f400399982691"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>waitForCardUID</b> (uint8_t UID[5]) override</td></tr>
+<tr class="memitem:aeb05c83c2d139eb2c57f400399982691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#aeb05c83c2d139eb2c57f400399982691">waitForCardUID</a> (uint8_t UID[5]) override</td></tr>
+<tr class="memdesc:aeb05c83c2d139eb2c57f400399982691"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function waits till there is a card in range and gives the UID back.  <a href="#aeb05c83c2d139eb2c57f400399982691">More...</a><br /></td></tr>
 <tr class="separator:aeb05c83c2d139eb2c57f400399982691"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25fb0a50bf7db51ab9c5bc2ff4fa84e3"><td class="memItemLeft" align="right" valign="top"><a id="a25fb0a50bf7db51ab9c5bc2ff4fa84e3"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getVersion</b> () override</td></tr>
+<tr class="memitem:a25fb0a50bf7db51ab9c5bc2ff4fa84e3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a25fb0a50bf7db51ab9c5bc2ff4fa84e3">getVersion</a> () override</td></tr>
+<tr class="memdesc:a25fb0a50bf7db51ab9c5bc2ff4fa84e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the version of the rfid chip to perform for instance a <a class="el" href="class_m_f_r_c522.html#adcc4f5eb212c1a94e462eab459bd685e" title="Let the rfid chip perform a self test. ">selfTest</a>.  <a href="#a25fb0a50bf7db51ab9c5bc2ff4fa84e3">More...</a><br /></td></tr>
 <tr class="separator:a25fb0a50bf7db51ab9c5bc2ff4fa84e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcc4f5eb212c1a94e462eab459bd685e"><td class="memItemLeft" align="right" valign="top"><a id="adcc4f5eb212c1a94e462eab459bd685e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>selfTest</b> () override</td></tr>
+<tr class="memitem:adcc4f5eb212c1a94e462eab459bd685e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#adcc4f5eb212c1a94e462eab459bd685e">selfTest</a> () override</td></tr>
+<tr class="memdesc:adcc4f5eb212c1a94e462eab459bd685e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let the rfid chip perform a self test.  <a href="#adcc4f5eb212c1a94e462eab459bd685e">More...</a><br /></td></tr>
 <tr class="separator:adcc4f5eb212c1a94e462eab459bd685e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrfid"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrfid')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrfid.html">rfid</a></td></tr>
-<tr class="memitem:a8c239b8e42f20d4310c44368bd5030a7 inherit pub_methods_classrfid"><td class="memItemLeft" align="right" valign="top"><a id="a8c239b8e42f20d4310c44368bd5030a7"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isUIDEqual</b> (uint8_t UID1[5], uint8_t UID2[5], unsigned int UIDSize)</td></tr>
+<tr class="memitem:a8c239b8e42f20d4310c44368bd5030a7 inherit pub_methods_classrfid"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a8c239b8e42f20d4310c44368bd5030a7">isUIDEqual</a> (uint8_t UID1[5], uint8_t UID2[5], unsigned int UIDSize)</td></tr>
+<tr class="memdesc:a8c239b8e42f20d4310c44368bd5030a7 inherit pub_methods_classrfid"><td class="mdescLeft">&#160;</td><td class="mdescRight">check whether two UIDs are equal  <a href="classrfid.html#a8c239b8e42f20d4310c44368bd5030a7">More...</a><br /></td></tr>
 <tr class="separator:a8c239b8e42f20d4310c44368bd5030a7 inherit pub_methods_classrfid"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add22fd6bae25ed7baa9ce6d9a61d2053 inherit pub_methods_classrfid"><td class="memItemLeft" align="right" valign="top"><a id="add22fd6bae25ed7baa9ce6d9a61d2053"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkUID4BCC</b> (uint8_t UID[5])</td></tr>
-<tr class="separator:add22fd6bae25ed7baa9ce6d9a61d2053 inherit pub_methods_classrfid"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca2918b2b7011a6eb685ea547c21826 inherit pub_methods_classrfid"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrfid.html#a4ca2918b2b7011a6eb685ea547c21826">checkUID4BCC</a> (const uint8_t UID[5])</td></tr>
+<tr class="memdesc:a4ca2918b2b7011a6eb685ea547c21826 inherit pub_methods_classrfid"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will check if the UID is valid using BCC.  <a href="classrfid.html#a4ca2918b2b7011a6eb685ea547c21826">More...</a><br /></td></tr>
+<tr class="separator:a4ca2918b2b7011a6eb685ea547c21826 inherit pub_methods_classrfid"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a56c8309a003cf1a5d8479c7783826f8e"><td class="memItemLeft" align="right" valign="top"><a id="a56c8309a003cf1a5d8479c7783826f8e"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>FIFOAmountOfBytes</b> = 64</td></tr>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a56c8309a003cf1a5d8479c7783826f8e">FIFOAmountOfBytes</a> = 64</td></tr>
+<tr class="memdesc:a56c8309a003cf1a5d8479c7783826f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum amount of bytes the FIFO can store. <br /></td></tr>
 <tr class="separator:a56c8309a003cf1a5d8479c7783826f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d19c9869a7fbbe0d9825d5653d6af7b"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>selfTestFIFOBufferV1</b> [64]</td></tr>
+<tr class="memitem:a7d19c9869a7fbbe0d9825d5653d6af7b"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a7d19c9869a7fbbe0d9825d5653d6af7b">selfTestFIFOBufferV1</a> [64]</td></tr>
+<tr class="memdesc:a7d19c9869a7fbbe0d9825d5653d6af7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data that will be in the FIFO after executing the selfTest on a <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> version 1.  <a href="#a7d19c9869a7fbbe0d9825d5653d6af7b">More...</a><br /></td></tr>
 <tr class="separator:a7d19c9869a7fbbe0d9825d5653d6af7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6973b73a8a922ac09b9d89489bdbc333"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>selfTestFIFOBufferV2</b> [64]</td></tr>
+<tr class="memitem:a6973b73a8a922ac09b9d89489bdbc333"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a6973b73a8a922ac09b9d89489bdbc333">selfTestFIFOBufferV2</a> [64]</td></tr>
+<tr class="memdesc:a6973b73a8a922ac09b9d89489bdbc333"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data that will be in the FIFO after executing the selfTest on a <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> version 2.  <a href="#a6973b73a8a922ac09b9d89489bdbc333">More...</a><br /></td></tr>
 <tr class="separator:a6973b73a8a922ac09b9d89489bdbc333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6bfefd877c6060dde4eff2c25b7f96f2"><td class="memItemLeft" align="right" valign="top"><a id="a6bfefd877c6060dde4eff2c25b7f96f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>waitTillStarted</b> () override</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_r_c522.html#a6bfefd877c6060dde4eff2c25b7f96f2">waitTillStarted</a> () override</td></tr>
+<tr class="memdesc:a6bfefd877c6060dde4eff2c25b7f96f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait till the is started correctly after for example a soft reset. <br /></td></tr>
 <tr class="separator:a6bfefd877c6060dde4eff2c25b7f96f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0e86db047ef36af49349e7fdc7fa65"><td class="memItemLeft" align="right" valign="top"><a id="afe0e86db047ef36af49349e7fdc7fa65"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>readRegister</b> (REG registerAddress)</td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>readRegister</b> (<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> registerAddress)</td></tr>
 <tr class="separator:afe0e86db047ef36af49349e7fdc7fa65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a559408e38c2c8fea3316f6e2b4477b81"><td class="memItemLeft" align="right" valign="top"><a id="a559408e38c2c8fea3316f6e2b4477b81"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>readRegister</b> (REG registerAddress, uint8_t read[], uint8_t amountOfBytes)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>readRegister</b> (<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> registerAddress, uint8_t read[], uint8_t amountOfBytes)</td></tr>
 <tr class="separator:a559408e38c2c8fea3316f6e2b4477b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa976c78dde5b2dfbbd5bcbedaad14a7a"><td class="memItemLeft" align="right" valign="top"><a id="aa976c78dde5b2dfbbd5bcbedaad14a7a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>writeRegister</b> (REG registerAddress, uint8_t newByte)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>writeRegister</b> (<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> registerAddress, uint8_t newByte)</td></tr>
 <tr class="separator:aa976c78dde5b2dfbbd5bcbedaad14a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3558d379575863072c711721b061bb75"><td class="memItemLeft" align="right" valign="top"><a id="a3558d379575863072c711721b061bb75"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>writeRegister</b> (REG registerAddress, uint8_t newBytes[], int amountOfBytes)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>writeRegister</b> (<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> registerAddress, uint8_t newBytes[], int amountOfBytes)</td></tr>
 <tr class="separator:a3558d379575863072c711721b061bb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae30686cdd50f6fdb821908a2547e5153"><td class="memItemLeft" align="right" valign="top"><a id="ae30686cdd50f6fdb821908a2547e5153"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMaskInRegister</b> (REG registerAddress, uint8_t mask)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMaskInRegister</b> (<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> registerAddress, uint8_t mask)</td></tr>
 <tr class="separator:ae30686cdd50f6fdb821908a2547e5153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9935264b559702a3a4ad2b87735b4f8f"><td class="memItemLeft" align="right" valign="top"><a id="a9935264b559702a3a4ad2b87735b4f8f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearMaskInRegister</b> (REG registerAddress, uint8_t mask)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearMaskInRegister</b> (<a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">REG</a> registerAddress, uint8_t mask)</td></tr>
 <tr class="separator:a9935264b559702a3a4ad2b87735b4f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad33cc8218440b30747fba97aa59c0583"><td class="memItemLeft" align="right" valign="top"><a id="ad33cc8218440b30747fba97aa59c0583"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setAntennas</b> (bool state)</td></tr>
@@ -311,7 +325,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateCRC</b> (uin
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>checkForErrors</b> ()</td></tr>
 <tr class="separator:a6d831a60a08c5f37a264c61f7c79c372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab605cd58a59f1d6cbc48ef0be252e593"><td class="memItemLeft" align="right" valign="top"><a id="ab605cd58a59f1d6cbc48ef0be252e593"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>communicate</b> (COMMAND command, uint8_t transmitData[], int transmitLength, uint8_t receivedData[], int &amp;receivedLength)</td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>communicate</b> (<a class="el" href="class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7">COMMAND</a> command, uint8_t transmitData[], int transmitLength, uint8_t receivedData[], int &amp;receivedLength)</td></tr>
 <tr class="separator:ab605cd58a59f1d6cbc48ef0be252e593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -335,6 +349,564 @@ hwlib::pin_out &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>slave
 hwlib::pin_out &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b></td></tr>
 <tr class="separator:a924c7dced5cb615461a0c9f353076407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class is used to communicate with the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> chip. </p>
+<p>This is a basic library for the MF522 chip. Using the pure virtual class <a class="el" href="classrfid.html">rfid</a>. Execute the tests when you're not sure the chip is connected correctly. </p><dl class="section warning"><dt>Warning</dt><dd>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. </dd></dl>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="abf038692c9cf33ed59b44a612e6ed1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf038692c9cf33ed59b44a612e6ed1c7">&#9670;&nbsp;</a></span>COMMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7">MFRC522::COMMAND</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The possible commands the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> has. </p>
+<p>Before using these commands you should have some basic knowledge of what they do. Check the datasheet before using! </p><dl class="section see"><dt>See also</dt><dd><a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">MFRC522 datasheet page 70</a> </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Check the datasheet before using! </dd></dl>
+
+</div>
+</div>
+<a id="a1160642f3b2b60b5ea7309374a8d760a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1160642f3b2b60b5ea7309374a8d760a">&#9670;&nbsp;</a></span>COMMUNICATION_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_m_f_r_c522.html#a1160642f3b2b60b5ea7309374a8d760a">MFRC522::COMMUNICATION_STATUS</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>All the communication status values. </p>
+<p>OkStatus is the best status you can have! Everything went fine! TimeOutStatus happens when the timer is down to 0 after for example transmitting the bytes to the card. <br />
+<br />
+ NoRoom occurs when the passed array is smaller than the amount of bytes received in the <a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328" title="Input/output of 64 uint8_t FIFO buffer. ">FIFODataReg</a>. (check using <a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7" title="Number of uint8_t stored in the FIFO buffer. ">FIFOLevelReg</a>) <br />
+<br />
+ After for example transceiving the MFRC52 does serveral checks. The results are stored in the #errorReg. Any status ending with Err is an Error! </p>
+
+</div>
+</div>
+<a id="a79bd44224bb1ad85e28a0937a6715818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bd44224bb1ad85e28a0937a6715818">&#9670;&nbsp;</a></span>MIFARE_COMMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_m_f_r_c522.html#a79bd44224bb1ad85e28a0937a6715818">MFRC522::MIFARE_COMMAND</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>All the MIFARE Classic EV1 with 1K commands. </p>
+<p>Most of the commands are MIFARE Classic only. But some are defined in the ISO/IEC 14443 Type A. So some command might be used for more card like the request and wake-up command. For more information about the MIFARE command take a look at the datasheet. Most MIFARE commands require authentication! <a href="http://www.orangetags.com/wp-content/downloads/datasheet/NXP/Mifare%20EV1%201K.pdf">MIFARE datsheet page 13</a> </p><dl class="section warning"><dt>Warning</dt><dd>some commands override the data on the cards! WATCH OUT! </dd></dl>
+
+</div>
+</div>
+<a id="ae7ec09eb8c9c61288a4770175b4b8db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ec09eb8c9c61288a4770175b4b8db7">&#9670;&nbsp;</a></span>REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_m_f_r_c522.html#ae7ec09eb8c9c61288a4770175b4b8db7">MFRC522::REG</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>All the internal register used in the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> chip. </p>
+<p>The enums contains all the reigsters in the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> chip. For more information about all the registers you should check the datasheet. </p><dl class="section see"><dt>See also</dt><dd><a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">MFRC522 datasheet page 36</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a0ec37643fa721f476b0cd4359e3c7ef1"></a>CommandReg&#160;</td><td class="fielddoc"><p>Starts/stops command execution <br />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7ad956725472615518dfb99f2d7dccc50e"></a>ComIEnReg&#160;</td><td class="fielddoc"><p>Enable/disable interrupt request control bits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7afb4527cc3e364cce3fe3e62cdcde7da0"></a>DivIEnReg&#160;</td><td class="fielddoc"><p>Enable/disable interrupt request control bits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a76b2a615444982e04566784bdb5c9841"></a>ComIrqReg&#160;</td><td class="fielddoc"><p>interrupt request bits </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a95e26d5ece97ae43c34d08797205a356"></a>DivIrqReg&#160;</td><td class="fielddoc"><p>interrupt request bits </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796"></a>ErrorReg&#160;</td><td class="fielddoc"><p>Error bits, error status of last command. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a9f8b10dda6868e74226ab7ccca8d5be0"></a>Status1Reg&#160;</td><td class="fielddoc"><p>Communication status bits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a8fb1a8c28b7a860793831566373f172f"></a>Status2Reg&#160;</td><td class="fielddoc"><p>Receiver and transmitter status bits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328"></a>FIFODataReg&#160;</td><td class="fielddoc"><p>Input/output of 64 uint8_t FIFO buffer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7"></a>FIFOLevelReg&#160;</td><td class="fielddoc"><p>Number of uint8_t stored in the FIFO buffer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7aee5f7c4d0d34d93e5ac67a47e886b224"></a>WaterLevelReg&#160;</td><td class="fielddoc"><p>Level for FIFO underflow and overflow warning. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a9d0df9e03ad6706004b003e20127a76a"></a>ControlReg&#160;</td><td class="fielddoc"><p>Miscellaneous control register. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7aaf8beb5a739cd8bf94b8b5c8d2d109ce"></a>BitFramingReg&#160;</td><td class="fielddoc"><p>Adjustments for bit-oriented frames. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7afafb7ec88f79c9b1f195195497d0ca07"></a>CollReg&#160;</td><td class="fielddoc"><p>Bit position of the first bit-collision detected of RF interface. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a2cd647ad1ac1327d2a632115cd9c4477"></a>ModeReg&#160;</td><td class="fielddoc"><p>Defines general modes for transmitting and receiving. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7ad4fe18ad01abc83d4559369226fe7992"></a>TxModeReg&#160;</td><td class="fielddoc"><p>Defines transmission data rate and framing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a7e0d6ae1fdd25be6d80d1b76b2274764"></a>RxModeReg&#160;</td><td class="fielddoc"><p>Defines reception data rate and framing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a73dc12b03f05177a400263e5e2bcf0cc"></a>TxControlReg&#160;</td><td class="fielddoc"><p>Controls the logical behaviour of the antenna driver pins TX1/2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7ac9de33ca066ca9481bd01d5642a0c879"></a>TxASKReg&#160;</td><td class="fielddoc"><p>Controls the setting of the transmission modulation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a6cf11e077148648aaec0492317be5177"></a>TxSelReg&#160;</td><td class="fielddoc"><p>Selects internal sources for the antenna driver. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a669c0c9418d5437566b4b42da326c05f"></a>RxSelReg&#160;</td><td class="fielddoc"><p>Selects interal reciever settings. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a5dfb7b5c8983d07d7df4fa915902db4c"></a>rxThresholdReg&#160;</td><td class="fielddoc"><p>Selects thresholds for the bit decoder. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a37b01e93fff19ca62364e8f4f797a5c4"></a>DemodReg&#160;</td><td class="fielddoc"><p>Defines demodulator settings. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a08eb51f4d08a41ceb4b34189bb712dc7"></a>MfTxReg&#160;</td><td class="fielddoc"><p>Controls some MIFARE communication transmit parameters. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a92fbf63612de021d242465d4685f1754"></a>MfRxReg&#160;</td><td class="fielddoc"><p>Controls some MIFARE communication receive parameters. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a23529258de3c3f5655afa2849f547f68"></a>SerialSpeedReg&#160;</td><td class="fielddoc"><p>Selects the speed of the serial UART interface. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a93ba2171ffd0724c539ea656627e3944"></a>CRCResult1Reg&#160;</td><td class="fielddoc"><p>Shows the MSB and LSB values of the CRC calculation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a38946dab95c184fd8ca72747d51dc0c5"></a>CRCResult2Reg&#160;</td><td class="fielddoc"><p>Shows the MSB and LSB values of the CRC calculation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7ad69a6a3d883ebfc993fc6fbdbc035508"></a>ModWidthReg&#160;</td><td class="fielddoc"><p>Control the ModWidth setting. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a0c99eea491c71e9d2a02bf8a86988adf"></a>RFCfgReg&#160;</td><td class="fielddoc"><p>Configures the receiver gain. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a2f81aa5f433fa51bb4b41cd8955de794"></a>GsNReg&#160;</td><td class="fielddoc"><p>Selects the conductance of the antenna driver pins tx1/2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a02925dc7a230fcf039c597bf8cfa113f"></a>CWGsPReg&#160;</td><td class="fielddoc"><p>Defines the conductance of the p-driver output during periods of no modulation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7acf6ed89766ba2a4e6483b3209b1aa74e"></a>ModGsPReg&#160;</td><td class="fielddoc"><p>Defines the conductance of the p-driver output during periods of modulation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a1ed52e7f88c8bf3fda91bf31bb62afe4"></a>TModeReg&#160;</td><td class="fielddoc"><p>Defines settings for the internal timer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a88c2ad7cdfb7178ea775c157f4ce5213"></a>TPrescalerReg&#160;</td><td class="fielddoc"><p>Defines settings for the internal timer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a1b5d7dfad8ec2fbc93d7b7c67cb0d94c"></a>TReloadReg1&#160;</td><td class="fielddoc"><p>Defines the 16-bit timer reload value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a5dbae491d9100c3437ff1ae30873e583"></a>TReloadReg2&#160;</td><td class="fielddoc"><p>Defines the 16-bit timer reload value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7af5d128e56733edcb6a36f2e62003b914"></a>TCounterValReg1&#160;</td><td class="fielddoc"><p>Shows the 16-bit times value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a90426989ff0e68a88f71fa5e12da987a"></a>TCounterValReg2&#160;</td><td class="fielddoc"><p>Shows the 16-bit times value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a3fd81beec1ed6566ff1897aac235890f"></a>TestSel1Reg&#160;</td><td class="fielddoc"><p>General test signal configuration. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7ac1053bcb64682eba4a767caaea677807"></a>TestSel2Reg&#160;</td><td class="fielddoc"><p>General test signal configuration and PRBS control. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a62a7871c0d3452a8f642bbea0ca7cb34"></a>TestPinEnReg&#160;</td><td class="fielddoc"><p>Enables pin output driver on pins D1-7. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7aa5bb4445abb525ddf46c6efcb21e8811"></a>TestPinValueReg&#160;</td><td class="fielddoc"><p>Defines the values for D1-7 when it is used as an I/O bus. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a37bc0188996dc1ee5332d40961bffb4b"></a>TestBusReg&#160;</td><td class="fielddoc"><p>Shows the status of the interal test bus. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a9583618ad17a8a20b7a735c7677c8e56"></a>AutoTestReg&#160;</td><td class="fielddoc"><p>Controls the digital self test. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a4281c25cf6743163ed2e2f903cf17ba9"></a>VersionReg&#160;</td><td class="fielddoc"><p>Shows the software version. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7af1d5966b064c10a672e0064d3ccc55c3"></a>AnalogTestReg&#160;</td><td class="fielddoc"><p>Controls the pins AUX1/2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a25334abb5ff680a530e95e6fb0e48a5b"></a>TestDAC1Reg&#160;</td><td class="fielddoc"><p>Defines the test value for TestDAC1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a505b75aac860302b2959da7fe607e5eb"></a>TestDAC2Reg&#160;</td><td class="fielddoc"><p>Defines the test value for TestDAC2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae7ec09eb8c9c61288a4770175b4b8db7a1042587aeb71f82f884975ca54c8854a"></a>TestADCReg&#160;</td><td class="fielddoc"><p>the value of ADC I and Q channels </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a70e6c463aec08918c71c2e0c77742b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e6c463aec08918c71c2e0c77742b4b">&#9670;&nbsp;</a></span>MFRC522()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MFRC522::MFRC522 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classspi_bus.html">spiBus</a> &amp;&#160;</td>
+          <td class="paramname"><em>SPIBus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hwlib::pin_out &amp;&#160;</td>
+          <td class="paramname"><em>slaveSelect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">hwlib::pin_out &amp;&#160;</td>
+          <td class="paramname"><em>reset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>init</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> class constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SPIBus</td><td>the spi bus that we need to use to communicate with the chip <a class="el" href="spi_bus_8hpp_source.html">spiBus.hpp</a>. </td></tr>
+    <tr><td class="paramname">slaveSelect</td><td>the pin out we need to use to select this chip. hwlib::pin_out (<a href="#" onclick="location.href='mai'+'lto:'+'wou'+'te'+'r@v'+'ot'+'i.n'+'l'; return false;">woute<span style="display: none;">.nosp@m.</span>r@vo<span style="display: none;">.nosp@m.</span>ti.nl</a>) 2017. </td></tr>
+    <tr><td class="paramname">reset</td><td>the pin out that is used to reset the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> chip <a class="el" href="class_m_f_r_c522.html#a016df9ed0421397c634cc79c475dbe3b" title="Hard reset the rfid chip probably with a hwlib::pin_out (wouter@voti.nl) 2017. ">hardReset</a>. </td></tr>
+    <tr><td class="paramname">init</td><td>whether you want to initilize when creating the <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad3c7ab4c70988e80c400f36f724a12b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c7ab4c70988e80c400f36f724a12b7">&#9670;&nbsp;</a></span>getCardUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MFRC522::getCardUID </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the UID/NUID of 4 bytes UID card with the BCC byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UID[5]</td><td>The array you want the UID to get stored into. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An uint8_t containing a possible error or succes code. (These codes are in the derived class)</dd></dl>
+<p>The UID of a card is a unique identifier. This UID can be used to know which card you're communicating with. The UID is used when more than one card is in the radio frequency field, also known as collision detection.<br />
+ The last byte of UID[5] will be the bcc. This can be used to check if the UID is valid. </p><dl class="section warning"><dt>Warning</dt><dd>Note that the UID might not be as unique as you might expect. Some cards have a feature to rewrite the UID block. </dd>
+<dd>
+Note that the UID[5] array will be overridden. </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#afeb2a321694ceaf84db793f5efb3a750">rfid</a>.</p>
+
+</div>
+</div>
+<a id="a33c20be6030f635d986984db4999a1eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c20be6030f635d986984db4999a1eb">&#9670;&nbsp;</a></span>getCardUIDSimple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MFRC522::getCardUIDSimple </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper around <a class="el" href="class_m_f_r_c522.html#ad3c7ab4c70988e80c400f36f724a12b7" title="Get the UID/NUID of 4 bytes UID card with the BCC byte. ">getCardUID</a> to make it simpler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UID[5]</td><td>The array you want the UID to get stored into. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bool which will be 1 when everything went fine and 0 when there was an error.</dd></dl>
+<p>When the function returns a zero you should try  instead because that function returns a more accurate return status. </p><dl class="section warning"><dt>Warning</dt><dd>Note that the UID might not be as unique as you might expect. Some cards have a feature to rewrite the UID block. </dd>
+<dd>
+Note that the UID[5] array will be overridden. </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#aaeb826495120d8d29683f0ea1b985d77">rfid</a>.</p>
+
+</div>
+</div>
+<a id="a25fb0a50bf7db51ab9c5bc2ff4fa84e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25fb0a50bf7db51ab9c5bc2ff4fa84e3">&#9670;&nbsp;</a></span>getVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MFRC522::getVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the version of the rfid chip to perform for instance a <a class="el" href="class_m_f_r_c522.html#adcc4f5eb212c1a94e462eab459bd685e" title="Let the rfid chip perform a self test. ">selfTest</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>An uint8_t containing the version value 1 or 2 </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#a27619628e718bb781f912aead770079a">rfid</a>.</p>
+
+</div>
+</div>
+<a id="a016df9ed0421397c634cc79c475dbe3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016df9ed0421397c634cc79c475dbe3b">&#9670;&nbsp;</a></span>hardReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFRC522::hardReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hard reset the rfid chip probably with a hwlib::pin_out (<a href="#" onclick="location.href='mai'+'lto:'+'wou'+'te'+'r@v'+'ot'+'i.n'+'l'; return false;">woute<span style="display: none;">.nosp@m.</span>r@vo<span style="display: none;">.nosp@m.</span>ti.nl</a>) 2017. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Note if the chip requires a external pin to reset the whole chip. The pin must me connected correctly. </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#a7f993197e5aa12e7b3bfb1576552bbf1">rfid</a>.</p>
+
+</div>
+</div>
+<a id="a5f589b09eaf150551b369052ce125fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f589b09eaf150551b369052ce125fa1">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFRC522::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the rfid chip for. </p>
+<p>This will reset the chip and initilize all the register. </p>
+
+<p>Implements <a class="el" href="classrfid.html#a76f857b77fbea6776048aab6ba835a29">rfid</a>.</p>
+
+</div>
+</div>
+<a id="a019f76569bddf9c2f9f94eca13a618d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a019f76569bddf9c2f9f94eca13a618d7">&#9670;&nbsp;</a></span>isCardInRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MFRC522::isCardInRange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if there is a card within the radio frequency field. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool which will be 1 if a card is detected and 0 when not.</dd></dl>
+<p>This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. </p><dl class="section warning"><dt>Warning</dt><dd>After requesting the rfid card expects the user to send another command. When you you only want to check if a card is in the radio frequency field you should use isCardInRangeCheck </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#a23fc4ec0bc3790c5e68269d4f32771b9">rfid</a>.</p>
+
+</div>
+</div>
+<a id="a29ce0dd04495f9352e32ada5ecc5fd03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ce0dd04495f9352e32ada5ecc5fd03">&#9670;&nbsp;</a></span>isCardInRangeCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MFRC522::isCardInRangeCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if there is a card within the radio frequency field. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool which will be 1 if a card is detected and 0 when not.</dd></dl>
+<p>This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. After sending the request command both antennas are reset (<a class="el" href="class_m_f_r_c522.html#ac981022cc3ae79f727b2365e309cf691" title="Reset the Tx and Rx antennas. ">resetAntennas</a>) to stop communicating with the card. </p><dl class="section warning"><dt>Warning</dt><dd>Use <a class="el" href="class_m_f_r_c522.html#a019f76569bddf9c2f9f94eca13a618d7" title="Check if there is a card within the radio frequency field. ">isCardInRange</a> when you want to send some commands after you send a request to the card. </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#a9790d273f2385c8fb48bb85ca2aa0d10">rfid</a>.</p>
+
+</div>
+</div>
+<a id="ac981022cc3ae79f727b2365e309cf691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac981022cc3ae79f727b2365e309cf691">&#9670;&nbsp;</a></span>resetAntennas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFRC522::resetAntennas </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the Tx and Rx antennas. </p>
+<p>This function is mostly used to stop communicating with a card without using the halt command. </p>
+
+<p>Implements <a class="el" href="classrfid.html#abf4826e77ab7b02f04c8f01d969149c1">rfid</a>.</p>
+
+</div>
+</div>
+<a id="adcc4f5eb212c1a94e462eab459bd685e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc4f5eb212c1a94e462eab459bd685e">&#9670;&nbsp;</a></span>selfTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MFRC522::selfTest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Let the rfid chip perform a self test. </p>
+<dl class="section return"><dt>Returns</dt><dd>A bool containing a 1 when passed and 0 when failed the self test.</dd></dl>
+<p>The rfid chip performs a self test. The self testing sequence can be found in the datasheet <a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">MFRC522 datasheet page 85</a> </p><dl class="section warning"><dt>Warning</dt><dd>Only version 1 and 2 are supported at the moment! Some clones might have another version. It might work fine when not passing the test. </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#a93e5430380a14fd652e7ca1ce6443198">rfid</a>.</p>
+
+</div>
+</div>
+<a id="aeb05c83c2d139eb2c57f400399982691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb05c83c2d139eb2c57f400399982691">&#9670;&nbsp;</a></span>waitForCardUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFRC522::waitForCardUID </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>UID</em>[5]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function waits till there is a card in range and gives the UID back. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function blocks everything! And will continue when there is a card detected with valid UID. </dd></dl>
+
+<p>Implements <a class="el" href="classrfid.html#a1b324cb1e7b4c377eca4b3495d4189fd">rfid</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7d19c9869a7fbbe0d9825d5653d6af7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d19c9869a7fbbe0d9825d5653d6af7b">&#9670;&nbsp;</a></span>selfTestFIFOBufferV1</h2>
@@ -347,7 +919,9 @@ hwlib::pin_out &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>reset
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        0x00, 0xC6, 0x37, 0xD5, 0x32, 0xB7, 0x57, 0x5C,</div><div class="line">        0xC2, 0xD8, 0x7C, 0x4D, 0xD9, 0x70, 0xC7, 0x73,</div><div class="line">        0x10, 0xE6, 0xD2, 0xAA, 0x5E, 0xA1, 0x3E, 0x5A,</div><div class="line">        0x14, 0xAF, 0x30, 0x61, 0xC9, 0x70, 0xDB, 0x2E,</div><div class="line">        0x64, 0x22, 0x72, 0xB5, 0xBD, 0x65, 0xF4, 0xEC,</div><div class="line">        0x22, 0xBC, 0xD3, 0x72, 0x35, 0xCD, 0xAA, 0x41,</div><div class="line">        0x1F, 0xA7, 0xF3, 0x53, 0x14, 0xDE, 0x7E, 0x02,</div><div class="line">        0xD9, 0x0F, 0xB5, 0x5E, 0x25, 0x1D, 0x29, 0x79</div><div class="line">    }</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">        0x00, 0xC6, 0x37, 0xD5, 0x32, 0xB7, 0x57, 0x5C,</div><div class="line">        0xC2, 0xD8, 0x7C, 0x4D, 0xD9, 0x70, 0xC7, 0x73,</div><div class="line">        0x10, 0xE6, 0xD2, 0xAA, 0x5E, 0xA1, 0x3E, 0x5A,</div><div class="line">        0x14, 0xAF, 0x30, 0x61, 0xC9, 0x70, 0xDB, 0x2E,</div><div class="line">        0x64, 0x22, 0x72, 0xB5, 0xBD, 0x65, 0xF4, 0xEC,</div><div class="line">        0x22, 0xBC, 0xD3, 0x72, 0x35, 0xCD, 0xAA, 0x41,</div><div class="line">        0x1F, 0xA7, 0xF3, 0x53, 0x14, 0xDE, 0x7E, 0x02,</div><div class="line">        0xD9, 0x0F, 0xB5, 0x5E, 0x25, 0x1D, 0x29, 0x79</div><div class="line">    }</div></div><!-- fragment -->
+<p>The data that will be in the FIFO after executing the selfTest on a <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> version 1. </p>
+
 </div>
 </div>
 <a id="a6973b73a8a922ac09b9d89489bdbc333"></a>
@@ -362,6 +936,8 @@ hwlib::pin_out &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>reset
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">        0x00, 0xEB, 0x66, 0xBA, 0x57, 0xBF, 0x23, 0x95,</div><div class="line">        0xD0, 0xE3, 0x0D, 0x3D, 0x27, 0x89, 0x5C, 0xDE,</div><div class="line">        0x9D, 0x3B, 0xA7, 0x00, 0x21, 0x5B, 0x89, 0x82,</div><div class="line">        0x51, 0x3A, 0xEB, 0x02, 0x0C, 0xA5, 0x00, 0x49,</div><div class="line">        0x7C, 0x84, 0x4D, 0xB3, 0xCC, 0xD2, 0x1B, 0x81,</div><div class="line">        0x5D, 0x48, 0x76, 0xD5, 0x71, 0x61, 0x21, 0xA9,</div><div class="line">        0x86, 0x96, 0x83, 0x38, 0xCF, 0x9D, 0x5B, 0x6D,</div><div class="line">        0xDC, 0x15, 0xBA, 0x3E, 0x7D, 0x95, 0x3B, 0x2F</div><div class="line">    }</div></div><!-- fragment -->
+<p>The data that will be in the FIFO after executing the selfTest on a <a class="el" href="class_m_f_r_c522.html" title="This class is used to communicate with the MFRC522 chip. ">MFRC522</a> version 2. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

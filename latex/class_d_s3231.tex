@@ -156,9 +156,8 @@ enum \mbox{\hyperlink{class_d_s3231_a0b898a5f3a0c06bc6a6d8fb94d34dd02}{R\+EG}} \
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}\label{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}} 
-void {\bfseries set\+I2\+C\+Bus\+Current\+Address} ()
-\item 
+void \mbox{\hyperlink{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}{set\+I2\+C\+Bus\+Current\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{i2c\+Bus\+::current\+Chip\+Address}} to the address of the \mbox{\hyperlink{class_d_s3231}{D\+S3231}}. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_d_s3231_a70033a61ca1965fa0aed9af31679355f}{get\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}} (uint8\+\_\+t alarm\+Register)
 \begin{DoxyCompactList}\small\item\em this used to get a alarm register. The M\+SB is not needed because that is the alarm rate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_s3231_a79280f7161eaa45b50fe649eda9c480a}{set\+Alarm\+B\+C\+D\+Register\+Ex\+M\+SB}} (uint8\+\_\+t alarm\+Register, uint8\+\_\+t new\+Byte)
@@ -1026,7 +1025,17 @@ Most chips will set the century bit when the year register went past 99. Note wh
 
 Implements \mbox{\hyperlink{classreal_time_clock_a4d6e8056f52cea52bab5c635c0860c12}{real\+Time\+Clock}}.
 
-\mbox{\Hypertarget{class_d_s3231_a303a9a5123f66987e209396d60e329e8}\label{class_d_s3231_a303a9a5123f66987e209396d60e329e8}} 
+\mbox{\Hypertarget{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}\label{class_d_s3231_ae6ef1547a0d2c2653ae3fe4c0f6a62ff}} 
+\index{D\+S3231@{D\+S3231}!set\+I2\+C\+Bus\+Current\+Address@{set\+I2\+C\+Bus\+Current\+Address}}
+\index{set\+I2\+C\+Bus\+Current\+Address@{set\+I2\+C\+Bus\+Current\+Address}!D\+S3231@{D\+S3231}}
+\subsubsection{\texorpdfstring{set\+I2\+C\+Bus\+Current\+Address()}{setI2CBusCurrentAddress()}}
+{\footnotesize\ttfamily void D\+S3231\+::set\+I2\+C\+Bus\+Current\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set the \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{i2c\+Bus\+::current\+Chip\+Address}} to the address of the \mbox{\hyperlink{class_d_s3231}{D\+S3231}}. 
+
+Everytime before communicating with the \mbox{\hyperlink{class_d_s3231}{D\+S3231}} this function is called. Because any other chip might have changed the \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{i2c\+Bus\+::current\+Chip\+Address}} variable. \mbox{\Hypertarget{class_d_s3231_a303a9a5123f66987e209396d60e329e8}\label{class_d_s3231_a303a9a5123f66987e209396d60e329e8}} 
 \index{D\+S3231@{D\+S3231}!set\+Status\+Register@{set\+Status\+Register}}
 \index{set\+Status\+Register@{set\+Status\+Register}!D\+S3231@{D\+S3231}}
 \subsubsection{\texorpdfstring{set\+Status\+Register()}{setStatusRegister()}}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update',['update',['../class_d_s3231.html#a143ec57122d892ea0ec671a153352f2c',1,'DS3231::update()'],['../classreal_time_clock.html#afb5132ca3cbe80552a88041cead0a2b3',1,'realTimeClock::update()']]]
+  ['timestamp',['timestamp',['../classtimestamp.html#adcd43bf86d093792baa6b406e0acafd3',1,'timestamp::timestamp(uint8_t seconds, uint8_t minutes, uint8_t hours, uint8_t day, uint8_t date, uint8_t month, uint16_t year)'],['../classtimestamp.html#a155539f65cabcec4ed8120e7d531d92a',1,'timestamp::timestamp()']]]
 ];
