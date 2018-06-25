@@ -15,8 +15,16 @@
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 class MFRC522 : public rfid {
 private:
+	/// @brief The spi bus which is used to communicate with the MFRC522
+	/// @details
+	/// My chip doesn't support I2C without resoldering the module.
+	/// So I chose to only implement SPI.
 	spiBus& SPIBus;
+
+	/// @brief the pin_out which is used to select the MFRC522 chip.
 	hwlib::pin_out& slaveSelect;
+
+	/// @brief the pin_out which is used to reset the MFRC522 chip.
 	hwlib::pin_out& reset;
 
 public:
@@ -112,16 +120,19 @@ public:
 	/// <a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">MFRC522 datasheet page 70</a>
 	/// @warning Check the datasheet before using!
 	enum COMMAND : uint8_t {
-		Idle        = 0x00,
-		Mem,
-		Generate_RandomID,
-		CalcCRC,
-		NoCmdChange	= 0x07,
-		Receive,
-		Transceive	= 0x0C,
+		Idle        = 0x00,	///< @brief No action, cancels current command execution.
+		Mem,				///< @brief Stores 25 bytes into the internal buffer.
+		Generate_RandomID,	///< @brief Generates a 10-byte random ID number.
+		CalcCRC,			///< @brief Activates the CRC coprocessor or performs a self test.
+		Transmit,			///< @brief Transmits data from the FIFO buffer.
+		NoCmdChange	= 0x07,	///< @brief	No command change.
+		Receive,			///< @brief Activates the receiver circuits.
+		Transceive	= 0x0C,	///< @brief
+		///< Transmits data from FIFO buffer to antenna and automatically
+		///< activates the receiver after transmission.
 		/* RESERVED = 0x0D, */
-		MFAuthent   = 0x0E,
-		SoftReset
+		MFAuthent   = 0x0E,	///< @brief Performs the MIFARE standard authentication as a reader.
+		SoftReset			///< @brief Resets the MFRC522.
 	};
 
 
@@ -157,29 +168,23 @@ public:
 	};
 
 	/// @brief All the communication status values.
-	/// @details
-	/// OkStatus is the best status you can have! Everything went fine!
-	/// TimeOutStatus happens when the timer is down to 0
-	/// after for example transmitting the bytes to the card. <br><br>
-	/// NoRoom occurs when the passed array is smaller than
-	/// the amount of bytes received in the #FIFODataReg. (check using #FIFOLevelReg) <br><br>
-	/// After for example transceiving the MFRC52 does serveral checks.
-	/// The results are stored in the #errorReg.
-	/// Any status ending with Err is an Error!
 	enum COMMUNICATION_STATUS : uint8_t {
-		OkStatus,		// Everything went as planned
-		TimeOutStatus,	// No card found in the given time span.
-		NoRoom,			// Not big enough received array to store all the data
+		OkStatus,		///< @brief Everything went as planned.
+		TimeOutStatus,	///< @brief No card found in the given time span.
+		NoRoom,			///< @brief Not big enough received array to store all the data.
 		// ERRORS
-		ProtocolErr,
-		ParityErr,
-		CRCErr,
-		CollErr,
-		BufferOvfl,
-		TempErr,
-		WrErr,
-		// MIFARE UID last byte (XOR of all the previous UID values)
-		BCCErr
+		ProtocolErr, 	///< @brief SOF is incorrect.
+		ParityErr,      ///< @brief Parity check failed.
+		CRCErr,			///< @brief The RxModeReg register’s RxCRCEn bit is set and the CRC calculation fails.
+		CollErr,		///< @brief A bit-collision is detected.
+		BufferOvfl,		///< @brief FIFO buffer is already full.
+		TempErr,		///< @brief Internal temperature detects overheating.
+		WrErr,			///< @brief
+		///< data is written into the FIFO buffer by the host during the MFAuthent
+		///< command or if data is written into the FIFO buffer by the host during the
+		///< time between sending the last bit on the RF interface and receiving the
+		///< last bit on the RF interface
+		BCCErr 			///< MIFARE UID XOR check failed BCC is not correct
 	};
 
 	/// @brief The maximum amount of bytes the FIFO can store.
@@ -232,20 +237,109 @@ public:
 	void resetAntennas() override;
 protected:
 	// REGISTER FUNCTIONS
+
+	/// @brief Get a byte from a register.
+	/// @param registerAddress the internal register address you want to read.
+	/// @return An uint8_t containing the value of the register.
+	/// @details
+	/// This method uses the basic spiBus::getByteFromRegister.
+	/// @see
+	/// @ref spiBus.hpp
 	uint8_t readRegister(REG registerAddress);
+
+	/// @brief Get multiple bytes from a register.
+	/// @param registerAddress the internal register address you want to read.
+	/// @param read[] the array you want to store the bytes in.
+	/// @param amountOfBytes the amount of bytes you want to read from the register.
+	/// @details
+	/// This method reads ONE register multiple times.
+	/// The method uses the basic spiBus::getBytesFromRegister.
+	/// @see
+	/// @ref spiBus.hpp
+	/// @warning Some registers might delete the value after reading. BE CAREFUL!
 	void readRegister(REG registerAddress, uint8_t read[], uint8_t amountOfBytes);
+
+	/// @brief Set a byte into a register.
+	/// @param registerAddress the internal register address you want to write to.
+	/// @param newByte the byte you want to store in the reigster.
+	/// @details
+	/// This method uses the basic spiBus::setByteInRegister.
+	/// @see
+	/// @ref spiBus.hpp
+	/// @warning The value of the register will be overridden.
 	void writeRegister(REG registerAddress, uint8_t newByte);
+
+	/// @brief Set multiple bytes into a register.
+	/// @param registerAddress the internal register address you want to write to.
+	/// @param newBytes[] the bytes you want to store in the reigster.
+	/// @param the amount of bytes you want to store into the register.
+	/// @details
+	/// This method uses the basic spiBus::setBytesInRegister.
+	/// @see
+	/// @ref spiBus.hpp
+	/// @warning The values of the register will be overridden.
+	/// @warning The amountOfBytes must be <= the size of newBytes[].
 	void writeRegister(REG registerAddress, uint8_t newBytes[], int amountOfBytes);
+
+	/// @brief Set specific bits using a mask. (logic 1 = set)
+	/// @param registerAddress the internal register address you want to change the bits of.
+	/// @param mask the bits you want to set (Those bits must be a logic 1)
+	/// @details
+	/// The current byte in the register is stored and manipulated using an | operator.
+	/// @warning the value of the register will be overridden.
 	void setMaskInRegister(REG registerAddress, uint8_t mask);
+
+	/// @brief Clear specific bits using a mask. (logic 1 = clear)
+	/// @param registerAddress the internal register address you want to change the bits of.
+	/// @param mask the bits you want to clear (Those bits must be a logic 1)
+	/// @details
+	/// The current byte in the register is stored and manipulated
+	/// using an & operator using the inverted mask.
+	/// @warning the value of the register will be overridden.
 	void clearMaskInRegister(REG registerAddress, uint8_t mask);
 
 private:
+	/// @brief Clear the FIFO buffer and reset the FIFO level.
+	/// @param amountOfBytes the amount of bytes you want to clear in the FIFO buffer.
+	/// @details the amountOfBytes will set a certain amount of zeroes into the #FIFODataReg.
+	/// and the #FIFOLevelReg will be reset.
+	/// @warning The data in the FIFO will be cleared!
 	void clearFIFOBuffer(const uint8_t amountOfBytes = 64);
+
+	/// @brief Clear the internalBuffer.
+	/// @details
+	/// The internal buffer will be cleared.
+	/// The internal buffer is 25 bytes big and will not be cleared by doing a soft reset.
+	/// That's why we need this method.
+	/// @warning the data in de internal buffer will become inaccessable.
 	void clearInternalBuffer();
 
 protected:
+	/// @brief Set the antennas rx and tx on or off.
+	/// @param state 1 = on, 0 = off.
 	void setAntennas(bool state);
+
+	/// @brief Checks if there are any errors in the #errorReg.
+	/// @return An uint8_t containing a #COMMUNICATION_STATUS value.
 	uint8_t checkForErrors();
+
+	/// @brief Communicate with a potential rfid card.
+	/// @return An uint8_t containing a #COMMUNICATION_STATUS value.
+	/// @param command			the command you want to execute.
+	/// @param transmitData[]	the bytes you want to send to the rfid card. for instance: #MIFARE_COMMAND
+	/// @param transmitLength	the amount of bytes you want to transmit to the card.
+	/// @paran receivedData[]	a array to store the bytes you received from a potential rfid card.
+	/// @param receivedLength	The amount of bytes you received from the rfid card.
+	/// @details
+	/// A small summary of what happens in the method: <br>
+	/// 1. The the register are set to start transmitting. <br>
+	/// 2. The FIFO is reset. <br>
+	/// 3. Command is executed. <br>
+	/// 4. Checking for any errors. <br>
+	/// 5. receivedData is filled with the FIFO data <br>
+	/// @warning You might have to change the #BitFramingReg before using this command.
+	/// @warning THIS METHOD IS ONLY TESTED WITH #Transceive COMMAND SO FAR!
+	/// @warning receivedLength MAY VARY.
 	uint8_t communicate(COMMAND command, uint8_t transmitData[],
 	                    int transmitLength, uint8_t receivedData[],
 	                    int & receivedLength);

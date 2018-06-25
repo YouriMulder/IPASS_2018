@@ -62,11 +62,11 @@ uint8_t MFRC522::readRegister(REG registerAddress) {
 
 void MFRC522::readRegister(REG registerAddress, uint8_t read[],
                            uint8_t amountOfBytes) {
-	SPIBus.getBytesFromRegister((uint8_t)registerAddress, read, amountOfBytes, slaveSelect);
+	SPIBus.getBytesFromRegister(static_cast<uint8_t>(registerAddress), read, amountOfBytes, slaveSelect);
 }
 
 void MFRC522::writeRegister(REG registerAddress, uint8_t newByte) {
-	SPIBus.setByteInRegister((uint8_t)registerAddress, newByte, slaveSelect);
+	SPIBus.setByteInRegister(static_cast<uint8_t>(registerAddress), newByte, slaveSelect);
 }
 
 void MFRC522::writeRegister(REG registerAddress, uint8_t newBytes[],

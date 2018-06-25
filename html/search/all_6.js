@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['generate_5frandomid',['Generate_RandomID',['../class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7a6bda04e01a6d5df97488787f375776a2',1,'MFRC522']]],
   ['getagingoffset',['getAgingOffset',['../class_d_s3231.html#a94e9f40f1b453dc4d8894b63bc0ec7d6',1,'DS3231::getAgingOffset()'],['../classreal_time_clock.html#a2bc081385a6ad8273201d66217f8b2f0',1,'realTimeClock::getAgingOffset()']]],
   ['getalarmbcdregisterexmsb',['getAlarmBCDRegisterExMSB',['../class_d_s3231.html#a70033a61ca1965fa0aed9af31679355f',1,'DS3231']]],
   ['getalarmdaydate',['getAlarmDayDate',['../class_d_s3231.html#a0b013c68f96b5145c1c9feb9270855a7',1,'DS3231::getAlarmDayDate()'],['../classreal_time_clock.html#afe0a54cb2f803d01df03e2ea8e86bbf9',1,'realTimeClock::getAlarmDayDate()']]],
