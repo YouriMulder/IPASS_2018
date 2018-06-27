@@ -32,7 +32,7 @@ When you want to test the libraries or your chip you need to run the main.cpp lo
 @section author_sec Author
 The project is made by: Youri Mulder - Computer science year 1 (Hogeschool Utrecht)
 
-@seconds reeferences_sec Used sites/datasheets
+@section reeferences_sec Used sites/datasheets
 https://www.mpja.com/download/31227sc.pdf
 https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
 https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf
