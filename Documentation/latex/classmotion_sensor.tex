@@ -1,0 +1,90 @@
+\hypertarget{classmotion_sensor}{}\section{motion\+Sensor Class Reference}
+\label{classmotion_sensor}\index{motion\+Sensor@{motion\+Sensor}}
+
+
+A pure virtual class for a motion sensor chip like the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}}.  
+
+
+
+
+{\ttfamily \#include $<$motion\+Sensor.\+hpp$>$}
+
+Inheritance diagram for motion\+Sensor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_sensor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classmotion_sensor_a0b8701a41516d8b1140c39474b1db9db}{detect}} ()=0
+\begin{DoxyCompactList}\small\item\em Detect if any movement is in front of the motionsensor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmotion_sensor_a855b7f86c8ef833bbcd2064a220a4b58}{wait\+To\+Go\+Off}} ()=0
+\begin{DoxyCompactList}\small\item\em Wait for the \mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}} to go off after detecting. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmotion_sensor_a718bb6e111adc734ce6e595e28664581}{test}} ()=0
+\begin{DoxyCompactList}\small\item\em This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A pure virtual class for a motion sensor chip like the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}}. 
+
+This class is a pure virtual class. This means that you can access methods of the derived class when using reference or pointers. This makes the code easier to expand. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_sensor_a0b8701a41516d8b1140c39474b1db9db}\label{classmotion_sensor_a0b8701a41516d8b1140c39474b1db9db}} 
+\index{motion\+Sensor@{motion\+Sensor}!detect@{detect}}
+\index{detect@{detect}!motion\+Sensor@{motion\+Sensor}}
+\subsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily virtual bool motion\+Sensor\+::detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Detect if any movement is in front of the motionsensor. 
+
+Detect whether there is anything is moving in the field of the motion sensor or not. \begin{DoxyReturn}{Returns}
+A bool containing a 0 when nothing is detected and 1 when somthing is detected. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_h_c_s_r501_a75456a573bf0066ee648f8f1a39d4966}{H\+C\+S\+R501}}.
+
+\mbox{\Hypertarget{classmotion_sensor_a718bb6e111adc734ce6e595e28664581}\label{classmotion_sensor_a718bb6e111adc734ce6e595e28664581}} 
+\index{motion\+Sensor@{motion\+Sensor}!test@{test}}
+\index{test@{test}!motion\+Sensor@{motion\+Sensor}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily virtual void motion\+Sensor\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. 
+
+Testing might take a while. Wait till the end test message appears. 
+
+Implemented in \mbox{\hyperlink{class_h_c_s_r501_ad90e8669ce7d60213c917c9213366798}{H\+C\+S\+R501}}.
+
+\mbox{\Hypertarget{classmotion_sensor_a855b7f86c8ef833bbcd2064a220a4b58}\label{classmotion_sensor_a855b7f86c8ef833bbcd2064a220a4b58}} 
+\index{motion\+Sensor@{motion\+Sensor}!wait\+To\+Go\+Off@{wait\+To\+Go\+Off}}
+\index{wait\+To\+Go\+Off@{wait\+To\+Go\+Off}!motion\+Sensor@{motion\+Sensor}}
+\subsubsection{\texorpdfstring{wait\+To\+Go\+Off()}{waitToGoOff()}}
+{\footnotesize\ttfamily virtual void motion\+Sensor\+::wait\+To\+Go\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Wait for the \mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}} to go off after detecting. 
+
+\begin{DoxyWarning}{Warning}
+This is a blocking call. It will block all the other functions to be called untill the motionsensors is off. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_h_c_s_r501_ad300c0219deddb52c3a5e443be9a96cd}{H\+C\+S\+R501}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Demo/motion\+Sensor.\+hpp\end{DoxyCompactItemize}

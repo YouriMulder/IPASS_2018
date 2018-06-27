@@ -1,0 +1,1168 @@
+\hypertarget{class_m_f_r_c522}{}\section{M\+F\+R\+C522 Class Reference}
+\label{class_m_f_r_c522}\index{M\+F\+R\+C522@{M\+F\+R\+C522}}
+
+
+This class is used to communicate with the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip.  
+
+
+
+
+{\ttfamily \#include $<$M\+F\+R\+C522.\+hpp$>$}
+
+Inheritance diagram for M\+F\+R\+C522\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_f_r_c522}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} \+: uint8\+\_\+t \{ \newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D1} = 0x00, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a0ec37643fa721f476b0cd4359e3c7ef1}{Command\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad956725472615518dfb99f2d7dccc50e}{Com\+I\+En\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afb4527cc3e364cce3fe3e62cdcde7da0}{Div\+I\+En\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a76b2a615444982e04566784bdb5c9841}{Com\+Irq\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a95e26d5ece97ae43c34d08797205a356}{Div\+Irq\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796}{Error\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9f8b10dda6868e74226ab7ccca8d5be0}{Status1\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a8fb1a8c28b7a860793831566373f172f}{Status2\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328}{F\+I\+F\+O\+Data\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7}{F\+I\+F\+O\+Level\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aee5f7c4d0d34d93e5ac67a47e886b224}{Water\+Level\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9d0df9e03ad6706004b003e20127a76a}{Control\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aaf8beb5a739cd8bf94b8b5c8d2d109ce}{Bit\+Framing\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afafb7ec88f79c9b1f195195497d0ca07}{Coll\+Reg}}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D2}, 
+\newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D3}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a2cd647ad1ac1327d2a632115cd9c4477}{Mode\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad4fe18ad01abc83d4559369226fe7992}{Tx\+Mode\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a7e0d6ae1fdd25be6d80d1b76b2274764}{Rx\+Mode\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a73dc12b03f05177a400263e5e2bcf0cc}{Tx\+Control\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ac9de33ca066ca9481bd01d5642a0c879}{Tx\+A\+S\+K\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a6cf11e077148648aaec0492317be5177}{Tx\+Sel\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a669c0c9418d5437566b4b42da326c05f}{Rx\+Sel\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a5dfb7b5c8983d07d7df4fa915902db4c}{rx\+Threshold\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a37b01e93fff19ca62364e8f4f797a5c4}{Demod\+Reg}}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D4}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D5}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a08eb51f4d08a41ceb4b34189bb712dc7}{Mf\+Tx\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a92fbf63612de021d242465d4685f1754}{Mf\+Rx\+Reg}}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D6}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a23529258de3c3f5655afa2849f547f68}{Serial\+Speed\+Reg}}, 
+\newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D7}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a93ba2171ffd0724c539ea656627e3944}{C\+R\+C\+Result1\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a38946dab95c184fd8ca72747d51dc0c5}{C\+R\+C\+Result2\+Reg}}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D8}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad69a6a3d883ebfc993fc6fbdbc035508}{Mod\+Width\+Reg}}, 
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D9}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a0c99eea491c71e9d2a02bf8a86988adf}{R\+F\+Cfg\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a2f81aa5f433fa51bb4b41cd8955de794}{Gs\+N\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a02925dc7a230fcf039c597bf8cfa113f}{C\+W\+Gs\+P\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7acf6ed89766ba2a4e6483b3209b1aa74e}{Mod\+Gs\+P\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1ed52e7f88c8bf3fda91bf31bb62afe4}{T\+Mode\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a88c2ad7cdfb7178ea775c157f4ce5213}{T\+Prescaler\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1b5d7dfad8ec2fbc93d7b7c67cb0d94c}{T\+Reload\+Reg1}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a5dbae491d9100c3437ff1ae30873e583}{T\+Reload\+Reg2}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7af5d128e56733edcb6a36f2e62003b914}{T\+Counter\+Val\+Reg1}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a90426989ff0e68a88f71fa5e12da987a}{T\+Counter\+Val\+Reg2}}, 
+\newline
+{\bfseries R\+E\+S\+E\+R\+V\+E\+D10}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a3fd81beec1ed6566ff1897aac235890f}{Test\+Sel1\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ac1053bcb64682eba4a767caaea677807}{Test\+Sel2\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a62a7871c0d3452a8f642bbea0ca7cb34}{Test\+Pin\+En\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aa5bb4445abb525ddf46c6efcb21e8811}{Test\+Pin\+Value\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a37bc0188996dc1ee5332d40961bffb4b}{Test\+Bus\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9583618ad17a8a20b7a735c7677c8e56}{Auto\+Test\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a4281c25cf6743163ed2e2f903cf17ba9}{Version\+Reg}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7af1d5966b064c10a672e0064d3ccc55c3}{Analog\+Test\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a25334abb5ff680a530e95e6fb0e48a5b}{Test\+D\+A\+C1\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a505b75aac860302b2959da7fe607e5eb}{Test\+D\+A\+C2\+Reg}}, 
+\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1042587aeb71f82f884975ca54c8854a}{Test\+A\+D\+C\+Reg}}
+ \}
+\begin{DoxyCompactList}\small\item\em All the internal register used in the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}{C\+O\+M\+M\+A\+ND}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a2e3acc1de05b7e99481861470dd4ec67}{Idle}} = 0x00, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a331b0d7cac5bb0e112f68aed6eb709d0}{Mem}}, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a6bda04e01a6d5df97488787f375776a2}{Generate\+\_\+\+Random\+ID}}, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a6f1fb41caaad33cafce719dad14c98dc}{Calc\+C\+RC}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7ad8058fe92d6fe81aa1ca962cf940e700}{Transmit}}, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a5283b4437854b195a315565bf14622fd}{No\+Cmd\+Change}} = 0x07, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a212875378684ee3dad1574c0965750d2}{Receive}}, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a1e5adf1be49c609a5d222b5bc79606d8}{Transceive}} = 0x0C, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a626e32787ed32c2544a228e6c5004344}{M\+F\+Authent}} = 0x0E, 
+\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a056870dfe674f9999e9c5c0191181d53}{Soft\+Reset}}
+ \}
+\begin{DoxyCompactList}\small\item\em The possible commands the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} has. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}{M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND}} \+: uint8\+\_\+t \{ \newline
+{\bfseries Request\+Command} = 0x26, 
+{\bfseries Wake\+Up\+Command} = 0x52, 
+{\bfseries C\+L1\+Command} = 0x93, 
+{\bfseries C\+L2\+Command} = 0x95, 
+\newline
+{\bfseries Anticollision\+Command} = 0x20, 
+{\bfseries Select\+Command} = 0x70, 
+{\bfseries Halt\+Part1\+Command} = 0x50, 
+{\bfseries Halt\+Part2\+Command} = 0x00, 
+\newline
+{\bfseries Auth\+Key\+A\+Command} = 0x60, 
+{\bfseries Auth\+Key\+B\+Command} = 0x61, 
+{\bfseries Personalize\+U\+I\+D\+Usage\+Command} = 0x40, 
+{\bfseries Set\+Mod\+Type\+Command} = 0x43, 
+\newline
+{\bfseries Read\+Command} = 0x30, 
+{\bfseries Write\+Command} = 0x\+A0, 
+{\bfseries Decrement\+Command} = 0x\+C0, 
+{\bfseries Increment\+Command} = 0x\+C1, 
+\newline
+{\bfseries Restore\+Command} = 0x\+C2, 
+{\bfseries Transfer\+Command} = 0x\+B0
+ \}
+\begin{DoxyCompactList}\small\item\em All the M\+I\+F\+A\+RE Classic E\+V1 with 1K commands. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aac0316866384830d083e73893908c3a2c}{Ok\+Status}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa8491f2caacbd7b74ffe3b22892cb99f2}{Time\+Out\+Status}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aab1033f7feead7acd936590016e2511eb}{No\+Room}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa7d6913b23fb1f180212a50cd3c816d6d}{Protocol\+Err}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa097511393d666b445c7b20cc39c95907}{Parity\+Err}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa48c177abd7dfe559d4fae4ac278e8238}{C\+R\+C\+Err}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa2f6b22ce4941a45f14e0fde8c4646afc}{Coll\+Err}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aad4532093172caeab300443ef77f31cd9}{Buffer\+Ovfl}}, 
+\newline
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aaf87b42298777d149525ae88fac5780d2}{Temp\+Err}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa11fe8cc84d59dbe6d7f1291a7ff6c2c4}{Wr\+Err}}, 
+\mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aaedb3b2c7a96e9ecdd6e185bb3f624e9c}{B\+C\+C\+Err}}
+ \}
+\begin{DoxyCompactList}\small\item\em All the communication status values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_f_r_c522_a70e6c463aec08918c71c2e0c77742b4b}{M\+F\+R\+C522}} (\mbox{\hyperlink{classspi_bus}{spi\+Bus}} \&\mbox{\hyperlink{class_m_f_r_c522_a76b0186fcad01aafd3d7d7ae4da6a68c}{S\+P\+I\+Bus}}, hwlib\+::pin\+\_\+out \&\mbox{\hyperlink{class_m_f_r_c522_ab945c275a8644e226def9f3eee6698a2}{slave\+Select}}, hwlib\+::pin\+\_\+out \&\mbox{\hyperlink{class_m_f_r_c522_a924c7dced5cb615461a0c9f353076407}{reset}}, bool init=true)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} class constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a5f589b09eaf150551b369052ce125fa1}{initialize}} () override
+\begin{DoxyCompactList}\small\item\em Initialize the rfid chip for. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}{hard\+Reset}} () override
+\begin{DoxyCompactList}\small\item\em Hard reset the rfid chip probably with a hwlib\+::pin\+\_\+out (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl}) 2017. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ae51e1e0bee2b7a65d6314bfb48121f1d}\label{class_m_f_r_c522_ae51e1e0bee2b7a65d6314bfb48121f1d}} 
+void \mbox{\hyperlink{class_m_f_r_c522_ae51e1e0bee2b7a65d6314bfb48121f1d}{soft\+Reset}} () override
+\begin{DoxyCompactList}\small\item\em Soft reset the rfid chip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}{reset\+Antennas}} () override
+\begin{DoxyCompactList}\small\item\em Reset the Tx and Rx antennas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}{is\+Card\+In\+Range}} () override
+\begin{DoxyCompactList}\small\item\em Check if there is a card within the radio frequency field. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_f_r_c522_a29ce0dd04495f9352e32ada5ecc5fd03}{is\+Card\+In\+Range\+Check}} () override
+\begin{DoxyCompactList}\small\item\em Check if there is a card within the radio frequency field. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}{get\+Card\+U\+ID}} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]}) override
+\begin{DoxyCompactList}\small\item\em Get the U\+I\+D/\+N\+U\+ID of 4 bytes U\+ID card with the B\+CC byte. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_f_r_c522_a33c20be6030f635d986984db4999a1eb}{get\+Card\+U\+I\+D\+Simple}} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]}) override
+\begin{DoxyCompactList}\small\item\em A wrapper around \mbox{\hyperlink{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}{get\+Card\+U\+ID}} to make it simpler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_aeb05c83c2d139eb2c57f400399982691}{wait\+For\+Card\+U\+ID}} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]}) override
+\begin{DoxyCompactList}\small\item\em This function waits till there is a card in range and gives the U\+ID back. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_aee85264d7411b76a3b0817622b428827}{print\+U\+ID}} () override
+\begin{DoxyCompactList}\small\item\em Wait for a card te be presented and print the U\+ID. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_a25fb0a50bf7db51ab9c5bc2ff4fa84e3}{get\+Version}} () override
+\begin{DoxyCompactList}\small\item\em Get the version of the rfid chip to perform for instance a \mbox{\hyperlink{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}{self\+Test}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}{self\+Test}} () override
+\begin{DoxyCompactList}\small\item\em Let the rfid chip perform a self test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_aff8e84921e9f133cfbd243ce994da023}{test}} () override
+\begin{DoxyCompactList}\small\item\em This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a56c8309a003cf1a5d8479c7783826f8e}\label{class_m_f_r_c522_a56c8309a003cf1a5d8479c7783826f8e}} 
+const uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_a56c8309a003cf1a5d8479c7783826f8e}{F\+I\+F\+O\+Amount\+Of\+Bytes}} = 64
+\begin{DoxyCompactList}\small\item\em The maximum amount of bytes the F\+I\+FO can store. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_a7d19c9869a7fbbe0d9825d5653d6af7b}{self\+Test\+F\+I\+F\+O\+Buffer\+V1}} \mbox{[}64\mbox{]}
+\begin{DoxyCompactList}\small\item\em The data that will be in the F\+I\+FO after executing the self\+Test on a \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} version 1. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_a6973b73a8a922ac09b9d89489bdbc333}{self\+Test\+F\+I\+F\+O\+Buffer\+V2}} \mbox{[}64\mbox{]}
+\begin{DoxyCompactList}\small\item\em The data that will be in the F\+I\+FO after executing the self\+Test on a \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} version 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a6bfefd877c6060dde4eff2c25b7f96f2}\label{class_m_f_r_c522_a6bfefd877c6060dde4eff2c25b7f96f2}} 
+void \mbox{\hyperlink{class_m_f_r_c522_a6bfefd877c6060dde4eff2c25b7f96f2}{wait\+Till\+Started}} () override
+\begin{DoxyCompactList}\small\item\em Wait till the is started correctly after for example a soft reset. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_afe0e86db047ef36af49349e7fdc7fa65}{read\+Register}} (\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} register\+Address)
+\begin{DoxyCompactList}\small\item\em Get a byte from a register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a559408e38c2c8fea3316f6e2b4477b81}{read\+Register}} (\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} register\+Address, uint8\+\_\+t read\mbox{[}$\,$\mbox{]}, uint8\+\_\+t amount\+Of\+Bytes)
+\begin{DoxyCompactList}\small\item\em Get multiple bytes from a register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_aa976c78dde5b2dfbbd5bcbedaad14a7a}{write\+Register}} (\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} register\+Address, uint8\+\_\+t new\+Byte)
+\begin{DoxyCompactList}\small\item\em Set a byte into a register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a3558d379575863072c711721b061bb75}{write\+Register}} (\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} register\+Address, uint8\+\_\+t new\+Bytes\mbox{[}$\,$\mbox{]}, int amount\+Of\+Bytes)
+\begin{DoxyCompactList}\small\item\em Set multiple bytes into a register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_ae30686cdd50f6fdb821908a2547e5153}{set\+Mask\+In\+Register}} (\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} register\+Address, uint8\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Set specific bits using a mask. (logic 1 = set) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a9935264b559702a3a4ad2b87735b4f8f}{clear\+Mask\+In\+Register}} (\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}} register\+Address, uint8\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Clear specific bits using a mask. (logic 1 = clear) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_ad33cc8218440b30747fba97aa59c0583}{set\+Antennas}} (bool state)
+\begin{DoxyCompactList}\small\item\em Set the antennas rx and tx on or off. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_a6d831a60a08c5f37a264c61f7c79c372}{check\+For\+Errors}} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are any errors in the \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796}{Error\+Reg}}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_m_f_r_c522_ab605cd58a59f1d6cbc48ef0be252e593}{communicate}} (\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}{C\+O\+M\+M\+A\+ND}} command, uint8\+\_\+t transmit\+Data\mbox{[}$\,$\mbox{]}, int transmit\+Length, uint8\+\_\+t received\+Data\mbox{[}$\,$\mbox{]}, int \&received\+Length)
+\begin{DoxyCompactList}\small\item\em Communicate with a potential rfid card. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a0fa1703360d0c741cf915b22e26c2631}{clear\+F\+I\+F\+O\+Buffer}} (const uint8\+\_\+t amount\+Of\+Bytes=64)
+\begin{DoxyCompactList}\small\item\em Clear the F\+I\+FO buffer and reset the F\+I\+FO level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a9d2c5ad7b977944e8bcbbcc9c1bb9b75}{clear\+Internal\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Clear the internal\+Buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_f_r_c522_a0ac8b78d0740d6ca161a21af1c44cf2e}{print\+Test}} (bool condition, const char test\+Case\+Message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em print out any error of passed test message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspi_bus}{spi\+Bus}} \& \mbox{\hyperlink{class_m_f_r_c522_a76b0186fcad01aafd3d7d7ae4da6a68c}{S\+P\+I\+Bus}}
+\begin{DoxyCompactList}\small\item\em The spi bus which is used to communicate with the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_m_f_r_c522_ab945c275a8644e226def9f3eee6698a2}\label{class_m_f_r_c522_ab945c275a8644e226def9f3eee6698a2}} 
+hwlib\+::pin\+\_\+out \& \mbox{\hyperlink{class_m_f_r_c522_ab945c275a8644e226def9f3eee6698a2}{slave\+Select}}
+\begin{DoxyCompactList}\small\item\em the pin\+\_\+out which is used to select the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_m_f_r_c522_a924c7dced5cb615461a0c9f353076407}\label{class_m_f_r_c522_a924c7dced5cb615461a0c9f353076407}} 
+hwlib\+::pin\+\_\+out \& \mbox{\hyperlink{class_m_f_r_c522_a924c7dced5cb615461a0c9f353076407}{reset}}
+\begin{DoxyCompactList}\small\item\em the pin\+\_\+out which is used to reset the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to communicate with the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip. 
+
+This is a basic library for the M\+F522 chip. Using the pure virtual class \mbox{\hyperlink{classrfid}{rfid}}. Execute the tests when you\textquotesingle{}re not sure the chip is connected correctly. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!C\+O\+M\+M\+A\+ND@{C\+O\+M\+M\+A\+ND}}
+\index{C\+O\+M\+M\+A\+ND@{C\+O\+M\+M\+A\+ND}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+A\+ND}{COMMAND}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}{M\+F\+R\+C522\+::\+C\+O\+M\+M\+A\+ND}} \+: uint8\+\_\+t}
+
+
+
+The possible commands the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} has. 
+
+Before using these commands you should have some basic knowledge of what they do. Check the datasheet before using! \begin{DoxySeeAlso}{See also}
+\href{https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf}{\tt M\+F\+R\+C522 datasheet page 70} 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Check the datasheet before using! 
+\end{DoxyWarning}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Idle@{Idle}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Idle@{Idle}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a2e3acc1de05b7e99481861470dd4ec67}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a2e3acc1de05b7e99481861470dd4ec67}} 
+Idle&No action, cancels current command execution. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mem@{Mem}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Mem@{Mem}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a331b0d7cac5bb0e112f68aed6eb709d0}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a331b0d7cac5bb0e112f68aed6eb709d0}} 
+Mem&Stores 25 bytes into the internal buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Generate\+\_\+\+Random\+ID@{Generate\+\_\+\+Random\+ID}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Generate\+\_\+\+Random\+ID@{Generate\+\_\+\+Random\+ID}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a6bda04e01a6d5df97488787f375776a2}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a6bda04e01a6d5df97488787f375776a2}} 
+Generate\+\_\+\+Random\+ID&Generates a 10-\/byte random ID number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Calc\+C\+RC@{Calc\+C\+RC}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Calc\+C\+RC@{Calc\+C\+RC}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a6f1fb41caaad33cafce719dad14c98dc}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a6f1fb41caaad33cafce719dad14c98dc}} 
+Calc\+C\+RC&Activates the C\+RC coprocessor or performs a self test. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Transmit@{Transmit}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Transmit@{Transmit}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7ad8058fe92d6fe81aa1ca962cf940e700}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7ad8058fe92d6fe81aa1ca962cf940e700}} 
+Transmit&Transmits data from the F\+I\+FO buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Cmd\+Change@{No\+Cmd\+Change}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!No\+Cmd\+Change@{No\+Cmd\+Change}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a5283b4437854b195a315565bf14622fd}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a5283b4437854b195a315565bf14622fd}} 
+No\+Cmd\+Change&No command change. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Receive@{Receive}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Receive@{Receive}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a212875378684ee3dad1574c0965750d2}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a212875378684ee3dad1574c0965750d2}} 
+Receive&Activates the receiver circuits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Transceive@{Transceive}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Transceive@{Transceive}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a1e5adf1be49c609a5d222b5bc79606d8}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a1e5adf1be49c609a5d222b5bc79606d8}} 
+Transceive&Transmits data from F\+I\+FO buffer to antenna and automatically activates the receiver after transmission. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+F\+Authent@{M\+F\+Authent}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!M\+F\+Authent@{M\+F\+Authent}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a626e32787ed32c2544a228e6c5004344}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a626e32787ed32c2544a228e6c5004344}} 
+M\+F\+Authent&Performs the M\+I\+F\+A\+RE standard authentication as a reader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Soft\+Reset@{Soft\+Reset}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Soft\+Reset@{Soft\+Reset}}}\mbox{\Hypertarget{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a056870dfe674f9999e9c5c0191181d53}\label{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a056870dfe674f9999e9c5c0191181d53}} 
+Soft\+Reset&Resets the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}}. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US@{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}}
+\index{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US@{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}{COMMUNICATION\_STATUS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}{M\+F\+R\+C522\+::\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}} \+: uint8\+\_\+t}
+
+
+
+All the communication status values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok\+Status@{Ok\+Status}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Ok\+Status@{Ok\+Status}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aac0316866384830d083e73893908c3a2c}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aac0316866384830d083e73893908c3a2c}} 
+Ok\+Status&Everything went as planned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Time\+Out\+Status@{Time\+Out\+Status}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Time\+Out\+Status@{Time\+Out\+Status}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa8491f2caacbd7b74ffe3b22892cb99f2}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa8491f2caacbd7b74ffe3b22892cb99f2}} 
+Time\+Out\+Status&No card found in the given time span. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Room@{No\+Room}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!No\+Room@{No\+Room}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aab1033f7feead7acd936590016e2511eb}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aab1033f7feead7acd936590016e2511eb}} 
+No\+Room&Not big enough received array to store all the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Protocol\+Err@{Protocol\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Protocol\+Err@{Protocol\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa7d6913b23fb1f180212a50cd3c816d6d}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa7d6913b23fb1f180212a50cd3c816d6d}} 
+Protocol\+Err&S\+OF is incorrect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Parity\+Err@{Parity\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Parity\+Err@{Parity\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa097511393d666b445c7b20cc39c95907}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa097511393d666b445c7b20cc39c95907}} 
+Parity\+Err&Parity check failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+R\+C\+Err@{C\+R\+C\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!C\+R\+C\+Err@{C\+R\+C\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa48c177abd7dfe559d4fae4ac278e8238}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa48c177abd7dfe559d4fae4ac278e8238}} 
+C\+R\+C\+Err&The Rx\+Mode\+Reg register’s Rx\+C\+R\+C\+En bit is set and the C\+RC calculation fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Coll\+Err@{Coll\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Coll\+Err@{Coll\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa2f6b22ce4941a45f14e0fde8c4646afc}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa2f6b22ce4941a45f14e0fde8c4646afc}} 
+Coll\+Err&A bit-\/collision is detected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Buffer\+Ovfl@{Buffer\+Ovfl}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Buffer\+Ovfl@{Buffer\+Ovfl}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aad4532093172caeab300443ef77f31cd9}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aad4532093172caeab300443ef77f31cd9}} 
+Buffer\+Ovfl&F\+I\+FO buffer is already full. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Temp\+Err@{Temp\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Temp\+Err@{Temp\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aaf87b42298777d149525ae88fac5780d2}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aaf87b42298777d149525ae88fac5780d2}} 
+Temp\+Err&Internal temperature detects overheating. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wr\+Err@{Wr\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Wr\+Err@{Wr\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa11fe8cc84d59dbe6d7f1291a7ff6c2c4}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aa11fe8cc84d59dbe6d7f1291a7ff6c2c4}} 
+Wr\+Err&data is written into the F\+I\+FO buffer by the host during the M\+F\+Authent command or if data is written into the F\+I\+FO buffer by the host during the time between sending the last bit on the RF interface and receiving the last bit on the RF interface \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+C\+C\+Err@{B\+C\+C\+Err}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!B\+C\+C\+Err@{B\+C\+C\+Err}}}\mbox{\Hypertarget{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aaedb3b2c7a96e9ecdd6e185bb3f624e9c}\label{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760aaedb3b2c7a96e9ecdd6e185bb3f624e9c}} 
+B\+C\+C\+Err&M\+I\+F\+A\+RE U\+ID X\+OR check failed B\+CC is not correct. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}\label{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND@{M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND}}
+\index{M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND@{M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND}{MIFARE\_COMMAND}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}{M\+F\+R\+C522\+::\+M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND}} \+: uint8\+\_\+t}
+
+
+
+All the M\+I\+F\+A\+RE Classic E\+V1 with 1K commands. 
+
+Most of the commands are M\+I\+F\+A\+RE Classic only. But some are defined in the I\+S\+O/\+I\+EC 14443 Type A. So some command might be used for more card like the request and wake-\/up command. For more information about the M\+I\+F\+A\+RE command take a look at the datasheet. Most M\+I\+F\+A\+RE commands require authentication! \href{http://www.orangetags.com/wp-content/downloads/datasheet/NXP/Mifare%20EV1%201K.pdf}{\tt M\+I\+F\+A\+RE datsheet page 13} \begin{DoxyWarning}{Warning}
+some commands override the data on the cards! W\+A\+T\+CH O\+U\+T! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!R\+EG@{R\+EG}}
+\index{R\+EG@{R\+EG}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{R\+EG}{REG}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{M\+F\+R\+C522\+::\+R\+EG}} \+: uint8\+\_\+t}
+
+
+
+All the internal register used in the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip. 
+
+The enums contains all the reigsters in the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip. For more information about all the registers you should check the datasheet. \begin{DoxySeeAlso}{See also}
+\href{https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf}{\tt M\+F\+R\+C522 datasheet page 36} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Command\+Reg@{Command\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Command\+Reg@{Command\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a0ec37643fa721f476b0cd4359e3c7ef1}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a0ec37643fa721f476b0cd4359e3c7ef1}} 
+Command\+Reg&Starts/stops command execution ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Com\+I\+En\+Reg@{Com\+I\+En\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Com\+I\+En\+Reg@{Com\+I\+En\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad956725472615518dfb99f2d7dccc50e}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad956725472615518dfb99f2d7dccc50e}} 
+Com\+I\+En\+Reg&Enable/disable interrupt request control bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Div\+I\+En\+Reg@{Div\+I\+En\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Div\+I\+En\+Reg@{Div\+I\+En\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afb4527cc3e364cce3fe3e62cdcde7da0}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afb4527cc3e364cce3fe3e62cdcde7da0}} 
+Div\+I\+En\+Reg&Enable/disable interrupt request control bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Com\+Irq\+Reg@{Com\+Irq\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Com\+Irq\+Reg@{Com\+Irq\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a76b2a615444982e04566784bdb5c9841}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a76b2a615444982e04566784bdb5c9841}} 
+Com\+Irq\+Reg&interrupt request bits \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Div\+Irq\+Reg@{Div\+Irq\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Div\+Irq\+Reg@{Div\+Irq\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a95e26d5ece97ae43c34d08797205a356}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a95e26d5ece97ae43c34d08797205a356}} 
+Div\+Irq\+Reg&interrupt request bits \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error\+Reg@{Error\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Error\+Reg@{Error\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796}} 
+Error\+Reg&Error bits, error status of last command. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Status1\+Reg@{Status1\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Status1\+Reg@{Status1\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9f8b10dda6868e74226ab7ccca8d5be0}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9f8b10dda6868e74226ab7ccca8d5be0}} 
+Status1\+Reg&Communication status bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Status2\+Reg@{Status2\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Status2\+Reg@{Status2\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a8fb1a8c28b7a860793831566373f172f}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a8fb1a8c28b7a860793831566373f172f}} 
+Status2\+Reg&Receiver and transmitter status bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+I\+F\+O\+Data\+Reg@{F\+I\+F\+O\+Data\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!F\+I\+F\+O\+Data\+Reg@{F\+I\+F\+O\+Data\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328}} 
+F\+I\+F\+O\+Data\+Reg&Input/output of 64 uint8\+\_\+t F\+I\+FO buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+I\+F\+O\+Level\+Reg@{F\+I\+F\+O\+Level\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!F\+I\+F\+O\+Level\+Reg@{F\+I\+F\+O\+Level\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7}} 
+F\+I\+F\+O\+Level\+Reg&Number of uint8\+\_\+t stored in the F\+I\+FO buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Water\+Level\+Reg@{Water\+Level\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Water\+Level\+Reg@{Water\+Level\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aee5f7c4d0d34d93e5ac67a47e886b224}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aee5f7c4d0d34d93e5ac67a47e886b224}} 
+Water\+Level\+Reg&Level for F\+I\+FO underflow and overflow warning. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Control\+Reg@{Control\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Control\+Reg@{Control\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9d0df9e03ad6706004b003e20127a76a}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9d0df9e03ad6706004b003e20127a76a}} 
+Control\+Reg&Miscellaneous control register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bit\+Framing\+Reg@{Bit\+Framing\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Bit\+Framing\+Reg@{Bit\+Framing\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aaf8beb5a739cd8bf94b8b5c8d2d109ce}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aaf8beb5a739cd8bf94b8b5c8d2d109ce}} 
+Bit\+Framing\+Reg&Adjustments for bit-\/oriented frames. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Coll\+Reg@{Coll\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Coll\+Reg@{Coll\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afafb7ec88f79c9b1f195195497d0ca07}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afafb7ec88f79c9b1f195195497d0ca07}} 
+Coll\+Reg&Bit position of the first bit-\/collision detected of RF interface. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mode\+Reg@{Mode\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Mode\+Reg@{Mode\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a2cd647ad1ac1327d2a632115cd9c4477}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a2cd647ad1ac1327d2a632115cd9c4477}} 
+Mode\+Reg&Defines general modes for transmitting and receiving. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tx\+Mode\+Reg@{Tx\+Mode\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Tx\+Mode\+Reg@{Tx\+Mode\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad4fe18ad01abc83d4559369226fe7992}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad4fe18ad01abc83d4559369226fe7992}} 
+Tx\+Mode\+Reg&Defines transmission data rate and framing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rx\+Mode\+Reg@{Rx\+Mode\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Rx\+Mode\+Reg@{Rx\+Mode\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a7e0d6ae1fdd25be6d80d1b76b2274764}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a7e0d6ae1fdd25be6d80d1b76b2274764}} 
+Rx\+Mode\+Reg&Defines reception data rate and framing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tx\+Control\+Reg@{Tx\+Control\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Tx\+Control\+Reg@{Tx\+Control\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a73dc12b03f05177a400263e5e2bcf0cc}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a73dc12b03f05177a400263e5e2bcf0cc}} 
+Tx\+Control\+Reg&Controls the logical behaviour of the antenna driver pins T\+X1/2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tx\+A\+S\+K\+Reg@{Tx\+A\+S\+K\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Tx\+A\+S\+K\+Reg@{Tx\+A\+S\+K\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ac9de33ca066ca9481bd01d5642a0c879}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ac9de33ca066ca9481bd01d5642a0c879}} 
+Tx\+A\+S\+K\+Reg&Controls the setting of the transmission modulation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tx\+Sel\+Reg@{Tx\+Sel\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Tx\+Sel\+Reg@{Tx\+Sel\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a6cf11e077148648aaec0492317be5177}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a6cf11e077148648aaec0492317be5177}} 
+Tx\+Sel\+Reg&Selects internal sources for the antenna driver. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rx\+Sel\+Reg@{Rx\+Sel\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Rx\+Sel\+Reg@{Rx\+Sel\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a669c0c9418d5437566b4b42da326c05f}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a669c0c9418d5437566b4b42da326c05f}} 
+Rx\+Sel\+Reg&Selects interal reciever settings. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rx\+Threshold\+Reg@{rx\+Threshold\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!rx\+Threshold\+Reg@{rx\+Threshold\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a5dfb7b5c8983d07d7df4fa915902db4c}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a5dfb7b5c8983d07d7df4fa915902db4c}} 
+rx\+Threshold\+Reg&Selects thresholds for the bit decoder. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Demod\+Reg@{Demod\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Demod\+Reg@{Demod\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a37b01e93fff19ca62364e8f4f797a5c4}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a37b01e93fff19ca62364e8f4f797a5c4}} 
+Demod\+Reg&Defines demodulator settings. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mf\+Tx\+Reg@{Mf\+Tx\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Mf\+Tx\+Reg@{Mf\+Tx\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a08eb51f4d08a41ceb4b34189bb712dc7}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a08eb51f4d08a41ceb4b34189bb712dc7}} 
+Mf\+Tx\+Reg&Controls some M\+I\+F\+A\+RE communication transmit parameters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mf\+Rx\+Reg@{Mf\+Rx\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Mf\+Rx\+Reg@{Mf\+Rx\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a92fbf63612de021d242465d4685f1754}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a92fbf63612de021d242465d4685f1754}} 
+Mf\+Rx\+Reg&Controls some M\+I\+F\+A\+RE communication receive parameters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Serial\+Speed\+Reg@{Serial\+Speed\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Serial\+Speed\+Reg@{Serial\+Speed\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a23529258de3c3f5655afa2849f547f68}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a23529258de3c3f5655afa2849f547f68}} 
+Serial\+Speed\+Reg&Selects the speed of the serial U\+A\+RT interface. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+R\+C\+Result1\+Reg@{C\+R\+C\+Result1\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!C\+R\+C\+Result1\+Reg@{C\+R\+C\+Result1\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a93ba2171ffd0724c539ea656627e3944}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a93ba2171ffd0724c539ea656627e3944}} 
+C\+R\+C\+Result1\+Reg&Shows the M\+SB and L\+SB values of the C\+RC calculation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+R\+C\+Result2\+Reg@{C\+R\+C\+Result2\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!C\+R\+C\+Result2\+Reg@{C\+R\+C\+Result2\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a38946dab95c184fd8ca72747d51dc0c5}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a38946dab95c184fd8ca72747d51dc0c5}} 
+C\+R\+C\+Result2\+Reg&Shows the M\+SB and L\+SB values of the C\+RC calculation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mod\+Width\+Reg@{Mod\+Width\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Mod\+Width\+Reg@{Mod\+Width\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad69a6a3d883ebfc993fc6fbdbc035508}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ad69a6a3d883ebfc993fc6fbdbc035508}} 
+Mod\+Width\+Reg&Control the Mod\+Width setting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+F\+Cfg\+Reg@{R\+F\+Cfg\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!R\+F\+Cfg\+Reg@{R\+F\+Cfg\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a0c99eea491c71e9d2a02bf8a86988adf}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a0c99eea491c71e9d2a02bf8a86988adf}} 
+R\+F\+Cfg\+Reg&Configures the receiver gain. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gs\+N\+Reg@{Gs\+N\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Gs\+N\+Reg@{Gs\+N\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a2f81aa5f433fa51bb4b41cd8955de794}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a2f81aa5f433fa51bb4b41cd8955de794}} 
+Gs\+N\+Reg&Selects the conductance of the antenna driver pins tx1/2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+W\+Gs\+P\+Reg@{C\+W\+Gs\+P\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!C\+W\+Gs\+P\+Reg@{C\+W\+Gs\+P\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a02925dc7a230fcf039c597bf8cfa113f}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a02925dc7a230fcf039c597bf8cfa113f}} 
+C\+W\+Gs\+P\+Reg&Defines the conductance of the p-\/driver output during periods of no modulation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mod\+Gs\+P\+Reg@{Mod\+Gs\+P\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Mod\+Gs\+P\+Reg@{Mod\+Gs\+P\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7acf6ed89766ba2a4e6483b3209b1aa74e}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7acf6ed89766ba2a4e6483b3209b1aa74e}} 
+Mod\+Gs\+P\+Reg&Defines the conductance of the p-\/driver output during periods of modulation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Mode\+Reg@{T\+Mode\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!T\+Mode\+Reg@{T\+Mode\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1ed52e7f88c8bf3fda91bf31bb62afe4}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1ed52e7f88c8bf3fda91bf31bb62afe4}} 
+T\+Mode\+Reg&Defines settings for the internal timer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Prescaler\+Reg@{T\+Prescaler\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!T\+Prescaler\+Reg@{T\+Prescaler\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a88c2ad7cdfb7178ea775c157f4ce5213}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a88c2ad7cdfb7178ea775c157f4ce5213}} 
+T\+Prescaler\+Reg&Defines settings for the internal timer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Reload\+Reg1@{T\+Reload\+Reg1}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!T\+Reload\+Reg1@{T\+Reload\+Reg1}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1b5d7dfad8ec2fbc93d7b7c67cb0d94c}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1b5d7dfad8ec2fbc93d7b7c67cb0d94c}} 
+T\+Reload\+Reg1&Defines the 16-\/bit timer reload value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Reload\+Reg2@{T\+Reload\+Reg2}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!T\+Reload\+Reg2@{T\+Reload\+Reg2}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a5dbae491d9100c3437ff1ae30873e583}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a5dbae491d9100c3437ff1ae30873e583}} 
+T\+Reload\+Reg2&Defines the 16-\/bit timer reload value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Counter\+Val\+Reg1@{T\+Counter\+Val\+Reg1}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!T\+Counter\+Val\+Reg1@{T\+Counter\+Val\+Reg1}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7af5d128e56733edcb6a36f2e62003b914}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7af5d128e56733edcb6a36f2e62003b914}} 
+T\+Counter\+Val\+Reg1&Shows the 16-\/bit times value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Counter\+Val\+Reg2@{T\+Counter\+Val\+Reg2}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!T\+Counter\+Val\+Reg2@{T\+Counter\+Val\+Reg2}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a90426989ff0e68a88f71fa5e12da987a}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a90426989ff0e68a88f71fa5e12da987a}} 
+T\+Counter\+Val\+Reg2&Shows the 16-\/bit times value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+Sel1\+Reg@{Test\+Sel1\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+Sel1\+Reg@{Test\+Sel1\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a3fd81beec1ed6566ff1897aac235890f}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a3fd81beec1ed6566ff1897aac235890f}} 
+Test\+Sel1\+Reg&General test signal configuration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+Sel2\+Reg@{Test\+Sel2\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+Sel2\+Reg@{Test\+Sel2\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ac1053bcb64682eba4a767caaea677807}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7ac1053bcb64682eba4a767caaea677807}} 
+Test\+Sel2\+Reg&General test signal configuration and P\+R\+BS control. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+Pin\+En\+Reg@{Test\+Pin\+En\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+Pin\+En\+Reg@{Test\+Pin\+En\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a62a7871c0d3452a8f642bbea0ca7cb34}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a62a7871c0d3452a8f642bbea0ca7cb34}} 
+Test\+Pin\+En\+Reg&Enables pin output driver on pins D1-\/7. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+Pin\+Value\+Reg@{Test\+Pin\+Value\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+Pin\+Value\+Reg@{Test\+Pin\+Value\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aa5bb4445abb525ddf46c6efcb21e8811}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aa5bb4445abb525ddf46c6efcb21e8811}} 
+Test\+Pin\+Value\+Reg&Defines the values for D1-\/7 when it is used as an I/O bus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+Bus\+Reg@{Test\+Bus\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+Bus\+Reg@{Test\+Bus\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a37bc0188996dc1ee5332d40961bffb4b}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a37bc0188996dc1ee5332d40961bffb4b}} 
+Test\+Bus\+Reg&Shows the status of the interal test bus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Auto\+Test\+Reg@{Auto\+Test\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Auto\+Test\+Reg@{Auto\+Test\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9583618ad17a8a20b7a735c7677c8e56}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a9583618ad17a8a20b7a735c7677c8e56}} 
+Auto\+Test\+Reg&Controls the digital self test. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Version\+Reg@{Version\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Version\+Reg@{Version\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a4281c25cf6743163ed2e2f903cf17ba9}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a4281c25cf6743163ed2e2f903cf17ba9}} 
+Version\+Reg&Shows the software version. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Analog\+Test\+Reg@{Analog\+Test\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Analog\+Test\+Reg@{Analog\+Test\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7af1d5966b064c10a672e0064d3ccc55c3}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7af1d5966b064c10a672e0064d3ccc55c3}} 
+Analog\+Test\+Reg&Controls the pins A\+U\+X1/2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+D\+A\+C1\+Reg@{Test\+D\+A\+C1\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+D\+A\+C1\+Reg@{Test\+D\+A\+C1\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a25334abb5ff680a530e95e6fb0e48a5b}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a25334abb5ff680a530e95e6fb0e48a5b}} 
+Test\+D\+A\+C1\+Reg&Defines the test value for Test\+D\+A\+C1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+D\+A\+C2\+Reg@{Test\+D\+A\+C2\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+D\+A\+C2\+Reg@{Test\+D\+A\+C2\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a505b75aac860302b2959da7fe607e5eb}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a505b75aac860302b2959da7fe607e5eb}} 
+Test\+D\+A\+C2\+Reg&Defines the test value for Test\+D\+A\+C2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Test\+A\+D\+C\+Reg@{Test\+A\+D\+C\+Reg}!M\+F\+R\+C522@{M\+F\+R\+C522}}\index{M\+F\+R\+C522@{M\+F\+R\+C522}!Test\+A\+D\+C\+Reg@{Test\+A\+D\+C\+Reg}}}\mbox{\Hypertarget{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1042587aeb71f82f884975ca54c8854a}\label{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a1042587aeb71f82f884975ca54c8854a}} 
+Test\+A\+D\+C\+Reg&Shows the value of A\+DC I and Q channels. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_f_r_c522_a70e6c463aec08918c71c2e0c77742b4b}\label{class_m_f_r_c522_a70e6c463aec08918c71c2e0c77742b4b}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{M\+F\+R\+C522()}{MFRC522()}}
+{\footnotesize\ttfamily M\+F\+R\+C522\+::\+M\+F\+R\+C522 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspi_bus}{spi\+Bus}} \&}]{S\+P\+I\+Bus,  }\item[{hwlib\+::pin\+\_\+out \&}]{slave\+Select,  }\item[{hwlib\+::pin\+\_\+out \&}]{reset,  }\item[{bool}]{init = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S\+P\+I\+Bus} & the spi bus that we need to use to communicate with the chip \mbox{\hyperlink{spi_bus_8hpp_source}{spi\+Bus.\+hpp}}. \\
+\hline
+{\em slave\+Select} & the pin out we need to use to select this chip. hwlib\+::pin\+\_\+out (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl}) 2017. \\
+\hline
+{\em reset} & the pin out that is used to reset the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} chip \mbox{\hyperlink{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}{hard\+Reset}}. \\
+\hline
+{\em init} & whether you want to initilize when creating the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_f_r_c522_a6d831a60a08c5f37a264c61f7c79c372}\label{class_m_f_r_c522_a6d831a60a08c5f37a264c61f7c79c372}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!check\+For\+Errors@{check\+For\+Errors}}
+\index{check\+For\+Errors@{check\+For\+Errors}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{check\+For\+Errors()}{checkForErrors()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+F\+R\+C522\+::check\+For\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if there are any errors in the \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a240aa03a1d9542235b89cdef377a5796}{Error\+Reg}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing a \mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}} value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_m_f_r_c522_a0fa1703360d0c741cf915b22e26c2631}\label{class_m_f_r_c522_a0fa1703360d0c741cf915b22e26c2631}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!clear\+F\+I\+F\+O\+Buffer@{clear\+F\+I\+F\+O\+Buffer}}
+\index{clear\+F\+I\+F\+O\+Buffer@{clear\+F\+I\+F\+O\+Buffer}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{clear\+F\+I\+F\+O\+Buffer()}{clearFIFOBuffer()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::clear\+F\+I\+F\+O\+Buffer (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{amount\+Of\+Bytes = {\ttfamily 64} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clear the F\+I\+FO buffer and reset the F\+I\+FO level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount\+Of\+Bytes} & the amount of bytes you want to clear in the F\+I\+FO buffer.\\
+\hline
+\end{DoxyParams}
+the amount\+Of\+Bytes will set a certain amount of zeroes into the \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7afdbfd2f397b96d1043c808ec26e80328}{F\+I\+F\+O\+Data\+Reg}}. and the \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7a35e5daf30358a0a271dadf50ba6bb4e7}{F\+I\+F\+O\+Level\+Reg}} will be reset. \begin{DoxyWarning}{Warning}
+The data in the F\+I\+FO will be cleared! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_a9d2c5ad7b977944e8bcbbcc9c1bb9b75}\label{class_m_f_r_c522_a9d2c5ad7b977944e8bcbbcc9c1bb9b75}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!clear\+Internal\+Buffer@{clear\+Internal\+Buffer}}
+\index{clear\+Internal\+Buffer@{clear\+Internal\+Buffer}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{clear\+Internal\+Buffer()}{clearInternalBuffer()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::clear\+Internal\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clear the internal\+Buffer. 
+
+The internal buffer will be cleared. The internal buffer is 25 bytes big and will not be cleared by doing a soft reset. That\textquotesingle{}s why we need this method. \begin{DoxyWarning}{Warning}
+the data in de internal buffer will become inaccessable. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_a9935264b559702a3a4ad2b87735b4f8f}\label{class_m_f_r_c522_a9935264b559702a3a4ad2b87735b4f8f}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!clear\+Mask\+In\+Register@{clear\+Mask\+In\+Register}}
+\index{clear\+Mask\+In\+Register@{clear\+Mask\+In\+Register}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{clear\+Mask\+In\+Register()}{clearMaskInRegister()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::clear\+Mask\+In\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}}}]{register\+Address,  }\item[{uint8\+\_\+t}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clear specific bits using a mask. (logic 1 = clear) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & the internal register address you want to change the bits of. \\
+\hline
+{\em mask} & the bits you want to clear (Those bits must be a logic 1)\\
+\hline
+\end{DoxyParams}
+The current byte in the register is stored and manipulated using an \& operator using the inverted mask. \begin{DoxyWarning}{Warning}
+the value of the register will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_ab605cd58a59f1d6cbc48ef0be252e593}\label{class_m_f_r_c522_ab605cd58a59f1d6cbc48ef0be252e593}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!communicate@{communicate}}
+\index{communicate@{communicate}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{communicate()}{communicate()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+F\+R\+C522\+::communicate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7}{C\+O\+M\+M\+A\+ND}}}]{command,  }\item[{uint8\+\_\+t}]{transmit\+Data\mbox{[}$\,$\mbox{]},  }\item[{int}]{transmit\+Length,  }\item[{uint8\+\_\+t}]{received\+Data\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{received\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Communicate with a potential rfid card. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing a \mbox{\hyperlink{class_m_f_r_c522_a1160642f3b2b60b5ea7309374a8d760a}{C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+T\+US}} value. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em command} & the command you want to execute. \\
+\hline
+{\em transmit\+Data\mbox{[}$\,$\mbox{]}} & the bytes you want to send to the rfid card. for instance\+: \mbox{\hyperlink{class_m_f_r_c522_a79bd44224bb1ad85e28a0937a6715818}{M\+I\+F\+A\+R\+E\+\_\+\+C\+O\+M\+M\+A\+ND}} \\
+\hline
+{\em transmit\+Length} & the amount of bytes you want to transmit to the card. \\
+\hline
+{\em received\+Data\mbox{[}$\,$\mbox{]}} & a array to store the bytes you received from a potential rfid card. \\
+\hline
+{\em received\+Length} & The amount of bytes you received from the rfid card.\\
+\hline
+\end{DoxyParams}
+A small summary of what happens in the method\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item The the register are set to start transmitting. ~\newline
+
+\item The F\+I\+FO is reset. ~\newline
+
+\item Command is executed. ~\newline
+
+\item Checking for any errors. ~\newline
+
+\item received\+Data is filled with the F\+I\+FO data ~\newline
+ \begin{DoxyWarning}{Warning}
+You might have to change the \mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7aaf8beb5a739cd8bf94b8b5c8d2d109ce}{Bit\+Framing\+Reg}} before using this command. 
+
+T\+H\+IS M\+E\+T\+H\+OD IS O\+N\+LY T\+E\+S\+T\+ED W\+I\+TH \mbox{\hyperlink{class_m_f_r_c522_abf038692c9cf33ed59b44a612e6ed1c7a1e5adf1be49c609a5d222b5bc79606d8}{Transceive}} C\+O\+M\+M\+A\+ND SO F\+A\+R! 
+
+received\+Length M\+AY V\+A\+RY. 
+\end{DoxyWarning}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}\label{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!get\+Card\+U\+ID@{get\+Card\+U\+ID}}
+\index{get\+Card\+U\+ID@{get\+Card\+U\+ID}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{get\+Card\+U\+I\+D()}{getCardUID()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+F\+R\+C522\+::get\+Card\+U\+ID (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the U\+I\+D/\+N\+U\+ID of 4 bytes U\+ID card with the B\+CC byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+I\+D\mbox{[}$\,$\mbox{]}} & The array you want the U\+ID to get stored into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing a possible error or succes code. (These codes are in the derived class)
+\end{DoxyReturn}
+The U\+ID of a card is a unique identifier. This U\+ID can be used to know which card you\textquotesingle{}re communicating with. The U\+ID is used when more than one card is in the radio frequency field, also known as collision detection.~\newline
+ The last byte of U\+ID\mbox{[}5\mbox{]} will be the bcc. This can be used to check if the U\+ID is valid. \begin{DoxyWarning}{Warning}
+Note that the U\+ID might not be as unique as you might expect. Some cards have a feature to rewrite the U\+ID block. 
+
+Note that the U\+ID\mbox{[}5\mbox{]} array will be overridden. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_afeb2a321694ceaf84db793f5efb3a750}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a33c20be6030f635d986984db4999a1eb}\label{class_m_f_r_c522_a33c20be6030f635d986984db4999a1eb}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!get\+Card\+U\+I\+D\+Simple@{get\+Card\+U\+I\+D\+Simple}}
+\index{get\+Card\+U\+I\+D\+Simple@{get\+Card\+U\+I\+D\+Simple}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{get\+Card\+U\+I\+D\+Simple()}{getCardUIDSimple()}}
+{\footnotesize\ttfamily bool M\+F\+R\+C522\+::get\+Card\+U\+I\+D\+Simple (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+A wrapper around \mbox{\hyperlink{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}{get\+Card\+U\+ID}} to make it simpler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+I\+D\mbox{[}$\,$\mbox{]}} & The array you want the U\+ID to get stored into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool which will be 1 when everything went fine and 0 when there was an error.
+\end{DoxyReturn}
+When the function returns a zero you should try \mbox{\hyperlink{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}{get\+Card\+U\+ID}} instead because that function returns a more accurate return status. \begin{DoxyWarning}{Warning}
+Note that the U\+ID might not be as unique as you might expect. Some cards have a feature to rewrite the U\+ID block. 
+
+Note that the U\+ID\mbox{[}5\mbox{]} array will be overridden. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_aaeb826495120d8d29683f0ea1b985d77}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a25fb0a50bf7db51ab9c5bc2ff4fa84e3}\label{class_m_f_r_c522_a25fb0a50bf7db51ab9c5bc2ff4fa84e3}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!get\+Version@{get\+Version}}
+\index{get\+Version@{get\+Version}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{get\+Version()}{getVersion()}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+F\+R\+C522\+::get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the version of the rfid chip to perform for instance a \mbox{\hyperlink{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}{self\+Test}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the version value 1 or 2 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classrfid_a27619628e718bb781f912aead770079a}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}\label{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!hard\+Reset@{hard\+Reset}}
+\index{hard\+Reset@{hard\+Reset}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{hard\+Reset()}{hardReset()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::hard\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Hard reset the rfid chip probably with a hwlib\+::pin\+\_\+out (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl}) 2017. 
+
+\begin{DoxyWarning}{Warning}
+Note if the chip requires a external pin to reset the whole chip. The pin must me connected correctly. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_a7f993197e5aa12e7b3bfb1576552bbf1}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a5f589b09eaf150551b369052ce125fa1}\label{class_m_f_r_c522_a5f589b09eaf150551b369052ce125fa1}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!initialize@{initialize}}
+\index{initialize@{initialize}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the rfid chip for. 
+
+This will reset the chip and initilize all the register. 
+
+Implements \mbox{\hyperlink{classrfid_a76f857b77fbea6776048aab6ba835a29}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}\label{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!is\+Card\+In\+Range@{is\+Card\+In\+Range}}
+\index{is\+Card\+In\+Range@{is\+Card\+In\+Range}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{is\+Card\+In\+Range()}{isCardInRange()}}
+{\footnotesize\ttfamily bool M\+F\+R\+C522\+::is\+Card\+In\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if there is a card within the radio frequency field. 
+
+\begin{DoxyReturn}{Returns}
+A bool which will be 1 if a card is detected and 0 when not.
+\end{DoxyReturn}
+This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. \begin{DoxyWarning}{Warning}
+After requesting the rfid card expects the user to send another command. When you you only want to check if a card is in the radio frequency field you should use is\+Card\+In\+Range\+Check 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_a23fc4ec0bc3790c5e68269d4f32771b9}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a29ce0dd04495f9352e32ada5ecc5fd03}\label{class_m_f_r_c522_a29ce0dd04495f9352e32ada5ecc5fd03}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!is\+Card\+In\+Range\+Check@{is\+Card\+In\+Range\+Check}}
+\index{is\+Card\+In\+Range\+Check@{is\+Card\+In\+Range\+Check}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{is\+Card\+In\+Range\+Check()}{isCardInRangeCheck()}}
+{\footnotesize\ttfamily bool M\+F\+R\+C522\+::is\+Card\+In\+Range\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if there is a card within the radio frequency field. 
+
+\begin{DoxyReturn}{Returns}
+A bool which will be 1 if a card is detected and 0 when not.
+\end{DoxyReturn}
+This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. After sending the request command both antennas are reset (\mbox{\hyperlink{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}{reset\+Antennas}}) to stop communicating with the card. \begin{DoxyWarning}{Warning}
+Use \mbox{\hyperlink{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}{is\+Card\+In\+Range}} when you want to send some commands after you send a request to the card. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_a9790d273f2385c8fb48bb85ca2aa0d10}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_a0ac8b78d0740d6ca161a21af1c44cf2e}\label{class_m_f_r_c522_a0ac8b78d0740d6ca161a21af1c44cf2e}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!print\+Test@{print\+Test}}
+\index{print\+Test@{print\+Test}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{print\+Test()}{printTest()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::print\+Test (\begin{DoxyParamCaption}\item[{bool}]{condition,  }\item[{const char}]{test\+Case\+Message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+print out any error of passed test message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & the condition you want to test if it\textquotesingle{}s true or false. \\
+\hline
+{\em test\+Case\+Message\mbox{[}$\,$\mbox{]}} & the message you want to print when passed or failed the test.\\
+\hline
+\end{DoxyParams}
+Green = passed, red = error. \mbox{\Hypertarget{class_m_f_r_c522_aee85264d7411b76a3b0817622b428827}\label{class_m_f_r_c522_aee85264d7411b76a3b0817622b428827}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!print\+U\+ID@{print\+U\+ID}}
+\index{print\+U\+ID@{print\+U\+ID}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{print\+U\+I\+D()}{printUID()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::print\+U\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Wait for a card te be presented and print the U\+ID. 
+
+This method waits for a card to be presented. After a card has been detected the U\+ID will be printed to the terminal. \begin{DoxyWarning}{Warning}
+This function blocks everything! 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_a4efe585f73e584d792347c2891300ad2}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_afe0e86db047ef36af49349e7fdc7fa65}\label{class_m_f_r_c522_afe0e86db047ef36af49349e7fdc7fa65}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!read\+Register@{read\+Register}}
+\index{read\+Register@{read\+Register}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{read\+Register()}{readRegister()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+F\+R\+C522\+::read\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}}}]{register\+Address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get a byte from a register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & the internal register address you want to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the value of the register.
+\end{DoxyReturn}
+This method uses the basic \mbox{\hyperlink{classspi_bus_ab6b195b235dd0a1dad2f7cec3d997ffb}{spi\+Bus\+::get\+Byte\+From\+Register}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{spi_bus_8hpp_source}{spi\+Bus.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_m_f_r_c522_a559408e38c2c8fea3316f6e2b4477b81}\label{class_m_f_r_c522_a559408e38c2c8fea3316f6e2b4477b81}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!read\+Register@{read\+Register}}
+\index{read\+Register@{read\+Register}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{read\+Register()}{readRegister()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::read\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}}}]{register\+Address,  }\item[{uint8\+\_\+t}]{read\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{amount\+Of\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get multiple bytes from a register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & the internal register address you want to read. \\
+\hline
+{\em read\mbox{[}$\,$\mbox{]}} & the array you want to store the bytes in. \\
+\hline
+{\em amount\+Of\+Bytes} & the amount of bytes you want to read from the register.\\
+\hline
+\end{DoxyParams}
+This method reads O\+NE register multiple times. The method uses the basic \mbox{\hyperlink{classspi_bus_a58318fdc7b4ff1869be4f0f321a853a8}{spi\+Bus\+::get\+Bytes\+From\+Register}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{spi_bus_8hpp_source}{spi\+Bus.\+hpp}} 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Some registers might delete the value after reading. BE C\+A\+R\+E\+F\+U\+L! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}\label{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!reset\+Antennas@{reset\+Antennas}}
+\index{reset\+Antennas@{reset\+Antennas}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{reset\+Antennas()}{resetAntennas()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::reset\+Antennas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reset the Tx and Rx antennas. 
+
+This function is mostly used to stop communicating with a card without using the halt command. 
+
+Implements \mbox{\hyperlink{classrfid_abf4826e77ab7b02f04c8f01d969149c1}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}\label{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!self\+Test@{self\+Test}}
+\index{self\+Test@{self\+Test}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{self\+Test()}{selfTest()}}
+{\footnotesize\ttfamily bool M\+F\+R\+C522\+::self\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Let the rfid chip perform a self test. 
+
+\begin{DoxyReturn}{Returns}
+A bool containing a 1 when passed and 0 when failed the self test.
+\end{DoxyReturn}
+The rfid chip performs a self test. The self testing sequence can be found in the datasheet \href{https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf}{\tt M\+F\+R\+C522 datasheet page 85} \begin{DoxyWarning}{Warning}
+Only version 1 and 2 are supported at the moment! Some clones might have another version. It might work fine when not passing the test. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_a93e5430380a14fd652e7ca1ce6443198}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_ad33cc8218440b30747fba97aa59c0583}\label{class_m_f_r_c522_ad33cc8218440b30747fba97aa59c0583}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!set\+Antennas@{set\+Antennas}}
+\index{set\+Antennas@{set\+Antennas}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{set\+Antennas()}{setAntennas()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::set\+Antennas (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set the antennas rx and tx on or off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & 1 = on, 0 = off. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_m_f_r_c522_ae30686cdd50f6fdb821908a2547e5153}\label{class_m_f_r_c522_ae30686cdd50f6fdb821908a2547e5153}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!set\+Mask\+In\+Register@{set\+Mask\+In\+Register}}
+\index{set\+Mask\+In\+Register@{set\+Mask\+In\+Register}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{set\+Mask\+In\+Register()}{setMaskInRegister()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::set\+Mask\+In\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}}}]{register\+Address,  }\item[{uint8\+\_\+t}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set specific bits using a mask. (logic 1 = set) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & the internal register address you want to change the bits of. \\
+\hline
+{\em mask} & the bits you want to set (Those bits must be a logic 1)\\
+\hline
+\end{DoxyParams}
+The current byte in the register is stored and manipulated using an $\vert$ operator. \begin{DoxyWarning}{Warning}
+the value of the register will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_aff8e84921e9f133cfbd243ce994da023}\label{class_m_f_r_c522_aff8e84921e9f133cfbd243ce994da023}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!test@{test}}
+\index{test@{test}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. 
+
+Testing might take a while. Wait till the end test message appears. Testing requires a rfid 4 U\+ID sized card. 
+
+Implements \mbox{\hyperlink{classrfid_adc4009859b77330fd5b3d0515337ac40}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_aeb05c83c2d139eb2c57f400399982691}\label{class_m_f_r_c522_aeb05c83c2d139eb2c57f400399982691}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!wait\+For\+Card\+U\+ID@{wait\+For\+Card\+U\+ID}}
+\index{wait\+For\+Card\+U\+ID@{wait\+For\+Card\+U\+ID}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{wait\+For\+Card\+U\+I\+D()}{waitForCardUID()}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::wait\+For\+Card\+U\+ID (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This function waits till there is a card in range and gives the U\+ID back. 
+
+\begin{DoxyWarning}{Warning}
+This function blocks everything! And will continue when there is a card detected with valid U\+ID. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classrfid_a1b324cb1e7b4c377eca4b3495d4189fd}{rfid}}.
+
+\mbox{\Hypertarget{class_m_f_r_c522_aa976c78dde5b2dfbbd5bcbedaad14a7a}\label{class_m_f_r_c522_aa976c78dde5b2dfbbd5bcbedaad14a7a}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!write\+Register@{write\+Register}}
+\index{write\+Register@{write\+Register}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{write\+Register()}{writeRegister()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::write\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}}}]{register\+Address,  }\item[{uint8\+\_\+t}]{new\+Byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set a byte into a register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & the internal register address you want to write to. \\
+\hline
+{\em new\+Byte} & the byte you want to store in the reigster.\\
+\hline
+\end{DoxyParams}
+This method uses the basic \mbox{\hyperlink{classspi_bus_a3322a039f33a7180a9a57da662607b7d}{spi\+Bus\+::set\+Byte\+In\+Register}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{spi_bus_8hpp_source}{spi\+Bus.\+hpp}} 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+The value of the register will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_m_f_r_c522_a3558d379575863072c711721b061bb75}\label{class_m_f_r_c522_a3558d379575863072c711721b061bb75}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!write\+Register@{write\+Register}}
+\index{write\+Register@{write\+Register}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{write\+Register()}{writeRegister()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void M\+F\+R\+C522\+::write\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_m_f_r_c522_ae7ec09eb8c9c61288a4770175b4b8db7}{R\+EG}}}]{register\+Address,  }\item[{uint8\+\_\+t}]{new\+Bytes\mbox{[}$\,$\mbox{]},  }\item[{int}]{amount\+Of\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set multiple bytes into a register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & the internal register address you want to write to. \\
+\hline
+{\em new\+Bytes\mbox{[}$\,$\mbox{]}} & the bytes you want to store in the reigster. \\
+\hline
+{\em amount\+Of\+Bytes} & the amount of bytes you want to store into the register.\\
+\hline
+\end{DoxyParams}
+This method uses the basic \mbox{\hyperlink{classspi_bus_a734591a2184ce01cac6dcf875ac424d4}{spi\+Bus\+::set\+Bytes\+In\+Register}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{spi_bus_8hpp_source}{spi\+Bus.\+hpp}} 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+The values of the register will be overridden. 
+
+The amount\+Of\+Bytes must be $<$= the size of new\+Bytes\mbox{[}\mbox{]}. 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m_f_r_c522_a7d19c9869a7fbbe0d9825d5653d6af7b}\label{class_m_f_r_c522_a7d19c9869a7fbbe0d9825d5653d6af7b}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!self\+Test\+F\+I\+F\+O\+Buffer\+V1@{self\+Test\+F\+I\+F\+O\+Buffer\+V1}}
+\index{self\+Test\+F\+I\+F\+O\+Buffer\+V1@{self\+Test\+F\+I\+F\+O\+Buffer\+V1}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{self\+Test\+F\+I\+F\+O\+Buffer\+V1}{selfTestFIFOBufferV1}}
+{\footnotesize\ttfamily const uint8\+\_\+t M\+F\+R\+C522\+::self\+Test\+F\+I\+F\+O\+Buffer\+V1\mbox{[}64\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        0x00, 0xC6, 0x37, 0xD5, 0x32, 0xB7, 0x57, 0x5C,
+        0xC2, 0xD8, 0x7C, 0x4D, 0xD9, 0x70, 0xC7, 0x73,
+        0x10, 0xE6, 0xD2, 0xAA, 0x5E, 0xA1, 0x3E, 0x5A,
+        0x14, 0xAF, 0x30, 0x61, 0xC9, 0x70, 0xDB, 0x2E,
+        0x64, 0x22, 0x72, 0xB5, 0xBD, 0x65, 0xF4, 0xEC,
+        0x22, 0xBC, 0xD3, 0x72, 0x35, 0xCD, 0xAA, 0x41,
+        0x1F, 0xA7, 0xF3, 0x53, 0x14, 0xDE, 0x7E, 0x02,
+        0xD9, 0x0F, 0xB5, 0x5E, 0x25, 0x1D, 0x29, 0x79
+    \}
+\end{DoxyCode}
+
+
+The data that will be in the F\+I\+FO after executing the self\+Test on a \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} version 1. 
+
+\mbox{\Hypertarget{class_m_f_r_c522_a6973b73a8a922ac09b9d89489bdbc333}\label{class_m_f_r_c522_a6973b73a8a922ac09b9d89489bdbc333}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!self\+Test\+F\+I\+F\+O\+Buffer\+V2@{self\+Test\+F\+I\+F\+O\+Buffer\+V2}}
+\index{self\+Test\+F\+I\+F\+O\+Buffer\+V2@{self\+Test\+F\+I\+F\+O\+Buffer\+V2}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{self\+Test\+F\+I\+F\+O\+Buffer\+V2}{selfTestFIFOBufferV2}}
+{\footnotesize\ttfamily const uint8\+\_\+t M\+F\+R\+C522\+::self\+Test\+F\+I\+F\+O\+Buffer\+V2\mbox{[}64\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        0x00, 0xEB, 0x66, 0xBA, 0x57, 0xBF, 0x23, 0x95,
+        0xD0, 0xE3, 0x0D, 0x3D, 0x27, 0x89, 0x5C, 0xDE,
+        0x9D, 0x3B, 0xA7, 0x00, 0x21, 0x5B, 0x89, 0x82,
+        0x51, 0x3A, 0xEB, 0x02, 0x0C, 0xA5, 0x00, 0x49,
+        0x7C, 0x84, 0x4D, 0xB3, 0xCC, 0xD2, 0x1B, 0x81,
+        0x5D, 0x48, 0x76, 0xD5, 0x71, 0x61, 0x21, 0xA9,
+        0x86, 0x96, 0x83, 0x38, 0xCF, 0x9D, 0x5B, 0x6D,
+        0xDC, 0x15, 0xBA, 0x3E, 0x7D, 0x95, 0x3B, 0x2F
+    \}
+\end{DoxyCode}
+
+
+The data that will be in the F\+I\+FO after executing the self\+Test on a \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}} version 2. 
+
+\mbox{\Hypertarget{class_m_f_r_c522_a76b0186fcad01aafd3d7d7ae4da6a68c}\label{class_m_f_r_c522_a76b0186fcad01aafd3d7d7ae4da6a68c}} 
+\index{M\+F\+R\+C522@{M\+F\+R\+C522}!S\+P\+I\+Bus@{S\+P\+I\+Bus}}
+\index{S\+P\+I\+Bus@{S\+P\+I\+Bus}!M\+F\+R\+C522@{M\+F\+R\+C522}}
+\subsubsection{\texorpdfstring{S\+P\+I\+Bus}{SPIBus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspi_bus}{spi\+Bus}}\& M\+F\+R\+C522\+::\+S\+P\+I\+Bus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The spi bus which is used to communicate with the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}}. 
+
+My chip doesn\textquotesingle{}t support I2C without resoldering the module. So I chose to only implement S\+PI. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Demo/M\+F\+R\+C522.\+hpp\item 
+Demo/M\+F\+R\+C522.\+cpp\end{DoxyCompactItemize}

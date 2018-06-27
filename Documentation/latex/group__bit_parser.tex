@@ -1,0 +1,122 @@
+\hypertarget{group__bit_parser}{}\section{Bit\+Parser}
+\label{group__bit_parser}\index{Bit\+Parser@{Bit\+Parser}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__bit_parser_ga59838a77502d6d7f71258ff348055510}{bit\+Parser\+::print\+Byte}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Print a byte to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__bit_parser_ga25b5179d0eec3cf5d3f465c7b2c179b6}{bit\+Parser\+::print\+Bytes}} (uint16\+\_\+t bytes)
+\begin{DoxyCompactList}\small\item\em Print a two bytes to the console. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__bit_parser_gad207f006665a21b8cbdb0148d81b80c1}{bit\+Parser\+::\+B\+C\+D\+To\+D\+EC}} (uint8\+\_\+t B\+CD)
+\begin{DoxyCompactList}\small\item\em Turn a B\+C\+D-\/coded value into a decimal value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__bit_parser_gabf889c80952fe124c224fd61c59704d1}{bit\+Parser\+::\+D\+E\+C\+To\+B\+CD}} (uint8\+\_\+t D\+EC)
+\begin{DoxyCompactList}\small\item\em Turn a decimal value into a B\+C\+D-\/coded value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__bit_parser_ga2cdf3099581569732367d0fc965e0a7e}{bit\+Parser\+::uint8\+\_\+t\+To\+Int}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Turn a uint8\+\_\+t into a signed integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__bit_parser_ga1089bf9f6a8c7710cb6f4161697d437c}\label{group__bit_parser_ga1089bf9f6a8c7710cb6f4161697d437c}} 
+const int \mbox{\hyperlink{group__bit_parser_ga1089bf9f6a8c7710cb6f4161697d437c}{bit\+Parser\+::n\+Bitsin\+Byte}} = 8
+\begin{DoxyCompactList}\small\item\em Mask for a whole byte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__bit_parser_ga47dacd6f8d9409a4866c9e22f8e0a3ca}\label{group__bit_parser_ga47dacd6f8d9409a4866c9e22f8e0a3ca}} 
+const int \mbox{\hyperlink{group__bit_parser_ga47dacd6f8d9409a4866c9e22f8e0a3ca}{bit\+Parser\+::n\+Bitsin\+Half\+A\+Byte}} = 4
+\begin{DoxyCompactList}\small\item\em Mask for half of a byte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__bit_parser_ga3706423b79d72421f8796475baf10c27}\label{group__bit_parser_ga3706423b79d72421f8796475baf10c27}} 
+const uint8\+\_\+t \mbox{\hyperlink{group__bit_parser_ga3706423b79d72421f8796475baf10c27}{bit\+Parser\+::left\+Half\+Byte\+Mask}} = 0x78
+\begin{DoxyCompactList}\small\item\em Mask for the 4 left bits of a byte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__bit_parser_gaadb1b05603363dca189d9f3900cebce4}\label{group__bit_parser_gaadb1b05603363dca189d9f3900cebce4}} 
+const uint8\+\_\+t \mbox{\hyperlink{group__bit_parser_gaadb1b05603363dca189d9f3900cebce4}{bit\+Parser\+::right\+Halfg\+Byte\+Mask}} = 0xF
+\begin{DoxyCompactList}\small\item\em Mask for the 4 right bits of a byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__bit_parser_gad207f006665a21b8cbdb0148d81b80c1}\label{group__bit_parser_gad207f006665a21b8cbdb0148d81b80c1}} 
+\index{Bit\+Parser@{Bit\+Parser}!B\+C\+D\+To\+D\+EC@{B\+C\+D\+To\+D\+EC}}
+\index{B\+C\+D\+To\+D\+EC@{B\+C\+D\+To\+D\+EC}!Bit\+Parser@{Bit\+Parser}}
+\subsubsection{\texorpdfstring{B\+C\+D\+To\+D\+E\+C()}{BCDToDEC()}}
+{\footnotesize\ttfamily uint8\+\_\+t bit\+Parser\+::\+B\+C\+D\+To\+D\+EC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{B\+CD }\end{DoxyParamCaption})}
+
+
+
+Turn a B\+C\+D-\/coded value into a decimal value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B\+CD} & the B\+C\+D-\/coded value you want to turn into a decimal value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the decimal value of the B\+C\+D-\/coded value. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+D\+E\+C\+To\+B\+CD for doing the opposite. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__bit_parser_gabf889c80952fe124c224fd61c59704d1}\label{group__bit_parser_gabf889c80952fe124c224fd61c59704d1}} 
+\index{Bit\+Parser@{Bit\+Parser}!D\+E\+C\+To\+B\+CD@{D\+E\+C\+To\+B\+CD}}
+\index{D\+E\+C\+To\+B\+CD@{D\+E\+C\+To\+B\+CD}!Bit\+Parser@{Bit\+Parser}}
+\subsubsection{\texorpdfstring{D\+E\+C\+To\+B\+C\+D()}{DECToBCD()}}
+{\footnotesize\ttfamily uint8\+\_\+t bit\+Parser\+::\+D\+E\+C\+To\+B\+CD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{D\+EC }\end{DoxyParamCaption})}
+
+
+
+Turn a decimal value into a B\+C\+D-\/coded value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em D\+EC} & the decimal value you want to turn into a B\+C\+D-\/coded value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing B\+C\+D-\/coded value of the decimal value. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+B\+C\+Dto\+D\+EC for doing the opposite. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__bit_parser_ga59838a77502d6d7f71258ff348055510}\label{group__bit_parser_ga59838a77502d6d7f71258ff348055510}} 
+\index{Bit\+Parser@{Bit\+Parser}!print\+Byte@{print\+Byte}}
+\index{print\+Byte@{print\+Byte}!Bit\+Parser@{Bit\+Parser}}
+\subsubsection{\texorpdfstring{print\+Byte()}{printByte()}}
+{\footnotesize\ttfamily void bit\+Parser\+::print\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})}
+
+
+
+Print a byte to the console. 
+
+The byte is printed with the L\+SB first (left). \begin{DoxyWarning}{Warning}
+The byte is printed with the L\+SB first (left). 
+\end{DoxyWarning}
+\mbox{\Hypertarget{group__bit_parser_ga25b5179d0eec3cf5d3f465c7b2c179b6}\label{group__bit_parser_ga25b5179d0eec3cf5d3f465c7b2c179b6}} 
+\index{Bit\+Parser@{Bit\+Parser}!print\+Bytes@{print\+Bytes}}
+\index{print\+Bytes@{print\+Bytes}!Bit\+Parser@{Bit\+Parser}}
+\subsubsection{\texorpdfstring{print\+Bytes()}{printBytes()}}
+{\footnotesize\ttfamily void bit\+Parser\+::print\+Bytes (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes }\end{DoxyParamCaption})}
+
+
+
+Print a two bytes to the console. 
+
+The bytes are printed with the L\+SB first (left). \begin{DoxyWarning}{Warning}
+The byte are printed with the L\+SB first (left). 
+\end{DoxyWarning}
+\mbox{\Hypertarget{group__bit_parser_ga2cdf3099581569732367d0fc965e0a7e}\label{group__bit_parser_ga2cdf3099581569732367d0fc965e0a7e}} 
+\index{Bit\+Parser@{Bit\+Parser}!uint8\+\_\+t\+To\+Int@{uint8\+\_\+t\+To\+Int}}
+\index{uint8\+\_\+t\+To\+Int@{uint8\+\_\+t\+To\+Int}!Bit\+Parser@{Bit\+Parser}}
+\subsubsection{\texorpdfstring{uint8\+\_\+t\+To\+Int()}{uint8\_tToInt()}}
+{\footnotesize\ttfamily int bit\+Parser\+::uint8\+\_\+t\+To\+Int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})}
+
+
+
+Turn a uint8\+\_\+t into a signed integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte} & the uint8\+\_\+t you want to turn into a signed integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An signed int containing the signed value of the uint8\+\_\+t. 
+\end{DoxyReturn}

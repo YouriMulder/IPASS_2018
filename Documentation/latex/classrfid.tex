@@ -1,0 +1,335 @@
+\hypertarget{classrfid}{}\section{rfid Class Reference}
+\label{classrfid}\index{rfid@{rfid}}
+
+
+A pure virtual class for a rfid chip like the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}}.  
+
+
+
+
+{\ttfamily \#include $<$rfid.\+hpp$>$}
+
+Inheritance diagram for rfid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrfid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classrfid_a76f857b77fbea6776048aab6ba835a29}{initialize}} ()=0
+\begin{DoxyCompactList}\small\item\em Initialize the rfid chip for. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classrfid_a7f993197e5aa12e7b3bfb1576552bbf1}{hard\+Reset}} ()=0
+\begin{DoxyCompactList}\small\item\em Hard reset the rfid chip probably with a hwlib\+::pin\+\_\+out (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl}) 2017. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrfid_a880add72f6db49af0b1d23878308d733}\label{classrfid_a880add72f6db49af0b1d23878308d733}} 
+virtual void \mbox{\hyperlink{classrfid_a880add72f6db49af0b1d23878308d733}{soft\+Reset}} ()=0
+\begin{DoxyCompactList}\small\item\em Soft reset the rfid chip. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classrfid_abf4826e77ab7b02f04c8f01d969149c1}{reset\+Antennas}} ()=0
+\begin{DoxyCompactList}\small\item\em Reset the Tx and Rx antennas. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classrfid_a23fc4ec0bc3790c5e68269d4f32771b9}{is\+Card\+In\+Range}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if there is a card within the radio frequency field. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classrfid_a9790d273f2385c8fb48bb85ca2aa0d10}{is\+Card\+In\+Range\+Check}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if there is a card within the radio frequency field. \end{DoxyCompactList}\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{classrfid_afeb2a321694ceaf84db793f5efb3a750}{get\+Card\+U\+ID}} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em Get the U\+I\+D/\+N\+U\+ID of 4 bytes U\+ID card with the B\+CC byte. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classrfid_aaeb826495120d8d29683f0ea1b985d77}{get\+Card\+U\+I\+D\+Simple}} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em A wrapper around \mbox{\hyperlink{classrfid_afeb2a321694ceaf84db793f5efb3a750}{get\+Card\+U\+ID}} to make it simpler. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classrfid_a1b324cb1e7b4c377eca4b3495d4189fd}{wait\+For\+Card\+U\+ID}} (uint8\+\_\+t U\+ID\mbox{[}5\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em This function waits till there is a card in range and gives the U\+ID back. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classrfid_a4efe585f73e584d792347c2891300ad2}{print\+U\+ID}} ()=0
+\begin{DoxyCompactList}\small\item\em Wait for a card te be presented and print the U\+ID. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classrfid_a8c239b8e42f20d4310c44368bd5030a7}{is\+U\+I\+D\+Equal}} (uint8\+\_\+t U\+I\+D1\mbox{[}5\mbox{]}, uint8\+\_\+t U\+I\+D2\mbox{[}5\mbox{]}, unsigned int U\+I\+D\+Size)
+\begin{DoxyCompactList}\small\item\em check whether two U\+I\+Ds are equal \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classrfid_a4ca2918b2b7011a6eb685ea547c21826}{check\+U\+I\+D4\+B\+CC}} (const uint8\+\_\+t U\+ID\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em This will check if the U\+ID is valid using B\+CC. \end{DoxyCompactList}\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{classrfid_a27619628e718bb781f912aead770079a}{get\+Version}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the version of the rfid chip to perform for instance a \mbox{\hyperlink{classrfid_a93e5430380a14fd652e7ca1ce6443198}{self\+Test}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classrfid_a93e5430380a14fd652e7ca1ce6443198}{self\+Test}} ()=0
+\begin{DoxyCompactList}\small\item\em Let the rfid chip perform a self test. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classrfid_adc4009859b77330fd5b3d0515337ac40}{test}} ()=0
+\begin{DoxyCompactList}\small\item\em This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrfid_aa8c64df0877a6bad52b08cfdcaea02bc}\label{classrfid_aa8c64df0877a6bad52b08cfdcaea02bc}} 
+virtual void \mbox{\hyperlink{classrfid_aa8c64df0877a6bad52b08cfdcaea02bc}{wait\+Till\+Started}} ()=0
+\begin{DoxyCompactList}\small\item\em Wait till the is started correctly after for example a soft reset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A pure virtual class for a rfid chip like the \mbox{\hyperlink{class_m_f_r_c522}{M\+F\+R\+C522}}. 
+
+This class is a pure virtual class. This means that you can access methods of the derived class when using reference or pointers. This makes the code easier to expand. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrfid_a4ca2918b2b7011a6eb685ea547c21826}\label{classrfid_a4ca2918b2b7011a6eb685ea547c21826}} 
+\index{rfid@{rfid}!check\+U\+I\+D4\+B\+CC@{check\+U\+I\+D4\+B\+CC}}
+\index{check\+U\+I\+D4\+B\+CC@{check\+U\+I\+D4\+B\+CC}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{check\+U\+I\+D4\+B\+C\+C()}{checkUID4BCC()}}
+{\footnotesize\ttfamily virtual bool rfid\+::check\+U\+I\+D4\+B\+CC (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This will check if the U\+ID is valid using B\+CC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+I\+D\mbox{[}$\,$\mbox{]}} & the array where the U\+ID including the B\+CC is store.\\
+\hline
+\end{DoxyParams}
+The U\+ID\mbox{[}5\mbox{]} will N\+OT be changed using this function. This check was found on the following site\+: \href{http://www.proxmark.org/forum/viewtopic.php?id=2274}{\tt B\+CC check} \mbox{\Hypertarget{classrfid_afeb2a321694ceaf84db793f5efb3a750}\label{classrfid_afeb2a321694ceaf84db793f5efb3a750}} 
+\index{rfid@{rfid}!get\+Card\+U\+ID@{get\+Card\+U\+ID}}
+\index{get\+Card\+U\+ID@{get\+Card\+U\+ID}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{get\+Card\+U\+I\+D()}{getCardUID()}}
+{\footnotesize\ttfamily virtual uint8\+\_\+t rfid\+::get\+Card\+U\+ID (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the U\+I\+D/\+N\+U\+ID of 4 bytes U\+ID card with the B\+CC byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+I\+D\mbox{[}$\,$\mbox{]}} & The array you want the U\+ID to get stored into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing a possible error or succes code. (These codes are in the derived class)
+\end{DoxyReturn}
+The U\+ID of a card is a unique identifier. This U\+ID can be used to know which card you\textquotesingle{}re communicating with. The U\+ID is used when more than one card is in the radio frequency field, also known as collision detection.~\newline
+ The last byte of U\+ID\mbox{[}5\mbox{]} will be the bcc. This can be used to check if the U\+ID is valid. \begin{DoxyWarning}{Warning}
+Note that the U\+ID might not be as unique as you might expect. Some cards have a feature to rewrite the U\+ID block. 
+
+Note that the U\+ID\mbox{[}5\mbox{]} array will be overridden. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_ad3c7ab4c70988e80c400f36f724a12b7}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_aaeb826495120d8d29683f0ea1b985d77}\label{classrfid_aaeb826495120d8d29683f0ea1b985d77}} 
+\index{rfid@{rfid}!get\+Card\+U\+I\+D\+Simple@{get\+Card\+U\+I\+D\+Simple}}
+\index{get\+Card\+U\+I\+D\+Simple@{get\+Card\+U\+I\+D\+Simple}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{get\+Card\+U\+I\+D\+Simple()}{getCardUIDSimple()}}
+{\footnotesize\ttfamily virtual bool rfid\+::get\+Card\+U\+I\+D\+Simple (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A wrapper around \mbox{\hyperlink{classrfid_afeb2a321694ceaf84db793f5efb3a750}{get\+Card\+U\+ID}} to make it simpler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+I\+D\mbox{[}$\,$\mbox{]}} & The array you want the U\+ID to get stored into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool which will be 1 when everything went fine and 0 when there was an error.
+\end{DoxyReturn}
+When the function returns a zero you should try \mbox{\hyperlink{classrfid_afeb2a321694ceaf84db793f5efb3a750}{get\+Card\+U\+ID}} instead because that function returns a more accurate return status. \begin{DoxyWarning}{Warning}
+Note that the U\+ID might not be as unique as you might expect. Some cards have a feature to rewrite the U\+ID block. 
+
+Note that the U\+ID\mbox{[}5\mbox{]} array will be overridden. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_a33c20be6030f635d986984db4999a1eb}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a27619628e718bb781f912aead770079a}\label{classrfid_a27619628e718bb781f912aead770079a}} 
+\index{rfid@{rfid}!get\+Version@{get\+Version}}
+\index{get\+Version@{get\+Version}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{get\+Version()}{getVersion()}}
+{\footnotesize\ttfamily virtual uint8\+\_\+t rfid\+::get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the version of the rfid chip to perform for instance a \mbox{\hyperlink{classrfid_a93e5430380a14fd652e7ca1ce6443198}{self\+Test}}. 
+
+\begin{DoxyReturn}{Returns}
+An uint8\+\_\+t containing the version value 1 or 2 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_a25fb0a50bf7db51ab9c5bc2ff4fa84e3}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a7f993197e5aa12e7b3bfb1576552bbf1}\label{classrfid_a7f993197e5aa12e7b3bfb1576552bbf1}} 
+\index{rfid@{rfid}!hard\+Reset@{hard\+Reset}}
+\index{hard\+Reset@{hard\+Reset}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{hard\+Reset()}{hardReset()}}
+{\footnotesize\ttfamily virtual void rfid\+::hard\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Hard reset the rfid chip probably with a hwlib\+::pin\+\_\+out (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl}) 2017. 
+
+\begin{DoxyWarning}{Warning}
+Note if the chip requires a external pin to reset the whole chip. The pin must me connected correctly. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_a016df9ed0421397c634cc79c475dbe3b}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a76f857b77fbea6776048aab6ba835a29}\label{classrfid_a76f857b77fbea6776048aab6ba835a29}} 
+\index{rfid@{rfid}!initialize@{initialize}}
+\index{initialize@{initialize}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void rfid\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initialize the rfid chip for. 
+
+This will reset the chip and initilize all the register. 
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_a5f589b09eaf150551b369052ce125fa1}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a23fc4ec0bc3790c5e68269d4f32771b9}\label{classrfid_a23fc4ec0bc3790c5e68269d4f32771b9}} 
+\index{rfid@{rfid}!is\+Card\+In\+Range@{is\+Card\+In\+Range}}
+\index{is\+Card\+In\+Range@{is\+Card\+In\+Range}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{is\+Card\+In\+Range()}{isCardInRange()}}
+{\footnotesize\ttfamily virtual bool rfid\+::is\+Card\+In\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if there is a card within the radio frequency field. 
+
+\begin{DoxyReturn}{Returns}
+A bool which will be 1 if a card is detected and 0 when not.
+\end{DoxyReturn}
+This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. \begin{DoxyWarning}{Warning}
+After requesting the rfid card expects the user to send another command. When you you only want to check if a card is in the radio frequency field you should use is\+Card\+In\+Range\+Check 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_a019f76569bddf9c2f9f94eca13a618d7}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a9790d273f2385c8fb48bb85ca2aa0d10}\label{classrfid_a9790d273f2385c8fb48bb85ca2aa0d10}} 
+\index{rfid@{rfid}!is\+Card\+In\+Range\+Check@{is\+Card\+In\+Range\+Check}}
+\index{is\+Card\+In\+Range\+Check@{is\+Card\+In\+Range\+Check}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{is\+Card\+In\+Range\+Check()}{isCardInRangeCheck()}}
+{\footnotesize\ttfamily virtual bool rfid\+::is\+Card\+In\+Range\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if there is a card within the radio frequency field. 
+
+\begin{DoxyReturn}{Returns}
+A bool which will be 1 if a card is detected and 0 when not.
+\end{DoxyReturn}
+This function checks whether there is a card within the radio frequency field. The function uses the rfid request command to achieve this. After sending the request command both antennas are reset (\mbox{\hyperlink{classrfid_abf4826e77ab7b02f04c8f01d969149c1}{reset\+Antennas}}) to stop communicating with the card. \begin{DoxyWarning}{Warning}
+Use \mbox{\hyperlink{classrfid_a23fc4ec0bc3790c5e68269d4f32771b9}{is\+Card\+In\+Range}} when you want to send some commands after you send a request to the card. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_a29ce0dd04495f9352e32ada5ecc5fd03}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a8c239b8e42f20d4310c44368bd5030a7}\label{classrfid_a8c239b8e42f20d4310c44368bd5030a7}} 
+\index{rfid@{rfid}!is\+U\+I\+D\+Equal@{is\+U\+I\+D\+Equal}}
+\index{is\+U\+I\+D\+Equal@{is\+U\+I\+D\+Equal}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{is\+U\+I\+D\+Equal()}{isUIDEqual()}}
+{\footnotesize\ttfamily virtual bool rfid\+::is\+U\+I\+D\+Equal (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+I\+D1\mbox{[}5\mbox{]},  }\item[{uint8\+\_\+t}]{U\+I\+D2\mbox{[}5\mbox{]},  }\item[{unsigned int}]{U\+I\+D\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+check whether two U\+I\+Ds are equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+I\+D1\mbox{[}$\,$\mbox{]}} & the first U\+ID you want to check. \\
+\hline
+{\em U\+I\+D2\mbox{[}$\,$\mbox{]}} & the seconds U\+ID you want to check. \\
+\hline
+{\em U\+I\+D\+Size} & the size of the arrays. N\+O\+TE T\+H\+AT F\+OR N\+OW T\+H\+EY H\+A\+VE TO BE 5. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool containing a 1 when they\textquotesingle{}re the same and a zero when the\textquotesingle{}re not.
+\end{DoxyReturn}
+This method will check if every value of the same index in the arrays are equal. The B\+CC is also checked for equality. \mbox{\Hypertarget{classrfid_a4efe585f73e584d792347c2891300ad2}\label{classrfid_a4efe585f73e584d792347c2891300ad2}} 
+\index{rfid@{rfid}!print\+U\+ID@{print\+U\+ID}}
+\index{print\+U\+ID@{print\+U\+ID}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{print\+U\+I\+D()}{printUID()}}
+{\footnotesize\ttfamily virtual void rfid\+::print\+U\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Wait for a card te be presented and print the U\+ID. 
+
+This method waits for a card to be presented. After a card has been detected the U\+ID will be printed to the terminal. \begin{DoxyWarning}{Warning}
+This function blocks everything! 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_aee85264d7411b76a3b0817622b428827}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_abf4826e77ab7b02f04c8f01d969149c1}\label{classrfid_abf4826e77ab7b02f04c8f01d969149c1}} 
+\index{rfid@{rfid}!reset\+Antennas@{reset\+Antennas}}
+\index{reset\+Antennas@{reset\+Antennas}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{reset\+Antennas()}{resetAntennas()}}
+{\footnotesize\ttfamily virtual void rfid\+::reset\+Antennas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reset the Tx and Rx antennas. 
+
+This function is mostly used to stop communicating with a card without using the halt command. 
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_ac981022cc3ae79f727b2365e309cf691}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a93e5430380a14fd652e7ca1ce6443198}\label{classrfid_a93e5430380a14fd652e7ca1ce6443198}} 
+\index{rfid@{rfid}!self\+Test@{self\+Test}}
+\index{self\+Test@{self\+Test}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{self\+Test()}{selfTest()}}
+{\footnotesize\ttfamily virtual bool rfid\+::self\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Let the rfid chip perform a self test. 
+
+\begin{DoxyReturn}{Returns}
+A bool containing a 1 when passed and 0 when failed the self test.
+\end{DoxyReturn}
+The rfid chip performs a self test. The self testing sequence can be found in the datasheet \href{https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf}{\tt M\+F\+R\+C522 datasheet page 85} \begin{DoxyWarning}{Warning}
+Only version 1 and 2 are supported at the moment! Some clones might have another version. It might work fine when not passing the test. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_adcc4f5eb212c1a94e462eab459bd685e}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_adc4009859b77330fd5b3d0515337ac40}\label{classrfid_adc4009859b77330fd5b3d0515337ac40}} 
+\index{rfid@{rfid}!test@{test}}
+\index{test@{test}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily virtual void rfid\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. 
+
+Testing might take a while. Wait till the end test message appears. Testing requires a rfid 4 U\+ID sized card. 
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_aff8e84921e9f133cfbd243ce994da023}{M\+F\+R\+C522}}.
+
+\mbox{\Hypertarget{classrfid_a1b324cb1e7b4c377eca4b3495d4189fd}\label{classrfid_a1b324cb1e7b4c377eca4b3495d4189fd}} 
+\index{rfid@{rfid}!wait\+For\+Card\+U\+ID@{wait\+For\+Card\+U\+ID}}
+\index{wait\+For\+Card\+U\+ID@{wait\+For\+Card\+U\+ID}!rfid@{rfid}}
+\subsubsection{\texorpdfstring{wait\+For\+Card\+U\+I\+D()}{waitForCardUID()}}
+{\footnotesize\ttfamily virtual void rfid\+::wait\+For\+Card\+U\+ID (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{U\+ID\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function waits till there is a card in range and gives the U\+ID back. 
+
+\begin{DoxyWarning}{Warning}
+This function blocks everything! And will continue when there is a card detected with valid U\+ID. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_m_f_r_c522_aeb05c83c2d139eb2c57f400399982691}{M\+F\+R\+C522}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Demo/rfid.\+hpp\end{DoxyCompactItemize}

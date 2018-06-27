@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="F:\Programming\C++\IPASS_2018\__codelite.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="3" Name="m_selectedTab"/>
   <wxString Value="F:\Programming\C++\IPASS_2018\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\MFRC522.hpp" Name="FileName"/>
-      <int Value="315" Name="FirstVisibleLine"/>
-      <int Value="341" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\main.cpp" Name="FileName"/>
+      <int Value="18" Name="FirstVisibleLine"/>
+      <int Value="59" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\MFRC522.cpp" Name="FileName"/>
-      <int Value="135" Name="FirstVisibleLine"/>
-      <int Value="179" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\alarm.cpp" Name="FileName"/>
+      <int Value="78" Name="FirstVisibleLine"/>
+      <int Value="95" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\spiBus.cpp" Name="FileName"/>
-      <int Value="27" Name="FirstVisibleLine"/>
-      <int Value="27" Name="CurrentLine"/>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\displayManager.cpp" Name="FileName"/>
+      <int Value="52" Name="FirstVisibleLine"/>
+      <int Value="55" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Programming\C++\IPASS_2018\Demo\HCSR501.cpp" Name="FileName"/>
+      <int Value="28" Name="FirstVisibleLine"/>
+      <int Value="36" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

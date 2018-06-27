@@ -1,0 +1,94 @@
+\hypertarget{classalarm}{}\section{alarm Class Reference}
+\label{classalarm}\index{alarm@{alarm}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classalarm_a291b28fcd9ffcdcce8e8fce6e512643f}\label{classalarm_a291b28fcd9ffcdcce8e8fce6e512643f}} 
+{\bfseries alarm} (\mbox{\hyperlink{classreal_time_clock}{real\+Time\+Clock}} \&rtc, \mbox{\hyperlink{classrfid}{rfid}} \&rfid\+Reader, \mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}} \&motion\+Detector, \mbox{\hyperlink{classbuzzer}{buzzer}} \&horn, \mbox{\hyperlink{classdisplay_manager}{display\+Manager}} \&d\+Manager, bool is\+Active=false)
+\item 
+\mbox{\Hypertarget{classalarm_a6077fa2ce42a4b04cb3ebbdff7f112ea}\label{classalarm_a6077fa2ce42a4b04cb3ebbdff7f112ea}} 
+bool {\bfseries get\+Is\+Active} ()
+\item 
+\mbox{\Hypertarget{classalarm_a04d2c03a06c2208e642ab55c2f5d3f17}\label{classalarm_a04d2c03a06c2208e642ab55c2f5d3f17}} 
+bool {\bfseries get\+Is\+Ringing} ()
+\item 
+\mbox{\Hypertarget{classalarm_a32500531a9dc214f564aa20d5f0ee145}\label{classalarm_a32500531a9dc214f564aa20d5f0ee145}} 
+bool {\bfseries is\+Member} (\mbox{\hyperlink{structpersonal_data}{personal\+Data}} \&member, uint8\+\_\+t U\+ID\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classalarm_abfda60288cdb57e93c66e10ac36ed35e}\label{classalarm_abfda60288cdb57e93c66e10ac36ed35e}} 
+bool {\bfseries check\+All\+Members} (\mbox{\hyperlink{structpersonal_data}{personal\+Data}} \&found\+Member, uint8\+\_\+t U\+ID\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classalarm_aed3ea13689f0461908659d36fc895c16}\label{classalarm_aed3ea13689f0461908659d36fc895c16}} 
+bool {\bfseries activate} ()
+\item 
+\mbox{\Hypertarget{classalarm_a242729ba99732c31170dcfe80050d405}\label{classalarm_a242729ba99732c31170dcfe80050d405}} 
+bool {\bfseries deactivate} ()
+\item 
+\mbox{\Hypertarget{classalarm_a008a838ccc2b272900f089f765629841}\label{classalarm_a008a838ccc2b272900f089f765629841}} 
+void {\bfseries update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classalarm_a06b1f88d7b539ae0a46c30d970222687}\label{classalarm_a06b1f88d7b539ae0a46c30d970222687}} 
+enum {\bfseries A\+C\+C\+E\+S\+S\+\_\+\+L\+E\+V\+EL} \+: uint8\+\_\+t \{ {\bfseries Normal} = 1, 
+{\bfseries Full\+Control}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classalarm_a0fed4e17af71e422087f61cb2a7443ca}\label{classalarm_a0fed4e17af71e422087f61cb2a7443ca}} 
+bool {\bfseries toggle} (bool new\+Value)
+\item 
+\mbox{\Hypertarget{classalarm_a66a4c7e43f89bfb0c6a0f03f5531d01b}\label{classalarm_a66a4c7e43f89bfb0c6a0f03f5531d01b}} 
+bool {\bfseries turn\+Off} (\mbox{\hyperlink{structpersonal_data}{personal\+Data}} \&member)
+\item 
+\mbox{\Hypertarget{classalarm_ac6de3c71489d640032d41fd50c1e041c}\label{classalarm_ac6de3c71489d640032d41fd50c1e041c}} 
+bool {\bfseries turn\+On} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classalarm_afec7be3c6ef6cefe5e0bc9b8cd2169e9}\label{classalarm_afec7be3c6ef6cefe5e0bc9b8cd2169e9}} 
+\mbox{\hyperlink{classreal_time_clock}{real\+Time\+Clock}} \& {\bfseries rtc}
+\item 
+\mbox{\Hypertarget{classalarm_a1c53aa85791e56c7a811e218f051df82}\label{classalarm_a1c53aa85791e56c7a811e218f051df82}} 
+\mbox{\hyperlink{classrfid}{rfid}} \& {\bfseries rfid\+Reader}
+\item 
+\mbox{\Hypertarget{classalarm_a25b4c008275f022756119e1250b90a98}\label{classalarm_a25b4c008275f022756119e1250b90a98}} 
+\mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}} \& {\bfseries motion\+Detector}
+\item 
+\mbox{\Hypertarget{classalarm_a8d87a3c8c7b8cce58ad2cee9fa0a4310}\label{classalarm_a8d87a3c8c7b8cce58ad2cee9fa0a4310}} 
+\mbox{\hyperlink{classbuzzer}{buzzer}} \& {\bfseries horn}
+\item 
+\mbox{\Hypertarget{classalarm_a4fd0e362b51c0d6cab5fa7d30a38af8e}\label{classalarm_a4fd0e362b51c0d6cab5fa7d30a38af8e}} 
+\mbox{\hyperlink{classdisplay_manager}{display\+Manager}} {\bfseries d\+Manager}
+\item 
+\mbox{\Hypertarget{classalarm_aa85f0f117c2aa100765e7be92e7e4514}\label{classalarm_aa85f0f117c2aa100765e7be92e7e4514}} 
+\mbox{\hyperlink{structpersonal_data}{personal\+Data}} {\bfseries youri} = \{\char`\"{}Youri\char`\"{}, Full\+Control, \{154, 45, 198, 89, 40\}\}
+\item 
+\mbox{\Hypertarget{classalarm_ad584a835047a5a45c84f20b250406dc4}\label{classalarm_ad584a835047a5a45c84f20b250406dc4}} 
+\mbox{\hyperlink{structpersonal_data}{personal\+Data}} {\bfseries hank} = \{\char`\"{}Hank\char`\"{}, Normal, \{37, 98, 166, 137, 104\}\}
+\item 
+\mbox{\Hypertarget{classalarm_a0df368fa9b7215aed85c20bf01158a85}\label{classalarm_a0df368fa9b7215aed85c20bf01158a85}} 
+uint8\+\_\+t {\bfseries amount\+Of\+Members} = 2
+\item 
+\mbox{\Hypertarget{classalarm_acbf7ed273a5a1921d884ae924d07dd33}\label{classalarm_acbf7ed273a5a1921d884ae924d07dd33}} 
+\mbox{\hyperlink{structpersonal_data}{personal\+Data}} $\ast$ {\bfseries members} \mbox{[}10\mbox{]} = \{\&youri, \&hank\}
+\item 
+\mbox{\Hypertarget{classalarm_a60b21367926834a5a178ea975667f8b4}\label{classalarm_a60b21367926834a5a178ea975667f8b4}} 
+const uint8\+\_\+t {\bfseries U\+I\+D\+Size} = 5
+\item 
+\mbox{\Hypertarget{classalarm_a6437d709cf6639065cffad1018b637be}\label{classalarm_a6437d709cf6639065cffad1018b637be}} 
+bool {\bfseries is\+Active}
+\item 
+\mbox{\Hypertarget{classalarm_a2418a1fd302f477edd563e6ffb5c407c}\label{classalarm_a2418a1fd302f477edd563e6ffb5c407c}} 
+bool {\bfseries is\+Ringing} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Demo/alarm.\+hpp\item 
+Demo/alarm.\+cpp\end{DoxyCompactItemize}

@@ -1,3 +1,10 @@
+// -----------------------------------------------------------
+// (C) Copyright Youri Mulder 2018.
+// Distributed under the Boost Software License, Version 1.0. (See
+// accompanying file LICENSE_1_0.txt or copy at
+// http://www.boost.org/LICENSE_1_0.txt)
+// -----------------------------------------------------------
+
 #include "alarm.hpp"
 
 alarm::alarm(realTimeClock& rtc, rfid& rfidReader, motionSensor& motionDetector, buzzer& horn,
@@ -86,8 +93,13 @@ bool alarm::turnOn() {
 	}
 	while(rtc.getCurrentSeconds() != endSeconds) {}
 
+	dManager.updateMessage("Wait for sensor!");
+	dManager.draw();
+	motionDetector.waitToGoOff();
+
 	dManager.updateMessage("");
 
+	horn.alarmEnabled();
 	return true;
 }
 
@@ -108,7 +120,6 @@ void alarm::update() {
 	// Turn on the horn
 	if(isRinging) {
 		horn.turnOn();
-		dManager.updateMessage("INTRUDER!");
 	} else {
 		horn.turnOff();
 	}
@@ -119,7 +130,6 @@ void alarm::update() {
 		} else {
 			deactivate();
 		}
-
 	}
 
 	dManager.updateAlarm(isActive);

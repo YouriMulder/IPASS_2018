@@ -1,0 +1,151 @@
+\hypertarget{class_h_c_s_r501}{}\section{H\+C\+S\+R501 Class Reference}
+\label{class_h_c_s_r501}\index{H\+C\+S\+R501@{H\+C\+S\+R501}}
+
+
+This class is used to communicate with the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}} chip.  
+
+
+
+
+{\ttfamily \#include $<$H\+C\+S\+R501.\+hpp$>$}
+
+Inheritance diagram for H\+C\+S\+R501\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_h_c_s_r501}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_h_c_s_r501_a589a13daf993e217138344db60086f36}{H\+C\+S\+R501}} (hwlib\+::pin\+\_\+in \&\mbox{\hyperlink{class_h_c_s_r501_a00d41bcf68fa634e07ae68488d2b61ee}{input}})
+\begin{DoxyCompactList}\small\item\em the constructor for the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_h_c_s_r501_a75456a573bf0066ee648f8f1a39d4966}{detect}} () override
+\begin{DoxyCompactList}\small\item\em Detect if any movement is in front of the motionsensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_h_c_s_r501_ad300c0219deddb52c3a5e443be9a96cd}{wait\+To\+Go\+Off}} () override
+\begin{DoxyCompactList}\small\item\em Wait for the \mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}} to go off after detecting. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_h_c_s_r501_ad90e8669ce7d60213c917c9213366798}{test}} () override
+\begin{DoxyCompactList}\small\item\em This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_h_c_s_r501_a062d325c62157cc2b82d4a092caee2a1}{print\+Test}} (bool condition, const char test\+Case\+Message\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em print out any error of passed test message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+hwlib\+::pin\+\_\+in \& \mbox{\hyperlink{class_h_c_s_r501_a00d41bcf68fa634e07ae68488d2b61ee}{input}}
+\begin{DoxyCompactList}\small\item\em This is the input pin for the motion sensor data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to communicate with the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}} chip. 
+
+This is a basic library for the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}} chip. Using the pure virtual class \mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}}. Execute the tests when you\textquotesingle{}re not sure the chip is connected correctly. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_h_c_s_r501_a589a13daf993e217138344db60086f36}\label{class_h_c_s_r501_a589a13daf993e217138344db60086f36}} 
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\subsubsection{\texorpdfstring{H\+C\+S\+R501()}{HCSR501()}}
+{\footnotesize\ttfamily H\+C\+S\+R501\+::\+H\+C\+S\+R501 (\begin{DoxyParamCaption}\item[{hwlib\+::pin\+\_\+in \&}]{input }\end{DoxyParamCaption})}
+
+
+
+the constructor for the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & the input pin for the \mbox{\hyperlink{class_h_c_s_r501}{H\+C\+S\+R501}} data. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_h_c_s_r501_a75456a573bf0066ee648f8f1a39d4966}\label{class_h_c_s_r501_a75456a573bf0066ee648f8f1a39d4966}} 
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!detect@{detect}}
+\index{detect@{detect}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\subsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily bool H\+C\+S\+R501\+::detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Detect if any movement is in front of the motionsensor. 
+
+Detect whether there is anything is moving in the field of the motion sensor or not. \begin{DoxyReturn}{Returns}
+A bool containing a 0 when nothing is detected and 1 when somthing is detected. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmotion_sensor_a0b8701a41516d8b1140c39474b1db9db}{motion\+Sensor}}.
+
+\mbox{\Hypertarget{class_h_c_s_r501_a062d325c62157cc2b82d4a092caee2a1}\label{class_h_c_s_r501_a062d325c62157cc2b82d4a092caee2a1}} 
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!print\+Test@{print\+Test}}
+\index{print\+Test@{print\+Test}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\subsubsection{\texorpdfstring{print\+Test()}{printTest()}}
+{\footnotesize\ttfamily void H\+C\+S\+R501\+::print\+Test (\begin{DoxyParamCaption}\item[{bool}]{condition,  }\item[{const char}]{test\+Case\+Message\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+print out any error of passed test message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & the condition you want to test if it\textquotesingle{}s true or false. \\
+\hline
+{\em test\+Case\+Message\mbox{[}$\,$\mbox{]}} & the message you want to print when passed or failed the test.\\
+\hline
+\end{DoxyParams}
+Green = passed, red = error. \mbox{\Hypertarget{class_h_c_s_r501_ad90e8669ce7d60213c917c9213366798}\label{class_h_c_s_r501_ad90e8669ce7d60213c917c9213366798}} 
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!test@{test}}
+\index{test@{test}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily void H\+C\+S\+R501\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This checks if the chip is functioning correctly. Make sure you connected everything correctly before executing. 
+
+Testing might take a while. Wait till the end test message appears. 
+
+Implements \mbox{\hyperlink{classmotion_sensor_a718bb6e111adc734ce6e595e28664581}{motion\+Sensor}}.
+
+\mbox{\Hypertarget{class_h_c_s_r501_ad300c0219deddb52c3a5e443be9a96cd}\label{class_h_c_s_r501_ad300c0219deddb52c3a5e443be9a96cd}} 
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!wait\+To\+Go\+Off@{wait\+To\+Go\+Off}}
+\index{wait\+To\+Go\+Off@{wait\+To\+Go\+Off}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\subsubsection{\texorpdfstring{wait\+To\+Go\+Off()}{waitToGoOff()}}
+{\footnotesize\ttfamily void H\+C\+S\+R501\+::wait\+To\+Go\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Wait for the \mbox{\hyperlink{classmotion_sensor}{motion\+Sensor}} to go off after detecting. 
+
+\begin{DoxyWarning}{Warning}
+This is a blocking call. It will block all the other functions to be called untill the motionsensors is off. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classmotion_sensor_a855b7f86c8ef833bbcd2064a220a4b58}{motion\+Sensor}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_h_c_s_r501_a00d41bcf68fa634e07ae68488d2b61ee}\label{class_h_c_s_r501_a00d41bcf68fa634e07ae68488d2b61ee}} 
+\index{H\+C\+S\+R501@{H\+C\+S\+R501}!input@{input}}
+\index{input@{input}!H\+C\+S\+R501@{H\+C\+S\+R501}}
+\subsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily hwlib\+::pin\+\_\+in\& H\+C\+S\+R501\+::input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the input pin for the motion sensor data. 
+
+Note that hwlib\+::pin\+\_\+in is a class made by (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl} 2017). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Demo/H\+C\+S\+R501.\+hpp\item 
+Demo/H\+C\+S\+R501.\+cpp\end{DoxyCompactItemize}

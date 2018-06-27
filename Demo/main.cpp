@@ -1,6 +1,12 @@
+// -----------------------------------------------------------
+// (C) Copyright Youri Mulder 2018.
+// Distributed under the Boost Software License, Version 1.0. (See
+// accompanying file LICENSE_1_0.txt or copy at
+// http://www.boost.org/LICENSE_1_0.txt)
+// -----------------------------------------------------------
+
 #include "hwlib.hpp"
 #include "DS3231.hpp"
-#include "bitParser.hpp"
 #include "i2cBus.hpp"
 #include "spiBus.hpp"
 #include "MFRC522.hpp"
@@ -50,6 +56,17 @@ int main(int argc, char **argv) {
 	DS3231 rtc(I2CBus, 0x68);
 	alarm theftAlarm(rtc, rfidReader, motionDetector, horn, dManager);
 
+	// wait for the terminal to start on the PC side
+	hwlib::wait_ms(1000);
+
+	// tests chips
+	rtc.test();
+	rfidReader.test();
+	motionDetector.test();
+
+
+	timestamp ts;
+	uint8_t sec = rtc.getCurrentSeconds();
 	rtc.setCurrentSeconds(0); // 0 - 59
 	rtc.setCurrentMinutes(21); // 0 - 59
 	rtc.setCurrentHours(17);
@@ -58,57 +75,15 @@ int main(int argc, char **argv) {
 	rtc.setCurrentMonth(6);
 	rtc.setCurrentYear(18);
 
-	// wait for the terminal to start on the PC side
-	hwlib::wait_ms(1000);
-
-	timestamp ts;
-	uint8_t sec = rtc.getCurrentSeconds();
-
 	for(;;) {
-//		hwlib::cout << (unsigned)rtc.getCurrentSeconds() << "\n";
 		if(sec != rtc.getCurrentSeconds()) {
 			sec = rtc.getCurrentSeconds();
 			rtc.getCurrentTimestamp(ts);
-			hwlib::wait_ms(100);
+			//hwlib::wait_ms(100);
 			dManager.updateTime(ts);
 			dManager.updateTemperature(rtc.getCurrentTemperatureCelsius());
 			dManager.draw();
-//			hwlib::cout << ts <<"\n";
-//			hwlib::cout << rtc.getCurrentTemperatureCelsius();
 		}
 		theftAlarm.update();
 	}
-
-	/*for(;;) {
-		rtc.getCurrentTimestamp(ts);
-		hwlib::cout << ts << "\n";
-		hwlib::cout << "century: " << rtc.getCurrentCenturyBit() << "\n";
-		hwlib::cout << "Temperature: " << rtc.getCurrentTemperatureCelsius() << "\n";
-		hwlib::cout << "Temperature: " << rtc.getCurrentTemperatureFahrenheit() << "\n\n";
-
-		hwlib::cout << "Alarm one hours: " << (unsigned)rtc.getAlarmHours(1) << "\n\n";
-		rtc.update();
-	}
-	hwlib::cout << (unsigned) rfid.getVersion() << "\n";
-	hwlib::cout << "Self Test: " << rfid.selfTest() << "\n";
-
-	*/
-
-	/*	for(;;) {
-			if(rfidReader.isCardInRange()) {
-				uint8_t UID[5] = {0};
-				hwlib::cout << "status: " << (unsigned)rfidReader.getCardUID(UID) << "\n";
-				for(auto d : UID) {
-					hwlib::cout << (unsigned)d << " , ";
-				}
-				hwlib::cout << "\n";
-			}
-			hwlib::wait_ms(1000);
-		}*/
-
-	/*	for(;;) {
-			hwlib::cout << motionSensor.getInput() << "\n";
-
-		}*/
-
 }

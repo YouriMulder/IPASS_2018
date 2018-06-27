@@ -1,3 +1,10 @@
+// -----------------------------------------------------------
+// (C) Copyright Youri Mulder 2018.
+// Distributed under the Boost Software License, Version 1.0. (See
+// accompanying file LICENSE_1_0.txt or copy at
+// http://www.boost.org/LICENSE_1_0.txt)
+// -----------------------------------------------------------
+
 #ifndef ALARM_HPP
 #define ALARM_HPP
 
@@ -24,10 +31,11 @@ private:
 	};
 
 	// Alarm users
-	personalData youri = {"Youri", FullControl, {154, 45, 198, 89, 40}};
+	personalData youri = 	{"Youri", FullControl, {154, 45, 198, 89, 40}};
+	personalData hank = 	{"Hank", Normal, {37, 98, 166, 137, 104}};
 
-	uint8_t amountOfMembers = 1;
-	personalData* members[10] = {&youri};
+	uint8_t amountOfMembers = 2;
+	personalData* members[10] = {&youri, &hank};
 
 	// STATIC WORKAROUND
 	// THE VARIABLE ABOVE SHOULD BE THE SAME AS THE ARRAY SIZES

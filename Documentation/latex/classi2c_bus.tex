@@ -1,0 +1,285 @@
+\hypertarget{classi2c_bus}{}\section{i2c\+Bus Class Reference}
+\label{classi2c_bus}\index{i2c\+Bus@{i2c\+Bus}}
+
+
+Basic I2C functions like write and read a register.  
+
+
+
+
+{\ttfamily \#include $<$i2c\+Bus.\+hpp$>$}
+
+Inheritance diagram for i2c\+Bus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classi2c_bus}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classi2c_bus_aa2f1a1a391410e33dc4f09c6f5b9ae7c}{i2c\+Bus}} (hwlib\+::pin\+\_\+oc \&scl, hwlib\+::pin\+\_\+oc \&sda)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classi2c_bus}{i2c\+Bus}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi2c_bus_a5f3a99851f437473a00f1216ba2a1517}{set\+Current\+Chip\+Address}} (uint8\+\_\+t new\+Chip\+Address)
+\begin{DoxyCompactList}\small\item\em Set \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}} to another address. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classi2c_bus_aba70817c7bc0a9ad73b369616a864395}{get\+Current\+Chip\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Returns the value of the current chip you are communicating with. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi2c_bus_adee2545c8b692474b6814b4605e48ec3}{set\+Register}} (uint8\+\_\+t chip\+Reg\+Address)
+\begin{DoxyCompactList}\small\item\em set the interal register pointer of \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classi2c_bus_a7f83afc0264e758214db63cca336846d}{get\+Byte\+From\+Register}} (uint8\+\_\+t chip\+Reg\+Address)
+\begin{DoxyCompactList}\small\item\em Get byte from a specific register address. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classi2c_bus_a30d44d89d2f9b0d290cb2a207f6a4777}{get\+D\+E\+C\+From\+B\+C\+D\+Register}} (uint8\+\_\+t chip\+Reg\+Address)
+\begin{DoxyCompactList}\small\item\em Get a decimal value from a register containing B\+CD value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi2c_bus_a8bed9bf37dee74b691ab4c92723dd206}{set\+Byte\+In\+Register}} (uint8\+\_\+t chip\+Reg\+Address, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Set byte into a specific register address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi2c_bus_a31c36069cff15f73aa54703a6ee8b951}{set\+Byte\+To\+B\+C\+D\+In\+Register}} (uint8\+\_\+t chip\+Reg\+Address, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em set a decimal value into a register containing B\+CD value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classi2c_bus_aeedd7fa6ab6640fe86bcfb8a3ac3f306}{get\+Bit\+From\+Register}} (uint8\+\_\+t chip\+Reg\+Address, uint8\+\_\+t bit\+Number)
+\begin{DoxyCompactList}\small\item\em Get bit from a specific register address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi2c_bus_a3b2f595372a05bde8e1cf9d6a86f2bdb}{set\+Bit\+In\+Register}} (uint8\+\_\+t chip\+Reg\+Address, uint8\+\_\+t bit\+Number)
+\begin{DoxyCompactList}\small\item\em Set bit into a specific register address (This function will always set the bit to H\+I\+G\+H/1). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi2c_bus_a30c140f08712618bc46f7c98ba1da3c3}{clear\+Bit\+In\+Register}} (uint8\+\_\+t chip\+Reg\+Address, uint8\+\_\+t bit\+Number)
+\begin{DoxyCompactList}\small\item\em Clear bit of specific register address (This function will always set the bit to L\+O\+W/0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}} = 0x00
+\begin{DoxyCompactList}\small\item\em This variable stores the address of the chip you want to talk with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic I2C functions like write and read a register. 
+
+This class is a wrapper around the hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl} 2017). It contains some basic I2C functions for easy access of the used module. \begin{DoxyWarning}{Warning}
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classi2c_bus_aa2f1a1a391410e33dc4f09c6f5b9ae7c}\label{classi2c_bus_aa2f1a1a391410e33dc4f09c6f5b9ae7c}} 
+\index{i2c\+Bus@{i2c\+Bus}!i2c\+Bus@{i2c\+Bus}}
+\index{i2c\+Bus@{i2c\+Bus}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{i2c\+Bus()}{i2cBus()}}
+{\footnotesize\ttfamily i2c\+Bus\+::i2c\+Bus (\begin{DoxyParamCaption}\item[{hwlib\+::pin\+\_\+oc \&}]{scl,  }\item[{hwlib\+::pin\+\_\+oc \&}]{sda }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classi2c_bus}{i2c\+Bus}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scl} & Serial clock line. \\
+\hline
+{\em sda} & Serial Data line. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classi2c_bus_a30c140f08712618bc46f7c98ba1da3c3}\label{classi2c_bus_a30c140f08712618bc46f7c98ba1da3c3}} 
+\index{i2c\+Bus@{i2c\+Bus}!clear\+Bit\+In\+Register@{clear\+Bit\+In\+Register}}
+\index{clear\+Bit\+In\+Register@{clear\+Bit\+In\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{clear\+Bit\+In\+Register()}{clearBitInRegister()}}
+{\footnotesize\ttfamily void i2c\+Bus\+::clear\+Bit\+In\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number }\end{DoxyParamCaption})}
+
+
+
+Clear bit of specific register address (This function will always set the bit to L\+O\+W/0). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address where you want to clear the bit. \\
+\hline
+{\em bit\+Number} & the bit you want to clear the value of (0 = L\+SB, 7 = M\+SB).\\
+\hline
+\end{DoxyParams}
+First this function gets the current byte in the register. After achieving the whole byte it will clear the bit given by the user(bit\+Number). And last but not least it will set the manipulated byte into the register using \mbox{\hyperlink{classi2c_bus_a8bed9bf37dee74b691ab4c92723dd206}{set\+Byte\+In\+Register}} \begin{DoxyWarning}{Warning}
+The value of the bit will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classi2c_bus_aeedd7fa6ab6640fe86bcfb8a3ac3f306}\label{classi2c_bus_aeedd7fa6ab6640fe86bcfb8a3ac3f306}} 
+\index{i2c\+Bus@{i2c\+Bus}!get\+Bit\+From\+Register@{get\+Bit\+From\+Register}}
+\index{get\+Bit\+From\+Register@{get\+Bit\+From\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{get\+Bit\+From\+Register()}{getBitFromRegister()}}
+{\footnotesize\ttfamily bool i2c\+Bus\+::get\+Bit\+From\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number }\end{DoxyParamCaption})}
+
+
+
+Get bit from a specific register address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want the bit from. \\
+\hline
+{\em bit\+Number} & the bit you want to get from the register (0 = L\+SB, 7 = M\+SB). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean containing the the bit value of the give bit\+Number.
+\end{DoxyReturn}
+First it will get the whole byte using \mbox{\hyperlink{classi2c_bus_a7f83afc0264e758214db63cca336846d}{get\+Byte\+From\+Register}}. After achieving the whole byte it will bitshift to the right bit and return that specific bit. \mbox{\Hypertarget{classi2c_bus_a7f83afc0264e758214db63cca336846d}\label{classi2c_bus_a7f83afc0264e758214db63cca336846d}} 
+\index{i2c\+Bus@{i2c\+Bus}!get\+Byte\+From\+Register@{get\+Byte\+From\+Register}}
+\index{get\+Byte\+From\+Register@{get\+Byte\+From\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{get\+Byte\+From\+Register()}{getByteFromRegister()}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+Bus\+::get\+Byte\+From\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address }\end{DoxyParamCaption})}
+
+
+
+Get byte from a specific register address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want the byte from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A uint8\+\_\+t containing the byte of the give chip\+Reg\+Address.
+\end{DoxyReturn}
+This method will only get one byte from the \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}} and returns it. First the internal register pointer is set using \mbox{\hyperlink{classi2c_bus_adee2545c8b692474b6814b4605e48ec3}{set\+Register}}. After that the byte is read using hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda.\+read (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl} 2017). \mbox{\Hypertarget{classi2c_bus_aba70817c7bc0a9ad73b369616a864395}\label{classi2c_bus_aba70817c7bc0a9ad73b369616a864395}} 
+\index{i2c\+Bus@{i2c\+Bus}!get\+Current\+Chip\+Address@{get\+Current\+Chip\+Address}}
+\index{get\+Current\+Chip\+Address@{get\+Current\+Chip\+Address}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{get\+Current\+Chip\+Address()}{getCurrentChipAddress()}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+Bus\+::get\+Current\+Chip\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the value of the current chip you are communicating with. 
+
+\begin{DoxyReturn}{Returns}
+A uint8\+\_\+t containing the value of \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classi2c_bus_a30d44d89d2f9b0d290cb2a207f6a4777}\label{classi2c_bus_a30d44d89d2f9b0d290cb2a207f6a4777}} 
+\index{i2c\+Bus@{i2c\+Bus}!get\+D\+E\+C\+From\+B\+C\+D\+Register@{get\+D\+E\+C\+From\+B\+C\+D\+Register}}
+\index{get\+D\+E\+C\+From\+B\+C\+D\+Register@{get\+D\+E\+C\+From\+B\+C\+D\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{get\+D\+E\+C\+From\+B\+C\+D\+Register()}{getDECFromBCDRegister()}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+Bus\+::get\+D\+E\+C\+From\+B\+C\+D\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address }\end{DoxyParamCaption})}
+
+
+
+Get a decimal value from a register containing B\+CD value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want the decimal value from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A uint8\+\_\+t containing the decimal value
+\end{DoxyReturn}
+This method gets the value of the register using \mbox{\hyperlink{classi2c_bus_a7f83afc0264e758214db63cca336846d}{get\+Byte\+From\+Register}}. After getting the byte it uses \mbox{\hyperlink{group__bit_parser_gad207f006665a21b8cbdb0148d81b80c1}{B\+C\+D\+To\+D\+E\+C()}} to turn the B\+C\+D-\/code into a decimal value. the B\+C\+D\+To\+D\+EC function is located in the following file\+: \mbox{\hyperlink{bit_parser_8hpp_source}{bit\+Parser.\+hpp}}. \mbox{\Hypertarget{classi2c_bus_a3b2f595372a05bde8e1cf9d6a86f2bdb}\label{classi2c_bus_a3b2f595372a05bde8e1cf9d6a86f2bdb}} 
+\index{i2c\+Bus@{i2c\+Bus}!set\+Bit\+In\+Register@{set\+Bit\+In\+Register}}
+\index{set\+Bit\+In\+Register@{set\+Bit\+In\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{set\+Bit\+In\+Register()}{setBitInRegister()}}
+{\footnotesize\ttfamily void i2c\+Bus\+::set\+Bit\+In\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number }\end{DoxyParamCaption})}
+
+
+
+Set bit into a specific register address (This function will always set the bit to H\+I\+G\+H/1). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address where you want to set the bit. \\
+\hline
+{\em bit\+Number} & the bit you want to set the value of (0 = L\+SB, 7 = M\+SB).\\
+\hline
+\end{DoxyParams}
+First this function gets the current byte in the register. After achieving the whole byte it will set the bit given by the user(bit\+Number). And last but not least it will set the manipulated byte into the register using \mbox{\hyperlink{classi2c_bus_a8bed9bf37dee74b691ab4c92723dd206}{set\+Byte\+In\+Register}} \begin{DoxyWarning}{Warning}
+The value of the bit will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classi2c_bus_a8bed9bf37dee74b691ab4c92723dd206}\label{classi2c_bus_a8bed9bf37dee74b691ab4c92723dd206}} 
+\index{i2c\+Bus@{i2c\+Bus}!set\+Byte\+In\+Register@{set\+Byte\+In\+Register}}
+\index{set\+Byte\+In\+Register@{set\+Byte\+In\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{set\+Byte\+In\+Register()}{setByteInRegister()}}
+{\footnotesize\ttfamily void i2c\+Bus\+::set\+Byte\+In\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address,  }\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})}
+
+
+
+Set byte into a specific register address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want to set the byte into. \\
+\hline
+{\em byte} & this is the byte you want te set into the register.\\
+\hline
+\end{DoxyParams}
+This method will set a byte into the given register address(chip\+Reg\+Address). The chip it will be communicating with is specified by \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}}. First the internal register pointer is set using \mbox{\hyperlink{classi2c_bus_adee2545c8b692474b6814b4605e48ec3}{set\+Register}}. After that the byte is written using hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda.\+write (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl} 2017). \begin{DoxyWarning}{Warning}
+the value of the register will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classi2c_bus_a31c36069cff15f73aa54703a6ee8b951}\label{classi2c_bus_a31c36069cff15f73aa54703a6ee8b951}} 
+\index{i2c\+Bus@{i2c\+Bus}!set\+Byte\+To\+B\+C\+D\+In\+Register@{set\+Byte\+To\+B\+C\+D\+In\+Register}}
+\index{set\+Byte\+To\+B\+C\+D\+In\+Register@{set\+Byte\+To\+B\+C\+D\+In\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{set\+Byte\+To\+B\+C\+D\+In\+Register()}{setByteToBCDInRegister()}}
+{\footnotesize\ttfamily void i2c\+Bus\+::set\+Byte\+To\+B\+C\+D\+In\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address,  }\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})}
+
+
+
+set a decimal value into a register containing B\+CD value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want to set the decimal value in. \\
+\hline
+{\em byte} & the decimal value(byte) you want to set into the register.\\
+\hline
+\end{DoxyParams}
+This function turns the decimal byte into a B\+C\+D-\/coded value using the the function D\+E\+C\+To\+B\+CD which is located the following file\+: \mbox{\hyperlink{bit_parser_8hpp_source}{bit\+Parser.\+hpp}}. After turning the decimal value into a B\+C\+D-\/coded byte it sends the value using \mbox{\hyperlink{classi2c_bus_a8bed9bf37dee74b691ab4c92723dd206}{set\+Byte\+In\+Register}}. \begin{DoxyWarning}{Warning}
+The value of the register will be overridden. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classi2c_bus_a5f3a99851f437473a00f1216ba2a1517}\label{classi2c_bus_a5f3a99851f437473a00f1216ba2a1517}} 
+\index{i2c\+Bus@{i2c\+Bus}!set\+Current\+Chip\+Address@{set\+Current\+Chip\+Address}}
+\index{set\+Current\+Chip\+Address@{set\+Current\+Chip\+Address}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{set\+Current\+Chip\+Address()}{setCurrentChipAddress()}}
+{\footnotesize\ttfamily void i2c\+Bus\+::set\+Current\+Chip\+Address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Chip\+Address }\end{DoxyParamCaption})}
+
+
+
+Set \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}} to another address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Chip\+Address} & This will be the new value of \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Changing \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}} means that you will be communicating with another chip from now on. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classi2c_bus_adee2545c8b692474b6814b4605e48ec3}\label{classi2c_bus_adee2545c8b692474b6814b4605e48ec3}} 
+\index{i2c\+Bus@{i2c\+Bus}!set\+Register@{set\+Register}}
+\index{set\+Register@{set\+Register}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{set\+Register()}{setRegister()}}
+{\footnotesize\ttfamily void i2c\+Bus\+::set\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Reg\+Address }\end{DoxyParamCaption})}
+
+
+
+set the interal register pointer of \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chip\+Reg\+Address} & the register address you want the interal register pointer to set to.\\
+\hline
+\end{DoxyParams}
+This function sends one byte in a array containing chip\+Reg\+Address. This array will be sent using hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda.\+write (\href{mailto:wouter@voti.nl}{\tt wouter@voti.\+nl} 2017). \begin{DoxyWarning}{Warning}
+the internal register pointer value will be overridden. 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}\label{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}} 
+\index{i2c\+Bus@{i2c\+Bus}!current\+Chip\+Address@{current\+Chip\+Address}}
+\index{current\+Chip\+Address@{current\+Chip\+Address}!i2c\+Bus@{i2c\+Bus}}
+\subsubsection{\texorpdfstring{current\+Chip\+Address}{currentChipAddress}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+Bus\+::current\+Chip\+Address = 0x00\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This variable stores the address of the chip you want to talk with. 
+
+Every function that communicates with a chip will send this byte first to let all the chips know we want to communicate with the chip using this address. \begin{DoxyWarning}{Warning}
+Changing \mbox{\hyperlink{classi2c_bus_a64ff87527c88619d72ede947d73eac3a}{current\+Chip\+Address}} means that you will be communicating with another chip from now on. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Demo/i2c\+Bus.\+hpp\item 
+Demo/i2c\+Bus.\+cpp\end{DoxyCompactItemize}
