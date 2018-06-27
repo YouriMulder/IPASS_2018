@@ -63,8 +63,3 @@ MCFR522:
                 ✔ Turning antenna's on and off made it work @done(2018-06-16 14:16) @project(MCFR522 / BUGS)
                     ✔ Turning the antenna's on before executing and after executing probably even saves some energy (NOT CHECKED, JUST AN ASSUMPTION) @done(2018-06-16 14:17) @project(MCFR522 / BUGS)
                         - THIS OPTION DIDN'T WORK. After turning on/requesting the card the connection the antenna's have to be on the whole time to execute for example a collision check  
-
-
-
-References:
-    http://www.nedapidentification.com/news/insights/understanding-the-confusing-world-of-rfid-tags-and-readers-in-access-control.html

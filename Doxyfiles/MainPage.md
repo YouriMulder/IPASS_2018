@@ -26,9 +26,16 @@ After choosing the library you should test if your chip is working correctly. (c
 @section import_sec Import library to your own project
 To use a library in your own project you should just copy the folder or files to the directory of your own projected and add the files to your makefile (Note that you need HWLIB and BMPTK for using the libraries!). 
 
-
 @section test_sec Testing
 When you want to test the libraries or your chip you need to run the main.cpp located in the folder of the library.
 
 @section author_sec Author
 The project is made by: Youri Mulder - Computer science year 1 (Hogeschool Utrecht)
+
+@seconds reeferences_sec Used sites/datasheets
+https://www.mpja.com/download/31227sc.pdf
+https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
+https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf
+https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
+http://www.radio-electronics.com/info/wireless/nfc/near-field-communications-modulation-rf-signal-interface.php
+http://www.nedapidentification.com/news/insights/understanding-the-confusing-world-of-rfid-tags-and-readers-in-access-control.html
