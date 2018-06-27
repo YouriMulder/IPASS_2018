@@ -33,9 +33,9 @@ When you want to test the libraries or your chip you need to run the main.cpp lo
 The project is made by: Youri Mulder - Computer science year 1 (Hogeschool Utrecht)
 
 @section reeferences_sec Used sites/datasheets
-https://www.mpja.com/download/31227sc.pdf
-https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
-https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf
-https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf
-http://www.radio-electronics.com/info/wireless/nfc/near-field-communications-modulation-rf-signal-interface.php
-http://www.nedapidentification.com/news/insights/understanding-the-confusing-world-of-rfid-tags-and-readers-in-access-control.html
+https://www.mpja.com/download/31227sc.pdf <br>
+https://datasheets.maximintegrated.com/en/ds/DS3231.pdf <br>
+https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf <br>
+https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf <br>
+http://www.radio-electronics.com/info/wireless/nfc/near-field-communications-modulation-rf-signal-interface.php <br>
+http://www.nedapidentification.com/news/insights/understanding-the-confusing-world-of-rfid-tags-and-readers-in-access-control.html <br>
