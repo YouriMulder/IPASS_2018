@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['readme',['README',['../md__r_e_a_d_m_e.html',1,'']]],
   ['read_5fmask',['READ_MASK',['../classspi_bus.html#a0dda31f7fa031ef8913e029d2eb4acf9',1,'spiBus']]],
   ['readregister',['readRegister',['../class_m_f_r_c522.html#afe0e86db047ef36af49349e7fdc7fa65',1,'MFRC522::readRegister(REG registerAddress)'],['../class_m_f_r_c522.html#a559408e38c2c8fea3316f6e2b4477b81',1,'MFRC522::readRegister(REG registerAddress, uint8_t read[], uint8_t amountOfBytes)']]],
   ['realtimeclock',['realTimeClock',['../classreal_time_clock.html',1,'']]],

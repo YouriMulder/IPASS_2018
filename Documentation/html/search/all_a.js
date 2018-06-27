@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['my_20personal_20index_20page',['My Personal Index Page',['../index.html',1,'']]],
   ['mem',['Mem',['../class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7a331b0d7cac5bb0e112f68aed6eb709d0',1,'MFRC522']]],
   ['mfauthent',['MFAuthent',['../class_m_f_r_c522.html#abf038692c9cf33ed59b44a612e6ed1c7a626e32787ed32c2544a228e6c5004344',1,'MFRC522']]],
   ['mfrc522',['MFRC522',['../class_m_f_r_c522.html',1,'MFRC522'],['../class_m_f_r_c522.html#a70e6c463aec08918c71c2e0c77742b4b',1,'MFRC522::MFRC522()']]],
